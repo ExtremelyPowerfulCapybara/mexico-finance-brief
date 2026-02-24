@@ -1,0 +1,150 @@
+{
+  "date": "2026-02-24",
+  "digest": {
+    "editor_note": "The dominant story this morning is the Supreme Court striking down most of Trump's sweeping tariffs — but don't pop the champagne yet, because Trump's already signaling workarounds via executive order and Commerce Department investigations. Closer to home, the killing of El Mencho and the subsequent CJNG violence in Jalisco is the most consequential Mexico story in years, with real implications for security, the World Cup, and investor sentiment. Buckle up — it's a messy Monday. — Ed.",
+    "sentiment": {
+      "label": "Cautious",
+      "context": "U.S. futures are sliding despite the tariff ruling, Trump is pursuing alternative trade barriers, and cartel-driven unrest in Mexico adds a domestic layer of uncertainty that keeps risk firmly in check."
+    },
+    "stories": [
+      {
+        "source": "ABC News",
+        "headline": "Supreme Court Strikes Down Trump's Sweeping Tariffs, But Markets Remain Uneasy",
+        "body": "U.S. equity futures fell Monday — S&P 500 -0.5%, Dow -0.6%, Nasdaq -0.7% — even after the Supreme Court voided most of Trump's broad tariff package late last week. The relief was short-lived: Trump immediately announced a 10-15% global tariff via executive order and signaled further Commerce Department-led levies, keeping trade policy as 'a movable feast,' per Rabobank's Benjamin Picton. For Mexico, the ruling offers a narrow reprieve, but Trump's pivot to alternative mechanisms means the threat to export-dependent sectors isn't gone.",
+        "url": "https://abcnews.com/Business/wireStory/us-futures-fall-asian-markets-higher-after-supreme-130398435",
+        "tag": "Trade"
+      },
+      {
+        "source": "Marca",
+        "headline": "El Mencho Killed, CJNG Violence Erupts in Jalisco — FIFA Weighs Guadalajara's World Cup Role",
+        "body": "Mexican security forces killed Nemesio Oseguera Cervantes 'El Mencho,' leader of the Jalisco New Generation Cartel, triggering widespread reprisals including burning roadblocks, arson, and flight cancellations around Guadalajara and Puerto Vallarta. Burnt vehicles lined the highway near Akron Stadium, Liga MX matches were postponed, and authorities declared a 'red alert' across parts of the metro area. FIFA has not publicly pulled Guadalajara's hosting rights, but sources say concerns are high with four group-stage matches, two playoff games, and the South Korean and Colombian national team base camps already committed to the city.",
+        "url": "https://www.marca.com/en/world-cup/2026/02/23/699bc8a2268e3ea2148b4572.html",
+        "tag": "Mexico"
+      },
+      {
+        "source": "Sputnik / Times of India",
+        "headline": "President Sheinbaum Urges Calm as Post-El Mencho Violence Tests Security Narrative",
+        "body": "President Claudia Sheinbaum publicly called for calm and praised the army and security forces following the CJNG's violent response to El Mencho's death. The killing is a significant strategic win for the Mexican government, but the swift and widespread retaliation across Jalisco exposed vulnerabilities in security infrastructure at a politically sensitive moment. Investors and multinationals with operations in western Mexico will be watching how quickly the federal government reestablishes control and whether copycat violence spreads to other cartel territories.",
+        "url": "https://sputnikglobe.com/20260223/mexican-president-urges-citizens-to-remain-calm-amid-unrest-1123672484.html",
+        "tag": "Mexico"
+      },
+      {
+        "source": "ABC News",
+        "headline": "Bitcoin Drops Below $65,000 as Risk Appetite Fades; Strategy Eyes 100th BTC Purchase",
+        "body": "Bitcoin fell as much as 5% Monday, briefly touching below $65,000 before stabilizing around $66,000 — now nearly 50% off its October record high of $126,210. The sell-off reflects broader risk-off positioning and regulatory uncertainty around crypto. Meanwhile, Strategy's Michael Saylor hinted at the firm's 100th Bitcoin purchase, with holdings of 717,131 BTC at an average cost of $76,027 — meaning the position is currently sitting at an unrealized loss of roughly $8,000 per coin.",
+        "url": "https://abcnews.com/Business/wireStory/us-futures-fall-asian-markets-higher-after-supreme-130398435",
+        "tag": "Markets"
+      },
+      {
+        "source": "Elliptic / Cointelegraph",
+        "headline": "Five Crypto Exchanges Allegedly Helping Russia Evade Sanctions Post-Garantex Takedown",
+        "body": "Blockchain analytics firm Elliptic identified five exchanges — Bitpapa, ABCeX, Exmo, Rapira, and Aifory Pro — as filling the vacuum left by sanctioned Russian exchange Garantex, which was shut down in March 2025. ABCeX reportedly processed at least $11 billion in crypto from Moscow's Federation Tower, the same address Garantex used, while Exmo.com and Exmo.me allegedly share custodial wallet infrastructure with over $19.5 million in direct transactions with sanctioned entities. This matters for global compliance teams: Chainalysis estimates crypto received by illicit addresses hit a record $154 billion in 2025.",
+        "url": "https://cointelegraph.com/news/crypto-exchange-network-helping-russia-skirt-sanctions-elliptic",
+        "tag": "Macro"
+      },
+      {
+        "source": "BusinessLine / NSE",
+        "headline": "India's Stock Market Investor Growth Slows Sharply — Tariff Shocks Get the Blame",
+        "body": "The NSE's latest report shows new investor registrations in India hit 17.7 lakh in January 2026, but the pace of growth has clearly decelerated: the most recent 1 crore addition took eight months versus five to six months for prior milestones, with the exchange citing tariff-related global headwinds as the primary cause. Total registered NSE investors now stand at 12.7 crore — a 27.3% CAGR since FY2020 — but the slowdown signals that retail risk appetite globally is being dented by trade uncertainty. This is a useful read-across for Mexico's own retail brokerage growth story.",
+        "url": "https://www.thehindubusinessline.com/markets/pace-of-new-investors-joining-stock-market-slows-amid-tariff-shocks-177-lakh-joined-in-january-nse-report/article70665504.ece",
+        "tag": "Markets"
+      },
+      {
+        "source": "ABC News / Novo Nordisk",
+        "headline": "Novo Nordisk Slides 13% Premarket as CagriSema Disappoints vs. Eli Lilly's Rival Drug",
+        "body": "Novo Nordisk shares cratered more than 13% in premarket trading after its next-generation weight loss drug CagriSema posted trial results that fell short of those from Eli Lilly's competing therapy, handing Lilly a 3.5% premarket gain. The divergence is a sharp reminder of how binary drug trial outcomes can rapidly reshape multi-hundred-billion-dollar competitive positions in the GLP-1 obesity market. This is one of the largest single-day moves for a major pharma name in recent memory and will dominate healthcare sector trading Monday.",
+        "url": "https://abcnews.com/Business/wireStory/us-futures-fall-asian-markets-higher-after-supreme-130398435",
+        "tag": "Markets"
+      }
+    ],
+    "quote": {
+      "text": "Uncertainty is not an aberration; it is the normal condition under which markets operate. The challenge for investors is not to eliminate uncertainty but to act wisely in its presence.",
+      "attribution": "Peter Bernstein, Against the Gods: The Remarkable Story of Risk, 1996"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.26",
+        "change": "▲ 0.9%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,838",
+        "change": "▼ 0.4%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "—",
+        "change": "",
+        "direction": "flat"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "70,633.77",
+        "change": "▼ 1.1%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "MXN / USD",
+        "rate": "17.2590",
+        "chg_1d": {
+          "text": "▲ 0.94%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.82%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "MXN / EUR",
+        "rate": "0.0487",
+        "chg_1d": {
+          "text": "▼ 1.42%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 1.09%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "MXN / CAD",
+        "rate": "0.0789",
+        "chg_1d": {
+          "text": "▼ 1.13%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 0.79%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "MXN / CNY",
+        "rate": "—",
+        "chg_1d": {
+          "text": "—",
+          "cls": "chg-flat"
+        },
+        "chg_1w": {
+          "text": "—",
+          "cls": "chg-flat"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "8°C",
+    "high_low": "18°C / 3°C",
+    "humidity": "Humidity 73%",
+    "desc": "Clear skies"
+  }
+}
