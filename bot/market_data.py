@@ -2,29 +2,66 @@
 #  market_data.py  —  Tickers, FX, Weather
 # ─────────────────────────────────────────────
 
+import os
 import requests
 from config import (
     TICKER_SYMBOLS, CURRENCY_PAIRS,
     WEATHER_LAT, WEATHER_LON, WEATHER_CITY
 )
 
+BANXICO_TOKEN  = os.environ.get("BANXICO_API_KEY", "")
+CETES_SERIES   = "SF43936"   # CETES 28 días tasa de rendimiento
+
+
+# ── Banxico CETES ─────────────────────────────
+
+def fetch_cetes() -> dict:
+    """
+    Fetches the latest CETES 28D rate from Banxico SIE API.
+    Returns a ticker dict. Falls back to "—" if token missing or call fails.
+    """
+    if not BANXICO_TOKEN:
+        return {"label": "CETES 28D", "value": "—", "change": "", "direction": "flat"}
+    try:
+        url     = f"https://www.banxico.org.mx/SieAPIRest/service/v1/series/{CETES_SERIES}/datos/oportuno"
+        headers = {"Bmx-Token": BANXICO_TOKEN}
+        data    = requests.get(url, headers=headers, timeout=8).json()
+        datos   = data["bmx"]["series"][0]["datos"]
+
+        # Latest and previous observation
+        latest   = float(datos[-1]["dato"])
+        previous = float(datos[-2]["dato"]) if len(datos) >= 2 else latest
+        chg      = latest - previous
+        direction = "up" if chg >= 0 else "down"
+        chg_str   = f"{'▲' if chg >= 0 else '▼'} {abs(chg):.2f}pp"
+
+        return {
+            "label":     "CETES 28D",
+            "value":     f"{latest:.2f}%",
+            "change":    chg_str,
+            "direction": direction,
+        }
+    except Exception as e:
+        print(f"  [market] CETES fetch failed: {e}")
+        return {"label": "CETES 28D", "value": "—", "change": "", "direction": "flat"}
+
+
 # ── Tickers ───────────────────────────────────
 
 def fetch_tickers() -> list[dict]:
     """
     Fetches market data for each ticker in config using Yahoo Finance.
+    CETES 28D is fetched from Banxico SIE API.
     Returns list of dicts with label, value, change, direction.
     """
     results = []
     for label, symbol in TICKER_SYMBOLS:
         if symbol is None:
-            # CETES placeholder — you can wire Banxico API here later
-            results.append({
-                "label":     label,
-                "value":     "—",
-                "change":    "",
-                "direction": "flat",
-            })
+            # Wire Banxico for CETES, skip anything else with no symbol
+            if "CETES" in label:
+                results.append(fetch_cetes())
+            else:
+                results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
             continue
         try:
             url  = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
@@ -37,13 +74,10 @@ def fetch_tickers() -> list[dict]:
             pct_chg   = ((price - prev) / prev * 100) if prev else 0
             direction = "up" if pct_chg >= 0 else "down"
 
-            # Format value
             if "MXN" in label or "IPC" in label:
                 val_str = f"{price:,.2f}"
             elif label == "S&P 500":
                 val_str = f"{price:,.0f}"
-            elif "Oil" in label:
-                val_str = f"${price:.1f}"
             else:
                 val_str = f"{price:.4f}"
 
@@ -69,26 +103,60 @@ def fetch_tickers() -> list[dict]:
 
 # ── Currency table ────────────────────────────
 
+def _fetch_yahoo_rate(symbol: str) -> tuple[float, float, float] | None:
+    """
+    Returns (current_rate, prev_day, prev_week) for a Yahoo Finance symbol.
+    Returns None on failure.
+    """
+    try:
+        url     = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d"
+        headers = {"User-Agent": "Mozilla/5.0"}
+        data    = requests.get(url, headers=headers, timeout=8).json()
+        result  = data["chart"]["result"][0]
+        meta    = result["meta"]
+        closes  = result["indicators"]["quote"][0]["close"]
+        closes  = [c for c in closes if c is not None]
+
+        rate      = meta.get("regularMarketPrice", 0)
+        prev_day  = closes[-2] if len(closes) >= 2 else rate
+        prev_week = closes[0]  if len(closes) >= 5 else rate
+        return rate, prev_day, prev_week
+    except Exception as e:
+        print(f"  [currency] Yahoo fetch failed for {symbol}: {e}")
+        return None
+
+
 def fetch_currency_table() -> list[dict]:
     """
     Fetches MXN vs each currency in CURRENCY_PAIRS.
-    Returns list of dicts per pair.
+    CNY is calculated as a cross rate (MXN/USD × USD/CNY)
+    since Yahoo doesn't carry MXNCNY=X directly.
     """
     rows = []
-    for currency in CURRENCY_PAIRS:
-        symbol = f"MXN{currency}=X" if currency != "USD" else "MXN=X"
-        try:
-            url     = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d"
-            headers = {"User-Agent": "Mozilla/5.0"}
-            data    = requests.get(url, headers=headers, timeout=8).json()
-            result  = data["chart"]["result"][0]
-            meta    = result["meta"]
-            closes  = result["indicators"]["quote"][0]["close"]
-            closes  = [c for c in closes if c is not None]
 
-            rate      = meta.get("regularMarketPrice", 0)
-            prev_day  = closes[-2] if len(closes) >= 2 else rate
-            prev_week = closes[0]  if len(closes) >= 5 else rate
+    # Pre-fetch MXN/USD once for CNY cross rate
+    mxn_usd_data = _fetch_yahoo_rate("MXN=X")
+
+    for currency in CURRENCY_PAIRS:
+        try:
+            if currency == "CNY":
+                # Cross rate: MXN/CNY = MXN/USD × USD/CNY
+                usd_cny_data = _fetch_yahoo_rate("USDCNY=X")
+                if not mxn_usd_data or not usd_cny_data:
+                    raise ValueError("Missing data for CNY cross rate")
+
+                mxn_usd, mxn_usd_prev, mxn_usd_week = mxn_usd_data
+                usd_cny, usd_cny_prev, usd_cny_week  = usd_cny_data
+
+                rate      = mxn_usd * usd_cny
+                prev_day  = mxn_usd_prev * usd_cny_prev
+                prev_week = mxn_usd_week * usd_cny_week
+            else:
+                symbol = "MXN=X" if currency == "USD" else f"MXN{currency}=X"
+                result = _fetch_yahoo_rate(symbol)
+                if not result:
+                    raise ValueError(f"No data for {symbol}")
+                rate, prev_day, prev_week = result
 
             chg_1d = ((rate - prev_day)  / prev_day  * 100) if prev_day  else 0
             chg_1w = ((rate - prev_week) / prev_week * 100) if prev_week else 0
@@ -104,6 +172,7 @@ def fetch_currency_table() -> list[dict]:
                 "chg_1d": fmt_chg(chg_1d),
                 "chg_1w": fmt_chg(chg_1w),
             })
+
         except Exception as e:
             print(f"  [currency] Failed MXN/{currency}: {e}")
             rows.append({
@@ -112,6 +181,7 @@ def fetch_currency_table() -> list[dict]:
                 "chg_1d": {"text": "—", "cls": "chg-flat"},
                 "chg_1w": {"text": "—", "cls": "chg-flat"},
             })
+
     return rows
 
 

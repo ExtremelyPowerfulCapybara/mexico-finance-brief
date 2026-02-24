@@ -52,6 +52,7 @@ jobs:
           EMAIL_SENDER:      ${{ secrets.EMAIL_SENDER }}
           EMAIL_PASSWORD:    ${{ secrets.EMAIL_PASSWORD }}
           SUBSCRIBERS:       ${{ secrets.SUBSCRIBERS }}
+          BANXICO_API_KEY:   ${{ secrets.BANXICO_API_KEY }}
         run: python main.py
 
       - name: Commit and push archive
