@@ -12,9 +12,8 @@ name: Daily Newsletter
 
 on:
   schedule:
-    # 13:00 UTC = 7:00 AM Mexico City (CST, UTC-6)
-    # Adjust to 12:00 UTC in summer (CDT, UTC-5)
-    - cron: "0 13 * * 1-5"
+    # 13:00 UTC = 5:30 AM Mexico City (CST, UTC-6) 
+    - cron: "30 11 * * 1-5"
 
   # Allows you to trigger a run manually from
   # the GitHub Actions tab — useful for testing
