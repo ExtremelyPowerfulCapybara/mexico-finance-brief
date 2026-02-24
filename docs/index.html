@@ -16,6 +16,28 @@
     .masthead-count { font-size:11px; color:#444; letter-spacing:1px; text-align:right; }
     a { color:inherit; }
     .issue-card:hover div { color:#555 !important; }
+    .search-wrap { position:relative; margin-bottom:16px; }
+    .search-input {
+      width:100%; padding:12px 40px 12px 16px;
+      background:#f0f3f5; border:1px solid #cdd4d9;
+      font-family:'DM Sans',sans-serif; font-size:13px; color:#1a1a1a;
+      outline:none; box-sizing:border-box;
+    }
+    .search-input:focus { border-color:#3a4a54; }
+    .search-input::placeholder { color:#aab4bc; }
+    .search-clear {
+      position:absolute; right:12px; top:50%; transform:translateY(-50%);
+      cursor:pointer; font-size:16px; color:#aab4bc; display:none;
+      background:none; border:none; padding:0;
+    }
+    .search-clear:hover { color:#1a1a1a; }
+    .search-count { font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px; }
+    .no-results { color:#aab4bc; font-size:13px; font-style:italic; padding:20px 0; }
+    @media (max-width:600px) {
+      body { padding:16px 0; }
+      .wrap { padding:0 12px; }
+      .masthead { padding:24px 20px; flex-direction:column; align-items:flex-start; gap:8px; }
+    }
   </style>
 </head>
 <body>
@@ -53,9 +75,9 @@
 
   <script>
     const dates    = ["2026-02-24"];
-    const position = [18];
+    const position = [38];
     const stories  = [7];
-    const colors   = ["#b84a3a"];
+    const colors   = ["#e8a030"];
 
     // ── Sentiment chart ──
     new Chart(document.getElementById('sentimentChart'), {
@@ -83,7 +105,7 @@
             callbacks: {
               label: (ctx) => {
                 const i = ctx.dataIndex;
-                const labels = ["Risk-Off"];
+                const labels = ["Cautious"];
                 return labels[i] + ' (' + ctx.raw + ')';
               }
             }
@@ -132,17 +154,99 @@
     });
   </script>
 
-  <!-- Section label -->
-  <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;">All Issues</p>
+  <!-- Search -->
+  <div class="search-wrap">
+    <input class="search-input" id="searchInput" type="text" placeholder="Search issues — try 'Banxico', 'tariff', 'peso'...">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+  </div>
+  <div class="search-count" id="searchCount"></div>
 
+  <!-- Section label -->
+  <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;" id="allIssuesLabel">All Issues</p>
+
+  <div id="cardsContainer">
   
     <a href="2026-02-24.html" style="display:block; text-decoration:none; background:#f0f3f5; border:1px solid #cdd4d9; padding:20px 28px; margin-bottom:10px;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
         <span style="font-family:Arial,sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#aab4bc;">ISSUE #1 &middot; Tuesday, February 24, 2026</span>
-        <span><span style="font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#b84a3a; padding:3px 10px; border:1px solid #b84a3a; border-radius:20px;">Risk-Off</span><span style="font-size:9px; color:#aab4bc; margin-left:10px;">7 stories</span></span>
+        <span><span style="font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#9a6a1a; padding:3px 10px; border:1px solid #9a6a1a; border-radius:20px;">Cautious</span><span style="font-size:9px; color:#aab4bc; margin-left:10px;">7 stories</span></span>
       </div>
-      <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">Supreme Court Strikes Down Trump Tariff Authority; 15% Global Duty Imposed Under New Legal Cover</div>
+      <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">Supreme Court Strikes Down Trump Tariffs, President Threatens 15% Global Levy in Response</div>
     </a>
+  </div>
+
+  <script>
+    const searchIndex = [{"date": "2026-02-24", "filename": "2026-02-24.html", "text": "fellow humans, the dominant thread today is instability \u2014 tariff shock from the supreme court, crypto selling off hard, and the u.s. tightening the screws on cuba while canada scrambles to respond. the student loan privatization trial balloon is also quietly one of the bigger policy stories of the week. \u2014 ed. supreme court strikes down trump tariffs, president threatens 15% global levy in response supreme court strikes down trump tariffs, president threatens 15% global levy in response the supreme court struck down trump's sweeping tariffs on major trading partners, creating immediate legal and market uncertainty around u.s. trade policy. trump responded by threatening to impose a 15% global tariff, escalating the standoff. the ruling injects significant instability into global supply chains and currency markets at a moment when trade relationships are already strained. cbs news trade citrini research note projects 40% s&p drop, hammers payment and software stocks a widely circulated ai-doom research post from citrini sent payment and software shares tumbling, with the report modeling a near-40% decline in the s&p 500 under a severe ai disruption scenario. netflix also saw selling pressure in the wake of the note. whether the thesis holds or not, the market reaction signals how thin sentiment has become \u2014 one bearish research note is moving sectors. slashdot / marketwatch markets canada announces cuba aid package as u.s. oil embargo deepens energy crisis canada's foreign minister anita anand confirmed monday that ottawa is preparing an aid package for cuba, which is facing severe blackouts and fuel shortages after the u.s. oil embargo cut off venezuelan and mexican supply. cuba produces only 40% of its required fuel, and air canada has already suspended flights due to aviation fuel shortages. mexico previously sent two navy ships with roughly 2,300 tons of humanitarian goods; canada is now following suit, putting both countries in direct friction with washington's embargo posture. yahoo finance / ap energy trump administration confirms $1.7 trillion federal student loan portfolio sale is under active consideration the department of education's undersecretary nicholas kent confirmed in a letter to sen. elizabeth warren that the administration has held meetings with finance executives about selling all or part of the $1.7 trillion federal student loan portfolio. the department stopped short of announcing any final decision, but this marks the first official public acknowledgment of the discussions first reported by politico in october. private lenders are already positioning for an influx of borrowers, raising serious questions about which income-driven repayment protections would survive a transfer to private hands. business insider politics crypto slides hard: btc down 4%, sol down 6%, solana company shares fall 13% bitcoin dropped more than 4% and solana fell nearly 6% in a 24-hour period, dragging listed crypto infrastructure plays down sharply \u2014 solana company (hsdt) shed 13.3% to $1.76. the broader drawdown comes as solana company announced its 'pacific backbone' buildout connecting seoul, tokyo, singapore, and hong kong to support institutional staking and trading on the solana network. building high-speed infrastructure into a falling market is a bold call; the $180 million sol treasury makes the timing uncomfortable. coindesk markets supreme court tariff ruling creates strategic uncertainty for india's export sector india's economic times flags that the u.s. supreme court's tariff ruling introduces fresh instability for indian exporters who had been navigating trump-era levies. the ruling forces a recalibration of what trade exposure actually looks like for emerging market economies that had been factoring in a specific tariff regime. the follow-on threat of a 15% global tariff compounds the uncertainty for policymakers in new delhi. the economic times trade spacex launches official starlink retail sales in venezuela, adds demand surcharge starting march 6 spacex has begun selling starlink dishes through three official venezuelan retailers \u2014 daka, multimax, and soytechno \u2014 with the standard dish priced at $469. free access ended february 3, and starting march 6, new residential activations will carry a one-time demand surcharge that has reached $1,500 in parts of the u.s. and $1,000 in mexico city. the commercialization push follows the u.s. military intervention that removed nicol\u00e1s maduro in january, making venezuela an active frontier for both geopolitics and satellite broadband expansion. pcmag politics", "label": "Cautious"}];
+
+    const input     = document.getElementById('searchInput');
+    const clearBtn  = document.getElementById('searchClear');
+    const container = document.getElementById('cardsContainer');
+    const countEl   = document.getElementById('searchCount');
+    const labelEl   = document.getElementById('allIssuesLabel');
+    const allCards  = Array.from(container.querySelectorAll('a'));
+
+    // Map date string to card element
+    const cardMap = {};
+    allCards.forEach(card => {
+      const href = card.getAttribute('href');
+      const date = href.replace('.html','');
+      cardMap[date] = card;
+    });
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      clearBtn.style.display = q ? 'block' : 'none';
+
+      if (!q) {
+        allCards.forEach(c => c.style.display = 'block');
+        countEl.textContent = '';
+        labelEl.textContent = 'All Issues';
+        return;
+      }
+
+      const tokens  = q.split(/\s+/).filter(Boolean);
+      const matches = searchIndex.filter(item =>
+        tokens.every(t => item.text.includes(t))
+      );
+      const matchDates = new Set(matches.map(m => m.date));
+
+      let shown = 0;
+      allCards.forEach(card => {
+        const href = card.getAttribute('href');
+        const date = href.replace('.html','');
+        if (matchDates.has(date)) {
+          card.style.display = 'block';
+          shown++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      labelEl.textContent = shown > 0 ? 'Matching Issues' : '';
+      countEl.textContent = shown > 0
+        ? shown + ' result' + (shown !== 1 ? 's' : '') + ' for "' + input.value.trim() + '"'
+        : '';
+
+      if (shown === 0) {
+        if (!document.getElementById('noResults')) {
+          const msg = document.createElement('p');
+          msg.id        = 'noResults';
+          msg.className = 'no-results';
+          msg.textContent = 'No issues found for "' + input.value.trim() + '"';
+          container.appendChild(msg);
+        }
+      } else {
+        const msg = document.getElementById('noResults');
+        if (msg) msg.remove();
+      }
+    });
+
+    function clearSearch() {
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+      input.focus();
+    }
+  </script>
 
 </div>
 </body>

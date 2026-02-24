@@ -1,73 +1,73 @@
 {
   "date": "2026-02-24",
   "digest": {
-    "editor_note": "Fellow Humans, today's tape is being written by two forces: tariff chaos and cartel chaos. The Supreme Court clipped Trump's IEEPA tariff authority, he responded by slapping a 15% global duty under new legal cover, and gold hit $5,230 while the Dow dropped 814 points. Meanwhile, Mexico killed El Mencho and promptly lost 25 National Guardsmen in the blowback — a reminder that decapitation strategies rarely decapitate problems. It's a full-contact Monday.",
+    "editor_note": "Fellow Humans, the dominant thread today is instability — tariff shock from the Supreme Court, crypto selling off hard, and the U.S. tightening the screws on Cuba while Canada scrambles to respond. The student loan privatization trial balloon is also quietly one of the bigger policy stories of the week. — Ed.",
     "sentiment": {
-      "label": "Risk-Off",
-      "position": 18,
-      "context": "A Supreme Court tariff ruling, a 15% global duty, an 814-point Dow drop, gold surging to record highs, and cartel-driven market disruption in Mexico collectively paint a deeply defensive picture."
+      "label": "Cautious",
+      "position": 38,
+      "context": "A Supreme Court tariff ruling rattles global trade frameworks, crypto is in a meaningful drawdown, and a Citrini research note projecting a 40% S&P decline is moving payment and software stocks — collectively, markets are defensive without full panic."
     },
     "stories": [
       {
-        "source": "Digital Journal",
-        "headline": "Supreme Court Strikes Down Trump Tariff Authority; 15% Global Duty Imposed Under New Legal Cover",
-        "body": "The US Supreme Court ruled 6-3 that Trump exceeded his authority imposing tariffs under the 1977 IEEPA, forcing a pivot to alternative statutory authority. Trump responded by announcing a 10% global duty, then raised it to 15% within 24 hours — the legal ceiling under the new framework — set to take effect Tuesday for 150 days. US Trade Representative Jamieson Greer insisted existing bilateral deals remain in force, while ECB President Christine Lagarde called for legal clarity, noting she isn't sure what the court decision actually means in practice.",
-        "url": "https://www.digitaljournal.com/business/us-says-trade-deals-in-force-despite-court-ruling-on-tariffs/article",
+        "source": "CBS News",
+        "headline": "Supreme Court Strikes Down Trump Tariffs, President Threatens 15% Global Levy in Response",
+        "body": "The Supreme Court struck down Trump's sweeping tariffs on major trading partners, creating immediate legal and market uncertainty around U.S. trade policy. Trump responded by threatening to impose a 15% global tariff, escalating the standoff. The ruling injects significant instability into global supply chains and currency markets at a moment when trade relationships are already strained.",
+        "url": "https://www.cbsnews.com/video/how-the-supreme-courts-tariff-decision-impact-global-economy/",
         "tag": "Trade"
       },
       {
-        "source": "Economic Times",
-        "headline": "Gold Hits $5,230, Dow Drops 814 Points as 15% Tariff Triggers Broad Risk Selloff",
-        "body": "Gold surged 2.95% to $5,230.70 and silver jumped 5.66% to $87.00 as investors fled equities following the new 15% global tariff announcement, which sent the Dow Jones down 814 points. Copper and platinum both fell nearly 1%, underscoring a split between safe-haven metals and industrial commodities sensitive to growth expectations. Precious metals are functioning as the primary recession hedge in a market now pricing in a sharply more protectionist US trade regime.",
-        "url": "https://m.economictimes.com/news/international/us/why-gold-and-silver-prices-are-rising-while-platinum-and-copper-prices-are-falling-amid-wall-street-uncertainty-and-todays-stock-market-crash-are-precious-metals-the-best-investment-right-now/articleshow/128722880.cms",
+        "source": "Slashdot / MarketWatch",
+        "headline": "Citrini Research Note Projects 40% S&P Drop, Hammers Payment and Software Stocks",
+        "body": "A widely circulated AI-doom research post from Citrini sent payment and software shares tumbling, with the report modeling a near-40% decline in the S&P 500 under a severe AI disruption scenario. Netflix also saw selling pressure in the wake of the note. Whether the thesis holds or not, the market reaction signals how thin sentiment has become — one bearish research note is moving sectors.",
+        "url": "https://slashdot.org/firehose.pl?op=view&id=180847066",
         "tag": "Markets"
       },
       {
-        "source": "Financial Post",
-        "headline": "El Mencho Killed, 25 Mexican Guardsmen Dead in Cartel Retaliation; Peso and Stocks Drop",
-        "body": "Mexico's special forces killed CJNG leader Nemesio 'El Mencho' Oseguera Cervantes on Sunday after tracking his mistress, with the CIA providing supporting intelligence. The cartel's retaliation was immediate and severe: 250-plus roadblocks across 20 states, 25 National Guardsmen killed, and widespread transport disruption that rattled Mexican markets. The Mexican peso fell 0.5%, the Mexbol index dropped over 1%, Volaris shed 7.2%, and the iShares MSCI Mexico ETF fell 1.9% — the biggest intraday drop in two weeks.",
-        "url": "https://financialpost.com/pmn/business-pmn/mexico-details-how-it-took-out-its-most-wanted-drug-cartel-chief",
-        "tag": "Mexico"
+        "source": "Yahoo Finance / AP",
+        "headline": "Canada Announces Cuba Aid Package as U.S. Oil Embargo Deepens Energy Crisis",
+        "body": "Canada's Foreign Minister Anita Anand confirmed Monday that Ottawa is preparing an aid package for Cuba, which is facing severe blackouts and fuel shortages after the U.S. oil embargo cut off Venezuelan and Mexican supply. Cuba produces only 40% of its required fuel, and Air Canada has already suspended flights due to aviation fuel shortages. Mexico previously sent two Navy ships with roughly 2,300 tons of humanitarian goods; Canada is now following suit, putting both countries in direct friction with Washington's embargo posture.",
+        "url": "https://www.yahoo.com/news/articles/canada-prepares-aid-package-cuba-174726102.html",
+        "tag": "Energy"
       },
       {
-        "source": "Economic Times",
-        "headline": "Novo Nordisk's $475 Billion in Market Value Erased as CagriSema Fails to Deliver",
-        "body": "Novo Nordisk has surrendered all of its Wegovy-era market cap gains after its next-generation obesity drug CagriSema missed trial expectations, sending shares back to pre-GLP-1 boom levels. The failure directly benefits Eli Lilly, whose stock rose as investors reassessed competitive dynamics in the $100-billion-plus weight-loss drug market. It is a stark reminder that single-product dependency at scale creates single-point-of-failure risk for even the most dominant pharma franchises.",
-        "url": "https://economictimes.indiatimes.com/news/international/business/novo-nordisks-475-billion-rise-and-fall-as-wegovy-era-gains-wiped-out/articleshow/128723524.cms",
-        "tag": "Markets"
-      },
-      {
-        "source": "Times of India",
-        "headline": "Israel Prepares Gaza Disarmament Ultimatum; Full Military Occupation on the Table",
-        "body": "Israeli Finance Minister Bezalel Smotrich warned that Israeli forces will occupy all of Gaza if Hamas refuses to disarm, framing it as the next phase of the conflict with reported backing from Washington. Foreign forces stationed near the enclave are said to be preparing to withdraw, which would remove one layer of regional stabilization. The ultimatum adds fresh geopolitical risk to an already fragile ceasefire architecture.",
-        "url": "https://economictimes.indiatimes.com/news/international/world-news/israeli-minister-says-army-will-occupy-all-gaza-if-hamas-does-not-disarm/articleshow/128723357.cms",
+        "source": "Business Insider",
+        "headline": "Trump Administration Confirms $1.7 Trillion Federal Student Loan Portfolio Sale Is Under Active Consideration",
+        "body": "The Department of Education's Undersecretary Nicholas Kent confirmed in a letter to Sen. Elizabeth Warren that the administration has held meetings with finance executives about selling all or part of the $1.7 trillion federal student loan portfolio. The department stopped short of announcing any final decision, but this marks the first official public acknowledgment of the discussions first reported by Politico in October. Private lenders are already positioning for an influx of borrowers, raising serious questions about which income-driven repayment protections would survive a transfer to private hands.",
+        "url": "https://www.businessinsider.com/federal-student-loans-could-be-sold-off-education-department-warren-2026-2",
         "tag": "Politics"
       },
       {
-        "source": "Cointelegraph",
-        "headline": "ProShares GENIUS ETF Launches With $17B First-Day Volume as Tokenized Money Markets Gain Ground",
-        "body": "ProShares' IQMM — structured under the newly passed GENIUS Act regulatory framework for payment stablecoins — generated $17 billion in first-day trading volume, dwarfing Bitcoin ETF launches and underscoring institutional demand for cash-management vehicles. Much of the volume reflected internal reallocation from existing ProShares funds rather than organic inflows, but the scale signals the strategic importance of money market products in a stablecoin-competitive landscape. JPMorgan and others have positioned tokenized money market funds as yield-bearing, compliant alternatives to stablecoins in collateral and DeFi markets.",
-        "url": "https://cointelegraph.com/news/iqmm-s-17b-debut-strengthens-case-for-tokenized-money-market-funds",
+        "source": "CoinDesk",
+        "headline": "Crypto Slides Hard: BTC Down 4%, SOL Down 6%, Solana Company Shares Fall 13%",
+        "body": "Bitcoin dropped more than 4% and Solana fell nearly 6% in a 24-hour period, dragging listed crypto infrastructure plays down sharply — Solana Company (HSDT) shed 13.3% to $1.76. The broader drawdown comes as Solana Company announced its 'Pacific Backbone' buildout connecting Seoul, Tokyo, Singapore, and Hong Kong to support institutional staking and trading on the Solana network. Building high-speed infrastructure into a falling market is a bold call; the $180 million SOL treasury makes the timing uncomfortable.",
+        "url": "https://www.coindesk.com/business/2026/02/23/solana-company-starts-building-high-speed-infrastructure-to-prepare-sol-for-next-super-cycle",
         "tag": "Markets"
       },
       {
-        "source": "Bitcoinist",
-        "headline": "Trump-Linked 'Board of Peace' Explores Dollar-Backed Stablecoin for Gaza Reconstruction",
-        "body": "Advisers to Trump's US-led Board of Peace are in early-stage discussions about deploying a dollar-pegged stablecoin to rebuild Gaza's financial infrastructure, according to sources briefed on the talks reported by the Financial Times. Proponents argue a digital currency system would reduce Hamas's ability to generate cash revenue, while critics warn it could economically isolate Gaza from the West Bank. Nothing is finalized, but the concept involves Gulf Arab and Palestinian firms with digital currency experience providing the infrastructure.",
-        "url": "https://bitcoinist.com/trump-panel-examines-stablecoin-proposal-gaza/",
+        "source": "The Economic Times",
+        "headline": "Supreme Court Tariff Ruling Creates Strategic Uncertainty for India's Export Sector",
+        "body": "India's Economic Times flags that the U.S. Supreme Court's tariff ruling introduces fresh instability for Indian exporters who had been navigating Trump-era levies. The ruling forces a recalibration of what trade exposure actually looks like for emerging market economies that had been factoring in a specific tariff regime. The follow-on threat of a 15% global tariff compounds the uncertainty for policymakers in New Delhi.",
+        "url": "https://economictimes.indiatimes.com/opinion/et-commentary/us-tariffs-supreme-court-ruling-creates-instability-whats-next-for-india/articleshow/128724829.cms",
+        "tag": "Trade"
+      },
+      {
+        "source": "PCMag",
+        "headline": "SpaceX Launches Official Starlink Retail Sales in Venezuela, Adds Demand Surcharge Starting March 6",
+        "body": "SpaceX has begun selling Starlink dishes through three official Venezuelan retailers — Daka, Multimax, and Soytechno — with the standard dish priced at $469. Free access ended February 3, and starting March 6, new residential activations will carry a one-time demand surcharge that has reached $1,500 in parts of the U.S. and $1,000 in Mexico City. The commercialization push follows the U.S. military intervention that removed Nicolás Maduro in January, making Venezuela an active frontier for both geopolitics and satellite broadband expansion.",
+        "url": "https://uk.pcmag.com/networking/163322/spacex-teams-with-local-retailers-to-sell-starlink-dishes-in-venezuela",
         "tag": "Politics"
       }
     ],
     "quote": {
-      "text": "Protectionism is the institutionalization of economic decline.",
-      "attribution": "Edward Heath, speech to the House of Commons, 1974"
+      "text": "Protectionism is a fool's game. Every time a country raises tariffs, it invites retaliation and disrupts the very trade flows that generate prosperity.",
+      "attribution": "Lawrence Summers, Harvard University, 2018"
     }
   },
   "market": {
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.16",
+        "value": "17.17",
         "change": "▲ 0.4%",
         "direction": "up"
       },
@@ -85,57 +85,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "70,816.49",
-        "change": "▲ 0.3%",
+        "value": "70,992.78",
+        "change": "▲ 0.5%",
         "direction": "up"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.1623",
+        "rate": "17.1640",
         "chg_1d": {
-          "text": "▲ 0.37%",
+          "text": "▲ 0.38%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.26%",
+          "text": "▲ 0.27%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2280",
+        "rate": "20.2329",
         "chg_1d": {
-          "text": "▼ 0.03%",
+          "text": "▼ 0.00%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.36%",
+          "text": "▼ 0.33%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.5253",
+        "rate": "12.5372",
         "chg_1d": {
-          "text": "▼ 0.01%",
-          "cls": "chg-down"
+          "text": "▲ 0.08%",
+          "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.21%",
+          "text": "▼ 0.11%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "118.1195",
+        "rate": "118.1312",
         "chg_1d": {
-          "text": "▲ 0.00%",
+          "text": "▲ 0.01%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.11%",
+          "text": "▼ 0.10%",
           "cls": "chg-down"
         }
       }
@@ -143,9 +143,9 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "15°C",
+    "temp": "18°C",
     "high_low": "21°C / 2°C",
-    "humidity": "Humidity 27%",
+    "humidity": "Humidity 20%",
     "desc": "Clear skies"
   }
 }
