@@ -1,0 +1,24 @@
+# ── Secrets ───────────────────────────────────
+.env
+bot/config_local.py
+
+# ── Python ────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# ── OS ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Editors ───────────────────────────────────
+.vscode/
+.idea/
+*.swp

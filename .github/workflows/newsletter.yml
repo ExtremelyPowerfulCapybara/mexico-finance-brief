@@ -1,0 +1,70 @@
+# ─────────────────────────────────────────────
+#  .github/workflows/newsletter.yml
+#
+#  Runs the newsletter bot every weekday at
+#  7:00 AM Mexico City time (13:00 UTC).
+#  After each run it commits the new archive
+#  HTML and digest JSON back to the repo so
+#  GitHub Pages updates automatically.
+# ─────────────────────────────────────────────
+
+name: Daily Newsletter
+
+on:
+  schedule:
+    # 13:00 UTC = 7:00 AM Mexico City (CST, UTC-6)
+    # Adjust to 12:00 UTC in summer (CDT, UTC-5)
+    - cron: "0 13 * * 1-5"
+
+  # Allows you to trigger a run manually from
+  # the GitHub Actions tab — useful for testing
+  workflow_dispatch:
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+
+    # Give the job permission to push back to the repo
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history so git log works correctly
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run newsletter bot
+        working-directory: bot
+        env:
+          NEWS_API_KEY:      ${{ secrets.NEWS_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EMAIL_SENDER:      ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD:    ${{ secrets.EMAIL_PASSWORD }}
+          SUBSCRIBERS:       ${{ secrets.SUBSCRIBERS }}
+        run: python main.py
+
+      - name: Commit and push archive
+        run: |
+          git config user.name  "Mexico Finance Brief Bot"
+          git config user.email "bot@mexico-finance-brief"
+
+          git add docs/ digests/
+
+          # Only commit if there's something new
+          if git diff --staged --quiet; then
+            echo "Nothing new to commit."
+          else
+            git commit -m "Issue: $(date +'%Y-%m-%d')"
+            git push
+          fi

@@ -1,0 +1,3 @@
+# This folder stores the raw JSON digest for each day.
+# Used by the archive index to show headlines and sentiment.
+# Format: YYYY-MM-DD.json
