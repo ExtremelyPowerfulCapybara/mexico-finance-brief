@@ -11,8 +11,7 @@ from datetime import date, datetime
 from pretty_renderer import build_pretty_html
 from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR
 
-GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest/"  # Set this after GitHub Pages is live, e.g. "https://username.github.io/mexico-finance-brief"
-
+GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest/"  
 
 def save_pretty_issue(
     digest:       dict,
@@ -144,6 +143,32 @@ def rebuild_index() -> None:
       <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">{headline or "View issue &rarr;"}</div>
     </a>"""
 
+    # ── Build search index (embedded JSON) ───────
+    search_index = []
+    for d in digest_data:
+        digest_path = os.path.join(DIGEST_DIR, f"{d['date']}.json")
+        if not os.path.exists(digest_path):
+            continue
+        with open(digest_path, encoding="utf-8") as f:
+            data = json.load(f)
+        digest_obj = data.get("digest", {})
+        stories    = digest_obj.get("stories", [])
+        # Collect all searchable text for this issue
+        text_parts = [
+            digest_obj.get("editor_note", ""),
+            d["headline"],
+        ]
+        for s in stories:
+            text_parts += [s.get("headline",""), s.get("body",""), s.get("source",""), s.get("tag","")]
+        search_index.append({
+            "date":     d["date"],
+            "filename": f"{d['date']}.html",
+            "text":     " ".join(text_parts).lower(),
+            "label":    d["label"],
+        })
+
+    search_index_js = json.dumps(search_index)
+
     # ── Chart JS data ─────────────────────────
     dates_js    = json.dumps(chart_dates)
     position_js = json.dumps(chart_position)
@@ -274,6 +299,28 @@ def rebuild_index() -> None:
     .masthead-count {{ font-size:11px; color:#444; letter-spacing:1px; text-align:right; }}
     a {{ color:inherit; }}
     .issue-card:hover div {{ color:#555 !important; }}
+    .search-wrap {{ position:relative; margin-bottom:16px; }}
+    .search-input {{
+      width:100%; padding:12px 40px 12px 16px;
+      background:#f0f3f5; border:1px solid #cdd4d9;
+      font-family:'DM Sans',sans-serif; font-size:13px; color:#1a1a1a;
+      outline:none; box-sizing:border-box;
+    }}
+    .search-input:focus {{ border-color:#3a4a54; }}
+    .search-input::placeholder {{ color:#aab4bc; }}
+    .search-clear {{
+      position:absolute; right:12px; top:50%; transform:translateY(-50%);
+      cursor:pointer; font-size:16px; color:#aab4bc; display:none;
+      background:none; border:none; padding:0;
+    }}
+    .search-clear:hover {{ color:#1a1a1a; }}
+    .search-count {{ font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px; }}
+    .no-results {{ color:#aab4bc; font-size:13px; font-style:italic; padding:20px 0; }}
+    @media (max-width:600px) {{
+      body {{ padding:16px 0; }}
+      .wrap {{ padding:0 12px; }}
+      .masthead {{ padding:24px 20px; flex-direction:column; align-items:flex-start; gap:8px; }}
+    }}
   </style>
 </head>
 <body>
@@ -290,10 +337,92 @@ def rebuild_index() -> None:
 
   {charts_html}
 
-  <!-- Section label -->
-  <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;">All Issues</p>
+  <!-- Search -->
+  <div class="search-wrap">
+    <input class="search-input" id="searchInput" type="text" placeholder="Search issues — try 'Banxico', 'tariff', 'peso'...">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+  </div>
+  <div class="search-count" id="searchCount"></div>
 
+  <!-- Section label -->
+  <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;" id="allIssuesLabel">All Issues</p>
+
+  <div id="cardsContainer">
   {cards if cards else '<p style="color:#aab4bc; font-size:13px;">No issues yet.</p>'}
+  </div>
+
+  <script>
+    const searchIndex = {search_index_js};
+
+    const input     = document.getElementById('searchInput');
+    const clearBtn  = document.getElementById('searchClear');
+    const container = document.getElementById('cardsContainer');
+    const countEl   = document.getElementById('searchCount');
+    const labelEl   = document.getElementById('allIssuesLabel');
+    const allCards  = Array.from(container.querySelectorAll('a'));
+
+    // Map date string to card element
+    const cardMap = {{}};
+    allCards.forEach(card => {{
+      const href = card.getAttribute('href');
+      const date = href.replace('.html','');
+      cardMap[date] = card;
+    }});
+
+    input.addEventListener('input', () => {{
+      const q = input.value.trim().toLowerCase();
+      clearBtn.style.display = q ? 'block' : 'none';
+
+      if (!q) {{
+        allCards.forEach(c => c.style.display = 'block');
+        countEl.textContent = '';
+        labelEl.textContent = 'All Issues';
+        return;
+      }}
+
+      const tokens  = q.split(/\s+/).filter(Boolean);
+      const matches = searchIndex.filter(item =>
+        tokens.every(t => item.text.includes(t))
+      );
+      const matchDates = new Set(matches.map(m => m.date));
+
+      let shown = 0;
+      allCards.forEach(card => {{
+        const href = card.getAttribute('href');
+        const date = href.replace('.html','');
+        if (matchDates.has(date)) {{
+          card.style.display = 'block';
+          shown++;
+        }} else {{
+          card.style.display = 'none';
+        }}
+      }});
+
+      labelEl.textContent = shown > 0 ? 'Matching Issues' : '';
+      countEl.textContent = shown > 0
+        ? shown + ' result' + (shown !== 1 ? 's' : '') + ' for "' + input.value.trim() + '"'
+        : '';
+
+      if (shown === 0) {{
+        if (!document.getElementById('noResults')) {{
+          const msg = document.createElement('p');
+          msg.id        = 'noResults';
+          msg.className = 'no-results';
+          msg.textContent = 'No issues found for "' + input.value.trim() + '"';
+          container.appendChild(msg);
+        }}
+      }} else {{
+        const msg = document.getElementById('noResults');
+        if (msg) msg.remove();
+      }}
+    }});
+
+    function clearSearch() {{
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+      input.focus();
+    }}
+  </script>
 
 </div>
 </body>
