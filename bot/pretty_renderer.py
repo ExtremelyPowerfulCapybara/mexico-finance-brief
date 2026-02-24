@@ -6,7 +6,13 @@
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
-from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_BYLINE
+import hashlib
+from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_NAMES, AUTHOR_TITLES
+
+_seed       = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
+AUTHOR_BYLINE_NAME  = AUTHOR_NAMES[_seed % len(AUTHOR_NAMES)]
+AUTHOR_BYLINE_TITLE = AUTHOR_TITLES[(_seed // len(AUTHOR_NAMES)) % len(AUTHOR_TITLES)]
+AUTHOR_BYLINE       = f"{AUTHOR_BYLINE_NAME}, {AUTHOR_BYLINE_TITLE}"
 
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }

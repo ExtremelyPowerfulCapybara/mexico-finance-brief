@@ -25,7 +25,62 @@ SUBSCRIBERS = [s.strip() for s in _subs_env.split(",") if s.strip()]
 NEWSLETTER_NAME    = "Mexico Finance Brief"
 NEWSLETTER_TAGLINE = "Daily Intelligence"
 AUTHOR_NAME        = "Adrian"
-AUTHOR_BYLINE      = "Al Gorithm"
+
+# ── Rotating pen names ────────────────────────
+AUTHOR_NAMES = [
+    "Drew Downing",
+    "Cora Lation",
+    "Russell Bearings",
+    "Hal F. Life",
+    "Carrie Trade",
+    "Bea Rish",
+    "Buck N. Yields",
+    "Ray Tio",
+    "Stan Dard Deviation",
+    "Cliff N. Overhang",
+    "Mort I. Fication",
+    "Barry Cade",
+    "Rex Cession",
+    "Hugh Liquidity",
+    "Art Bitrage",
+    "Bill Ateral",
+    "Mac Roeconomics",
+    "Lev Erage",
+    "Cal Lateral",
+    "Phil Ation",
+    "Chip Deflation",
+    "Vera Tility",
+]
+
+AUTHOR_TITLES = [
+    "Director of Mildly Concerning Developments",
+    "Senior Fellow, Bureau of Controlled Panic",
+    "Chairman of the Committee on 'It's Fine'",
+    "Principal Strategist, Gradual Decay",
+    "Global Head of Conditional Optimism",
+    "Custodian of Forward Guidance and Other Myths",
+    "Deputy Undersecretary of Controlled Descent",
+    "Executive Director of Fragile Equilibrium",
+    "Chief Architect of Confident Uncertainty",
+    "Senior Fellow, Institute of Permanent Volatility",
+    "Visiting Scholar, Department of Inevitable Outcomes",
+    "Head of Preemptive Disappointment",
+    "Chief Correspondent, Bureau of Things Already Priced In",
+    "Director of Soft Landings (Emeritus)",
+    "Senior Analyst, Office of Delayed Consequences",
+    "Minister of Transitory Phenomena",
+    "Head of Quantitative Vibes",
+    "Assistant to the Regional Hegemon",
+    "Chief of Staff, Monetary Policy Theater",
+    "Commissioner of Yield Curve Interpretive Dance",
+    "Secretary General of the Ad Hoc Liquidity Committee",
+    "Distinguished Chair of Optimism Suppression",
+    "Lead Correspondent, The Structural Adjustment Beat",
+    "Director of Things That Are Technically Not a Crisis",
+    "Senior Vice President of Premature Conclusions",
+    "Keeper of the Dot Plot",
+    "Ambassador-at-Large for Unintended Consequences",
+]
 
 # ── News preferences ──────────────────────────
 TOPICS                 = ["finance", "economy", "Mexico", "trade", "markets"]

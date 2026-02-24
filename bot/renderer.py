@@ -4,8 +4,15 @@
 #  No flexbox, no grid, no external CSS classes.
 # ─────────────────────────────────────────────
 
+import hashlib
 from datetime import date, timedelta
-from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_BYLINE
+from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_NAMES, AUTHOR_TITLES
+
+# Pick a name and title that rotates daily but stays fixed within one day's run
+_seed       = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
+AUTHOR_BYLINE_NAME  = AUTHOR_NAMES[_seed % len(AUTHOR_NAMES)]
+AUTHOR_BYLINE_TITLE = AUTHOR_TITLES[(_seed // len(AUTHOR_NAMES)) % len(AUTHOR_TITLES)]
+AUTHOR_BYLINE       = f"{AUTHOR_BYLINE_NAME}, {AUTHOR_BYLINE_TITLE}"
 
 # ── Shared style constants ────────────────────
 BG_OUTER   = "#dde3e8"
