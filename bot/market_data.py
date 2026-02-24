@@ -152,11 +152,18 @@ def fetch_currency_table() -> list[dict]:
                 prev_day  = mxn_usd_prev * usd_cny_prev
                 prev_week = mxn_usd_week * usd_cny_week
             else:
-                symbol = "MXN=X" if currency == "USD" else f"MXN{currency}=X"
-                result = _fetch_yahoo_rate(symbol)
-                if not result:
-                    raise ValueError(f"No data for {symbol}")
-                rate, prev_day, prev_week = result
+                if currency == "USD":
+                    symbol = "MXN=X"
+                    result = _fetch_yahoo_rate(symbol)
+                    if not result:
+                        raise ValueError(f"No data for {symbol}")
+                    rate, prev_day, prev_week = result
+                else:
+                    symbol = f"{currency}MXN=X"
+                    result = _fetch_yahoo_rate(symbol)
+                    if not result:
+                        raise ValueError(f"No data for {symbol}")
+                    rate, prev_day, prev_week = result
 
             chg_1d = ((rate - prev_day)  / prev_day  * 100) if prev_day  else 0
             chg_1w = ((rate - prev_week) / prev_week * 100) if prev_week else 0
@@ -167,7 +174,7 @@ def fetch_currency_table() -> list[dict]:
                 return {"text": f"{arrow} {abs(val):.2f}%", "cls": cls}
 
             rows.append({
-                "pair":   f"MXN / {currency}",
+                "pair":   f"{currency} / MXN",
                 "rate":   f"{rate:.4f}",
                 "chg_1d": fmt_chg(chg_1d),
                 "chg_1w": fmt_chg(chg_1w),
