@@ -1,79 +1,80 @@
 {
   "date": "2026-02-24",
   "digest": {
-    "editor_note": "Adrian, two stories are dominating everything else today and they're connected at the hip: Trump's tariff chaos after the Supreme Court ruling has the EU ready for a brawl, and right here at home, the killing of El Mencho has lit Mexico on fire across 20 states. Markets are going to have to price both simultaneously. Let's get into it.",
+    "editor_note": "Fellow Humans, today's tape is being written by two forces: tariff chaos and cartel chaos. The Supreme Court clipped Trump's IEEPA tariff authority, he responded by slapping a 15% global duty under new legal cover, and gold hit $5,230 while the Dow dropped 814 points. Meanwhile, Mexico killed El Mencho and promptly lost 25 National Guardsmen in the blowback — a reminder that decapitation strategies rarely decapitate problems. It's a full-contact Monday.",
     "sentiment": {
       "label": "Risk-Off",
-      "context": "A combination of cartel-driven civil disruption across Mexico, an escalating US-EU trade standoff post-Supreme Court tariff ruling, and a slow luxury recovery out of China is keeping risk appetite firmly suppressed."
+      "position": 18,
+      "context": "A Supreme Court tariff ruling, a 15% global duty, an 814-point Dow drop, gold surging to record highs, and cartel-driven market disruption in Mexico collectively paint a deeply defensive picture."
     },
     "stories": [
       {
-        "source": "BBC News",
-        "headline": "CJNG unleashes nationwide violence after El Mencho killed in military raid",
-        "body": "Nemesio Oseguera Cervantes, 'El Mencho,' leader of the Jalisco New Generation Cartel and Mexico's most wanted man, was captured and died in military custody on Sunday following a special forces operation in Tapalpa, Jalisco. His cartel responded by torching businesses, blocking roads, and attacking banks across 20 states, with Puerto Vallarta and Guadalajara—a FIFA World Cup host city—among the hardest hit. The operation carries echoes of the 2019 Ovidio Guzmán arrest, which forced authorities to release him to stop the bloodshed; this time, the government appears to be holding the line.",
-        "url": "https://www.bbc.com/news/articles/c795qgejzpxo",
-        "tag": "Mexico"
-      },
-      {
-        "source": "Marca",
-        "headline": "US tourists stranded as airlines cancel Puerto Vallarta and Guadalajara flights amid CJNG retaliation",
-        "body": "The US State Department issued shelter-in-place warnings for Americans in Puerto Vallarta, Guadalajara, and surrounding areas after El Mencho's death triggered cartel roadblocks and vehicle burnings across key tourist corridors. United, Alaska, Southwest, and Air Canada all canceled or diverted flights, leaving hundreds—including many Californians—stranded. The US Embassy urged citizens to limit movement, and Canadian authorities issued parallel advisories, compounding the economic damage to Mexico's tourism sector.",
-        "url": "https://www.marca.com/en/lifestyle/world-news/2026/02/23/699be082268e3ec05b8b457b.html",
-        "tag": "Mexico"
-      },
-      {
-        "source": "Independent.ie",
-        "headline": "EU demands Trump honor 2025 trade deal as new 15% across-the-board tariffs cloud agreement",
-        "body": "After the US Supreme Court struck down Trump's global tariffs on Friday, the president responded by announcing temporary 10% across-the-board levies, then raised them to 15% within a day. The European Commission fired back Sunday, saying 'a deal is a deal' and demanding Washington provide 'full clarity' on whether last year's EU-US agreement—which had already locked in a 15% rate for most EU goods—still stands. The ambiguity is significant: if the new tariffs sit on top of existing most-favored-nation duties rather than replacing them, European exporters could face a materially worse outcome than under the original deal, with Italy estimated to absorb an extra 1.7 percentage points of US tariffs.",
-        "url": "https://www.independent.ie/world-news/europe/a-deal-is-a-deal-eu-set-for-tariff-showdown-with-donald-trump-as-it-insists-he-must-honour-2025-agreement/a655676317.html",
+        "source": "Digital Journal",
+        "headline": "Supreme Court Strikes Down Trump Tariff Authority; 15% Global Duty Imposed Under New Legal Cover",
+        "body": "The US Supreme Court ruled 6-3 that Trump exceeded his authority imposing tariffs under the 1977 IEEPA, forcing a pivot to alternative statutory authority. Trump responded by announcing a 10% global duty, then raised it to 15% within 24 hours — the legal ceiling under the new framework — set to take effect Tuesday for 150 days. US Trade Representative Jamieson Greer insisted existing bilateral deals remain in force, while ECB President Christine Lagarde called for legal clarity, noting she isn't sure what the court decision actually means in practice.",
+        "url": "https://www.digitaljournal.com/business/us-says-trade-deals-in-force-despite-court-ruling-on-tariffs/article",
         "tag": "Trade"
       },
       {
-        "source": "Vogue",
-        "headline": "Luxury sector posts 2.2% Q4 growth but China recovery disappoints; LVMH falls 8%, Kering rallies 11%",
-        "body": "Global luxury grew just 2.2% in Q4, in line with expectations, as Chinese demand improved only incrementally—far below what markets had hoped. LVMH stock dropped as much as 8% after reporting group sales up just 1%, with fashion and leather goods down 3%, while CEO Bernard Arnault warned '2026 won't be simple.' Kering surged 11% on better-than-feared results (sales down 3% vs. the expected -5%), but Bernstein analyst Luca Solca cautioned that companies 'working hard to turn things around are still far from being out of the woods,' describing the path ahead as a U-shaped recovery requiring patience.",
-        "url": "https://www.vogue.com/article/5-takeaways-from-luxurys-q4-earnings",
+        "source": "Economic Times",
+        "headline": "Gold Hits $5,230, Dow Drops 814 Points as 15% Tariff Triggers Broad Risk Selloff",
+        "body": "Gold surged 2.95% to $5,230.70 and silver jumped 5.66% to $87.00 as investors fled equities following the new 15% global tariff announcement, which sent the Dow Jones down 814 points. Copper and platinum both fell nearly 1%, underscoring a split between safe-haven metals and industrial commodities sensitive to growth expectations. Precious metals are functioning as the primary recession hedge in a market now pricing in a sharply more protectionist US trade regime.",
+        "url": "https://m.economictimes.com/news/international/us/why-gold-and-silver-prices-are-rising-while-platinum-and-copper-prices-are-falling-amid-wall-street-uncertainty-and-todays-stock-market-crash-are-precious-metals-the-best-investment-right-now/articleshow/128722880.cms",
         "tag": "Markets"
       },
       {
-        "source": "Slashdot / The Guardian",
-        "headline": "Trump trade chief says US tariff policy 'hasn't changed' despite Supreme Court ruling",
-        "body": "The US Trade Representative's office signaled that Washington views its tariff posture as unchanged notwithstanding the Supreme Court decision that invalidated Trump's global tariff framework, even as the president moved rapidly to impose new 10%-then-15% across-the-board levies. The ruling exposed a split among conservative Supreme Court justices who had previously unified against Biden-era policies, adding legal and political uncertainty to an already volatile trade environment. For Mexico and the EU alike, the message from Washington is that tariff risk remains firmly on the table regardless of what courts say.",
-        "url": "https://slashdot.org/firehose.pl?op=view&id=180844982",
-        "tag": "Trade"
+        "source": "Financial Post",
+        "headline": "El Mencho Killed, 25 Mexican Guardsmen Dead in Cartel Retaliation; Peso and Stocks Drop",
+        "body": "Mexico's special forces killed CJNG leader Nemesio 'El Mencho' Oseguera Cervantes on Sunday after tracking his mistress, with the CIA providing supporting intelligence. The cartel's retaliation was immediate and severe: 250-plus roadblocks across 20 states, 25 National Guardsmen killed, and widespread transport disruption that rattled Mexican markets. The Mexican peso fell 0.5%, the Mexbol index dropped over 1%, Volaris shed 7.2%, and the iShares MSCI Mexico ETF fell 1.9% — the biggest intraday drop in two weeks.",
+        "url": "https://financialpost.com/pmn/business-pmn/mexico-details-how-it-took-out-its-most-wanted-drug-cartel-chief",
+        "tag": "Mexico"
       },
       {
-        "source": "BusinessLine",
-        "headline": "UPL shares crater 14% as restructuring plan raises holding company discount fears",
-        "body": "Shares of agrochemical giant UPL fell to ₹625.55 intraday on the NSE before settling 14% lower at ₹644.80, as investors reacted skeptically to the company's plan to carve out its crop protection business into a new listed entity, UPL Global Sustainable Agrisolutions. The restructuring involves a complex series of mergers and demergers across UPL's India and international businesses, subject to approvals from SEBI, CCI, RBI, and the NCLT over a 12–15 month timeline. While Motilal Oswal called the move strategically positive and flagged potential value unlocking via a planned Advanta IPO, Nuvama flagged unresolved debt concerns and the risk of a persistent holding company discount.",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/upl-shares-plunge-14-after-reorganisation-plan/article70665750.ece",
+        "source": "Economic Times",
+        "headline": "Novo Nordisk's $475 Billion in Market Value Erased as CagriSema Fails to Deliver",
+        "body": "Novo Nordisk has surrendered all of its Wegovy-era market cap gains after its next-generation obesity drug CagriSema missed trial expectations, sending shares back to pre-GLP-1 boom levels. The failure directly benefits Eli Lilly, whose stock rose as investors reassessed competitive dynamics in the $100-billion-plus weight-loss drug market. It is a stark reminder that single-product dependency at scale creates single-point-of-failure risk for even the most dominant pharma franchises.",
+        "url": "https://economictimes.indiatimes.com/news/international/business/novo-nordisks-475-billion-rise-and-fall-as-wegovy-era-gains-wiped-out/articleshow/128723524.cms",
         "tag": "Markets"
       },
       {
-        "source": "The Irish Times",
-        "headline": "Ireland's €170 billion in idle household savings highlights urgent need for tax-efficient investment wrapper",
-        "body": "Irish households hold approximately €170 billion in low-yield deposit accounts, yet the country lacks a general-purpose, tax-advantaged retail investment vehicle comparable to the UK's ISA or Japan's NISA. Retail investors in Irish-domiciled funds face a 38% exit tax—still 5 percentage points above the standard 33% capital gains tax rate—plus an eight-year 'deemed disposal' rule that taxes unrealised gains and fundamentally disrupts compounding. The government's proposed retail investment roadmap, developed amid European Commission pressure to build a stronger savings and investments union, represents a potential structural shift in how Irish households deploy long-term capital.",
-        "url": "https://www.irishtimes.com/your-money/2026/02/23/simple-well-designed-investment-account-can-channel-household-savings-into-real-growth/",
-        "tag": "Macro"
+        "source": "Times of India",
+        "headline": "Israel Prepares Gaza Disarmament Ultimatum; Full Military Occupation on the Table",
+        "body": "Israeli Finance Minister Bezalel Smotrich warned that Israeli forces will occupy all of Gaza if Hamas refuses to disarm, framing it as the next phase of the conflict with reported backing from Washington. Foreign forces stationed near the enclave are said to be preparing to withdraw, which would remove one layer of regional stabilization. The ultimatum adds fresh geopolitical risk to an already fragile ceasefire architecture.",
+        "url": "https://economictimes.indiatimes.com/news/international/world-news/israeli-minister-says-army-will-occupy-all-gaza-if-hamas-does-not-disarm/articleshow/128723357.cms",
+        "tag": "Politics"
+      },
+      {
+        "source": "Cointelegraph",
+        "headline": "ProShares GENIUS ETF Launches With $17B First-Day Volume as Tokenized Money Markets Gain Ground",
+        "body": "ProShares' IQMM — structured under the newly passed GENIUS Act regulatory framework for payment stablecoins — generated $17 billion in first-day trading volume, dwarfing Bitcoin ETF launches and underscoring institutional demand for cash-management vehicles. Much of the volume reflected internal reallocation from existing ProShares funds rather than organic inflows, but the scale signals the strategic importance of money market products in a stablecoin-competitive landscape. JPMorgan and others have positioned tokenized money market funds as yield-bearing, compliant alternatives to stablecoins in collateral and DeFi markets.",
+        "url": "https://cointelegraph.com/news/iqmm-s-17b-debut-strengthens-case-for-tokenized-money-market-funds",
+        "tag": "Markets"
+      },
+      {
+        "source": "Bitcoinist",
+        "headline": "Trump-Linked 'Board of Peace' Explores Dollar-Backed Stablecoin for Gaza Reconstruction",
+        "body": "Advisers to Trump's US-led Board of Peace are in early-stage discussions about deploying a dollar-pegged stablecoin to rebuild Gaza's financial infrastructure, according to sources briefed on the talks reported by the Financial Times. Proponents argue a digital currency system would reduce Hamas's ability to generate cash revenue, while critics warn it could economically isolate Gaza from the West Bank. Nothing is finalized, but the concept involves Gulf Arab and Palestinian firms with digital currency experience providing the infrastructure.",
+        "url": "https://bitcoinist.com/trump-panel-examines-stablecoin-proposal-gaza/",
+        "tag": "Politics"
       }
     ],
     "quote": {
-      "text": "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin.",
-      "attribution": "Ernest Hemingway, Notes on the Next War, 1935"
+      "text": "Protectionism is the institutionalization of economic decline.",
+      "attribution": "Edward Heath, speech to the House of Commons, 1974"
     }
   },
   "market": {
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.27",
-        "change": "▲ 1.0%",
+        "value": "17.16",
+        "change": "▲ 0.4%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,838",
-        "change": "▼ 0.4%",
+        "value": "6,890",
+        "change": "▼ 0.3%",
         "direction": "down"
       },
       {
@@ -84,67 +85,67 @@
       },
       {
         "label": "IPC BMV",
-        "value": "70,633.77",
-        "change": "▼ 1.1%",
-        "direction": "down"
+        "value": "70,816.49",
+        "change": "▲ 0.3%",
+        "direction": "up"
       }
     ],
     "currency": [
       {
-        "pair": "MXN / USD",
-        "rate": "17.2754",
+        "pair": "USD / MXN",
+        "rate": "17.1623",
         "chg_1d": {
-          "text": "▲ 1.04%",
+          "text": "▲ 0.37%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.92%",
+          "text": "▲ 0.26%",
           "cls": "chg-up"
         }
       },
       {
-        "pair": "MXN / EUR",
-        "rate": "0.0486",
+        "pair": "EUR / MXN",
+        "rate": "20.2280",
         "chg_1d": {
-          "text": "▼ 1.63%",
+          "text": "▼ 0.03%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 1.30%",
+          "text": "▼ 0.36%",
           "cls": "chg-down"
         }
       },
       {
-        "pair": "MXN / CAD",
-        "rate": "0.0788",
+        "pair": "CAD / MXN",
+        "rate": "12.5253",
         "chg_1d": {
-          "text": "▼ 1.26%",
+          "text": "▼ 0.01%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.92%",
+          "text": "▼ 0.21%",
           "cls": "chg-down"
         }
       },
       {
-        "pair": "MXN / CNY",
-        "rate": "119.1225",
+        "pair": "CNY / MXN",
+        "rate": "118.1195",
         "chg_1d": {
-          "text": "▲ 0.85%",
+          "text": "▲ 0.00%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.73%",
-          "cls": "chg-up"
+          "text": "▼ 0.11%",
+          "cls": "chg-down"
         }
       }
     ]
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "6°C",
-    "high_low": "18°C / 3°C",
-    "humidity": "Humidity 75%",
+    "temp": "15°C",
+    "high_low": "21°C / 2°C",
+    "humidity": "Humidity 27%",
     "desc": "Clear skies"
   }
 }

@@ -3,32 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mexico Finance Brief — Archive</title>
+  <title>The Opening Bell — Archive</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { background:#dde3e8; font-family:'DM Sans',sans-serif; padding:40px 16px; }
     .wrap { max-width:640px; margin:0 auto; }
-    .masthead { background:#1a1a1a; padding:32px 36px; margin-bottom:24px; }
+    .masthead { background:#1a1a1a; padding:32px 36px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:flex-end; }
     .masthead-name { font-family:'Playfair Display',serif; font-size:28px; color:#f5f2ed; margin-bottom:4px; }
     .masthead-sub { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#555; }
-    a:hover div { color:#555 !important; }
+    .masthead-count { font-size:11px; color:#444; letter-spacing:1px; text-align:right; }
+    a { color:inherit; }
+    .issue-card:hover div { color:#555 !important; }
   </style>
 </head>
 <body>
 <div class="wrap">
+
+  <!-- Masthead -->
   <div class="masthead">
-    <div class="masthead-name">Mexico Finance Brief</div>
-    <div class="masthead-sub">Archive &mdash; by Adrian</div>
+    <div>
+      <div class="masthead-name">The Opening Bell</div>
+      <div class="masthead-sub">Archive &mdash; by Adrian</div>
+    </div>
+    <div class="masthead-count">1 issue</div>
   </div>
+
   
-    <a href="2026-02-24.html" style="display:block; text-decoration:none; background:#f0f3f5; border:1px solid #cdd4d9; padding:20px 28px; margin-bottom:12px; transition:border-color 0.15s;">
+  <!-- ── Dashboard charts ─────────────────── -->
+  <div style="background:#f0f3f5; border:1px solid #cdd4d9; padding:28px 32px; margin-bottom:24px;">
+
+    <!-- Sentiment timeline -->
+    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Sentiment Timeline</p>
+    <div style="position:relative; height:120px; margin-bottom:28px;">
+      <canvas id="sentimentChart"></canvas>
+    </div>
+
+    <!-- Divider -->
+    <div style="height:1px; background:#dde3e8; margin-bottom:24px;"></div>
+
+    <!-- Story count -->
+    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Stories per Issue</p>
+    <div style="position:relative; height:80px;">
+      <canvas id="storyChart"></canvas>
+    </div>
+
+  </div>
+
+  <script>
+    const dates    = ["2026-02-24"];
+    const position = [18];
+    const stories  = [7];
+    const colors   = ["#b84a3a"];
+
+    // ── Sentiment chart ──
+    new Chart(document.getElementById('sentimentChart'), {
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets: [{
+          data: position,
+          borderColor: '#3a4a54',
+          borderWidth: 1.5,
+          pointBackgroundColor: colors,
+          pointBorderColor: colors,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          fill: false,
+          tension: 0.3,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const i = ctx.dataIndex;
+                const labels = ["Risk-Off"];
+                return labels[i] + ' (' + ctx.raw + ')';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { font: { size: 9 }, color: '#aab4bc', maxTicksLimit: 10 },
+            grid: { color: '#e8edf0' }
+          },
+          y: {
+            min: 0,
+            max: 100,
+            ticks: {
+              font: { size: 9 },
+              color: '#aab4bc',
+              callback: (v) => v === 5 ? 'Risk-Off' : v === 50 ? 'Neutral' : v === 95 ? 'Risk-On' : '',
+              stepSize: 45,
+            },
+            grid: { color: '#e8edf0' }
+          }
+        }
+      }
+    });
+
+    // ── Story count chart ──
+    new Chart(document.getElementById('storyChart'), {
+      type: 'bar',
+      data: {
+        labels: dates,
+        datasets: [{
+          data: stories,
+          backgroundColor: '#c8d4da',
+          borderRadius: 2,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => ctx.raw + ' stories' } } },
+        scales: {
+          x: { ticks: { font: { size: 9 }, color: '#aab4bc', maxTicksLimit: 10 }, grid: { display: false } },
+          y: { ticks: { font: { size: 9 }, color: '#aab4bc', stepSize: 1 }, grid: { color: '#e8edf0' } }
+        }
+      }
+    });
+  </script>
+
+  <!-- Section label -->
+  <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;">All Issues</p>
+
+  
+    <a href="2026-02-24.html" style="display:block; text-decoration:none; background:#f0f3f5; border:1px solid #cdd4d9; padding:20px 28px; margin-bottom:10px;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
         <span style="font-family:Arial,sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#aab4bc;">ISSUE #1 &middot; Tuesday, February 24, 2026</span>
-        <span style="font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:#b84a3a; padding:3px 10px; border:1px solid #b84a3a; border-radius:20px;">Risk-Off</span>
+        <span><span style="font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#b84a3a; padding:3px 10px; border:1px solid #b84a3a; border-radius:20px;">Risk-Off</span><span style="font-size:9px; color:#aab4bc; margin-left:10px;">7 stories</span></span>
       </div>
-      <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">CJNG unleashes nationwide violence after El Mencho killed in military raid</div>
+      <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">Supreme Court Strikes Down Trump Tariff Authority; 15% Global Duty Imposed Under New Legal Cover</div>
     </a>
+
 </div>
 </body>
 </html>
