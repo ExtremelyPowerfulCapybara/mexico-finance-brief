@@ -21,7 +21,7 @@ def summarize_news(articles: list[dict]) -> dict:
     for i, a in enumerate(articles, 1):
         news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n"
 
-    prompt = f"""You are a sharp financial news editor producing a morning briefing for {AUTHOR_NAME} and a small group of finance-savvy friends in Mexico City.
+    prompt = f"""You are a sharp financial news editor producing a daily morning briefing. Address the reader as "Fellow Humans" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
 
 Analyze the articles below and return a JSON object with EXACTLY this structure:
 
