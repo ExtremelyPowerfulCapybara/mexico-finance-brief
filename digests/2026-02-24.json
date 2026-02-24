@@ -1,73 +1,73 @@
 {
   "date": "2026-02-24",
   "digest": {
-    "editor_note": "The dominant story this morning is the Supreme Court striking down most of Trump's sweeping tariffs — but don't pop the champagne yet, because Trump's already signaling workarounds via executive order and Commerce Department investigations. Closer to home, the killing of El Mencho and the subsequent CJNG violence in Jalisco is the most consequential Mexico story in years, with real implications for security, the World Cup, and investor sentiment. Buckle up — it's a messy Monday. — Ed.",
+    "editor_note": "Dominating today's session is a one-two punch of tariff chaos and cartel violence — both with direct implications for Mexico City readers. The US Supreme Court's rejection of Trump's tariff structure has markets skittish, while El Mencho's killing has triggered cartel retaliation across Jalisco, Tamaulipas, and beyond. Buckle up — Adrian, this one touches home on multiple fronts.",
     "sentiment": {
-      "label": "Cautious",
-      "context": "U.S. futures are sliding despite the tariff ruling, Trump is pursuing alternative trade barriers, and cartel-driven unrest in Mexico adds a domestic layer of uncertainty that keeps risk firmly in check."
+      "label": "Risk-Off",
+      "context": "US tariff legal uncertainty, cartel-driven security alerts across Mexico, and a broad crypto selloff are pushing markets and investors into defensive positioning."
     },
     "stories": [
       {
-        "source": "ABC News",
-        "headline": "Supreme Court Strikes Down Trump's Sweeping Tariffs, But Markets Remain Uneasy",
-        "body": "U.S. equity futures fell Monday — S&P 500 -0.5%, Dow -0.6%, Nasdaq -0.7% — even after the Supreme Court voided most of Trump's broad tariff package late last week. The relief was short-lived: Trump immediately announced a 10-15% global tariff via executive order and signaled further Commerce Department-led levies, keeping trade policy as 'a movable feast,' per Rabobank's Benjamin Picton. For Mexico, the ruling offers a narrow reprieve, but Trump's pivot to alternative mechanisms means the threat to export-dependent sectors isn't gone.",
-        "url": "https://abcnews.com/Business/wireStory/us-futures-fall-asian-markets-higher-after-supreme-130398435",
-        "tag": "Trade"
-      },
-      {
-        "source": "Marca",
-        "headline": "El Mencho Killed, CJNG Violence Erupts in Jalisco — FIFA Weighs Guadalajara's World Cup Role",
-        "body": "Mexican security forces killed Nemesio Oseguera Cervantes 'El Mencho,' leader of the Jalisco New Generation Cartel, triggering widespread reprisals including burning roadblocks, arson, and flight cancellations around Guadalajara and Puerto Vallarta. Burnt vehicles lined the highway near Akron Stadium, Liga MX matches were postponed, and authorities declared a 'red alert' across parts of the metro area. FIFA has not publicly pulled Guadalajara's hosting rights, but sources say concerns are high with four group-stage matches, two playoff games, and the South Korean and Colombian national team base camps already committed to the city.",
-        "url": "https://www.marca.com/en/world-cup/2026/02/23/699bc8a2268e3ea2148b4572.html",
+        "source": "Marca / BusinessLine",
+        "headline": "El Mencho killed in Jalisco raid, triggering cartel retaliation and US shelter-in-place warnings across Mexico",
+        "body": "Mexican special forces, with US intelligence support, killed CJNG leader Nemesio 'El Mencho' Oseguera Cervantes, 59, in a raid in Tapalpa, Jalisco on Sunday. The operation — for which the US had offered up to $15 million — sparked immediate cartel retaliation: vehicle torchings, roadblocks, and armed clashes across Jalisco, Tamaulipas, Guanajuato, and Michoacán. The US State Department issued shelter-in-place warnings for Americans in Puerto Vallarta and Guadalajara, while United, Alaska, Southwest, and Air Canada canceled or diverted flights to both cities.",
+        "url": "https://www.marca.com/en/lifestyle/world-news/2026/02/23/699be082268e3ec05b8b457b.html",
         "tag": "Mexico"
       },
       {
-        "source": "Sputnik / Times of India",
-        "headline": "President Sheinbaum Urges Calm as Post-El Mencho Violence Tests Security Narrative",
-        "body": "President Claudia Sheinbaum publicly called for calm and praised the army and security forces following the CJNG's violent response to El Mencho's death. The killing is a significant strategic win for the Mexican government, but the swift and widespread retaliation across Jalisco exposed vulnerabilities in security infrastructure at a politically sensitive moment. Investors and multinationals with operations in western Mexico will be watching how quickly the federal government reestablishes control and whether copycat violence spreads to other cartel territories.",
-        "url": "https://sputnikglobe.com/20260223/mexican-president-urges-citizens-to-remain-calm-amid-unrest-1123672484.html",
-        "tag": "Mexico"
-      },
-      {
-        "source": "ABC News",
-        "headline": "Bitcoin Drops Below $65,000 as Risk Appetite Fades; Strategy Eyes 100th BTC Purchase",
-        "body": "Bitcoin fell as much as 5% Monday, briefly touching below $65,000 before stabilizing around $66,000 — now nearly 50% off its October record high of $126,210. The sell-off reflects broader risk-off positioning and regulatory uncertainty around crypto. Meanwhile, Strategy's Michael Saylor hinted at the firm's 100th Bitcoin purchase, with holdings of 717,131 BTC at an average cost of $76,027 — meaning the position is currently sitting at an unrealized loss of roughly $8,000 per coin.",
-        "url": "https://abcnews.com/Business/wireStory/us-futures-fall-asian-markets-higher-after-supreme-130398435",
-        "tag": "Markets"
-      },
-      {
-        "source": "Elliptic / Cointelegraph",
-        "headline": "Five Crypto Exchanges Allegedly Helping Russia Evade Sanctions Post-Garantex Takedown",
-        "body": "Blockchain analytics firm Elliptic identified five exchanges — Bitpapa, ABCeX, Exmo, Rapira, and Aifory Pro — as filling the vacuum left by sanctioned Russian exchange Garantex, which was shut down in March 2025. ABCeX reportedly processed at least $11 billion in crypto from Moscow's Federation Tower, the same address Garantex used, while Exmo.com and Exmo.me allegedly share custodial wallet infrastructure with over $19.5 million in direct transactions with sanctioned entities. This matters for global compliance teams: Chainalysis estimates crypto received by illicit addresses hit a record $154 billion in 2025.",
-        "url": "https://cointelegraph.com/news/crypto-exchange-network-helping-russia-skirt-sanctions-elliptic",
+        "source": "Slashdot / CNBC",
+        "headline": "US stock futures and dollar slide as Trump tariff legal uncertainty deepens",
+        "body": "US stock futures and the dollar fell Monday after the Supreme Court struck down Trump's broad tariff authority, forcing the administration to invoke a rarely used trade provision capping tariffs at 15% on all imports. Markets are struggling to price the legal and policy uncertainty, with investors pulling back across equities and FX. The volatility is a direct headwind for emerging market assets, including the Mexican peso.",
+        "url": "https://slashdot.org/firehose.pl?op=view&id=180844950",
         "tag": "Macro"
       },
       {
-        "source": "BusinessLine / NSE",
-        "headline": "India's Stock Market Investor Growth Slows Sharply — Tariff Shocks Get the Blame",
-        "body": "The NSE's latest report shows new investor registrations in India hit 17.7 lakh in January 2026, but the pace of growth has clearly decelerated: the most recent 1 crore addition took eight months versus five to six months for prior milestones, with the exchange citing tariff-related global headwinds as the primary cause. Total registered NSE investors now stand at 12.7 crore — a 27.3% CAGR since FY2020 — but the slowdown signals that retail risk appetite globally is being dented by trade uncertainty. This is a useful read-across for Mexico's own retail brokerage growth story.",
-        "url": "https://www.thehindubusinessline.com/markets/pace-of-new-investors-joining-stock-market-slows-amid-tariff-shocks-177-lakh-joined-in-january-nse-report/article70665504.ece",
+        "source": "Freerepublic.com / Channel News Asia",
+        "headline": "India delays Washington trade delegation after SCOTUS rejects Trump tariffs",
+        "body": "India's trade ministry confirmed it has postponed a planned delegation to Washington this week, citing uncertainty following the Supreme Court's rejection of Trump's tariff framework and his subsequent imposition of a 15% flat tariff on all US imports. No new date has been set for the visit, with officials from both sides acknowledging the situation remains too fluid for productive negotiations. The episode illustrates how the tariff legal chaos is freezing bilateral trade diplomacy globally.",
+        "url": "https://freerepublic.com/focus/f-news/4367940/posts",
+        "tag": "Trade"
+      },
+      {
+        "source": "Times of India / Economic Times",
+        "headline": "Indian textile stocks split on US tariff ruling: Welspun +5%, Gokaldas Exports -4%",
+        "body": "Indian textile shares showed a sharp divergence Monday following the US Supreme Court tariff ruling, with Welspun surging 5% while Gokaldas Exports dropped 4% and other names moved in opposite directions. The mixed reaction reflects uncertainty over whether the new 15% flat tariff regime under Trump's fallback authority will ultimately help or hurt specific exporters relative to competitors. A rescheduled India-US trade meeting adds another layer of ambiguity for sector investors.",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/textile-stocks-mixed-gokaldas-exports-drops-4-welspun-jumps-5-after-us-sc-tariff-ruling/articleshow/128700173.cms",
+        "tag": "Trade"
+      },
+      {
+        "source": "newsBTC",
+        "headline": "Solana breaks below $80 as crypto selloff broadens; next major support at $75",
+        "body": "Solana fell through the $80 floor after failing to hold $92, hitting an intraday low of $77.30 as Bitcoin and Ethereum dragged the broader market lower. The hourly MACD is deepening in bearish territory and RSI sits below 50, with key resistance now at $82–$83.10 and a potential flush to $70 if the $75 support breaks. The selloff aligns with the wider risk-off tone driven by US tariff and geopolitical uncertainty.",
+        "url": "http://www.newsbtc.com/analysis/solana-sol-loses-80-floor/",
         "tag": "Markets"
       },
       {
-        "source": "ABC News / Novo Nordisk",
-        "headline": "Novo Nordisk Slides 13% Premarket as CagriSema Disappoints vs. Eli Lilly's Rival Drug",
-        "body": "Novo Nordisk shares cratered more than 13% in premarket trading after its next-generation weight loss drug CagriSema posted trial results that fell short of those from Eli Lilly's competing therapy, handing Lilly a 3.5% premarket gain. The divergence is a sharp reminder of how binary drug trial outcomes can rapidly reshape multi-hundred-billion-dollar competitive positions in the GLP-1 obesity market. This is one of the largest single-day moves for a major pharma name in recent memory and will dominate healthcare sector trading Monday.",
-        "url": "https://abcnews.com/Business/wireStory/us-futures-fall-asian-markets-higher-after-supreme-130398435",
-        "tag": "Markets"
+        "source": "New Zealand Herald",
+        "headline": "Genesis Energy raises NZ$400m for renewables at a discount; NZ government commits $200m",
+        "body": "Genesis Energy launched a NZ$400 million capital raise Monday — comprising a $100m placement at $2.15/share and a 1-for-7.9 rights offer at $2.05 — representing a meaningful discount to Friday's close of $2.41. The New Zealand government confirmed it will subscribe for up to $200m to maintain its 51% stake, with Finance Minister Nicola Willis citing energy security and dry-year risk capacity as rationale. Genesis also reported record H1 normalised EBITDAF of $307m, up sharply from $222m a year earlier.",
+        "url": "https://www.nzherald.co.nz/business/companies/energy/genesis-energy-launches-400m-share-offer-for-renewables-investment/premium/VU4IZFVLLRGKDC54V2HRT73DHE/",
+        "tag": "Energy"
+      },
+      {
+        "source": "KCRA Sacramento",
+        "headline": "Kim Jong Un reelected North Korea party chief, signals nuclear acceleration and Russia alignment",
+        "body": "Kim Jong Un was unanimously reelected as Workers' Party General Secretary at the five-year party congress, with delegates crediting him for expanding North Korea's nuclear arsenal. The congress is expected to formalize deeper military integration with nuclear capabilities and continued economic 'self-reliance,' while cementing closer ties with Russia forged through arms exports during the Ukraine war. Xi Jinping congratulated Kim, underscoring a tightening Beijing-Pyongyang-Moscow axis that raises the regional security premium.",
+        "url": "https://www.kcra.com/article/kim-reelected-top-post-north-koreas-ruling-party/70457236",
+        "tag": "Politics"
       }
     ],
     "quote": {
-      "text": "Uncertainty is not an aberration; it is the normal condition under which markets operate. The challenge for investors is not to eliminate uncertainty but to act wisely in its presence.",
-      "attribution": "Peter Bernstein, Against the Gods: The Remarkable Story of Risk, 1996"
+      "text": "Uncertainty is not an absence of information. It is a fundamental feature of markets, and those who learn to act decisively within it will outperform those who wait for clarity that never fully arrives.",
+      "attribution": "Alan Greenspan, testimony before the US Senate Banking Committee, 1994"
     }
   },
   "market": {
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.26",
-        "change": "▲ 0.9%",
+        "value": "17.28",
+        "change": "▲ 1.1%",
         "direction": "up"
       },
       {
@@ -78,9 +78,9 @@
       },
       {
         "label": "CETES 28D",
-        "value": "—",
-        "change": "",
-        "direction": "flat"
+        "value": "6.84%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
       },
       {
         "label": "IPC BMV",
@@ -92,13 +92,13 @@
     "currency": [
       {
         "pair": "MXN / USD",
-        "rate": "17.2590",
+        "rate": "17.2801",
         "chg_1d": {
-          "text": "▲ 0.94%",
+          "text": "▲ 1.06%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.82%",
+          "text": "▲ 0.94%",
           "cls": "chg-up"
         }
       },
@@ -116,35 +116,35 @@
       },
       {
         "pair": "MXN / CAD",
-        "rate": "0.0789",
+        "rate": "0.0788",
         "chg_1d": {
-          "text": "▼ 1.13%",
+          "text": "▼ 1.26%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.79%",
+          "text": "▼ 0.92%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "MXN / CNY",
-        "rate": "—",
+        "rate": "119.1129",
         "chg_1d": {
-          "text": "—",
-          "cls": "chg-flat"
+          "text": "▲ 0.84%",
+          "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "—",
-          "cls": "chg-flat"
+          "text": "▲ 0.73%",
+          "cls": "chg-up"
         }
       }
     ]
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "8°C",
+    "temp": "6°C",
     "high_low": "18°C / 3°C",
-    "humidity": "Humidity 73%",
+    "humidity": "Humidity 76%",
     "desc": "Clear skies"
   }
 }
