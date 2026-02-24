@@ -30,6 +30,7 @@ Analyze the articles below and return a JSON object with EXACTLY this structure:
 
   "sentiment": {{
     "label": "Risk-Off" | "Cautious" | "Risk-On",
+    "position": <integer 5-95 where 5=extreme risk-off, 50=neutral, 95=extreme risk-on>,
     "context": "One sentence explaining today's sentiment based on the stories."
   }},
 
@@ -54,6 +55,7 @@ Rules:
 - Skip duplicates covering the same event
 - stories must include the original URL from the article list
 - Respond ONLY with the JSON object, no preamble, no markdown fences
+- sentiment.position must be consistent with sentiment.label: Risk-Off should be 5-35, Cautious 36-64, Risk-On 65-95
 
 Articles:
 {news_text}

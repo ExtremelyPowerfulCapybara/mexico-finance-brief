@@ -184,12 +184,14 @@ def build_pretty_html(
     for r in currency:
         c1 = "up" if r['chg_1d']['cls'] == 'chg-up' else ("down" if r['chg_1d']['cls'] == 'chg-down' else "flat")
         c7 = "up" if r['chg_1w']['cls'] == 'chg-up' else ("down" if r['chg_1w']['cls'] == 'chg-down' else "flat")
+        chg1_color = "#4a9e6a" if c1 == "up" else ("#b84a3a" if c1 == "down" else "#aab4bc")
+        chg7_color = "#4a9e6a" if c7 == "up" else ("#b84a3a" if c7 == "down" else "#aab4bc")
         tbody += f"""
       <tr>
         <td class="pair">{r['pair']}</td>
         <td>{r['rate']}</td>
-        <td class="{c1}">{r['chg_1d']['text']}</td>
-        <td class="{c7}">{r['chg_1w']['text']}</td>
+        <td style="color:{chg1_color}; text-align:right;">{r['chg_1d']['text']}</td>
+        <td style="color:{chg7_color}; text-align:right;">{r['chg_1w']['text']}</td>
       </tr>"""
 
     # ── Quote ──

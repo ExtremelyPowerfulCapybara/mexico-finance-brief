@@ -22,8 +22,8 @@ _subs_env   = os.environ.get("SUBSCRIBERS", EMAIL_SENDER)
 SUBSCRIBERS = [s.strip() for s in _subs_env.split(",") if s.strip()]
 
 # ── Newsletter identity (safe to commit) ─────
-NEWSLETTER_NAME    = "Mexico Finance Brief"
-NEWSLETTER_TAGLINE = "Daily Intelligence"
+NEWSLETTER_NAME    = "The Opening Bell"
+NEWSLETTER_TAGLINE = "Context before the noise"
 AUTHOR_NAME        = "Adrian"
 
 # ── Rotating pen names ────────────────────────
