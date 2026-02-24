@@ -1,7 +1,8 @@
 # ─────────────────────────────────────────────
-#  archive.py  —  Saves pretty HTML issues
-#  and regenerates the index page.
-#  Output: archive/YYYY-MM-DD.html + index.html
+#  archive.py  —  Saves pretty HTML issues and
+#  rebuilds index.html with a full dashboard:
+#  sentiment timeline, volatility, story count,
+#  and issue cards.
 # ─────────────────────────────────────────────
 
 import os
@@ -9,6 +10,8 @@ import json
 from datetime import date, datetime
 from pretty_renderer import build_pretty_html
 from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR
+
+GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest/"  # Set this after GitHub Pages is live, e.g. "https://username.github.io/mexico-finance-brief"
 
 
 def save_pretty_issue(
@@ -43,13 +46,62 @@ def save_pretty_issue(
     return filepath
 
 
+def _load_all_digests() -> list[dict]:
+    """
+    Loads all saved digest JSONs from DIGEST_DIR, sorted oldest first.
+    Each entry: { date, label, position, story_count, headline }
+    """
+    entries = []
+    if not os.path.exists(DIGEST_DIR):
+        return entries
+
+    for filename in sorted(os.listdir(DIGEST_DIR)):
+        if not filename.endswith(".json"):
+            continue
+        date_str = filename.replace(".json", "")
+        try:
+            datetime.strptime(date_str, "%Y-%m-%d")
+        except ValueError:
+            continue
+
+        with open(os.path.join(DIGEST_DIR, filename), encoding="utf-8") as f:
+            data = json.load(f)
+
+        digest    = data.get("digest", {})
+        sentiment = digest.get("sentiment", {})
+        stories   = digest.get("stories", [])
+        headline  = stories[0].get("headline", "") if stories else ""
+
+        entries.append({
+            "date":        date_str,
+            "label":       sentiment.get("label", "Cautious"),
+            "position":    int(sentiment.get("position", 50)),
+            "story_count": len(stories),
+            "headline":    headline,
+        })
+
+    return entries
+
+
 def rebuild_index() -> None:
-    """
-    Scans the archive folder and regenerates index.html
-    with a card for each saved issue, newest first.
-    """
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
 
+    # ── Load digest data for charts ───────────
+    digest_data = _load_all_digests()
+
+    # ── Build chart data arrays ────────────────
+    chart_dates    = [d["date"]        for d in digest_data]
+    chart_position = [d["position"]    for d in digest_data]
+    chart_stories  = [d["story_count"] for d in digest_data]
+    chart_labels   = [d["label"]       for d in digest_data]
+
+    # Point colors per label
+    point_colors = [
+        "#b84a3a" if l == "Risk-Off" else ("#4a9e6a" if l == "Risk-On" else "#e8a030")
+        for l in chart_labels
+    ]
+
+    # ── Issue cards ───────────────────────────
     issues = sorted(
         [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html") and f != "index.html"],
         reverse=True,
@@ -59,34 +111,151 @@ def rebuild_index() -> None:
     for i, filename in enumerate(issues):
         issue_date_str = filename.replace(".html", "")
         try:
-            dt = datetime.strptime(issue_date_str, "%Y-%m-%d")
+            dt    = datetime.strptime(issue_date_str, "%Y-%m-%d")
             label = dt.strftime("%A, %B %d, %Y")
         except ValueError:
             label = issue_date_str
 
-        issue_num = len(issues) - i
+        issue_num   = len(issues) - i
         digest_path = os.path.join(DIGEST_DIR, f"{issue_date_str}.json")
         headline    = ""
         sentiment   = ""
+        story_count = 0
+
         if os.path.exists(digest_path):
             with open(digest_path, encoding="utf-8") as f:
                 data = json.load(f)
-            stories  = data.get("digest", {}).get("stories", [])
-            headline = stories[0].get("headline", "") if stories else ""
-            sentiment = data.get("digest", {}).get("sentiment", {}).get("label", "")
+            digest_obj  = data.get("digest", {})
+            stories     = digest_obj.get("stories", [])
+            headline    = stories[0].get("headline", "") if stories else ""
+            sentiment   = digest_obj.get("sentiment", {}).get("label", "")
+            story_count = len(stories)
 
         sent_color = {"Risk-Off": "#b84a3a", "Cautious": "#9a6a1a", "Risk-On": "#4a9e6a"}.get(sentiment, "#aab4bc")
-        sent_html  = f'<span style="font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:{sent_color}; padding:3px 10px; border:1px solid {sent_color}; border-radius:20px;">{sentiment}</span>' if sentiment else ""
+        sent_pill  = f'<span style="font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:{sent_color}; padding:3px 10px; border:1px solid {sent_color}; border-radius:20px;">{sentiment}</span>' if sentiment else ""
+        count_html = f'<span style="font-size:9px; color:#aab4bc; margin-left:10px;">{story_count} stories</span>' if story_count else ""
 
         cards += f"""
-    <a href="{filename}" style="display:block; text-decoration:none; background:#f0f3f5; border:1px solid #cdd4d9; padding:20px 28px; margin-bottom:12px; transition:border-color 0.15s;">
+    <a href="{filename}" style="display:block; text-decoration:none; background:#f0f3f5; border:1px solid #cdd4d9; padding:20px 28px; margin-bottom:10px;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
         <span style="font-family:Arial,sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#aab4bc;">ISSUE #{issue_num} &middot; {label}</span>
-        {sent_html}
+        <span>{sent_pill}{count_html}</span>
       </div>
       <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">{headline or "View issue &rarr;"}</div>
     </a>"""
 
+    # ── Chart JS data ─────────────────────────
+    dates_js    = json.dumps(chart_dates)
+    position_js = json.dumps(chart_position)
+    stories_js  = json.dumps(chart_stories)
+    colors_js   = json.dumps(point_colors)
+
+    # Only render charts if we have data
+    charts_html = ""
+    if digest_data:
+        charts_html = f"""
+  <!-- ── Dashboard charts ─────────────────── -->
+  <div style="background:#f0f3f5; border:1px solid #cdd4d9; padding:28px 32px; margin-bottom:24px;">
+
+    <!-- Sentiment timeline -->
+    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Sentiment Timeline</p>
+    <div style="position:relative; height:120px; margin-bottom:28px;">
+      <canvas id="sentimentChart"></canvas>
+    </div>
+
+    <!-- Divider -->
+    <div style="height:1px; background:#dde3e8; margin-bottom:24px;"></div>
+
+    <!-- Story count -->
+    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Stories per Issue</p>
+    <div style="position:relative; height:80px;">
+      <canvas id="storyChart"></canvas>
+    </div>
+
+  </div>
+
+  <script>
+    const dates    = {dates_js};
+    const position = {position_js};
+    const stories  = {stories_js};
+    const colors   = {colors_js};
+
+    // ── Sentiment chart ──
+    new Chart(document.getElementById('sentimentChart'), {{
+      type: 'line',
+      data: {{
+        labels: dates,
+        datasets: [{{
+          data: position,
+          borderColor: '#3a4a54',
+          borderWidth: 1.5,
+          pointBackgroundColor: colors,
+          pointBorderColor: colors,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          fill: false,
+          tension: 0.3,
+        }}]
+      }},
+      options: {{
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {{
+          legend: {{ display: false }},
+          tooltip: {{
+            callbacks: {{
+              label: (ctx) => {{
+                const i = ctx.dataIndex;
+                const labels = {json.dumps(chart_labels)};
+                return labels[i] + ' (' + ctx.raw + ')';
+              }}
+            }}
+          }}
+        }},
+        scales: {{
+          x: {{
+            ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }},
+            grid: {{ color: '#e8edf0' }}
+          }},
+          y: {{
+            min: 0,
+            max: 100,
+            ticks: {{
+              font: {{ size: 9 }},
+              color: '#aab4bc',
+              callback: (v) => v === 5 ? 'Risk-Off' : v === 50 ? 'Neutral' : v === 95 ? 'Risk-On' : '',
+              stepSize: 45,
+            }},
+            grid: {{ color: '#e8edf0' }}
+          }}
+        }}
+      }}
+    }});
+
+    // ── Story count chart ──
+    new Chart(document.getElementById('storyChart'), {{
+      type: 'bar',
+      data: {{
+        labels: dates,
+        datasets: [{{
+          data: stories,
+          backgroundColor: '#c8d4da',
+          borderRadius: 2,
+        }}]
+      }},
+      options: {{
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {{ legend: {{ display: false }}, tooltip: {{ callbacks: {{ label: (ctx) => ctx.raw + ' stories' }} }} }},
+        scales: {{
+          x: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }}, grid: {{ display: false }} }},
+          y: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', stepSize: 1 }}, grid: {{ color: '#e8edf0' }} }}
+        }}
+      }}
+    }});
+  </script>"""
+
+    # ── Full index page ───────────────────────
     index_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,23 +263,38 @@ def rebuild_index() -> None:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{NEWSLETTER_NAME} — Archive</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     * {{ margin:0; padding:0; box-sizing:border-box; }}
     body {{ background:#dde3e8; font-family:'DM Sans',sans-serif; padding:40px 16px; }}
     .wrap {{ max-width:640px; margin:0 auto; }}
-    .masthead {{ background:#1a1a1a; padding:32px 36px; margin-bottom:24px; }}
+    .masthead {{ background:#1a1a1a; padding:32px 36px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:flex-end; }}
     .masthead-name {{ font-family:'Playfair Display',serif; font-size:28px; color:#f5f2ed; margin-bottom:4px; }}
     .masthead-sub {{ font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#555; }}
-    a:hover div {{ color:#555 !important; }}
+    .masthead-count {{ font-size:11px; color:#444; letter-spacing:1px; text-align:right; }}
+    a {{ color:inherit; }}
+    .issue-card:hover div {{ color:#555 !important; }}
   </style>
 </head>
 <body>
 <div class="wrap">
+
+  <!-- Masthead -->
   <div class="masthead">
-    <div class="masthead-name">{NEWSLETTER_NAME}</div>
-    <div class="masthead-sub">Archive &mdash; by {AUTHOR_NAME}</div>
+    <div>
+      <div class="masthead-name">{NEWSLETTER_NAME}</div>
+      <div class="masthead-sub">Archive &mdash; by {AUTHOR_NAME}</div>
+    </div>
+    <div class="masthead-count">{len(issues)} issue{"s" if len(issues) != 1 else ""}</div>
   </div>
+
+  {charts_html}
+
+  <!-- Section label -->
+  <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;">All Issues</p>
+
   {cards if cards else '<p style="color:#aab4bc; font-size:13px;">No issues yet.</p>'}
+
 </div>
 </body>
 </html>"""

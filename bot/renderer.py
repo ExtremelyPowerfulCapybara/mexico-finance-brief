@@ -7,6 +7,7 @@
 import hashlib
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_NAMES, AUTHOR_TITLES
+from archive import GITHUB_PAGES_URL
 
 # Pick a name and title that rotates daily but stays fixed within one day's run
 _seed       = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
@@ -266,7 +267,10 @@ def _week_review(stories: list[dict]) -> str:
 </table>"""
 
 
-def _footer() -> str:
+def _footer(issue_date: str = "") -> str:
+    archive_link = ""
+    if GITHUB_PAGES_URL and issue_date:
+        archive_link = f'&nbsp;&middot;&nbsp;<a href="{GITHUB_PAGES_URL}/index.html" style="color:#666666; text-decoration:none; letter-spacing:1px;">Archive</a>'
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK};">
   <tr>
@@ -274,7 +278,7 @@ def _footer() -> str:
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="font-family:{FONT_SERIF}; font-size:14px; color:#f5f2ed;">{NEWSLETTER_NAME}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; letter-spacing:1px;">by {AUTHOR_NAME} &middot; Unsubscribe</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; letter-spacing:1px;">by {AUTHOR_NAME} &middot; Unsubscribe{archive_link}</td>
         </tr>
       </table>
     </td>
@@ -304,8 +308,30 @@ def build_html(
     if is_friday and week_stories:
         week_html = _divider() + _week_review(week_stories)
 
-    sentiment = digest.get("sentiment", {})
-    quote     = digest.get("quote", {})
+    sentiment  = digest.get("sentiment", {})
+    quote      = digest.get("quote", {})
+    today_iso  = date.today().isoformat()
+
+    preheader = ""
+    if GITHUB_PAGES_URL:
+        issue_url   = f"{GITHUB_PAGES_URL}/{today_iso}.html"
+        archive_url = f"{GITHUB_PAGES_URL}/index.html"
+        preheader = f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_OUTER};">
+  <tr>
+    <td align="center" style="padding:10px 16px 4px;">
+      <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
+        <tr>
+          <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888;">
+            <a href="{issue_url}" style="color:#555555; text-decoration:none;">View in browser</a>
+            &nbsp;&middot;&nbsp;
+            <a href="{archive_url}" style="color:#555555; text-decoration:none;">Browse all issues</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>"""
 
     return f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -315,9 +341,10 @@ def build_html(
   <title>{NEWSLETTER_NAME}</title>
 </head>
 <body style="margin:0; padding:0; background:{BG_OUTER}; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+{preheader}
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_OUTER};">
   <tr>
-    <td align="center" style="padding:32px 16px;">
+    <td align="center" style="padding:8px 16px 32px;">
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background:{BG_MAIN}; border:1px solid {BORDER};">
         <tr><td>{_header(issue_number)}</td></tr>
         <tr><td>{_ticker(tickers)}</td></tr>
@@ -332,14 +359,13 @@ def build_html(
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}
-        <tr><td>{_footer()}</td></tr>
+        <tr><td>{_footer(today_iso)}</td></tr>
       </table>
     </td>
   </tr>
 </table>
 </body>
 </html>"""
-
 
 def build_plain(digest: dict) -> str:
     today = date.today().strftime("%B %d, %Y")
