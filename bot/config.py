@@ -25,6 +25,7 @@ SUBSCRIBERS = [s.strip() for s in _subs_env.split(",") if s.strip()]
 NEWSLETTER_NAME    = "Mexico Finance Brief"
 NEWSLETTER_TAGLINE = "Daily Intelligence"
 AUTHOR_NAME        = "Adrian"
+AUTHOR_BYLINE      = "Al Gorithm"
 
 # ── News preferences ──────────────────────────
 TOPICS                 = ["finance", "economy", "Mexico", "trade", "markets"]

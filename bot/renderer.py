@@ -5,7 +5,7 @@
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
-from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME
+from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_BYLINE
 
 # ── Shared style constants ────────────────────
 BG_OUTER   = "#dde3e8"
@@ -114,7 +114,7 @@ def _editor_note(note: str) -> str:
   <tr>
     <td style="padding:28px 48px;">
       <p style="margin:0 0 12px 0; font-family:{FONT_SERIF}; font-style:italic; font-size:15px; color:#444444; line-height:1.8;">{note}</p>
-      <p style="margin:0; font-family:{FONT_SANS}; font-size:10px; color:#999999; letter-spacing:1px; text-transform:uppercase;">&#8212; {AUTHOR_NAME}</p>
+      <p style="margin:0; font-family:{FONT_SANS}; font-size:10px; color:#999999; letter-spacing:1px; text-transform:uppercase;">&#8212; {AUTHOR_BYLINE}</p>
     </td>
   </tr>
 </table>"""

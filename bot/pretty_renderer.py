@@ -6,7 +6,7 @@
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
-from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME
+from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_BYLINE
 
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -254,7 +254,7 @@ def build_pretty_html(
 
   <div class="editor-note">
     <p>{digest.get('editor_note','')}</p>
-    <div class="editor-sig">&mdash; {AUTHOR_NAME}</div>
+    <div class="editor-sig">&mdash; {AUTHOR_BYLINE}</div>
   </div>
 
   {DIVIDER}
