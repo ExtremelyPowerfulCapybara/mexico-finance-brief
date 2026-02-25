@@ -3,6 +3,7 @@
 # ─────────────────────────────────────────────
 
 import json
+import time
 import anthropic
 from config import ANTHROPIC_API_KEY, AUTHOR_NAME
 
@@ -62,12 +63,22 @@ Articles:
 """
 
     print("  [summarizer] Sending to Claude...")
-    message = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=2500,
-        messages=[{"role": "user", "content": prompt}]
-    )
-
+    for attempt in range(4):
+        try:
+            message = client.messages.create(
+                model="claude-sonnet-4-6",
+                max_tokens=2500,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            break
+        except Exception as e:
+            if "overloaded" in str(e).lower() and attempt < 3:
+                wait = 30 * (attempt + 1)
+                print(f"  [summarizer] API overloaded, retrying in {wait}s (attempt {attempt + 1}/4)...")
+                time.sleep(wait)
+            else:
+                raise
+            
     raw = message.content[0].text.strip()
 
     # Strip markdown fences if present
