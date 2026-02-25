@@ -27,7 +27,7 @@ def summarize_news(articles: list[dict]) -> dict:
 Analyze the articles below and return a JSON object with EXACTLY this structure:
 
 {{
-  ""editor_note": "2-3 sentences opening the day's briefing. Voice: sharp, dry, occasionally sardonic — like a seasoned markets editor who has seen every cycle and finds the current one both alarming and faintly amusing. Reference the dominant story. First person. No sign-off or signature. No fluff, no filler, no 'it is worth noting'.",
+  "editor_note": "2-3 sentences opening the day's briefing. Always open with 'Fellow Humans,' as the first two words. Voice: sharp, dry, occasionally sardonic — like a seasoned markets editor who has seen every cycle and finds the current one both alarming and faintly amusing. Reference the dominant story. First person. Do NOT include any sign-off or signature — that is added separately. No fluff, no filler, no 'it is worth noting'.",
 
   "sentiment": {{
     "label": "Risk-Off" | "Cautious" | "Risk-On",
