@@ -1,6 +1,66 @@
 {
   "date": "2026-02-26",
   "digest": {
+    "editor_note": "Fellow Humans, the dominant story this morning is not the Nasdaq bounce or Nvidia's earnings — it's Saudi Arabia quietly ramping oil output in anticipation of a US strike on Iran, which tells you everything about where geopolitical risk is actually priced. Markets are choosing to look at the cheerful side of the ledger today, but the Middle East is doing its best to remind everyone that complacency has a cost.",
+    "sentiment": {
+      "label": "Cautious",
+      "position": 42,
+      "context": "Equity markets rebounding from AI panic while Saudi Arabia pre-positions for a potential Iran conflict and geopolitical risk premiums quietly build in oil."
+    },
+    "stories": [
+      {
+        "source": "OilPrice.com",
+        "headline": "Saudi Arabia Pre-Positions Oil Supply for Potential US Strike on Iran",
+        "body": "Saudi crude shipments surged to 7.3 million barrels per day in the first 24 days of February 2026 — the highest since April 2023 — as Riyadh activates a contingency plan to offset supply disruptions if the US strikes Iran. Trump has publicly floated a 'limited military strike' to force Tehran into a new nuclear deal, while Iran has warned of immediate retaliation and potential closure of the Strait of Hormuz, which handles 20-30% of global seaborne oil. Saudi spare capacity stands at roughly 2.4 million bpd, a buffer that would be tested severely in a full disruption scenario.",
+        "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-Arabia-Boosting-Oil-Output-In-Anticipation-of-US-Attacks-On-Iran.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "New York Post",
+        "headline": "Nasdaq Rebounds 250 Points as Markets Shrug Off AI Unemployment Doomsday Report",
+        "body": "Tech stocks clawed back losses Wednesday after a Citrini Research essay warning of AI-driven unemployment above 10% and a 38% S&P 500 plunge by June 2028 rattled markets earlier in the week, sending the Dow down over 800 points on Monday. White House CEA acting chair Pierre Yared dismissed the paper as 'science fiction' that 'violates basic accounting in economics,' while Citadel Securities argued historical waves of technological change have not rendered labor obsolete. Nvidia reported earnings after the bell, providing the sector's next real test of sentiment.",
+        "url": "https://nypost.com/2026/02/25/business/tech-stocks-shake-off-panic-over-ai-doomsday-scenario-where-unemployment-hits-10/",
+        "tag": "Markets"
+      },
+      {
+        "source": "DW (English)",
+        "headline": "Cuban Coast Guard Kills Four on US-Flagged Speedboat, Escalating US-Cuba Tensions",
+        "body": "Cuba's Interior Ministry confirmed its coast guard shot dead four people and wounded six aboard a Florida-registered speedboat one nautical mile from its northern coast, claiming the vessel fired first. Havana subsequently alleged the occupants were armed Cuban-Americans attempting to 'infiltrate the island and unleash terrorism.' Secretary of State Marco Rubio, traveling in the Caribbean, said the US would not rely on Cuba's account and would 'respond accordingly' once facts are established — a geopolitical flashpoint arriving at a moment when the US is already strangling Cuba's fuel supply.",
+        "url": "https://www.dw.com/en/cuban-coast-guard-shoots-dead-four-on-us-flagged-speedboat/a-76126495",
+        "tag": "Politics"
+      },
+      {
+        "source": "DW (English)",
+        "headline": "US Greenlights Resale of Venezuelan Oil to Cuba's Private Sector",
+        "body": "The US Treasury's OFAC announced it would adopt a favorable licensing policy for resale of Venezuelan-origin oil to Cuba, provided transactions benefit the Cuban private sector rather than the government, military, or intelligence services. The partial easing follows a near-total fuel blockade that has left Cuban hospitals cutting services and streets piling up with uncollected rubbish. The carve-out is narrow and the humanitarian situation on the island remains acute, with Canada separately pledging CAD $8 million in aid via the UN.",
+        "url": "https://www.dw.com/en/us-eases-restrictions-on-venezuelan-fuel-for-cuba/a-76126101",
+        "tag": "Politics"
+      },
+      {
+        "source": "CryptoSlate",
+        "headline": "US Strategic Bitcoin Reserve May Be 30% Smaller Than Advertised Due to Bitfinex Litigation",
+        "body": "Of the roughly 328,372 BTC the US government controls — worth approximately $21.6 billion — some 94,643 BTC is tied to the 2016 Bitfinex hack and subject to potential court-ordered restitution, which would mechanically shrink the reserve to around 234,000 BTC. Prosecutors have already asked a federal court to approve returning the assets to Bitfinex as in-kind restitution, and Trump's executive order explicitly carves out court-ordered dispositions. The distinction matters: a restitution transfer is not a sovereign sale, but markets counting every government-held coin as permanently strategic are building on contested ground.",
+        "url": "https://cryptoslate.com/?p=521045",
+        "tag": "Markets"
+      },
+      {
+        "source": "Newser / New York Times",
+        "headline": "Op-Ed: China Deploys AI in Factories While America Debates It in Conference Rooms",
+        "body": "Former White House economist Jonas Nahm argues in the NYT that the US-China AI gap is a manufacturing execution problem, not just an R&D competition: Tesla's Shanghai factory dramatically outperforms its California counterpart on output per worker, and China has over 30,000 'smart factories' already operational. Xiaomi's Beijing plant produces a car every 76 seconds using 700 robots and AI-driven defect detection, while US manufacturers — especially smaller ones — are stuck with outdated equipment and manual data entry. Nahm's prescription is blunt: Washington must shift focus from trade flows to factory-floor deployment.",
+        "url": "https://www.newser.com/story/384305/op-ed-we-keep-inventing-ai-but-china-is-actually-using-it.html",
+        "tag": "Macro"
+      },
+      {
+        "source": "New Zealand Herald",
+        "headline": "BNZ Reverses Mortgage Rate Hike, Cuts 3-Year Fixed Rate Back Below 5%",
+        "body": "Bank of New Zealand reversed its December rate hike cycle, cutting three, four, and five-year fixed home loan rates by 10-40 basis points effective Wednesday, bringing its three-year rate to 4.99%. The move follows a more dovish-than-expected Reserve Bank of New Zealand OCR decision, which signaled a later and shallower tightening path than markets had priced, causing wholesale rates to ease. Westpac made comparable cuts last week; the back-and-forth on longer-term mortgage pricing reflects ongoing market uncertainty about the terminal rate path.",
+        "url": "https://www.nzherald.co.nz/business/mortgage-rate-u-turn-bnz-cuts-long-term-rates-3yr-loan-dips-back-under-5/P37Z4NGUPJDSTJR7BLG3FGWW7U/",
+        "tag": "Rates"
+      }
+    ],
+    "quote": {
+      "text": "The market can remain irrational longer than you can remain solvent.",
+      "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
     "editor_note": "Fellow Humans, prediction markets are busy establishing their first case law this morning, with Kalshi fining an MrBeast editor for insider-trading YouTube outcomes while a separate $100,000 bet on a government alien disclosure sits unresolved and faintly terrifying. Meanwhile, the actual geopolitical news — Ukraine peace sequencing, Modi at the Knesset, cartels designated terrorists after El Mencho's death — is moving fast enough that the aliens story almost makes sense by comparison.",
     "sentiment": {
       "label": "Cautious",
@@ -73,6 +133,7 @@
       },
       {
         "label": "S&P 500",
+        "value": "6,907",
         "value": "6,905",
         "change": "▲ 0.2%",
         "direction": "up"
@@ -85,6 +146,8 @@
       },
       {
         "label": "IPC BMV",
+        "value": "71,171.93",
+        "change": "▲ 0.0%",
         "value": "71,232.25",
         "change": "▲ 0.1%",
         "direction": "up"
@@ -93,6 +156,13 @@
     "currency": [
       {
         "pair": "USD / MXN",
+        "rate": "17.1850",
+        "chg_1d": {
+          "text": "▲ 0.04%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.42%",
         "rate": "17.1882",
         "chg_1d": {
           "text": "▲ 0.05%",
@@ -105,6 +175,13 @@
       },
       {
         "pair": "EUR / MXN",
+        "rate": "20.2827",
+        "chg_1d": {
+          "text": "▲ 0.27%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.14%",
         "rate": "20.2871",
         "chg_1d": {
           "text": "▲ 0.30%",
@@ -117,18 +194,26 @@
       },
       {
         "pair": "CAD / MXN",
+        "rate": "12.5730",
         "rate": "12.5643",
         "chg_1d": {
-          "text": "▲ 0.21%",
+          "text": "▲ 0.28%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.34%",
+          "text": "▼ 0.27%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CNY / MXN",
+        "rate": "117.5609",
+        "chg_1d": {
+          "text": "▼ 0.58%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 1.38%",
         "rate": "117.5828",
         "chg_1d": {
           "text": "▼ 0.56%",
