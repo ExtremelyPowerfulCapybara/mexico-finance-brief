@@ -67,4 +67,10 @@ jobs:
           else
             git commit -m "Issue: $(date +'%Y-%m-%d')"
             git push
-          fi
+            fi
+        
+      - name: Ping health check
+        if: success()
+        run: curl -fsS "$HEALTH_CHECK_URL" > /dev/null
+        env:
+          HEALTH_CHECK_URL: ${{ secrets.HEALTH_CHECK_URL }}
