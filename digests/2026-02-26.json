@@ -1,66 +1,66 @@
 {
   "date": "2026-02-26",
   "digest": {
-    "editor_note": "Fellow Humans, the foxes are now officially managing the henhouse: the Federal Reserve has handed bank supervision to a Wall Street lawyer who spent four decades representing the industry he will now police. Meanwhile, Circle's stablecoin numbers reminded everyone that even in a crypto winter, the plumbing can still print money.",
+    "editor_note": "Fellow Humans, Europe's diplomatic traffic to Beijing is becoming something of a pilgrimage: Macron went, Starmer went, and now Merz has made the trip, business delegation in tow, to tell Xi Jinping that the €90 billion trade deficit is 'not healthy' while simultaneously cheering a 120-aircraft Airbus order. Meanwhile, Washington is quietly licensing Venezuelan oil resales to a Cuba it helped starve of fuel — the kind of policy whiplash that passes for strategy these days.",
     "sentiment": {
       "label": "Cautious",
       "position": 42,
-      "context": "Regulatory capture concerns at the Fed, an AI infrastructure fraud lawsuit, and luxury consumers quietly tightening belts paint a picture of a market that is functioning but increasingly aware of the cracks beneath it."
+      "context": "Geopolitical hedging dominates — Europe pivoting toward China amid U.S. friction, courts blocking Trump deportation policy, and crypto markets struggling to hold momentum — pointing to a market environment that is watchful rather than directional."
     },
     "stories": [
       {
-        "source": "Common Dreams / Reuters / Politico",
-        "headline": "Fed Appoints 40-Year Wall Street Lawyer Randall Guynn as Director of Bank Supervision",
-        "body": "The Federal Reserve has quietly named Randall Guynn, a longtime Davis Polk & Wardwell financial institutions lawyer, as its next director of supervision and regulation, effective March 8. The appointment breaks a decades-long tradition of filling the role with career Fed staff — the last time an outsider held it was before 1977. Critics at Better Markets called it 'appointing a lifelong arsonist as fire chief,' warning the move will accelerate deregulatory policy favoring Guynn's former Wall Street clients.",
-        "url": "https://www.commondreams.org/news/fed-wall-street-lobbyist",
-        "tag": "Rates"
-      },
-      {
-        "source": "Fortune",
-        "headline": "Circle Shares Surge 23% After Q4 Revenue Jumps 77%, USDC Circulation Hits $75 Billion",
-        "body": "Stablecoin issuer Circle reported fourth-quarter revenue up 77% year-over-year, sending shares up 23% in morning trading and offering a rare bright spot in a months-long crypto slump. USDC in circulation rose approximately 72% compared to a year earlier, reaching a market cap of around $75 billion, with Visa and Polymarket among major adopters. The beat underscores stablecoins' growing role as payment infrastructure even as broader crypto prices languish, though analysts at CFRA flagged rate compression and market share competition as key risks to sustaining the momentum.",
-        "url": "https://fortune.com/2026/02/25/circle-shares-surge-after-surprise-earnings-beat-shows-strong-demand-for-stablecoins/",
-        "tag": "Markets"
-      },
-      {
-        "source": "The Indian Express",
-        "headline": "Reliance Closes Meta AI Joint Venture: Facebook Overseas Takes 30% Stake for ₹256.6 Crore",
-        "body": "Reliance Industries has completed the equity allotment for its AI subsidiary Reliance Enterprise Intelligence Ltd, with Facebook Overseas — a Meta Platforms unit — receiving 30% for ₹256.6 crore, and the remaining 70% going to another RIL subsidiary for ₹596.6 crore. The JV, first flagged at RIL's August 2025 AGM, will build enterprise AI services leveraging Meta's open-source Llama models distributed across Reliance's vast digital infrastructure. The close arrives as the Nifty IT index has shed roughly 20% in February alone and questions mount over whether AI capital expenditure will ever generate commensurate returns.",
-        "url": "https://indianexpress.com/article/business/companies/reliance-industries-restructures-ai-arm-meta-picks-up-30-stake-10552551/",
-        "tag": "Markets"
-      },
-      {
-        "source": "GlobeNewswire / Hagens Berman",
-        "headline": "Fermi Inc. Faces Securities Fraud Suit Over AI Data Center IPO: Anchor Tenant Cancelled $150M Deal",
-        "body": "Law firm Hagens Berman has issued a lead plaintiff deadline notice — March 6, 2026 — for investors in Fermi Inc. (NASDAQ: FRMI), alleging the company's IPO materials misrepresented demand for its 'Project Matador' AI data center campus. The complaint centres on a December 2025 disclosure that the project's anchor tenant terminated a $150 million Advance in Aid of Construction Agreement, which sent the stock down nearly 34% in a single session. The case is a pointed reminder that the AI infrastructure boom has minted at least as many liabilities as it has data centers.",
-        "url": "https://www.globenewswire.com/news-release/2026/02/25/3244937/32716/en/FRMI-9-DAY-DEADLINE-ALERT-Fermi-Inc-Facing-Securities-Class-Action-Over-IPO-And-Subsequent-Disclosures-Hagens-Berman.html",
-        "tag": "Markets"
-      },
-      {
-        "source": "PYMNTS",
-        "headline": "Nearly Half of U.S. Consumers Earning Over $100K Live Paycheck to Paycheck, Luxury Retailers Respond",
-        "body": "PYMNTS Intelligence data shows that nearly 50% of consumers earning above $100,000 annually report living paycheck to paycheck, with more than a third of those earning above $200,000 citing the same condition — complicating the familiar narrative of a resilient high-income consumer. Luxury retailers are responding by leaning into value messaging, resale markets, and BNPL options, channels once considered beneath the demographic. Moody's Analytics chief economist Mark Zandi notes the spending gap between income cohorts 'has never been wider,' even as the top 10% of earners account for nearly half of all U.S. consumption.",
-        "url": "https://www.pymnts.com/news/retail/2026/luxury-retailers-rethink-pricing-as-wealthy-consumers-tighten-budgets/",
+        "source": "CNA",
+        "headline": "Merz Courts Xi in Beijing, Airbus Deal in Hand, Trade Deficit Looming Over Talks",
+        "body": "German Chancellor Friedrich Merz visited Beijing on Feb. 25 with a large business delegation, telling President Xi Jinping he wants to deepen the 'comprehensive strategic partnership' — even as Germany's trade deficit with China hit €90 billion last year, up fourfold since 2020. China announced a 120-aircraft Airbus order as a goodwill gesture, but Merz was blunt that the imbalance driven by Chinese overcapacity is 'not healthy.' The visit follows Macron and Starmer to Beijing and signals Europe's deliberate hedge against a deteriorating relationship with Washington.",
+        "url": "https://www.channelnewsasia.com/world/germany-china-merz-xi-jinping-talks-beijing-5953371",
         "tag": "Macro"
       },
       {
-        "source": "PBS NewsHour",
-        "headline": "UK Parliamentary Speaker Tipped Off Police That Peter Mandelson Was a Flight Risk Before His Arrest",
-        "body": "The UK's Parliamentary Speaker alerted police that former EU trade commissioner and current diplomat Peter Mandelson posed a potential flight risk, ahead of his Monday arrest at his north London home on suspicion of misconduct in public office. The disclosure adds a significant procedural dimension to what is already one of the most politically charged arrests in recent British history. Mandelson's detention is likely to reverberate through UK financial and political circles given his decades at the intersection of government, business, and transatlantic trade.",
-        "url": "https://www.pbs.org/newshour/world/uk-parliamentary-speaker-tipped-off-police-over-mandelsons-possible-flight-risk",
+        "source": "The Irish Times",
+        "headline": "U.S. Treasury Opens Door to Venezuelan Oil Resales to Cuba as Rubio Begins Caribbean Tour",
+        "body": "The U.S. Treasury Department said it will authorise companies to apply for licences to resell Venezuelan oil to Cuba, reversing a supply cut that followed Washington's seizure of control over Venezuela's oil exports in January. Cuba lost its main crude supplier when the U.S. took over Venezuela's export flow, and Mexico — an interim substitute — also halted shipments in January. The move, timed to Secretary of State Marco Rubio's Caribbean visit, is conditional: transactions must support the Cuban private sector and cannot benefit Cuban military or government institutions.",
+        "url": "https://www.irishtimes.com/world/us/2026/02/25/us-to-allow-resale-of-venezuelan-oil-to-cuba/",
+        "tag": "Energy"
+      },
+      {
+        "source": "The Denver Post",
+        "headline": "Federal Judge Rules Trump's Third-Country Deportation Policy Unlawful, Grants 15-Day Stay",
+        "body": "U.S. District Judge Brian E. Murphy ruled Wednesday that the Trump administration's policy of deporting migrants to third countries with which they have no connection violates due process, finding that the policy 'extinguishes valid challenges by effecting removal before those challenges can be raised.' Murphy suspended his ruling for 15 days to allow a government appeal — the same case in which the Supreme Court's conservative majority previously paused his earlier decision, clearing a flight to South Sudan. The ruling adds fresh legal turbulence to an immigration enforcement agenda that already faces multiple active injunctions.",
+        "url": "https://www.denverpost.com/2026/02/25/immigration-deportation-south-sudan/",
         "tag": "Politics"
       },
       {
-        "source": "Business Insider",
-        "headline": "Puerto Vallarta Airbnb Host Sees Bookings Hold Despite Jalisco Violence — But Cancellations Are Arriving",
-        "body": "Lora Pope, a Canadian content creator managing three Airbnbs in Puerto Vallarta through an arbitrage model, says properties remain booked despite the recent Jalisco cartel violence, though cancellation messages have begun filtering in. Pope was in Mexico City during the explosions and spent Sunday advising guests to stay indoors, relying on filtered water stocks to keep them comfortable while grocery stores remained shuttered. The account illustrates the direct economic exposure of the short-term rental market to Mexico's security situation — a risk that formal balance sheets rarely capture in real time.",
-        "url": "https://www.businessinsider.com/airbnb-host-puerto-vallarta-tourism-picks-back-up-2026-2",
-        "tag": "Mexico"
+        "source": "The Punch",
+        "headline": "Nigeria's NRS Targets N40.7 Trillion in 2026 Revenue After Beating 2025 Goal by N3 Trillion",
+        "body": "Nigeria's National Revenue Service Executive Chairman Zacch Adedeji told the House of Representatives Appropriations Committee that the agency is targeting N40.7 trillion in combined tax, petroleum, and mineral revenue for 2026, up from N28.23 trillion actually collected in 2025 — which itself was N3 trillion above target. Growth was driven overwhelmingly by non-oil taxes, which came in N3.4 trillion above projection, while oil tax revenues missed by 5.2%. The 2026 target assumes oil production rising from 1.7 to 1.8 million barrels per day and reflects structural reforms transferring petroleum royalties to NRS.",
+        "url": "https://punchng.com/nrs-unveils-2026-revenue-roadmap-targets-n40-7tn/",
+        "tag": "Macro"
+      },
+      {
+        "source": "ZyCrypto",
+        "headline": "XRP Gains 8% as Bitcoin and Ethereum Sentiment Cools; $1,300 Targets Circulate",
+        "body": "XRP rose 8.19% in 24 hours to trade at $1.46, outperforming Bitcoin and Ethereum as on-chain analytics firm Santiment flagged that bullish commentary toward the two leading assets has dropped sharply from the prior week. Analyst ChartNerd identified $1.50 as the critical level for continuation toward $1.80, warning that failure there could see a retraction to $1.20–$1.30. More exuberant calls — including a Fibonacci extension target of $1,300 per coin — are circulating in retail communities, a reliable indicator that the speculative fringe is growing louder as fundamentals remain mixed.",
+        "url": "https://zycrypto.com/xrp-at-1300-crazy-optimism-fuels-unhinged-price-expectations-amid-btc-weakness/",
+        "tag": "Markets"
+      },
+      {
+        "source": "Commercial Observer",
+        "headline": "GO Residential REIT Acquires Three NYC Apartment Towers for $380.5 Million",
+        "body": "GO Residential REIT is under contract to buy Ivy Tower at 350 West 43rd Street from Friedman Management for $150.5 million, and two Hudson Yards towers — 411 and 444 West 35th Street — from Maddd Equities and Joy Construction for $230 million. The combined 624-unit portfolio was funded through cash and stock, with Newmark's Adam Spies and Doug Harmon representing sellers and now seeking at least 50% leverage on acquisition financing. The deals signal continued institutional appetite for New York multifamily assets despite elevated rate conditions.",
+        "url": "http://commercialobserver.com/2026/02/go-residential-reit-buys-three-new-york-city-apartments/",
+        "tag": "Markets"
+      },
+      {
+        "source": "ABC News (AU)",
+        "headline": "Australia's Chalmers Faces 'Inflation Denial' Charge as Election Pressure Mounts",
+        "body": "Australia's shadow treasurer accused Treasurer Jim Chalmers of being in 'denial' over inflation, sharpening pre-election economic lines as the Albanese government navigates an uncomfortable period of domestic controversy including a diplomatic spat over comments about activist Grace Tame. Mortgage rates reportedly hitting their lowest level since 2022 adds a complicating variable for the government's narrative heading into a pivotal political stretch. The inflation debate mirrors tensions in other developed economies where central bank credibility and cost-of-living politics are increasingly inseparable.",
+        "url": "https://www.abc.net.au/news/2026-02-26/federal-politics-live-blog-chalmers-inflation/106388618",
+        "tag": "Macro"
       }
     ],
     "quote": {
-      "text": "The problem with being a regulator is that you tend to be captured by the people you regulate.",
-      "attribution": "Paul Volcker, remarks to the Group of 30, 2012"
+      "text": "The market can stay irrational longer than you can stay solvent.",
+      "attribution": "John Maynard Keynes, attributed, circa 1930s"
     }
   },
   "market": {
@@ -73,8 +73,8 @@
       },
       {
         "label": "S&P 500",
-        "value": "6,912",
-        "change": "▲ 0.3%",
+        "value": "6,904",
+        "change": "▲ 0.2%",
         "direction": "up"
       },
       {
@@ -85,57 +85,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "71,119.77",
-        "change": "▼ 0.0%",
+        "value": "71,028.12",
+        "change": "▼ 0.2%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.2005",
+        "rate": "17.1900",
         "chg_1d": {
-          "text": "▲ 0.13%",
+          "text": "▲ 0.06%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.33%",
+          "text": "▼ 0.39%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2910",
+        "rate": "20.2856",
         "chg_1d": {
-          "text": "▲ 0.32%",
+          "text": "▲ 0.29%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.10%",
+          "text": "▼ 0.12%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.5716",
+        "rate": "12.5646",
         "chg_1d": {
-          "text": "▲ 0.26%",
+          "text": "▲ 0.21%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.29%",
+          "text": "▼ 0.34%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "117.6669",
+        "rate": "117.6293",
         "chg_1d": {
-          "text": "▼ 0.49%",
+          "text": "▼ 0.52%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 1.30%",
+          "text": "▼ 1.33%",
           "cls": "chg-down"
         }
       }
