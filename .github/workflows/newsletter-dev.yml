@@ -38,9 +38,18 @@ jobs:
 
       - name: Write subscribers file
         run: |
-          echo "$SUBSCRIBERS_CSV" > subscribers.csv
+          python3 -c "
+          import os
+          emails = os.environ['DEV_SUBSCRIBERS_CSV'].split(',')
+          with open('subscribers.csv', 'w') as f:
+              f.write('email,name,active\n')
+              for e in emails:
+                  e = e.strip()
+                  if e:
+                      f.write(f'{e},,true\n')
+          "
         env:
-          SUBSCRIBERS_CSV: ${{ secrets.DEV_SUBSCRIBERS_CSV }}
+          DEV_SUBSCRIBERS_CSV: ${{ secrets.DEV_SUBSCRIBERS_CSV }}
 
       - name: Run newsletter bot
         working-directory: bot
