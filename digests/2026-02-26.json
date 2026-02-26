@@ -1,66 +1,66 @@
 {
   "date": "2026-02-26",
   "digest": {
-    "editor_note": "Fellow Humans, markets are doing their best impression of a patient who was told the diagnosis was wrong — Nasdaq up 250 points Wednesday as Wall Street decided the Citrini AI doomsday report was, in the White House's words, 'science fiction.' Nvidia earnings after the bell will either validate the recovery or remind everyone why panic has a way of being early rather than wrong.",
+    "editor_note": "Fellow Humans, prediction markets are busy establishing their first case law this morning, with Kalshi fining an MrBeast editor for insider-trading YouTube outcomes while a separate $100,000 bet on a government alien disclosure sits unresolved and faintly terrifying. Meanwhile, the actual geopolitical news — Ukraine peace sequencing, Modi at the Knesset, cartels designated terrorists after El Mencho's death — is moving fast enough that the aliens story almost makes sense by comparison.",
     "sentiment": {
       "label": "Cautious",
-      "position": 52,
-      "context": "Equities rebounded sharply from Monday's AI-driven selloff, but Nvidia's post-close earnings and lingering macro uncertainty keep conviction limited."
+      "position": 42,
+      "context": "Geopolitical uncertainty across Ukraine, the Middle East, and US-Mexico cartel dynamics keeps markets in a watchful holding pattern, with no decisive risk catalyst in either direction."
     },
     "stories": [
       {
-        "source": "New York Post",
-        "headline": "Nasdaq Rebounds 250 Points as Wall Street Dismisses AI Unemployment 'Doomsday' Report",
-        "body": "The Nasdaq surged more than 250 points Wednesday, clawing back losses from a rout triggered by a Citrini Research essay warning that AI could push unemployment above 10% and crash the S&P 500 by 38% by June 2028. Pierre Yared, acting chair of the White House Council of Economic Advisers, called it 'science fiction,' while Citadel Securities argued current data shows no evidence AI will render labour obsolete. Nvidia, the sector's bellwether, reported earnings after the bell — the number that will determine whether this bounce has legs.",
-        "url": "https://nypost.com/2026/02/25/business/tech-stocks-shake-off-panic-over-ai-doomsday-scenario-where-unemployment-hits-10/",
+        "source": "Yahoo Entertainment / Reuters",
+        "headline": "Zelenskiy and Trump agree Ukraine talks should escalate to leaders' summit in March",
+        "body": "Following a phone call that included Steve Witkoff and Jared Kushner, Zelenskiy confirmed that trilateral US-Ukraine-Russia talks are set for early March, with the explicit goal of advancing to a presidential-level meeting. Ukraine is simultaneously negotiating a 'prosperity package' covering reconstruction financing, with Kyiv targeting $800 billion in public and private funds over a decade. The territorial question remains the core impasse, with Moscow and Kyiv still far apart.",
+        "url": "https://www.yahoo.com/news/articles/ukrainian-negotiators-meet-us-team-103259401.html",
+        "tag": "Macro"
+      },
+      {
+        "source": "WND / The Daily Signal",
+        "headline": "Rep. Chip Roy pushes bill to permanently codify cartel terrorist designations after El Mencho killing",
+        "body": "Following a US-led operation that killed Jalisco New Generation Cartel leader El Mencho, Rep. Chip Roy is pressing House colleagues to pass the Drug Cartel Terrorist Designation Act, which would enshrine Trump's executive order into statute. Violence in Puerto Vallarta has killed over 70 people since the operation, and the US Embassy has issued shelter-in-place guidance for Americans in parts of Mexico. Roy's argument: executive orders can be reversed by the next administration; legislation cannot.",
+        "url": "https://www.wnd.com/2026/02/chip-roy-pushes-terrorist-designation-mexican-drug-cartels/",
+        "tag": "Mexico"
+      },
+      {
+        "source": "Fortune",
+        "headline": "Larry Summers to resign from Harvard as Epstein document review continues",
+        "body": "Former Treasury Secretary Larry Summers will retire from Harvard at the end of the academic year, remaining on leave until then, after his name appeared hundreds of times in Justice Department Epstein file releases. Emails revealed Summers consulting Epstein on a personal relationship and using a racial slur in a separate exchange; Summers had previously called his association with Epstein 'a major error in judgement.' The resignation follows Nobel laureate Richard Axel's departure from Columbia, signaling that the Epstein document releases are still extracting institutional casualties.",
+        "url": "https://fortune.com/2026/02/25/larry-summers-to-resign-from-harvard-with-epstein-ties-under-review/",
+        "tag": "Politics"
+      },
+      {
+        "source": "Financial Post / CBS News",
+        "headline": "Kalshi fines MrBeast editor for insider trading, opens enforcement precedent for prediction markets",
+        "body": "Kalshi suspended editor Artem Kaptur for two years and fined him approximately $20,000 after he netted around $5,000 betting on MrBeast video outcomes using non-public information obtained through his job. In a separate action, former California gubernatorial candidate Kyle Langford received a five-year ban for betting $200 on his own candidacy. Kalshi has reported both cases to the CFTC and disclosed it has opened 200 insider trading investigations over the past year — a number that underscores how rapidly enforcement is scaling alongside the industry.",
+        "url": "https://financialpost.com/news/retail-marketing/e-commerce-solutions/kalshi-fines-mrbeast-employee-insider-trading",
         "tag": "Markets"
       },
       {
-        "source": "ABC News (AU)",
-        "headline": "ASX 200 Hits Fresh Record at 9,175 as Miners and Tech Lead; Qantas Drops 9.2%",
-        "body": "Australia's ASX 200 closed 0.5% higher at a new record of 9,175, buoyed by tech sentiment imported from Wall Street, strong commodity prices lifting Rio Tinto 3.6%, and a 10% surge in Ramsay Healthcare on solid results. Data centre operator Megaport led the index, gaining 12.6% after broker upgrades. Qantas fell 9.2% after posting a flat first-half profit, and energy stocks across the board — oil, gas, uranium, coal — retreated.",
-        "url": "https://www.abc.net.au/news/2026-02-26/asx-markets-business-news-live-updates/106389370",
+        "source": "The Atlantic",
+        "headline": "Nearly $200,000 bet on US alien disclosure triggers insider trading speculation on Kalshi",
+        "body": "A single trader placed two bets totalling close to $200,000 on Kalshi Monday night, wagering that the Trump administration will confirm alien life or technology exists by end of December — briefly pushing implied odds above one-in-three. The trades arrived days after any public alien-related news had subsided, with no congressional hearings or credible leaks circulating online at the time. Kalshi's own enforcement team is actively investigating insider trading across its platform, making this particular wager an uncomfortable data point.",
+        "url": "https://www.theatlantic.com/technology/2026/02/kalshi-aliens-insider-trading/686144/",
         "tag": "Markets"
-      },
-      {
-        "source": "New Zealand Herald",
-        "headline": "BNZ Reverses Mortgage Rate Hike, Cuts 5-Year Fixed Rate 40bps to 5.29%",
-        "body": "BNZ has cut its three-, four-, and five-year fixed home loan rates by 10–40 basis points, unwinding a hike it implemented less than a month ago. The reversal follows a more dovish-than-expected Reserve Bank OCR review, which pushed wholesale rates lower after markets had priced in a mid-year hike that never materialised. Westpac made similar cuts last week; the easing cycle in New Zealand mortgage markets is now clearly back in motion.",
-        "url": "https://www.nzherald.co.nz/business/mortgage-rate-u-turn-bnz-cuts-long-term-rates-3yr-loan-dips-back-under-5/P37Z4NGUPJDSTJR7BLG3FGWW7U/",
-        "tag": "Rates"
       },
       {
         "source": "Al Jazeera English",
-        "headline": "Modi Addresses Knesset on First Visit to Israel, Reaffirms 'Full Conviction' Support",
-        "body": "Indian Prime Minister Narendra Modi became the first Indian leader to address Israel's Knesset, declaring India stands with Israel 'firmly, with full conviction,' receiving a standing ovation despite India's domestic public opinion running sharply critical of Israeli operations in Gaza. The visit comes after India and Israel signed a bilateral investment treaty in September 2025 and against the backdrop of a $20.5bn arms trade between the two countries from 2020–2024. Netanyahu called Modi 'more than a friend, a brother,' underscoring the deepening strategic and economic alignment between the two nations.",
+        "headline": "Modi addresses Knesset, declares India stands with Israel 'with full conviction'",
+        "body": "In the first address by an Indian leader to Israel's parliament, Prime Minister Modi received a standing ovation and affirmed that India 'stands with Israel firmly' while condemning the October 7 attacks as 'barbaric.' The visit deepens a defence-heavy bilateral relationship: India spent $20.5 billion on Israeli weapons between 2020 and 2024, and the two countries signed a bilateral investment treaty in September 2025. Modi's alignment carries weight given that Indian public opinion has grown increasingly critical of Israel's Gaza campaign, which has killed at least 72,000 people.",
         "url": "https://www.aljazeera.com/news/2026/2/25/indias-modi-addresses-israeli-parliament-on-first-day-of-visit",
         "tag": "Politics"
       },
       {
-        "source": "New York Post",
-        "headline": "Casey Means Faces Senate Grilling Over Psilocybin, Vaccine Stance at Surgeon General Confirmation Hearing",
-        "body": "Trump's surgeon general nominee Dr. Casey Means faced pointed questioning from the Senate HELP Committee over FTC disclosure violations, her promotion of psilocybin-assisted therapy, and her vaccine positions. Sen. Chris Murphy cited complaints that Means failed to disclose financial ties to wellness brands she promoted on social media, a charge she denied. Means, co-author of the MAHA movement's flagship book and sister to an HHS senior advisor, is widely viewed as an unorthodox nominee who would extend RFK Jr.'s chronic disease agenda through the surgeon general's office.",
-        "url": "https://nypost.com/2026/02/25/us-news/surgeon-general-pick-casey-means-grilled-about-shrooms-and-hawking-maha-products-at-lively-senate-confirmation-hearing/",
-        "tag": "Politics"
-      },
-      {
-        "source": "TheWrap",
-        "headline": "MrBeast Editor Banned from Kalshi, Reported to CFTC for Insider Trading on Creator's YouTube Activity",
-        "body": "Artem Kaptur, an editor for MrBeast, has been banned for two years from prediction market platform Kalshi and fined $20,397 after the company found he used proprietary non-public information to make approximately $4,000 in bets on MrBeast-related event contracts in August and September 2025. Kalshi has reported the matter to the CFTC, marking one of the first significant insider-trading enforcement actions in the fast-growing retail prediction market space. Beast Industries has opened an independent investigation and criticised Kalshi for not sharing its findings before publishing Wednesday's disciplinary notice.",
-        "url": "https://www.thewrap.com/media-platforms/tv/mrbeast-insider-trading/",
-        "tag": "Markets"
-      },
-      {
-        "source": "New Zealand Herald",
-        "headline": "Sky TV Posts NZ$19.3m Half-Year Profit but Warns of Challenging Economy; Neon Subscribers Fall 17%",
-        "body": "New Zealand's Sky TV reported a 77% jump in net profit after tax to NZ$19.3m for the six months to December 31, boosted by its acquisition of free-to-air broadcaster Three for $1 and an $8.2m Optus satellite compensation payment. Excluding the Three deal benefits, operating revenue was down 1.3%, and Neon streaming subscribers fell 17% to 215,000. CEO Sophie Moloney flagged that 'economic conditions remain challenging in the near term' but said the company is positioned for earnings growth from FY27.",
-        "url": "https://www.nzherald.co.nz/business/media-insider/media-insider-sky-tv-half-year-result-strong-193m-profit-a-drop-in-neon-and-sky-box-customers-and-a-warning-that-economy-remains-challenging/premium/6XSCQFBIKFCMLIK45V4OEZZMUQ/",
-        "tag": "Markets"
+        "source": "The Punch",
+        "headline": "Tinubu extends Nigeria's raw shea nut export ban by one year through February 2027",
+        "body": "President Tinubu approved a one-year extension of the ban on raw shea nut exports, channelling supply through the Nigerian Commodity Exchange framework and withdrawing all existing waivers. The policy rationale is value-addition arbitrage: processed shea butter fetches 10 to 20 times the price of raw nuts in international markets. The Federal Ministry of Finance has been directed to open a dedicated NESS Support Window to finance domestic processing capacity.",
+        "url": "https://punchng.com/tinubu-extends-raw-shea-nut-export-ban-by-one-year/",
+        "tag": "Trade"
       }
     ],
     "quote": {
-      "text": "The market can stay irrational longer than you can stay solvent.",
-      "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
+      "text": "The markets are not an invention of Wall Street. They are a result of human nature — the desire to truck, barter, and exchange.",
+      "attribution": "Milton Friedman, Free to Choose, 1980"
     }
   },
   "market": {
@@ -73,8 +73,8 @@
       },
       {
         "label": "S&P 500",
-        "value": "6,908",
-        "change": "▲ 0.3%",
+        "value": "6,905",
+        "change": "▲ 0.2%",
         "direction": "up"
       },
       {
@@ -85,57 +85,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "71,139.61",
-        "change": "▼ 0.0%",
-        "direction": "down"
+        "value": "71,232.25",
+        "change": "▲ 0.1%",
+        "direction": "up"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.1820",
+        "rate": "17.1882",
         "chg_1d": {
-          "text": "▲ 0.02%",
+          "text": "▲ 0.05%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.43%",
+          "text": "▼ 0.40%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2943",
+        "rate": "20.2871",
         "chg_1d": {
-          "text": "▲ 0.33%",
+          "text": "▲ 0.30%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.08%",
+          "text": "▼ 0.12%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.5713",
+        "rate": "12.5643",
         "chg_1d": {
-          "text": "▲ 0.26%",
+          "text": "▲ 0.21%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.29%",
+          "text": "▼ 0.34%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "117.5403",
+        "rate": "117.5828",
         "chg_1d": {
-          "text": "▼ 0.60%",
+          "text": "▼ 0.56%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 1.40%",
+          "text": "▼ 1.37%",
           "cls": "chg-down"
         }
       }
@@ -143,7 +143,7 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "24°C",
+    "temp": "25°C",
     "high_low": "25°C / 7°C",
     "humidity": "Humidity 16%",
     "desc": "Clear skies"
