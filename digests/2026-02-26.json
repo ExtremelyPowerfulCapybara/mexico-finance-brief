@@ -1,141 +1,79 @@
 {
   "date": "2026-02-26",
   "digest": {
-    "editor_note": "Fellow Humans, Europe's diplomatic traffic to Beijing is becoming something of a pilgrimage: Macron went, Starmer went, and now Merz has made the trip, business delegation in tow, to tell Xi Jinping that the €90 billion trade deficit is 'not healthy' while simultaneously cheering a 120-aircraft Airbus order. Meanwhile, Washington is quietly licensing Venezuelan oil resales to a Cuba it helped starve of fuel — the kind of policy whiplash that passes for strategy these days.",
+    "editor_note": "Fellow Humans, markets are doing their best impression of a patient who was told the diagnosis was wrong — Nasdaq up 250 points Wednesday as Wall Street decided the Citrini AI doomsday report was, in the White House's words, 'science fiction.' Nvidia earnings after the bell will either validate the recovery or remind everyone why panic has a way of being early rather than wrong.",
     "sentiment": {
       "label": "Cautious",
-      "position": 42,
-      "context": "Geopolitical hedging dominates — Europe pivoting toward China amid U.S. friction, courts blocking Trump deportation policy, and crypto markets struggling to hold momentum — pointing to a market environment that is watchful rather than directional."
+      "position": 52,
+      "context": "Equities rebounded sharply from Monday's AI-driven selloff, but Nvidia's post-close earnings and lingering macro uncertainty keep conviction limited."
     },
     "stories": [
       {
-        "source": "CNA",
-        "headline": "Merz Courts Xi in Beijing, Airbus Deal in Hand, Trade Deficit Looming Over Talks",
-        "body": "German Chancellor Friedrich Merz visited Beijing on Feb. 25 with a large business delegation, telling President Xi Jinping he wants to deepen the 'comprehensive strategic partnership' — even as Germany's trade deficit with China hit €90 billion last year, up fourfold since 2020. China announced a 120-aircraft Airbus order as a goodwill gesture, but Merz was blunt that the imbalance driven by Chinese overcapacity is 'not healthy.' The visit follows Macron and Starmer to Beijing and signals Europe's deliberate hedge against a deteriorating relationship with Washington.",
-        "url": "https://www.channelnewsasia.com/world/germany-china-merz-xi-jinping-talks-beijing-5953371",
-        "tag": "Macro"
-      },
-      {
-        "source": "The Irish Times",
-        "headline": "U.S. Treasury Opens Door to Venezuelan Oil Resales to Cuba as Rubio Begins Caribbean Tour",
-        "body": "The U.S. Treasury Department said it will authorise companies to apply for licences to resell Venezuelan oil to Cuba, reversing a supply cut that followed Washington's seizure of control over Venezuela's oil exports in January. Cuba lost its main crude supplier when the U.S. took over Venezuela's export flow, and Mexico — an interim substitute — also halted shipments in January. The move, timed to Secretary of State Marco Rubio's Caribbean visit, is conditional: transactions must support the Cuban private sector and cannot benefit Cuban military or government institutions.",
-        "url": "https://www.irishtimes.com/world/us/2026/02/25/us-to-allow-resale-of-venezuelan-oil-to-cuba/",
-        "tag": "Energy"
-      },
-      {
-        "source": "The Denver Post",
-        "headline": "Federal Judge Rules Trump's Third-Country Deportation Policy Unlawful, Grants 15-Day Stay",
-        "body": "U.S. District Judge Brian E. Murphy ruled Wednesday that the Trump administration's policy of deporting migrants to third countries with which they have no connection violates due process, finding that the policy 'extinguishes valid challenges by effecting removal before those challenges can be raised.' Murphy suspended his ruling for 15 days to allow a government appeal — the same case in which the Supreme Court's conservative majority previously paused his earlier decision, clearing a flight to South Sudan. The ruling adds fresh legal turbulence to an immigration enforcement agenda that already faces multiple active injunctions.",
-        "url": "https://www.denverpost.com/2026/02/25/immigration-deportation-south-sudan/",
-        "tag": "Politics"
-      },
-      {
-        "source": "The Punch",
-        "headline": "Nigeria's NRS Targets N40.7 Trillion in 2026 Revenue After Beating 2025 Goal by N3 Trillion",
-        "body": "Nigeria's National Revenue Service Executive Chairman Zacch Adedeji told the House of Representatives Appropriations Committee that the agency is targeting N40.7 trillion in combined tax, petroleum, and mineral revenue for 2026, up from N28.23 trillion actually collected in 2025 — which itself was N3 trillion above target. Growth was driven overwhelmingly by non-oil taxes, which came in N3.4 trillion above projection, while oil tax revenues missed by 5.2%. The 2026 target assumes oil production rising from 1.7 to 1.8 million barrels per day and reflects structural reforms transferring petroleum royalties to NRS.",
-        "url": "https://punchng.com/nrs-unveils-2026-revenue-roadmap-targets-n40-7tn/",
-        "tag": "Macro"
-      },
-      {
-        "source": "ZyCrypto",
-        "headline": "XRP Gains 8% as Bitcoin and Ethereum Sentiment Cools; $1,300 Targets Circulate",
-        "body": "XRP rose 8.19% in 24 hours to trade at $1.46, outperforming Bitcoin and Ethereum as on-chain analytics firm Santiment flagged that bullish commentary toward the two leading assets has dropped sharply from the prior week. Analyst ChartNerd identified $1.50 as the critical level for continuation toward $1.80, warning that failure there could see a retraction to $1.20–$1.30. More exuberant calls — including a Fibonacci extension target of $1,300 per coin — are circulating in retail communities, a reliable indicator that the speculative fringe is growing louder as fundamentals remain mixed.",
-        "url": "https://zycrypto.com/xrp-at-1300-crazy-optimism-fuels-unhinged-price-expectations-amid-btc-weakness/",
-        "tag": "Markets"
-      },
-      {
-        "source": "Commercial Observer",
-        "headline": "GO Residential REIT Acquires Three NYC Apartment Towers for $380.5 Million",
-        "body": "GO Residential REIT is under contract to buy Ivy Tower at 350 West 43rd Street from Friedman Management for $150.5 million, and two Hudson Yards towers — 411 and 444 West 35th Street — from Maddd Equities and Joy Construction for $230 million. The combined 624-unit portfolio was funded through cash and stock, with Newmark's Adam Spies and Doug Harmon representing sellers and now seeking at least 50% leverage on acquisition financing. The deals signal continued institutional appetite for New York multifamily assets despite elevated rate conditions.",
-        "url": "http://commercialobserver.com/2026/02/go-residential-reit-buys-three-new-york-city-apartments/",
+        "source": "New York Post",
+        "headline": "Nasdaq Rebounds 250 Points as Wall Street Dismisses AI Unemployment 'Doomsday' Report",
+        "body": "The Nasdaq surged more than 250 points Wednesday, clawing back losses from a rout triggered by a Citrini Research essay warning that AI could push unemployment above 10% and crash the S&P 500 by 38% by June 2028. Pierre Yared, acting chair of the White House Council of Economic Advisers, called it 'science fiction,' while Citadel Securities argued current data shows no evidence AI will render labour obsolete. Nvidia, the sector's bellwether, reported earnings after the bell — the number that will determine whether this bounce has legs.",
+        "url": "https://nypost.com/2026/02/25/business/tech-stocks-shake-off-panic-over-ai-doomsday-scenario-where-unemployment-hits-10/",
         "tag": "Markets"
       },
       {
         "source": "ABC News (AU)",
-        "headline": "Australia's Chalmers Faces 'Inflation Denial' Charge as Election Pressure Mounts",
-        "body": "Australia's shadow treasurer accused Treasurer Jim Chalmers of being in 'denial' over inflation, sharpening pre-election economic lines as the Albanese government navigates an uncomfortable period of domestic controversy including a diplomatic spat over comments about activist Grace Tame. Mortgage rates reportedly hitting their lowest level since 2022 adds a complicating variable for the government's narrative heading into a pivotal political stretch. The inflation debate mirrors tensions in other developed economies where central bank credibility and cost-of-living politics are increasingly inseparable.",
-        "url": "https://www.abc.net.au/news/2026-02-26/federal-politics-live-blog-chalmers-inflation/106388618",
-        "tag": "Macro"
+        "headline": "ASX 200 Hits Fresh Record at 9,175 as Miners and Tech Lead; Qantas Drops 9.2%",
+        "body": "Australia's ASX 200 closed 0.5% higher at a new record of 9,175, buoyed by tech sentiment imported from Wall Street, strong commodity prices lifting Rio Tinto 3.6%, and a 10% surge in Ramsay Healthcare on solid results. Data centre operator Megaport led the index, gaining 12.6% after broker upgrades. Qantas fell 9.2% after posting a flat first-half profit, and energy stocks across the board — oil, gas, uranium, coal — retreated.",
+        "url": "https://www.abc.net.au/news/2026-02-26/asx-markets-business-news-live-updates/106389370",
+        "tag": "Markets"
+      },
+      {
+        "source": "New Zealand Herald",
+        "headline": "BNZ Reverses Mortgage Rate Hike, Cuts 5-Year Fixed Rate 40bps to 5.29%",
+        "body": "BNZ has cut its three-, four-, and five-year fixed home loan rates by 10–40 basis points, unwinding a hike it implemented less than a month ago. The reversal follows a more dovish-than-expected Reserve Bank OCR review, which pushed wholesale rates lower after markets had priced in a mid-year hike that never materialised. Westpac made similar cuts last week; the easing cycle in New Zealand mortgage markets is now clearly back in motion.",
+        "url": "https://www.nzherald.co.nz/business/mortgage-rate-u-turn-bnz-cuts-long-term-rates-3yr-loan-dips-back-under-5/P37Z4NGUPJDSTJR7BLG3FGWW7U/",
+        "tag": "Rates"
+      },
+      {
+        "source": "Al Jazeera English",
+        "headline": "Modi Addresses Knesset on First Visit to Israel, Reaffirms 'Full Conviction' Support",
+        "body": "Indian Prime Minister Narendra Modi became the first Indian leader to address Israel's Knesset, declaring India stands with Israel 'firmly, with full conviction,' receiving a standing ovation despite India's domestic public opinion running sharply critical of Israeli operations in Gaza. The visit comes after India and Israel signed a bilateral investment treaty in September 2025 and against the backdrop of a $20.5bn arms trade between the two countries from 2020–2024. Netanyahu called Modi 'more than a friend, a brother,' underscoring the deepening strategic and economic alignment between the two nations.",
+        "url": "https://www.aljazeera.com/news/2026/2/25/indias-modi-addresses-israeli-parliament-on-first-day-of-visit",
+        "tag": "Politics"
+      },
+      {
+        "source": "New York Post",
+        "headline": "Casey Means Faces Senate Grilling Over Psilocybin, Vaccine Stance at Surgeon General Confirmation Hearing",
+        "body": "Trump's surgeon general nominee Dr. Casey Means faced pointed questioning from the Senate HELP Committee over FTC disclosure violations, her promotion of psilocybin-assisted therapy, and her vaccine positions. Sen. Chris Murphy cited complaints that Means failed to disclose financial ties to wellness brands she promoted on social media, a charge she denied. Means, co-author of the MAHA movement's flagship book and sister to an HHS senior advisor, is widely viewed as an unorthodox nominee who would extend RFK Jr.'s chronic disease agenda through the surgeon general's office.",
+        "url": "https://nypost.com/2026/02/25/us-news/surgeon-general-pick-casey-means-grilled-about-shrooms-and-hawking-maha-products-at-lively-senate-confirmation-hearing/",
+        "tag": "Politics"
+      },
+      {
+        "source": "TheWrap",
+        "headline": "MrBeast Editor Banned from Kalshi, Reported to CFTC for Insider Trading on Creator's YouTube Activity",
+        "body": "Artem Kaptur, an editor for MrBeast, has been banned for two years from prediction market platform Kalshi and fined $20,397 after the company found he used proprietary non-public information to make approximately $4,000 in bets on MrBeast-related event contracts in August and September 2025. Kalshi has reported the matter to the CFTC, marking one of the first significant insider-trading enforcement actions in the fast-growing retail prediction market space. Beast Industries has opened an independent investigation and criticised Kalshi for not sharing its findings before publishing Wednesday's disciplinary notice.",
+        "url": "https://www.thewrap.com/media-platforms/tv/mrbeast-insider-trading/",
+        "tag": "Markets"
+      },
+      {
+        "source": "New Zealand Herald",
+        "headline": "Sky TV Posts NZ$19.3m Half-Year Profit but Warns of Challenging Economy; Neon Subscribers Fall 17%",
+        "body": "New Zealand's Sky TV reported a 77% jump in net profit after tax to NZ$19.3m for the six months to December 31, boosted by its acquisition of free-to-air broadcaster Three for $1 and an $8.2m Optus satellite compensation payment. Excluding the Three deal benefits, operating revenue was down 1.3%, and Neon streaming subscribers fell 17% to 215,000. CEO Sophie Moloney flagged that 'economic conditions remain challenging in the near term' but said the company is positioned for earnings growth from FY27.",
+        "url": "https://www.nzherald.co.nz/business/media-insider/media-insider-sky-tv-half-year-result-strong-193m-profit-a-drop-in-neon-and-sky-box-customers-and-a-warning-that-economy-remains-challenging/premium/6XSCQFBIKFCMLIK45V4OEZZMUQ/",
+        "tag": "Markets"
       }
     ],
     "quote": {
       "text": "The market can stay irrational longer than you can stay solvent.",
-      "attribution": "John Maynard Keynes, attributed, circa 1930s"
-    "editor_note": "Fellow Humans, the Federal Reserve has quietly handed bank supervision to a man who spent four decades representing the banks he'll now police — and the market, characteristically, has other things to worry about. Circle's stablecoin revenue is up 77%, Reliance and Meta are formalizing their AI joint venture, and somewhere in Albuquerque a streamer is planning to put pizza on a roof. We cover what matters.",
-    "sentiment": {
-      "label": "Cautious",
-      "position": 42,
-      "context": "A mix of regulatory capture concerns at the Fed, crypto resilience amid broader market softness, and AI investment uncertainty keeps sentiment in cautious territory."
-    },
-    "stories": [
-      {
-        "source": "Common Dreams / Reuters / Politico",
-        "headline": "Fed Appoints Career Wall Street Lawyer Randall Guynn to Head Bank Supervision",
-        "body": "The Federal Reserve board has named Randall Guynn — a nearly 40-year veteran of Davis Polk & Wardwell's Financial Institutions Group — as director of supervision and regulation, effective March 8. The appointment breaks a tradition dating to at least 1977 of filling the role with career Fed staff. Critics, including Better Markets CEO Dennis Kelleher, have described the move as regulatory capture in plain sight, arguing that Guynn's entire professional history was spent representing the very institutions he will now oversee.",
-        "url": "https://www.commondreams.org/news/fed-wall-street-lobbyist",
-        "tag": "Rates"
-      },
-      {
-        "source": "Fortune",
-        "headline": "Circle Posts 77% Revenue Surge, USDC Circulation Up 72% Year-on-Year",
-        "body": "Circle reported fourth-quarter revenue growth of 77% year-on-year, sending shares up 23% in morning trading despite a prolonged slump in broader crypto markets. USDC in circulation hit a market cap of approximately $75 billion, with Visa and Polymarket among new infrastructure adopters. Analysts at CFRA warn that sustaining performance will require navigating Federal Reserve rate compression and a rapidly crowding stablecoin competitive landscape.",
-        "url": "https://fortune.com/2026/02/25/circle-shares-surge-after-surprise-earnings-beat-shows-strong-demand-for-stablecoins/",
-        "tag": "Markets"
-      },
-      {
-        "source": "The Indian Express",
-        "headline": "Meta Takes 30% Stake in Reliance's AI Arm for Rs 256.6 Crore",
-        "body": "Reliance Industries has completed the stake allotment in Reliance Enterprise Intelligence Ltd, with Facebook Overseas acquiring 30% for Rs 256.6 crore and Reliance Intelligence holding the remaining 70% for Rs 596.6 crore. The joint venture, first announced at RIL's August 2025 AGM, will deploy Meta's open-source Llama models across enterprise AI services leveraging Reliance's distribution network. The deal closes as Nifty IT has shed roughly 20% in February alone and questions mount over whether enterprise AI investments will generate meaningful returns.",
-        "url": "https://indianexpress.com/article/business/companies/reliance-industries-restructures-ai-arm-meta-picks-up-30-stake-10552551/",
-        "tag": "Markets"
-      },
-      {
-        "source": "GlobeNewswire / Hagens Berman",
-        "headline": "Fermi Inc. Faces Securities Class Action Over AI Data Center IPO Misrepresentations",
-        "body": "Law firm Hagens Berman has issued a deadline notice for the March 6 lead plaintiff filing in a securities class action against Fermi Inc. (NASDAQ: FRMI), alleging the company misrepresented demand for its 'Project Matador' AI data center campus during its October 2025 IPO. The complaint centers on a December 12 disclosure that the campus's anchor tenant had terminated a $150 million construction financing agreement, triggering a near-34% single-day stock decline. The case adds to growing scrutiny over AI infrastructure companies that raised capital on bullish demand projections.",
-        "url": "https://www.globenewswire.com/news-release/2026/02/25/3244937/32716/en/FRMI-9-DAY-DEADLINE-ALERT-Fermi-Inc-Facing-Securities-Class-Action-Over-IPO-And-Subsequent-Disclosures-Hagens-Berman.html",
-        "tag": "Markets"
-      },
-      {
-        "source": "PYMNTS",
-        "headline": "Luxury Retailers Recalibrate as High Earners Show Paycheck-to-Paycheck Stress",
-        "body": "PYMNTS Intelligence data reveals that nearly half of U.S. consumers earning above $100,000 annually report living paycheck to paycheck, with more than a third of those earning above $200,000 saying the same. Luxury brands are responding by emphasizing value narratives and expanding buy-now-pay-later options, a structural shift that complicates the traditional assumption of affluent consumers as a reliable demand floor. Moody's Analytics Chief Economist Mark Zandi notes the spending gap between income cohorts 'has never been wider,' concentrating consumption growth at the very top of the income distribution.",
-        "url": "https://www.pymnts.com/news/retail/2026/luxury-retailers-rethink-pricing-as-wealthy-consumers-tighten-budgets/",
-        "tag": "Macro"
-      },
-      {
-        "source": "Business Insider",
-        "headline": "Jalisco Violence Hits Puerto Vallarta Airbnb Hosts as Cancellations Begin",
-        "body": "An Airbnb operator managing three properties in Puerto Vallarta reports receiving cancellations following the recent outbreak of cartel violence in Jalisco, which forced guests to shelter in place and drew international travel advisories. The host, who manages a mix of owned and arbitrage rentals generating at least half her income, says bookings remain in place for now but the medium-term pipeline is uncertain. The episode is an early data point on how security incidents in Mexico translate into measurable tourism and short-term rental revenue losses.",
-        "url": "https://www.businessinsider.com/airbnb-host-puerto-vallarta-tourism-picks-back-up-2026-2",
-        "tag": "Mexico"
-      },
-      {
-        "source": "PBS NewsHour",
-        "headline": "UK Parliamentary Speaker Alerted Police to Peter Mandelson Flight Risk Before Arrest",
-        "body": "Peter Mandelson was arrested at his north London home on suspicion of misconduct in public office, with the UK parliamentary speaker having tipped off police over concerns he might flee. Mandelson, a senior figure in New Labour and former EU trade commissioner, has held prominent advisory and diplomatic roles in recent years. The arrest adds political turbulence to the UK's institutional landscape at a moment when its transatlantic relationships are already under pressure.",
-        "url": "https://www.pbs.org/newshour/world/uk-parliamentary-speaker-tipped-off-police-over-mandelsons-possible-flight-risk",
-        "tag": "Politics"
-      }
-    ],
-    "quote": {
-      "text": "The stock market is filled with individuals who know the price of everything, but the value of nothing.",
-      "attribution": "Philip Fisher, Common Stocks and Uncommon Profits, 1958"
+      "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
     }
   },
   "market": {
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.20",
-        "change": "▲ 0.1%",
+        "value": "17.18",
+        "change": "▲ 0.0%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,904",
-        "change": "▲ 0.2%",
-        "value": "6,910",
+        "value": "6,908",
         "change": "▲ 0.3%",
         "direction": "up"
       },
@@ -147,81 +85,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "71,028.12",
-        "change": "▼ 0.2%",
-        "value": "71,066.20",
-        "change": "▼ 0.1%",
+        "value": "71,139.61",
+        "change": "▼ 0.0%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.1900",
+        "rate": "17.1820",
         "chg_1d": {
-          "text": "▲ 0.06%",
+          "text": "▲ 0.02%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.39%",
-        "rate": "17.2010",
-        "chg_1d": {
-          "text": "▲ 0.13%",
-          "cls": "chg-up"
-        },
-        "chg_1w": {
-          "text": "▼ 0.32%",
+          "text": "▼ 0.43%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2856",
+        "rate": "20.2943",
         "chg_1d": {
-          "text": "▲ 0.29%",
+          "text": "▲ 0.33%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.12%",
-        "rate": "20.2924",
-        "chg_1d": {
-          "text": "▲ 0.32%",
-          "cls": "chg-up"
-        },
-        "chg_1w": {
-          "text": "▼ 0.09%",
+          "text": "▼ 0.08%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.5646",
-        "rate": "12.5733",
+        "rate": "12.5713",
         "chg_1d": {
-          "text": "▲ 0.21%",
+          "text": "▲ 0.26%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.34%",
+          "text": "▼ 0.29%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "117.6293",
+        "rate": "117.5403",
         "chg_1d": {
-          "text": "▼ 0.52%",
+          "text": "▼ 0.60%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 1.33%",
-        "rate": "117.6566",
-        "chg_1d": {
-          "text": "▼ 0.50%",
-          "cls": "chg-down"
-        },
-        "chg_1w": {
-          "text": "▼ 1.30%",
+          "text": "▼ 1.40%",
           "cls": "chg-down"
         }
       }
@@ -231,7 +145,7 @@
     "city": "Mexico City",
     "temp": "24°C",
     "high_low": "25°C / 7°C",
-    "humidity": "Humidity 17%",
+    "humidity": "Humidity 16%",
     "desc": "Clear skies"
   }
 }
