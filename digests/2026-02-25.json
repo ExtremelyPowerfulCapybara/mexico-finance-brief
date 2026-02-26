@@ -1,80 +1,73 @@
 {
   "date": "2026-02-25",
   "digest": {
-    "editor_note": "Fellow Humans, the macro picture today is a tug-of-war between sticky inflation and fragile confidence. Goolsbee is pumping the brakes on rate cuts, consumers are barely off the mat after January's confidence collapse, and Russia's war economy is being cited as a slow-motion structural implosion. The Fed patience trade is back, and markets are pricing in discomfort. — Ed.",
+    "editor_note": "The Supreme Court handed Trump a 6-3 rebuke on tariffs Friday, and tonight he faces some of those same justices at the State of the Union — which promises to be the most uncomfortable black-robe situation since John Roberts had to swear in the man who later called him a lapdog. Meanwhile, cartel violence in Mexico is now an insurance story, Samsung is printing money on AI memory chips, and Waymo is quietly becoming the only autonomous vehicle company that actually moves people from point A to point B.",
     "sentiment": {
       "label": "Cautious",
-      "position": 38,
-      "context": "Fed officials signaling a hold on cuts, sub-80 consumer expectations for 13 consecutive months, and a deteriorating Russia macro backdrop all point to a market sitting on its hands."
+      "position": 42,
+      "context": "Tariff authority struck down by the Supreme Court, cartel-driven economic risk in Mexico, and Iran's domestic unrest keep risk appetite suppressed despite bright spots in AI and semiconductors."
     },
     "stories": [
       {
-        "source": "CNBC via Slashdot",
-        "headline": "Fed's Goolsbee signals rate-cut pause as inflation remains 'not good enough'",
-        "body": "Chicago Fed President Austan Goolsbee said Tuesday he wants to see further inflation progress before supporting additional rate cuts, adding that a recent tariff court ruling could help ease price pressures. The comment reinforces the Fed's wait-and-see posture heading into spring, with markets already pushing back rate-cut expectations. For rate-sensitive assets, this is another reminder that the easing cycle is not on autopilot.",
-        "url": "https://slashdot.org/firehose.pl?op=view&id=180854194",
-        "tag": "Rates"
-      },
-      {
-        "source": "ABC News",
-        "headline": "US consumer confidence edges up to 91.2 in February but recession warning gauge stays below 80 for 13th straight month",
-        "body": "The Conference Board's consumer confidence index rose to 91.2 from a revised 89 in January, offering modest relief after a sharp drop. However, the expectations sub-index — a recession leading indicator — rose only to 72, still well below the critical 80 threshold for the 13th consecutive month. Trade and politics are top of mind for respondents, while the labor market added just 584,000 jobs in all of 2025, roughly one-quarter of 2024's pace.",
-        "url": "https://abcnews.com/Business/wireStory/us-consumer-confidence-improves-modestly-february-after-cratering-130448864",
-        "tag": "Macro"
-      },
-      {
-        "source": "The New York Times via Slashdot",
-        "headline": "Russia's war-remade economy is sowing the seeds of a long-term structural slump",
-        "body": "A wave of analysis — from the NYT to Reuters Breakingviews to The Economist — converges on the same conclusion: Russia's pivot to a war footing has inflated short-term activity while gutting long-term productive capacity. Elevated military spending is crowding out investment, labor shortages are deepening, and inflation is running hot. The longer the war continues, the steeper the eventual economic unwind.",
-        "url": "https://slashdot.org/firehose.pl?op=view&id=180854202",
-        "tag": "Macro"
-      },
-      {
-        "source": "Commercial Observer",
-        "headline": "Veris Residential agrees to $3.4B take-private deal led by Affinius Capital",
-        "body": "The multifamily REIT — formerly Mack-Cali Realty — has agreed to be acquired by an Affinius Capital and Vista Hill Partners consortium in an all-cash deal expected to close in Q2 2026, pending shareholder approval. Financing includes a $2.08 billion senior secured bridge loan. The deal caps a five-year pivot away from suburban office assets and validates the multifamily thesis in the current rate environment.",
-        "url": "http://commercialobserver.com/2026/02/veris-private-deal-affinius/",
-        "tag": "Markets"
-      },
-      {
-        "source": "Yahoo Finance",
-        "headline": "Bear case on RXO: Truck broker may be near zero cash, raising solvency concerns",
-        "body": "Analyst Keith Dalrymple via DF Research argues RXO, Inc. faces a severe liquidity crisis after Q4 2025, estimating cash balances have likely hit zero following negative free cash flow of roughly $25 million. Gross margins are estimated to have declined 130–225 basis points sequentially as spot freight rates surged faster than RXO could reprice contracts, with EBITDA falling well short of management's $20–30 million guidance. Accounting opacity — including the abrupt departure of the Chief Accounting Officer — adds another layer of concern to an already fragile balance sheet.",
-        "url": "https://finance.yahoo.com/news/rxo-inc-rxo-bear-case-151643299.html",
-        "tag": "Markets"
+        "source": "Yahoo Entertainment / Reuters",
+        "headline": "Trump faces Supreme Court justices tonight after 6-3 tariff ruling rebuked his emergency powers",
+        "body": "President Trump will deliver his State of the Union address Tuesday night with at least some of the justices who struck down his sweeping tariffs in attendance. The 6-3 ruling found Trump exceeded congressional authority by invoking emergency law to impose the tariffs; Trump responded by calling conservative justices Gorsuch and Barrett 'an embarrassment to their families.' The institutional tension between the executive and judiciary is now fully public and on-camera.",
+        "url": "https://www.yahoo.com/news/articles/trumps-state-union-supreme-court-160425611.html",
+        "tag": "Politics"
       },
       {
         "source": "Insurance Journal",
-        "headline": "Waymo launches commercial driverless service in Houston, Dallas, and San Antonio",
-        "body": "Alphabet's Waymo began no-safety-driver robotaxi service Tuesday in Texas's three largest cities, each initially covering 25 to 60 square miles. The rollout advances the company's target of entering more than 20 cities in 2026, despite New York Governor Kathy Hochul pulling a proposal last week to allow driverless rides in the state. Avis Budget Group is set to take over Dallas fleet management later in the year under a previously disclosed deal.",
-        "url": "https://www.insurancejournal.com/news/southcentral/2026/02/24/859398.htm",
+        "headline": "AM Best warns Mexico cartel violence threatens tourism-dependent economy and insurance segment",
+        "body": "Cartel violence triggered by the killing of Jalisco New Generation Cartel leader 'El Mencho' disrupted Puerto Vallarta and Guadalajara airports over the weekend, rattling a tourism sector that accounts for roughly 10% of Mexico's GDP. AM Best, which already holds a negative outlook on Mexico's insurance segment, warns that continued unrest compounds existing headwinds including a slowing economy and a VAT rule change that could wipe out 40% of insurers' expected 2025 net profits. Reinsurers had been returning to the market on price; that calculus may now shift.",
+        "url": "https://www.insurancejournal.com/news/international/2026/02/24/859409.htm",
+        "tag": "Mexico"
+      },
+      {
+        "source": "Ibtimes.com.au",
+        "headline": "Samsung hits record 200,000 won on HBM4 shipments; stock up 60% year-to-date",
+        "body": "Samsung Electronics closed at an all-time high of 200,000 won on February 24, up 3.63% on the day and more than 60% since January 1, driven by the commencement of commercial HBM4 chip shipments delivering 11.7 Gbps transfer speeds — a 22% improvement over its HBM3E predecessor. Q4 2025 operating profit tripled year-over-year to a record 20.1 trillion won, with the semiconductor division alone generating 16.4 trillion won in operating income. HBM sales are forecast to more than triple in 2026 as Samsung aggressively targets Nvidia-powered AI infrastructure customers where rival SK Hynix has dominated.",
+        "url": "https://www.ibtimes.com.au/samsung-electronics-stock-surges-record-highs-ai-memory-boom-hbm4-shipments-drive-gains-1862011",
         "tag": "Markets"
       },
       {
-        "source": "BusinessLine",
-        "headline": "Indian banks face narrowing margins as deposits migrate to mutual funds, equities, and gold",
-        "body": "A structural shift is underway in Indian banking as digitally savvy retail depositors move savings into higher-yielding alternatives, forcing banks to replace cheap retail deposits with expensive wholesale funding at rates of 7.5% or more, compressing net interest margins. Physical cash withdrawals surged to ₹4.4 trillion in the 14 months to January 2026 — three times the prior year's pace — and RBI dollar-selling operations are permanently removing rupee liquidity. The asset-liability mismatch risk is prompting calls for a fundamental recalibration of the Indian banking business model.",
-        "url": "https://www.thehindubusinessline.com/opinion/banks-grapple-with-changing-savings-behaviour/article70672248.ece",
+        "source": "ABC News",
+        "headline": "Waymo expands robotaxi service to 10 U.S. markets, targets 1 million weekly trips by end of 2026",
+        "body": "Waymo announced Tuesday it will deploy robotaxis in Dallas, Houston, San Antonio, and Orlando, bringing its total footprint to 10 major U.S. metropolitan markets and more than 400,000 weekly trips currently across its existing six cities. The expansion widens Waymo's lead over Tesla and Amazon-owned Zoox, which remain in limited testing phases. Waymo, valued at $126 billion after a recent $16 billion fundraise, is also targeting London as its first international market.",
+        "url": "https://abcnews.com/Technology/wireStory/waymos-robotaxis-now-dispatched-10-major-us-markets-130446191",
+        "tag": "Markets"
+      },
+      {
+        "source": "Al Jazeera English",
+        "headline": "Iran government warns students of 'red lines' as campus clashes enter fourth day",
+        "body": "Iranian government spokesperson Fatemeh Mohajerani acknowledged students 'have wounds in their hearts' following thousands of killings during January protests, but warned that burning the national flag crosses state red lines. Clashes between anti-establishment students and Basij-affiliated pro-state groups continued Tuesday at universities in Tehran, Shiraz, and Isfahan, with disciplinary cases opened against protesters and some institutions moving classes fully online through the end of the Iranian calendar year on March 20. The unrest adds geopolitical uncertainty to an already volatile regional backdrop.",
+        "url": "https://www.aljazeera.com/news/2026/2/24/irans-government-stresses-red-lines-as-students-protest-in-universities",
         "tag": "Macro"
+      },
+      {
+        "source": "The Times of India / Economic Times",
+        "headline": "Anthropic launches 10 enterprise AI plug-ins with LSEG and Slack, targeting finance and HR workflows",
+        "body": "Anthropic is expanding Claude beyond IT and software with 10 new enterprise plug-ins developed alongside partners including LSEG and Slack, aimed at automating workflows in investment banking, HR, and other sectors. The company frames the tools as augmenting rather than replacing workers, a positioning that has become standard industry cover as competitive pressure on legacy software vendors — think Salesforce, ServiceNow, Workday — intensifies. The move signals that the AI-versus-enterprise-software displacement trade is moving from thesis to product.",
+        "url": "https://economictimes.indiatimes.com/news/international/us/anthropic-claude-ai-targets-new-industries-with-10-fresh-ai-use-cases-after-it-software-cybersecurity-stocks-crash/articleshow/128756198.cms",
+        "tag": "Markets"
       }
     ],
     "quote": {
-      "text": "Price stability is the precondition for achieving maximum employment on a sustained basis.",
-      "attribution": "Jerome Powell, Federal Reserve Press Conference, March 2023"
+      "text": "The market can stay irrational longer than you can stay solvent.",
+      "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
     }
   },
   "market": {
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.22",
-        "change": "▼ 0.2%",
+        "value": "17.15",
+        "change": "▼ 0.6%",
         "direction": "down"
       },
       {
         "label": "S&P 500",
-        "value": "6,921",
-        "change": "▲ 1.2%",
+        "value": "6,927",
+        "change": "▲ 1.3%",
         "direction": "up"
       },
       {
@@ -85,57 +78,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "70,866.54",
-        "change": "▼ 0.1%",
+        "value": "70,819.94",
+        "change": "▼ 0.2%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.2213",
+        "rate": "17.1502",
         "chg_1d": {
-          "text": "▼ 0.22%",
+          "text": "▼ 0.63%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▲ 0.07%",
-          "cls": "chg-up"
+          "text": "▼ 0.34%",
+          "cls": "chg-down"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.3042",
+        "rate": "20.2492",
         "chg_1d": {
-          "text": "▼ 0.25%",
+          "text": "▼ 0.52%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▲ 0.10%",
-          "cls": "chg-up"
+          "text": "▼ 0.18%",
+          "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.5734",
+        "rate": "12.5416",
         "chg_1d": {
-          "text": "▼ 0.23%",
+          "text": "▼ 0.49%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▲ 0.08%",
-          "cls": "chg-up"
+          "text": "▼ 0.17%",
+          "cls": "chg-down"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "118.2879",
+        "rate": "117.7996",
         "chg_1d": {
-          "text": "▼ 0.79%",
+          "text": "▼ 1.20%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.50%",
+          "text": "▼ 0.91%",
           "cls": "chg-down"
         }
       }
@@ -143,9 +136,9 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "14°C",
-    "high_low": "22°C / 6°C",
-    "humidity": "Humidity 29%",
+    "temp": "16°C",
+    "high_low": "23°C / 5°C",
+    "humidity": "Humidity 26%",
     "desc": "Clear skies"
   }
 }
