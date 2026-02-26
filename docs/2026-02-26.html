@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell &mdash; February 26, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  /* Header */
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* Ticker */
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  /* Weather */
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  /* Editor note */
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Divider */
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  /* Sentiment gauge */
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  /* Stories */
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  /* Currency table */
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+  .up   { color: #4a9e6a; font-size: 11px; }
+  .down { color: #b84a3a; font-size: 11px; }
+  .flat { color: #aab4bc; font-size: 11px; }
+
+  /* Quote */
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  /* Week in review */
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  /* Footer */
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .tick-label { font-size: 7px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .editor-note p { font-size: 14px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .story-headline { font-size: 17px; }
+    .currency { padding: 20px 20px; }
+    .currency-table { font-size: 11px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>THURSDAY, FEBRUARY 26, 2026</span>
+      <span>ISSUE NO. 4</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.21</span>
+        <span class="tick-up">▲ 0.2%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,939</span>
+        <span class="tick-up">▲ 0.7%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.84%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">71,144.35</span>
+        <span class="tick-up">▲ 0.0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">24°C / 7°C</span>
+    <span class="weather-humidity">Humidity 52%</span>
+    <span class="weather-desc">Clear skies</span>
+  </div>
+
+  <div class="editor-note">
+    <p>Nvidia earnings dominated the pre-market mood, with Wall Street opening higher as AI nerves briefly subsided — a reminder that one company's quarterly results now functions as a macro event. Meanwhile, the US Supreme Court's rollback of reciprocal tariffs is quietly reshaping global trade flows, with Indian exporters already fielding renewed American enquiries. Fellow Humans, the system is not broken; it is just running on vibes and semiconductor guidance.</p>
+    <div class="editor-sig">&mdash; Buck N. Yields, Assistant to the Regional Hegemon</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label">Market Sentiment</span>
+      <span class="sentiment-reading cautious">Cautious</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:48%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span>Risk-Off</span><span>Neutral</span><span>Risk-On</span>
+    </div>
+    <div class="sentiment-context">Markets edged higher on Nvidia earnings optimism, but tariff confusion, geopolitical military posturing around Taiwan, and commodity market concentration concerns keep the overall tone firmly in wait-and-see territory.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">The Times of India / Economic Times</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">Wall Street Opens Higher Ahead of Nvidia Earnings as AI Trade Stabilizes</div>
+  <div class="story-body">US equities opened in the green on Wednesday as investors repositioned ahead of Nvidia's closely watched earnings report, following a volatile stretch driven by AI valuation concerns and tariff uncertainty. The session reflected cautious optimism rather than conviction, with the tape essentially holding its breath for one company's quarterly numbers. Nvidia has become the single most important earnings event in the market — a status that says everything about how concentrated the AI trade remains.</div>
+  <a href="https://economictimes.indiatimes.com/markets/us-stocks/news/us-stock-market-today-us-stocks-open-higher-in-run-up-to-nvidia-earnings-as-ai-worries-abate/articleshow/128785884.cms" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">BusinessLine</span>
+    <span class="story-tag">Trade</span>
+  </div>
+  <div class="story-headline">Indian Exporters Report Surge in US Enquiries After Supreme Court Strikes Down Reciprocal Tariffs</div>
+  <div class="story-body">Indian garment, leather, and engineering goods exporters are reporting a revival in American buyer interest following the US Supreme Court's decision to strike down Trump's reciprocal tariff regime, which had imposed levies as high as 50% and pushed Indian exports to the US down 21% year-on-year to $6.6 billion in January 2026. A replacement 10% global surcharge is now in effect for 150 days, but buyers remain confused as Trump's social media posts threaten a 15% rate not yet formally enacted. The refund pipeline for exporters who entered tariff-sharing agreements with US counterparts adds a further layer of complexity to what is, charitably, a chaotic trade policy environment.</div>
+  <a href="https://www.thehindubusinessline.com/economy/indian-exporters-report-rise-in-us-enquiries-after-court-verdict-on-tariffs/article70676029.ece" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">ABC News (AU)</span>
+    <span class="story-tag">Politics</span>
+  </div>
+  <div class="story-headline">Japan Sets 2031 Deadline for Missile Deployment on Island 110km From Taiwan</div>
+  <div class="story-body">Japan's Defence Minister Shinjiro Koizumi confirmed Tokyo will deploy surface-to-air missiles on Yonaguni Island — located just 110 kilometres east of Taiwan — by March 2031, the first time a specific timeline has been attached to the plan announced in 2022. The announcement comes as Beijing tightens export restrictions on dozens of Japanese defence-linked firms and its top diplomat accuses Tokyo of seeking to "revive militarism." Prime Minister Takaichi has already suggested Japan could intervene militarily in any attack on Taiwan, a remark that prompted China to discourage nationals from visiting Japan, damaging a tourism sector the economy depends on.</div>
+  <a href="https://www.abc.net.au/news/2026-02-26/japan-to-deploy-missile-systems-on-island-near-taiwan-by-2031/106389506" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Financial Post</span>
+    <span class="story-tag">Energy</span>
+  </div>
+  <div class="story-headline">US Fracking Fleets Heading Abroad as Shale Activity Stalls, Tightening Domestic Supply Outlook</div>
+  <div class="story-body">Nearly one-fifth of the fracking capacity deployed in the Permian Basin as recently as last year has been shipped to Argentina and Australia by providers including Halliburton, Calfrac, and Liberty Energy, as US shale activity remains depressed and service companies seek margin recovery overseas. Primary Vision estimates up to a quarter of idle US fracking inventory — roughly 8 million horsepower — could be exported within the next two years, a shift that risks straining domestic oilfield service availability if producers attempt to ramp production quickly. The longer-term read: US shale's famed swing-producer status may be structurally slower to activate next cycle than markets currently assume.</div>
+  <a href="https://financialpost.com/pmn/business-pmn/us-frack-fleets-find-new-life-abroad-as-shale-slump-persists" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Crypto Briefing</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">UK FCA Selects Revolut and Three Others for Stablecoin Regulatory Sandbox</div>
+  <div class="story-body">The Financial Conduct Authority has chosen Revolut, Monee Financial Technologies, ReStabilise, and VVTX from 20 applicants to trial stablecoin services in live market conditions under proposed rules, with testing beginning Q1 2026. The sandbox covers payments, wholesale settlements, and digital asset trading, with findings intended to inform the UK's final stablecoin framework — a process that has dragged through multiple consultation rounds covering issuance, custody, and market abuse. Full regulatory requirements won't take effect until October 2027, which gives the industry a runway but also signals that the UK, despite its ambitions as a crypto hub, is moving deliberately rather than quickly.</div>
+  <a href="https://cryptobriefing.com/fca‑taps‑monee‑restabilise‑revolut‑vvtx‑test‑stablecoin‑services/" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Freerepublic.com / The Guardian</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">Big Four Meatpackers Face Antitrust Scrutiny as Beef Prices Soar and Plants Close</div>
+  <div class="story-body">The four companies controlling 85% of US beef processing — Tyson, JBS, Cargill, and National Beef — are under mounting legal and political pressure as consumer prices surge while Tyson simultaneously closed a 3,200-worker plant in Nebraska despite reporting a 6.5% profit increase. Tyson has already settled for $55 million with consumers and $87 million with small retailers over price-fixing allegations, while lawsuits from Kroger, McDonald's, Target, and Sysco pile up. The DOJ inquiry requested by Trump on Truth Social has yet to produce visible action, and the structural point stands: 85% market concentration in a critical food input is a policy problem that predates the current administration by decades.</div>
+  <a href="https://freerepublic.com/focus/f-news/4368241/posts" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">BusinessLine</span>
+    <span class="story-tag">Trade</span>
+  </div>
+  <div class="story-headline">India's Textile Exporters Blindsided by 50% Cut to RoDTEP Export Subsidy Rates</div>
+  <div class="story-body">India's DGFT has slashed RoDTEP rebate rates and value caps by 50% across all HS lines with immediate effect, shocking manmade fibre and technical textile exporters already navigating global demand uncertainty and recent US tariff disruption. MATEXIL Chairman Shaleen Toshniwal called the move "a big surprise and huge shock," noting the scheme was designed to neutralise embedded taxes and maintain export competitiveness. The RoDTEP review committee was still deliberating when the cut was implemented, meaning exporters had no transition period — an own-goal in trade policy timing that compounds external headwinds.</div>
+  <a href="https://www.thehindubusinessline.com/companies/matexil-urges-govt-to-reverse-rodtep-rate-cut/article70675566.ece" class="read-more">Read more &rarr;</a>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title">Currency Table</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th>Pair</th><th>Rate</th><th style="text-align:right;">Day</th><th style="text-align:right;">Week</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.2132</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.20%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.25%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.3272</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.49%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.5740</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.28%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.27%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>117.7452</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.42%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.23%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="quote-text">The market can remain irrational longer than you can remain solvent.</div>
+    <div class="quote-attr">John Maynard Keynes, A Tract on Monetary Reform, 1923</div>
+  </div>
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by">by Adrian</span>
+  </div>
+
+</div>
+</body>
+</html>
