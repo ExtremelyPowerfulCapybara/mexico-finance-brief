@@ -40,15 +40,23 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
       - name: Write subscribers file
         run: |
-          echo "$SUBSCRIBERS_CSV" > subscribers.csv
+          python3 -c "
+          import os
+          emails = os.environ['SUBSCRIBERS_CSV'].split(',')
+          with open('subscribers.csv', 'w') as f:
+              f.write('email,name,active\n')
+              for e in emails:
+                  e = e.strip()
+                  if e:
+                      f.write(f'{e},,true\n')
+          "
         env:
           SUBSCRIBERS_CSV: ${{ secrets.SUBSCRIBERS_CSV }}
 
+#And make sure your `SUBSCRIBERS_CSV` secret is set to just comma-separated emails like:  you@gmail.com,friend@gmail.com
+ 
       - name: Run newsletter bot
         working-directory: bot
         env:
