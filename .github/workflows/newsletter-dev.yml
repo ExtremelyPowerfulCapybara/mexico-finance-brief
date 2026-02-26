@@ -36,6 +36,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Write subscribers file
+        run: |
+          echo "$SUBSCRIBERS_CSV" > subscribers.csv
+        env:
+          SUBSCRIBERS_CSV: ${{ secrets.DEV_SUBSCRIBERS_CSV }}
+
       - name: Run newsletter bot
         working-directory: bot
         env:
