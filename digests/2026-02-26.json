@@ -61,6 +61,66 @@
     "quote": {
       "text": "The market can remain irrational longer than you can remain solvent.",
       "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
+    "editor_note": "Fellow Humans, prediction markets are busy establishing their first case law this morning, with Kalshi fining an MrBeast editor for insider-trading YouTube outcomes while a separate $100,000 bet on a government alien disclosure sits unresolved and faintly terrifying. Meanwhile, the actual geopolitical news — Ukraine peace sequencing, Modi at the Knesset, cartels designated terrorists after El Mencho's death — is moving fast enough that the aliens story almost makes sense by comparison.",
+    "sentiment": {
+      "label": "Cautious",
+      "position": 42,
+      "context": "Geopolitical uncertainty across Ukraine, the Middle East, and US-Mexico cartel dynamics keeps markets in a watchful holding pattern, with no decisive risk catalyst in either direction."
+    },
+    "stories": [
+      {
+        "source": "Yahoo Entertainment / Reuters",
+        "headline": "Zelenskiy and Trump agree Ukraine talks should escalate to leaders' summit in March",
+        "body": "Following a phone call that included Steve Witkoff and Jared Kushner, Zelenskiy confirmed that trilateral US-Ukraine-Russia talks are set for early March, with the explicit goal of advancing to a presidential-level meeting. Ukraine is simultaneously negotiating a 'prosperity package' covering reconstruction financing, with Kyiv targeting $800 billion in public and private funds over a decade. The territorial question remains the core impasse, with Moscow and Kyiv still far apart.",
+        "url": "https://www.yahoo.com/news/articles/ukrainian-negotiators-meet-us-team-103259401.html",
+        "tag": "Macro"
+      },
+      {
+        "source": "WND / The Daily Signal",
+        "headline": "Rep. Chip Roy pushes bill to permanently codify cartel terrorist designations after El Mencho killing",
+        "body": "Following a US-led operation that killed Jalisco New Generation Cartel leader El Mencho, Rep. Chip Roy is pressing House colleagues to pass the Drug Cartel Terrorist Designation Act, which would enshrine Trump's executive order into statute. Violence in Puerto Vallarta has killed over 70 people since the operation, and the US Embassy has issued shelter-in-place guidance for Americans in parts of Mexico. Roy's argument: executive orders can be reversed by the next administration; legislation cannot.",
+        "url": "https://www.wnd.com/2026/02/chip-roy-pushes-terrorist-designation-mexican-drug-cartels/",
+        "tag": "Mexico"
+      },
+      {
+        "source": "Fortune",
+        "headline": "Larry Summers to resign from Harvard as Epstein document review continues",
+        "body": "Former Treasury Secretary Larry Summers will retire from Harvard at the end of the academic year, remaining on leave until then, after his name appeared hundreds of times in Justice Department Epstein file releases. Emails revealed Summers consulting Epstein on a personal relationship and using a racial slur in a separate exchange; Summers had previously called his association with Epstein 'a major error in judgement.' The resignation follows Nobel laureate Richard Axel's departure from Columbia, signaling that the Epstein document releases are still extracting institutional casualties.",
+        "url": "https://fortune.com/2026/02/25/larry-summers-to-resign-from-harvard-with-epstein-ties-under-review/",
+        "tag": "Politics"
+      },
+      {
+        "source": "Financial Post / CBS News",
+        "headline": "Kalshi fines MrBeast editor for insider trading, opens enforcement precedent for prediction markets",
+        "body": "Kalshi suspended editor Artem Kaptur for two years and fined him approximately $20,000 after he netted around $5,000 betting on MrBeast video outcomes using non-public information obtained through his job. In a separate action, former California gubernatorial candidate Kyle Langford received a five-year ban for betting $200 on his own candidacy. Kalshi has reported both cases to the CFTC and disclosed it has opened 200 insider trading investigations over the past year — a number that underscores how rapidly enforcement is scaling alongside the industry.",
+        "url": "https://financialpost.com/news/retail-marketing/e-commerce-solutions/kalshi-fines-mrbeast-employee-insider-trading",
+        "tag": "Markets"
+      },
+      {
+        "source": "The Atlantic",
+        "headline": "Nearly $200,000 bet on US alien disclosure triggers insider trading speculation on Kalshi",
+        "body": "A single trader placed two bets totalling close to $200,000 on Kalshi Monday night, wagering that the Trump administration will confirm alien life or technology exists by end of December — briefly pushing implied odds above one-in-three. The trades arrived days after any public alien-related news had subsided, with no congressional hearings or credible leaks circulating online at the time. Kalshi's own enforcement team is actively investigating insider trading across its platform, making this particular wager an uncomfortable data point.",
+        "url": "https://www.theatlantic.com/technology/2026/02/kalshi-aliens-insider-trading/686144/",
+        "tag": "Markets"
+      },
+      {
+        "source": "Al Jazeera English",
+        "headline": "Modi addresses Knesset, declares India stands with Israel 'with full conviction'",
+        "body": "In the first address by an Indian leader to Israel's parliament, Prime Minister Modi received a standing ovation and affirmed that India 'stands with Israel firmly' while condemning the October 7 attacks as 'barbaric.' The visit deepens a defence-heavy bilateral relationship: India spent $20.5 billion on Israeli weapons between 2020 and 2024, and the two countries signed a bilateral investment treaty in September 2025. Modi's alignment carries weight given that Indian public opinion has grown increasingly critical of Israel's Gaza campaign, which has killed at least 72,000 people.",
+        "url": "https://www.aljazeera.com/news/2026/2/25/indias-modi-addresses-israeli-parliament-on-first-day-of-visit",
+        "tag": "Politics"
+      },
+      {
+        "source": "The Punch",
+        "headline": "Tinubu extends Nigeria's raw shea nut export ban by one year through February 2027",
+        "body": "President Tinubu approved a one-year extension of the ban on raw shea nut exports, channelling supply through the Nigerian Commodity Exchange framework and withdrawing all existing waivers. The policy rationale is value-addition arbitrage: processed shea butter fetches 10 to 20 times the price of raw nuts in international markets. The Federal Ministry of Finance has been directed to open a dedicated NESS Support Window to finance domestic processing capacity.",
+        "url": "https://punchng.com/tinubu-extends-raw-shea-nut-export-ban-by-one-year/",
+        "tag": "Trade"
+      }
+    ],
+    "quote": {
+      "text": "The markets are not an invention of Wall Street. They are a result of human nature — the desire to truck, barter, and exchange.",
+      "attribution": "Milton Friedman, Free to Choose, 1980"
     }
   },
   "market": {
@@ -74,6 +134,7 @@
       {
         "label": "S&P 500",
         "value": "6,907",
+        "value": "6,905",
         "change": "▲ 0.2%",
         "direction": "up"
       },
@@ -87,6 +148,8 @@
         "label": "IPC BMV",
         "value": "71,171.93",
         "change": "▲ 0.0%",
+        "value": "71,232.25",
+        "change": "▲ 0.1%",
         "direction": "up"
       }
     ],
@@ -100,6 +163,13 @@
         },
         "chg_1w": {
           "text": "▼ 0.42%",
+        "rate": "17.1882",
+        "chg_1d": {
+          "text": "▲ 0.05%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.40%",
           "cls": "chg-down"
         }
       },
@@ -112,12 +182,20 @@
         },
         "chg_1w": {
           "text": "▼ 0.14%",
+        "rate": "20.2871",
+        "chg_1d": {
+          "text": "▲ 0.30%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.12%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
         "rate": "12.5730",
+        "rate": "12.5643",
         "chg_1d": {
           "text": "▲ 0.28%",
           "cls": "chg-up"
@@ -136,6 +214,13 @@
         },
         "chg_1w": {
           "text": "▼ 1.38%",
+        "rate": "117.5828",
+        "chg_1d": {
+          "text": "▼ 0.56%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 1.37%",
           "cls": "chg-down"
         }
       }
@@ -143,7 +228,7 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "24°C",
+    "temp": "25°C",
     "high_low": "25°C / 7°C",
     "humidity": "Humidity 16%",
     "desc": "Clear skies"

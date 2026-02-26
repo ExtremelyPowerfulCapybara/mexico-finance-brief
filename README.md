@@ -1,6 +1,6 @@
-# Mexico Finance Brief
+# News Brief
 
-Automated daily financial newsletter for Mexico City. Fetches news, summarizes with Claude, sends email, and publishes a pretty archive to GitHub Pages — fully automatic, no server needed.
+Automated daily financial newsletter. Fetches news, summarizes with Claude, sends email, and publishes a pretty archive to GitHub Pages.
 
 ---
 
@@ -15,16 +15,6 @@ Every weekday at 7 AM Mexico City time, GitHub Actions:
 5. Saves a pretty HTML version to `archive/`
 6. Commits and pushes back to the repo — GitHub Pages updates automatically
 
----
-
-## One-time setup
-
-### 1. Fork or clone this repo
-
-```bash
-git clone https://github.com/YOUR_USERNAME/mexico-finance-brief.git
-cd mexico-finance-brief
-```
 
 ### 2. Enable GitHub Pages
 
