@@ -40,6 +40,9 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
       - name: Write subscribers file
         run: |
           python3 -c "
@@ -55,7 +58,6 @@ jobs:
         env:
           SUBSCRIBERS_CSV: ${{ secrets.SUBSCRIBERS_CSV }}
 
-#And make sure your `SUBSCRIBERS_CSV` secret is set to just comma-separated emails like:  you@gmail.com,friend@gmail.com
  
       - name: Run newsletter bot
         working-directory: bot
