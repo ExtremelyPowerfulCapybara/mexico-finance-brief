@@ -61,6 +61,66 @@
     "quote": {
       "text": "The market can stay irrational longer than you can stay solvent.",
       "attribution": "John Maynard Keynes, attributed, circa 1930s"
+    "editor_note": "Fellow Humans, the Federal Reserve has quietly handed bank supervision to a man who spent four decades representing the banks he'll now police — and the market, characteristically, has other things to worry about. Circle's stablecoin revenue is up 77%, Reliance and Meta are formalizing their AI joint venture, and somewhere in Albuquerque a streamer is planning to put pizza on a roof. We cover what matters.",
+    "sentiment": {
+      "label": "Cautious",
+      "position": 42,
+      "context": "A mix of regulatory capture concerns at the Fed, crypto resilience amid broader market softness, and AI investment uncertainty keeps sentiment in cautious territory."
+    },
+    "stories": [
+      {
+        "source": "Common Dreams / Reuters / Politico",
+        "headline": "Fed Appoints Career Wall Street Lawyer Randall Guynn to Head Bank Supervision",
+        "body": "The Federal Reserve board has named Randall Guynn — a nearly 40-year veteran of Davis Polk & Wardwell's Financial Institutions Group — as director of supervision and regulation, effective March 8. The appointment breaks a tradition dating to at least 1977 of filling the role with career Fed staff. Critics, including Better Markets CEO Dennis Kelleher, have described the move as regulatory capture in plain sight, arguing that Guynn's entire professional history was spent representing the very institutions he will now oversee.",
+        "url": "https://www.commondreams.org/news/fed-wall-street-lobbyist",
+        "tag": "Rates"
+      },
+      {
+        "source": "Fortune",
+        "headline": "Circle Posts 77% Revenue Surge, USDC Circulation Up 72% Year-on-Year",
+        "body": "Circle reported fourth-quarter revenue growth of 77% year-on-year, sending shares up 23% in morning trading despite a prolonged slump in broader crypto markets. USDC in circulation hit a market cap of approximately $75 billion, with Visa and Polymarket among new infrastructure adopters. Analysts at CFRA warn that sustaining performance will require navigating Federal Reserve rate compression and a rapidly crowding stablecoin competitive landscape.",
+        "url": "https://fortune.com/2026/02/25/circle-shares-surge-after-surprise-earnings-beat-shows-strong-demand-for-stablecoins/",
+        "tag": "Markets"
+      },
+      {
+        "source": "The Indian Express",
+        "headline": "Meta Takes 30% Stake in Reliance's AI Arm for Rs 256.6 Crore",
+        "body": "Reliance Industries has completed the stake allotment in Reliance Enterprise Intelligence Ltd, with Facebook Overseas acquiring 30% for Rs 256.6 crore and Reliance Intelligence holding the remaining 70% for Rs 596.6 crore. The joint venture, first announced at RIL's August 2025 AGM, will deploy Meta's open-source Llama models across enterprise AI services leveraging Reliance's distribution network. The deal closes as Nifty IT has shed roughly 20% in February alone and questions mount over whether enterprise AI investments will generate meaningful returns.",
+        "url": "https://indianexpress.com/article/business/companies/reliance-industries-restructures-ai-arm-meta-picks-up-30-stake-10552551/",
+        "tag": "Markets"
+      },
+      {
+        "source": "GlobeNewswire / Hagens Berman",
+        "headline": "Fermi Inc. Faces Securities Class Action Over AI Data Center IPO Misrepresentations",
+        "body": "Law firm Hagens Berman has issued a deadline notice for the March 6 lead plaintiff filing in a securities class action against Fermi Inc. (NASDAQ: FRMI), alleging the company misrepresented demand for its 'Project Matador' AI data center campus during its October 2025 IPO. The complaint centers on a December 12 disclosure that the campus's anchor tenant had terminated a $150 million construction financing agreement, triggering a near-34% single-day stock decline. The case adds to growing scrutiny over AI infrastructure companies that raised capital on bullish demand projections.",
+        "url": "https://www.globenewswire.com/news-release/2026/02/25/3244937/32716/en/FRMI-9-DAY-DEADLINE-ALERT-Fermi-Inc-Facing-Securities-Class-Action-Over-IPO-And-Subsequent-Disclosures-Hagens-Berman.html",
+        "tag": "Markets"
+      },
+      {
+        "source": "PYMNTS",
+        "headline": "Luxury Retailers Recalibrate as High Earners Show Paycheck-to-Paycheck Stress",
+        "body": "PYMNTS Intelligence data reveals that nearly half of U.S. consumers earning above $100,000 annually report living paycheck to paycheck, with more than a third of those earning above $200,000 saying the same. Luxury brands are responding by emphasizing value narratives and expanding buy-now-pay-later options, a structural shift that complicates the traditional assumption of affluent consumers as a reliable demand floor. Moody's Analytics Chief Economist Mark Zandi notes the spending gap between income cohorts 'has never been wider,' concentrating consumption growth at the very top of the income distribution.",
+        "url": "https://www.pymnts.com/news/retail/2026/luxury-retailers-rethink-pricing-as-wealthy-consumers-tighten-budgets/",
+        "tag": "Macro"
+      },
+      {
+        "source": "Business Insider",
+        "headline": "Jalisco Violence Hits Puerto Vallarta Airbnb Hosts as Cancellations Begin",
+        "body": "An Airbnb operator managing three properties in Puerto Vallarta reports receiving cancellations following the recent outbreak of cartel violence in Jalisco, which forced guests to shelter in place and drew international travel advisories. The host, who manages a mix of owned and arbitrage rentals generating at least half her income, says bookings remain in place for now but the medium-term pipeline is uncertain. The episode is an early data point on how security incidents in Mexico translate into measurable tourism and short-term rental revenue losses.",
+        "url": "https://www.businessinsider.com/airbnb-host-puerto-vallarta-tourism-picks-back-up-2026-2",
+        "tag": "Mexico"
+      },
+      {
+        "source": "PBS NewsHour",
+        "headline": "UK Parliamentary Speaker Alerted Police to Peter Mandelson Flight Risk Before Arrest",
+        "body": "Peter Mandelson was arrested at his north London home on suspicion of misconduct in public office, with the UK parliamentary speaker having tipped off police over concerns he might flee. Mandelson, a senior figure in New Labour and former EU trade commissioner, has held prominent advisory and diplomatic roles in recent years. The arrest adds political turbulence to the UK's institutional landscape at a moment when its transatlantic relationships are already under pressure.",
+        "url": "https://www.pbs.org/newshour/world/uk-parliamentary-speaker-tipped-off-police-over-mandelsons-possible-flight-risk",
+        "tag": "Politics"
+      }
+    ],
+    "quote": {
+      "text": "The stock market is filled with individuals who know the price of everything, but the value of nothing.",
+      "attribution": "Philip Fisher, Common Stocks and Uncommon Profits, 1958"
     }
   },
   "market": {
@@ -75,6 +135,8 @@
         "label": "S&P 500",
         "value": "6,904",
         "change": "▲ 0.2%",
+        "value": "6,910",
+        "change": "▲ 0.3%",
         "direction": "up"
       },
       {
@@ -87,6 +149,8 @@
         "label": "IPC BMV",
         "value": "71,028.12",
         "change": "▼ 0.2%",
+        "value": "71,066.20",
+        "change": "▼ 0.1%",
         "direction": "down"
       }
     ],
@@ -100,6 +164,13 @@
         },
         "chg_1w": {
           "text": "▼ 0.39%",
+        "rate": "17.2010",
+        "chg_1d": {
+          "text": "▲ 0.13%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.32%",
           "cls": "chg-down"
         }
       },
@@ -112,12 +183,20 @@
         },
         "chg_1w": {
           "text": "▼ 0.12%",
+        "rate": "20.2924",
+        "chg_1d": {
+          "text": "▲ 0.32%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.09%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
         "rate": "12.5646",
+        "rate": "12.5733",
         "chg_1d": {
           "text": "▲ 0.21%",
           "cls": "chg-up"
@@ -136,6 +215,13 @@
         },
         "chg_1w": {
           "text": "▼ 1.33%",
+        "rate": "117.6566",
+        "chg_1d": {
+          "text": "▼ 0.50%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 1.30%",
           "cls": "chg-down"
         }
       }
