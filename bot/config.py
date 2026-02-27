@@ -24,7 +24,7 @@ SUBSCRIBERS = [s.strip() for s in _subs_env.split(",") if s.strip()]
 # ── Newsletter identity (safe to commit) ─────
 NEWSLETTER_NAME    = "The Opening Bell"
 NEWSLETTER_TAGLINE = "Context before the noise"
-AUTHOR_NAME        = "Adrian"
+AUTHOR_NAME        = "Los 3"
 
 # ── Rotating pen names ────────────────────────
 AUTHOR_NAMES = [
