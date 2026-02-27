@@ -56,13 +56,9 @@ def fetch_tickers() -> list[dict]:
     """
     results = []
     for label, symbol in TICKER_SYMBOLS:
-        if symbol is None:
-            # Wire Banxico for CETES, skip anything else with no symbol
-            if "CETES" in label:
-                results.append(fetch_cetes())
-            else:
-                results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
-            continue
+     if symbol is None:
+        results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
+        continue
         try:
             url  = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
             headers = {"User-Agent": "Mozilla/5.0"}
@@ -74,7 +70,7 @@ def fetch_tickers() -> list[dict]:
             pct_chg   = ((price - prev) / prev * 100) if prev else 0
             direction = "up" if pct_chg >= 0 else "down"
 
-            if "MXN" in label or "IPC" in label:
+            if "IBEX" in label or "DAX" in label:
                 val_str = f"{price:,.2f}"
             elif label == "S&P 500":
                 val_str = f"{price:,.0f}"
@@ -204,7 +200,7 @@ def fetch_weather() -> dict:
             f"?latitude={WEATHER_LAT}&longitude={WEATHER_LON}"
             f"&current=temperature_2m,relative_humidity_2m,weather_code"
             f"&daily=temperature_2m_max,temperature_2m_min"
-            f"&timezone=America/Mexico_City&forecast_days=1"
+            f"&timezone=Europe/Madrid&forecast_days=1"
         )
         data    = requests.get(url, timeout=8).json()
         current = data["current"]
