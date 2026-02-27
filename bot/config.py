@@ -24,7 +24,7 @@ SUBSCRIBERS = [s.strip() for s in _subs_env.split(",") if s.strip()]
 # ── Newsletter identity (safe to commit) ─────
 NEWSLETTER_NAME    = "The Opening Bell"
 NEWSLETTER_TAGLINE = "Context before the noise"
-AUTHOR_NAME        = "Adrian"
+AUTHOR_NAME        = "Los 3"
 
 # ── Rotating pen names ────────────────────────
 AUTHOR_NAMES = [
@@ -83,26 +83,26 @@ AUTHOR_TITLES = [
 ]
 
 # ── News preferences ──────────────────────────
-TOPICS                 = ["finance", "economy", "Mexico", "trade", "markets"]
-LANGUAGE               = "en"
-MAX_ARTICLES_PER_TOPIC = 5
-MAX_ARTICLE_CHARS      = 3000
+TOPICS = ["Spain economy", "Spain finance", "euro markets", "Spain trade", "economia España"]
+LANGUAGE               = "es"
+MAX_ARTICLES_PER_TOPIC = 7
+MAX_ARTICLE_CHARS      = 8092
 
 # ── Market tickers (Yahoo Finance symbols) ────
 TICKER_SYMBOLS = [
-    ("USD/MXN",   "MXN=X"),
+    ("EUR/USD",   "EURUSD=X"),
     ("S&P 500",   "^GSPC"),
-    ("CETES 28D", None),    # placeholder — no free API available
-    ("IPC BMV",   "^MXX"),
+    ("IBEX 35",   "^IBEX"),
+    ("DAX",       "^GDAXI"),
 ]
 
 # ── Currency table ────────────────────────────
-CURRENCY_PAIRS = ["USD", "EUR", "CAD", "CNY"]
+CURRENCY_PAIRS = ["USD", "GBP", "CHF", "JPY"]
 
 # ── Weather (Open-Meteo, no API key needed) ───
-WEATHER_LAT  = 19.4326
-WEATHER_LON  = -99.1332
-WEATHER_CITY = "Mexico City"
+WEATHER_LAT  = 40.4168
+WEATHER_LON  = -3.7038
+WEATHER_CITY = "Madrid"
 
 # ── Storage paths ─────────────────────────────
 # Paths are relative to the repo root, not bot/
