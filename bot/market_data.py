@@ -70,7 +70,7 @@ def fetch_tickers() -> list[dict]:
             pct_chg   = ((price - prev) / prev * 100) if prev else 0
             direction = "up" if pct_chg >= 0 else "down"
 
-            if "IBEX" in label or "DAX" in label:
+            if "IBEX" in label or "DAX" in label or "Stoxx" in label:
                 val_str = f"{price:,.2f}"
             elif label == "S&P 500":
                 val_str = f"{price:,.0f}"
