@@ -20,7 +20,8 @@ def summarize_news(articles: list[dict]) -> dict:
     """
     news_text = ""
     for i, a in enumerate(articles, 1):
-        news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n"
+        content = a['content'][:1500] if a['content'] else ""
+        news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{content}\n\n"
 
     prompt = f"""You are a sharp financial news editor producing a daily morning briefing. Address the reader as "Fellow Humans" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
 
@@ -82,8 +83,18 @@ Articles:
     raw = message.content[0].text.strip()
 
     # Strip markdown fences if present
-    if raw.startswith("```"):
-        raw = raw.split("\n", 1)[1]
-        raw = raw.rsplit("```", 1)[0]
-
-    return json.loads(raw)
+    raw = message.content[0].text.strip()
+# Strip markdown fences if present
+if raw.startswith("```"):
+    raw = raw.split("\n", 1)[1]
+    raw = raw.rsplit("```", 1)[0]
+# Safety net: extract JSON if Claude added extra text
+raw = raw.strip()
+if not raw.startswith("{"):
+    import re
+    match = re.search(r'\{.*\}', raw, re.DOTALL)
+    if match:
+        raw = match.group()
+    else:
+        raise ValueError(f"No JSON found in Claude response. Raw: {raw[:200]}")
+return json.loads(raw)
