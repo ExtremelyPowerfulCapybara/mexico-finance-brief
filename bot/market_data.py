@@ -9,49 +9,12 @@ from config import (
     WEATHER_LAT, WEATHER_LON, WEATHER_CITY
 )
 
-BANXICO_TOKEN  = os.environ.get("BANXICO_API_KEY", "")
-CETES_SERIES   = "SF43936"   # CETES 28 días tasa de rendimiento
-
-
-# ── Banxico CETES ─────────────────────────────
-
-def fetch_cetes() -> dict:
-    """
-    Fetches the latest CETES 28D rate from Banxico SIE API.
-    Returns a ticker dict. Falls back to "—" if token missing or call fails.
-    """
-    if not BANXICO_TOKEN:
-        return {"label": "CETES 28D", "value": "—", "change": "", "direction": "flat"}
-    try:
-        url     = f"https://www.banxico.org.mx/SieAPIRest/service/v1/series/{CETES_SERIES}/datos/oportuno"
-        headers = {"Bmx-Token": BANXICO_TOKEN}
-        data    = requests.get(url, headers=headers, timeout=8).json()
-        datos   = data["bmx"]["series"][0]["datos"]
-
-        # Latest and previous observation
-        latest   = float(datos[-1]["dato"])
-        previous = float(datos[-2]["dato"]) if len(datos) >= 2 else latest
-        chg      = latest - previous
-        direction = "up" if chg >= 0 else "down"
-        chg_str   = f"{'▲' if chg >= 0 else '▼'} {abs(chg):.2f}pp"
-
-        return {
-            "label":     "CETES 28D",
-            "value":     f"{latest:.2f}%",
-            "change":    chg_str,
-            "direction": direction,
-        }
-    except Exception as e:
-        print(f"  [market] CETES fetch failed: {e}")
-        return {"label": "CETES 28D", "value": "—", "change": "", "direction": "flat"}
-
 
 # ── Tickers ───────────────────────────────────
 
 def fetch_tickers() -> list[dict]:
     """
     Fetches market data for each ticker in config using Yahoo Finance.
-    CETES 28D is fetched from Banxico SIE API.
     Returns list of dicts with label, value, change, direction.
     """
     results = []

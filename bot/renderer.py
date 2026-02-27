@@ -76,7 +76,7 @@ def _header(issue_number: int) -> str:
 def _ticker(tickers: list[dict]) -> str:
     cells = ""
     if not tickers:
-        for label in ["EUR/USD", "IBEX 35", "Euro Stoxx", "DAX"]:
+        for label in ["SPX", "IBEX 35", "Euro Stoxx", "DAX"]:
             cells += f"""
         <td style="padding:10px 16px; text-align:center; vertical-align:middle;">
           <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{label}</span>

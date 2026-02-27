@@ -85,12 +85,12 @@ AUTHOR_TITLES = [
 # ── News preferences ──────────────────────────
 TOPICS = ["Spain economy", "Spain finance", "euro markets", "Spain trade", "economia España"]
 LANGUAGE               = "es"
-MAX_ARTICLES_PER_TOPIC = 7
+MAX_ARTICLES_PER_TOPIC = 10
 MAX_ARTICLE_CHARS      = 8092
 
 # ── Market tickers (Yahoo Finance symbols) ────
 TICKER_SYMBOLS = [
-    ("EUR/USD",    "EURUSD=X"),
+    ("S&P 500",    "SPX"),
     ("IBEX 35",    "^IBEX"),
     ("Euro Stoxx", "^STOXX50E"),
     ("DAX",        "^GDAXI"),
