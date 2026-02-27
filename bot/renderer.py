@@ -55,7 +55,7 @@ def _divider() -> str:
 
 
 def _header(issue_number: int) -> str:
-    today = date.today().strftime("%A, %B %d, %Y").upper()
+    today = date.today().strftime("%A, %d de %B de %Y").upper()
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
@@ -65,7 +65,7 @@ def _header(issue_number: int) -> str:
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">{today}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">ISSUE NO. {issue_number}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">NÚMERO {issue_number}</td>
         </tr>
       </table>
     </td>
@@ -132,6 +132,8 @@ def _sentiment(s: dict) -> str:
     label   = s.get("label", "Cautious")
     context = s.get("context", "")
 
+    label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(label, label)
+
     style_map = {
         "Risk-Off": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),
         "Cautious": ("background:#fef3e2; color:#9a6a1a; border:1px solid #f0d8a0;", "#e8a030"),
@@ -142,11 +144,12 @@ def _sentiment(s: dict) -> str:
 
     pills_html = ""
     for p in ["Risk-Off", "Cautious", "Risk-On"]:
+        p_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(p, p)
         pill_style, dot_color = style_map[p] if p == label else (inactive_style, inactive_dot)
         pills_html += f"""
           <td style="padding-right:8px; white-space:nowrap;">
             <span style="display:inline-block; {pill_style} padding:5px 14px; border-radius:20px; font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">
-              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:{dot_color}; margin-right:5px; vertical-align:middle;"></span>{p}
+              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:{dot_color}; margin-right:5px; vertical-align:middle;"></span>{p_es}
             </span>
           </td>"""
 
@@ -156,7 +159,7 @@ def _sentiment(s: dict) -> str:
     <td style="padding:24px 48px;">
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:{TEXT_LIGHT}; vertical-align:middle; padding-right:12px; white-space:nowrap;">Today&#39;s Mood</td>
+          <td style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:{TEXT_LIGHT}; vertical-align:middle; padding-right:12px; white-space:nowrap;">Sentimiento</td>
           {pills_html}
         </tr>
       </table>
@@ -177,7 +180,7 @@ def _story_block(story: dict) -> str:
       </p>
       <p style="margin:0 0 10px 0; font-family:{FONT_SERIF}; font-size:20px; font-weight:bold; color:{TEXT_DARK}; line-height:1.3;">{story['headline']}</p>
       <p style="margin:0 0 10px 0; font-family:{FONT_SANS}; font-size:13px; color:{TEXT_MID}; line-height:1.75;">{story['body']}</p>
-      <a href="{story['url']}" style="font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_DARK}; text-decoration:none; border-bottom:1px solid {TEXT_DARK}; padding-bottom:1px;">Read more &#8594;</a>
+      <a href="{story['url']}" style="font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_DARK}; text-decoration:none; border-bottom:1px solid {TEXT_DARK}; padding-bottom:1px;">Leer más &#8594;</a>
     </td>
   </tr>
 </table>"""
@@ -201,13 +204,13 @@ def _currency_table(rows: list[dict]) -> str:
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:24px 48px;">
-      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Currency Table</p>
+      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Tabla de Divisas</p>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <th align="left"  style="{th}">Pair</th>
-          <th align="right" style="{th}">Rate</th>
+          <th align="left"  style="{th}">Par</th>
+          <th align="right" style="{th}">Tipo</th>
           <th align="right" style="{th} padding-left:12px;">1D</th>
-          <th align="right" style="{th} padding-left:12px;">1W</th>
+          <th align="right" style="{th} padding-left:12px;">1S</th>
         </tr>
         {tbody}
       </table>
@@ -235,7 +238,7 @@ def _week_review(stories: list[dict]) -> str:
     today  = date.today()
     monday = today - timedelta(days=today.weekday())
     friday = monday + timedelta(days=4)
-    label  = f"{monday.strftime('%b %d')}&#8211;{friday.strftime('%d, %Y')}"
+    label  = f"{monday.strftime('%d %b')}&#8211;{friday.strftime('%d %b, %Y')}"
 
     rows = ""
     for s in stories:
@@ -258,7 +261,7 @@ def _week_review(stories: list[dict]) -> str:
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:24px 48px;">
-      <p style="margin:0 0 18px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Week in Review &middot; {label}</p>
+      <p style="margin:0 0 18px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Resumen de la Semana &middot; {label}</p>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         {rows}
       </table>
@@ -270,7 +273,7 @@ def _week_review(stories: list[dict]) -> str:
 def _footer(issue_date: str = "") -> str:
     archive_link = ""
     if GITHUB_PAGES_URL and issue_date:
-        archive_link = f'&nbsp;&middot;&nbsp;<a href="{GITHUB_PAGES_URL}/index.html" style="color:#666666; text-decoration:none; letter-spacing:1px;">Archive</a>'
+        archive_link = f'&nbsp;&middot;&nbsp;<a href="{GITHUB_PAGES_URL}/index.html" style="color:#666666; text-decoration:none; letter-spacing:1px;">Archivo</a>'
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK};">
   <tr>
@@ -278,7 +281,7 @@ def _footer(issue_date: str = "") -> str:
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="font-family:{FONT_SERIF}; font-size:14px; color:#f5f2ed;">{NEWSLETTER_NAME}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; letter-spacing:1px;">by {AUTHOR_NAME} &middot; Unsubscribe{archive_link}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; letter-spacing:1px;">por {AUTHOR_NAME} &middot; Darse de baja{archive_link}</td>
         </tr>
       </table>
     </td>
@@ -323,9 +326,9 @@ def build_html(
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
         <tr>
           <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888;">
-            <a href="{issue_url}" style="color:#555555; text-decoration:none;">View in browser</a>
+            <a href="{issue_url}" style="color:#555555; text-decoration:none;">Ver en el navegador</a>
             &nbsp;&middot;&nbsp;
-            <a href="{archive_url}" style="color:#555555; text-decoration:none;">Browse all issues</a>
+            <a href="{archive_url}" style="color:#555555; text-decoration:none;">Ver todos los números</a>
           </td>
         </tr>
       </table>
@@ -334,7 +337,7 @@ def build_html(
 </table>"""
 
     return f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -367,8 +370,9 @@ def build_html(
 </body>
 </html>"""
 
+
 def build_plain(digest: dict) -> str:
-    today = date.today().strftime("%B %d, %Y")
+    today = date.today().strftime("%d de %B de %Y")
     lines = [f"{NEWSLETTER_NAME} — {today}", "=" * 40, ""]
 
     note = digest.get("editor_note", "")
@@ -377,13 +381,14 @@ def build_plain(digest: dict) -> str:
 
     sentiment = digest.get("sentiment", {})
     if sentiment:
-        lines += [f"Market Sentiment: {sentiment.get('label','')} — {sentiment.get('context','')}", ""]
+        label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(sentiment.get("label",""), sentiment.get("label",""))
+        lines += [f"Sentimiento del mercado: {label_es} — {sentiment.get('context','')}", ""]
 
     for s in digest.get("stories", []):
         lines += [
             f"[{s['source']}] {s['headline']}",
             s["body"],
-            f"Read more: {s['url']}",
+            f"Leer más: {s['url']}",
             "",
         ]
 
