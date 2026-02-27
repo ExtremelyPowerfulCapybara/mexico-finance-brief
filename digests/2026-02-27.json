@@ -1,66 +1,66 @@
 {
   "date": "2026-02-27",
   "digest": {
-    "editor_note": "Estimados Humanos, el euro cotiza por encima de 1,20 dólares por primera vez desde 2021 mientras Trump se jacta de poder mover la divisa 'como un yoyó' — una declaración que, viniendo del mandatario de la principal economía del mundo, debería inquietar más de lo que parece. Al mismo tiempo, España celebra su crecimiento del 2,8% en 2025 mientras el Banco de España registra la mayor pérdida de competitividad desde 2008: la contradicción favorita de este ciclo.",
+    "editor_note": "Estimados Humanos, el euro cotiza por encima de 1,20 dólares por primera vez desde 2021 mientras Trump juega al yoyó verbal con su propia divisa, y España pierde competitividad al ritmo más rápido desde 2008. Dos titulares que, juntos, resumen con bastante precisión el estado del orden económico global: caótico por diseño en Washington, erosionado por costes en Madrid.",
     "sentiment": {
       "label": "Cautious",
       "position": 38,
-      "context": "La debilidad estructural del dólar, la pérdida de competitividad española y las tensiones geopolíticas en torno al comercio europeo generan un tono de cautela que el optimismo macroeconómico superficial no logra disipar."
+      "context": "Fortaleza del euro frente al dólar tensiona la competitividad exportadora española justo cuando el Banco de España registra su peor dato desde 2008."
     },
     "stories": [
       {
-        "source": "La Nación (AFP)",
-        "headline": "El euro supera 1,20 dólares por primera vez desde 2021 tras las declaraciones de Trump sobre la divisa",
-        "body": "El euro alcanzó 1,2043 dólares el martes, su nivel más alto desde junio de 2021, después de que Trump calificara el dólar de 'formidable' y afirmara que podría hacerlo subir y bajar 'como un yoyó'. Desde enero de 2025, el billete verde se ha depreciado más de un 15% frente al euro, con inversores reduciendo exposición a activos estadounidenses. El oro y la plata encadenan récords: la plata se ha triplicado en un año y el oro ha subido cerca de un 90%.",
+        "source": "La Nación / AFP",
+        "headline": "El euro supera los 1,20 dólares por primera vez desde 2021 ante la erosión de confianza en el billete verde",
+        "body": "El euro alcanzó 1,2043 dólares el martes, su nivel más alto desde junio de 2021, tras caer el dólar un 1,37% en una sola sesión después de que Trump describiera su propia moneda como un yoyó que puede manipular a voluntad. Desde la llegada de Trump a la Casa Blanca en enero de 2025, el dólar acumula una depreciación superior al 15% frente al euro. El oro y la plata encadenan récords históricos, con la plata triplicando su valor en un año, señales inequívocas de que los inversores institucionales están reduciendo exposición a activos denominados en dólares.",
         "url": "https://www.nacion.com/economia/euro-rompe-la-barrera-de-los-120-por-primera-vez/DM7I3DBFSNGWVOCZUYWQ4NN3CA/story/",
         "tag": "FX"
       },
       {
         "source": "El Mundo",
-        "headline": "España sufre la mayor pérdida de competitividad desde 2008 pese al liderazgo europeo en crecimiento",
-        "body": "El índice del Banco de España registró en diciembre una caída de competitividad del 2,8% interanual frente a economías desarrolladas, el mayor deterioro desde 2008, agravando una tendencia iniciada en 2025. La paradoja es mayúscula: España lideró el crecimiento europeo con un PIB del 2,8%, mientras Alemania apenas avanzó un 0,2%. Las exportaciones españolas se comportan peor que las de sus competidores, y la captación de inversión internacional está en riesgo.",
+        "headline": "España sufre la mayor pérdida de competitividad desde 2008 pese al liderazgo en crecimiento europeo",
+        "body": "El índice de competitividad del Banco de España registró en diciembre una caída del 2,8% interanual frente a las economías desarrolladas, el mayor retroceso desde 2008, ahondando un deterioro que comenzó a gestarse en 2025. La paradoja es notable: España creció un 2,8% del PIB en 2025, liderando la zona euro, pero sus exportaciones se comportan peor que las de sus pares y su atractivo para la inversión extranjera se deteriora. Los costes internos, amplificados ahora por la fortaleza del euro, agravan la ecuación.",
         "url": "https://www.elmundo.es/economia/macroeconomia/2026/02/22/6989d472e9cf4ae2148b4580.html",
         "tag": "España"
       },
       {
         "source": "El Diario",
-        "headline": "Sánchez defiende en la cumbre europea el 'buy European' y una integración a dos velocidades",
-        "body": "En la reunión de los 27 en el castillo de Alden Biesen, Pedro Sánchez impulsa la 'preferencia europea' en licitaciones y subvenciones, y respalda avanzar en integración sin unanimidad de todos los estados miembros. El contexto es la presión arancelaria de Trump y la competencia desleal de China, que están obligando a Bruselas a replantear su modelo de apertura comercial. España, desde su posición de fuerza económica relativa, busca liderar el debate sobre competitividad europea.",
+        "headline": "Sánchez lleva a la cumbre europea el 'buy European' y la integración a dos velocidades ante la presión de Trump y China",
+        "body": "En la reunión de los 27 líderes de la UE en el castillo de Alden Biesen, el presidente del Gobierno defenderá la preferencia europea en licitaciones públicas y subvenciones, así como avanzar en la integración —incluso sin unanimidad— en áreas de seguridad, defensa y mercado de capitales. España llega con el viento a favor del crecimiento pero con la sombra de la competitividad: el 2,8% de PIB en 2025 le da autoridad moral, aunque sus socios más débiles ven el modelo de velocidades diferenciadas con recelo. El contexto geopolítico —aranceles de Trump y competencia desleal china— otorga urgencia a un debate que Europa lleva aplazando una década.",
         "url": "https://www.eldiario.es/economia/espana-defiende-buy-european-ue-velocidades-impulsar-competitividad_1_12982881.html",
         "tag": "Trade"
       },
       {
+        "source": "El Español / Invertia",
+        "headline": "Pedro J. Ramírez alerta: Europa pierde 300.000 millones de ahorro al año por la ausencia de un mercado único de capitales",
+        "body": "En el VI Foro del Observatorio de las Finanzas de EL ESPAÑOL, con la presencia del gobernador del Banco de España José Luis Escrivá, el director del medio advirtió que Europa es 'rica en ahorro pero pobre en inversión estratégica' mientras 300.000 millones anuales emigran a mercados extranjeros. La Savings and Investment Union —rebautización del proyecto Capital Markets Union— es el marco europeo para retener ese capital y financiar soberanía tecnológica y defensa. El diagnóstico no es nuevo; la voluntad política para ejecutarlo, tampoco.",
+        "url": "https://www.elespanol.com/eventos/2026/observatorio-finanzas/20260217/pedro-ramirez-evitar-ano-salgan-millones-ahorro-europeo-extranjero/1003744133278_0.html",
+        "tag": "Macro"
+      },
+      {
         "source": "ABC",
-        "headline": "Once bancos europeos crean Qivalis para lanzar una stablecoin vinculada al euro mientras bitcoin cae un 23%",
-        "body": "Un consorcio de once grandes entidades financieras europeas, entre ellas BBVA, ha constituido Qivalis para emitir una stablecoin regulada, respaldada por el sistema financiero europeo y alineada con la normativa MiCA. El movimiento se produce mientras bitcoin acumula una caída cercana al 23% en lo que va de año y ronda los 67.000 dólares. La iniciativa busca contrarrestar el dominio de stablecoins privadas denominadas en dólares en pagos interbancarios y liquidación de activos digitales.",
+        "headline": "Once grandes bancos europeos lanzan Qivalis, una 'stablecoin' en euros para competir frente al dólar digital",
+        "body": "Con el bitcoin acumulando una caída del 23% en lo que va de año y cotizando en torno a los 67.000 dólares, un consorcio de once entidades financieras europeas —entre ellas BBVA— ha constituido Qivalis para emitir una criptomoneda estable vinculada al euro, regulada bajo el marco comunitario y orientada a pagos interbancarios, operaciones internacionales y liquidación de activos tokenizados. El movimiento es una respuesta directa a la proliferación de stablecoins en dólares promovidas por emisores privados no bancarios. La iniciativa llega en un momento en que la debilidad del dólar refuerza el argumento a favor de una alternativa denominada en euros.",
         "url": "https://www.abc.es/economia/banca-europea-mueve-ficha-criptomonedas-red-20260216045544-nt.html",
         "tag": "Markets"
       },
       {
         "source": "El Economista",
-        "headline": "Repsol gana 1.899 millones en 2025, un 8% más, y promete superar el euro de dividendo en 2026",
-        "body": "Repsol cerró 2025 con un beneficio neto de 1.899 millones de euros, apoyado en su modelo integrado a pesar de un entorno de precios adverso. La compañía anuncia que en 2026 superará el umbral de un euro de dividendo por acción, reforzando su atractivo para el inversor en un sector energético bajo presión regulatoria y de transición. Es uno de los pocos resultados corporativos sólidos en un trimestre de resultados europeos dispar.",
+        "headline": "Repsol cierra 2025 con beneficio neto de 1.899 millones, un 8% más, y promete superar el euro de dividendo en 2026",
+        "body": "La compañía logró el resultado apoyándose en su modelo integrado a pesar de un entorno de precios de hidrocarburos más adverso, elevando el beneficio neto ajustado —su métrica de referencia— por encima de las expectativas del consenso. El compromiso de superar el umbral de un euro de dividendo por acción en 2026 refuerza la narrativa de retribución al accionista en un sector que lleva dos años bajo presión regulatoria y de transición energética. Es el dato más relevante de la temporada de resultados española en energía.",
         "url": "https://www.eleconomista.es/energia/noticias/13784544/02/26/repsol-logra-un-beneficio-neto-de-1899-millones-un-8-mas-y-superara-el-euro-de-dividendo-en-2026.html",
         "tag": "Energy"
       },
       {
         "source": "El Economista",
-        "headline": "Denarius lanza bonos al 12% para financiar el reinicio de la mina de níquel y cobre de Aguablanca en Extremadura",
-        "body": "Rio Narcea Recursos, participada de Denarius Metals Corp., ha lanzado una emisión de bonos garantizados al 12% de hasta 20 millones de dólares de ingresos brutos para reactivar el Proyecto Aguablanca en Monesterio, Badajoz. La operación busca financiar el reinicio de una mina de níquel y cobre en un momento de alta demanda de metales críticos para la transición energética. Un rendimiento del 12% refleja tanto el perfil de riesgo del activo como el apetito actual por deuda de recursos naturales.",
+        "headline": "Denarius emite bonos al 12% por hasta 20 millones de dólares para reactivar la mina de níquel y cobre de Aguablanca",
+        "body": "Rio Narcea Recursos, filial española de Denarius Metals Corp., ha lanzado una oferta de bonos garantizados a tipo fijo del 12% con el objetivo de captar hasta 20 millones de dólares brutos —18,5 millones de euros— destinados a financiar el reinicio operativo del yacimiento de Aguablanca en Monesterio, Extremadura. El cupón del 12% refleja el perfil de riesgo de un proyecto minero en fase de reinicio, con exposición al níquel y al cobre, metales críticos para la transición energética. La operación llega en un contexto de creciente interés europeo por asegurar cadenas de suministro de minerales estratégicos.",
         "url": "https://www.eleconomista.es/industria/noticias/13749694/01/26/denarius-lanza-bonos-al-12-por-185-millones-de-euros-para-financiar-el-reinicio-de-su-mina-de-aguablanca-en-monesterio.html",
         "tag": "Rates"
-      },
-      {
-        "source": "El Español / Invertia",
-        "headline": "Pedro J. Ramírez alerta: 300.000 millones de ahorro europeo salen al extranjero cada año",
-        "body": "En la apertura del VI Foro del Observatorio de las Finanzas de EL ESPAÑOL e Invertia, Pedro J. Ramírez cifró en 300.000 millones de euros anuales la fuga de ahorro europeo hacia mercados exteriores, reclamando medidas para retener y movilizar ese capital dentro de la UE. La advertencia conecta directamente con el debate sobre la Unión de Mercados de Capitales y la agenda de competitividad que Sánchez lleva esta semana a la cumbre europea. Es la cara financiera del mismo problema que discuten los líderes en Alden Biesen.",
-        "url": "https://www.elespanol.com/eventos/2026/observatorio-finanzas/20260217/pedro-ramirez-evitar-ano-salgan-millones-ahorro-europeo-extranjero/1003744133278_0.html",
-        "tag": "Macro"
       }
     ],
     "quote": {
       "text": "El dólar es nuestra moneda, pero es vuestro problema.",
-      "attribution": "John Connally, Secretario del Tesoro de EE.UU., dirigiéndose a ministros de finanzas europeos, 1971"
+      "attribution": "John Connally, Secretario del Tesoro de Estados Unidos, 1971"
     }
   },
   "market": {
@@ -68,25 +68,25 @@
     "currency": [
       {
         "pair": "EUR / USD",
-        "rate": "1.1820",
+        "rate": "1.1818",
         "chg_1d": {
-          "text": "▲ 0.04%",
+          "text": "▲ 0.02%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.12%",
+          "text": "▼ 0.14%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "EUR / GBP",
-        "rate": "0.8767",
+        "rate": "0.8766",
         "chg_1d": {
-          "text": "▲ 0.61%",
+          "text": "▲ 0.60%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.26%",
+          "text": "▲ 0.24%",
           "cls": "chg-up"
         }
       },
@@ -104,13 +104,13 @@
       },
       {
         "pair": "EUR / JPY",
-        "rate": "184.4090",
+        "rate": "184.4350",
         "chg_1d": {
-          "text": "▼ 0.07%",
+          "text": "▼ 0.06%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▲ 0.96%",
+          "text": "▲ 0.97%",
           "cls": "chg-up"
         }
       }
@@ -118,9 +118,9 @@
   },
   "weather": {
     "city": "Madrid",
-    "temp": "12°C",
+    "temp": "11°C",
     "high_low": "20°C / 5°C",
-    "humidity": "Humedad 55%",
+    "humidity": "Humedad 56%",
     "desc": "Parcialmente nublado"
   }
 }
