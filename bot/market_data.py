@@ -191,7 +191,7 @@ def fetch_weather() -> dict:
             "city":     WEATHER_CITY,
             "temp":     f"{temp}°C",
             "high_low": f"{temp_max}°C / {temp_min}°C",
-            "humidity": f"Humidity {humidity}%",
+            "humidity": f"Humedad {humidity}%",
             "desc":     desc,
         }
     except Exception as e:
@@ -206,12 +206,12 @@ def fetch_weather() -> dict:
 
 
 def _weather_description(code: int) -> str:
-    if code == 0:               return "Clear skies"
-    if code in (1, 2, 3):       return "Partly cloudy"
-    if code in (45, 48):        return "Foggy"
-    if code in (51, 53, 55):    return "Light drizzle"
-    if code in (61, 63, 65):    return "Rain"
-    if code in (71, 73, 75):    return "Snow"
-    if code in (80, 81, 82):    return "Rain showers"
-    if code in (95, 96, 99):    return "Thunderstorms"
-    return "Mixed conditions"
+    if code == 0:               return "Cielo despejado"
+    if code in (1, 2, 3):       return "Parcialmente nublado"
+    if code in (45, 48):        return "Niebla"
+    if code in (51, 53, 55):    return "Llovizna"
+    if code in (61, 63, 65):    return "Lluvia"
+    if code in (71, 73, 75):    return "Nieve"
+    if code in (80, 81, 82):    return "Chubascos"
+    if code in (95, 96, 99):    return "Tormenta"
+    return "Condiciones variables"
