@@ -19,9 +19,9 @@ def fetch_tickers() -> list[dict]:
     """
     results = []
     for label, symbol in TICKER_SYMBOLS:
-     if symbol is None:
-        results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
-        continue
+        if symbol is None:
+            results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
+            continue
         try:
             url  = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
             headers = {"User-Agent": "Mozilla/5.0"}
