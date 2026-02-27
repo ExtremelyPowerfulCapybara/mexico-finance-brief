@@ -19,7 +19,7 @@ def summarize_news(articles: list[dict]) -> dict:
     for i, a in enumerate(articles, 1):
         content = a['content'][:1500] if a['content'] else ""
         news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{content}\n\n"
-    prompt = f"""You are a sharp financial news editor producing a daily morning briefing. Address the reader as "Fellow Humans" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
+prompt = f"""You are a sharp financial news editor producing a daily morning briefing in Spanish. Write ALL content in Spanish, including the editor note, story headlines, story bodies, sentiment context, and quote attribution. Address the reader as "Estimados Humanos" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
 Analyze the articles below and return a JSON object with EXACTLY this structure:
 {{
   "editor_note": "2-3 sentences opening the day's briefing. Always open with 'Fellow Humans,' as the first two words. Voice: sharp, dry, occasionally sardonic — like a seasoned markets editor who has seen every cycle and finds the current one both alarming and faintly amusing. Reference the dominant story. First person. Do NOT include any sign-off or signature — that is added separately. No fluff, no filler, no 'it is worth noting'.",
