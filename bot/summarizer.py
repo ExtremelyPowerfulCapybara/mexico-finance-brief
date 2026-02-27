@@ -7,6 +7,7 @@ import time
 import anthropic
 from config import ANTHROPIC_API_KEY, AUTHOR_NAME
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+
 def summarize_news(articles: list[dict]) -> dict:
     """
     Sends articles to Claude and returns a structured digest dict with:
@@ -19,27 +20,28 @@ def summarize_news(articles: list[dict]) -> dict:
     for i, a in enumerate(articles, 1):
         content = a['content'][:1500] if a['content'] else ""
         news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{content}\n\n"
-prompt = f"""You are a sharp financial news editor producing a daily morning briefing in Spanish. Write ALL content in Spanish, including the editor note, story headlines, story bodies, sentiment context, and quote attribution. Address the reader as "Estimados Humanos" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
+
+    prompt = f"""You are a sharp financial news editor producing a daily morning briefing in Spanish. Write ALL content in Spanish, including the editor note, story headlines, story bodies, sentiment context, and quote attribution. Address the reader as "Estimados Humanos" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
 Analyze the articles below and return a JSON object with EXACTLY this structure:
 {{
-  "editor_note": "2-3 sentences opening the day's briefing. Always open with 'Fellow Humans,' as the first two words. Voice: sharp, dry, occasionally sardonic — like a seasoned markets editor who has seen every cycle and finds the current one both alarming and faintly amusing. Reference the dominant story. First person. Do NOT include any sign-off or signature — that is added separately. No fluff, no filler, no 'it is worth noting'.",
+  "editor_note": "2-3 sentences opening the day's briefing. Always open with 'Estimados Humanos,' as the first two words. Voice: sharp, dry, occasionally sardonic — like a seasoned markets editor who has seen every cycle and finds the current one both alarming and faintly amusing. Reference the dominant story. First person. Do NOT include any sign-off or signature — that is added separately. No fluff, no filler, no 'it is worth noting'.",
   "sentiment": {{
     "label": "Risk-Off" | "Cautious" | "Risk-On",
     "position": <integer 5-95 where 5=extreme risk-off, 50=neutral, 95=extreme risk-on>,
-    "context": "One sentence explaining today's sentiment based on the stories."
+    "context": "Una frase explicando el sentimiento de hoy basado en las noticias."
   }},
   "stories": [
     {{
-      "source": "Source name",
-      "headline": "Concise, specific headline",
-      "body": "2-3 sentences. Include specific figures, names, and why it matters. End naturally.",
-      "url": "original article URL",
-      "tag": "One of: Macro | FX | Mexico | Trade | Rates | Markets | Energy | Politics"
+      "source": "Nombre de la fuente",
+      "headline": "Titular conciso y específico",
+      "body": "2-3 frases. Incluye cifras específicas, nombres, y por qué importa. Termina de forma natural.",
+      "url": "URL original del artículo",
+      "tag": "One of: Macro | FX | España | Trade | Rates | Markets | Energy | Politics"
     }}
   ],
   "quote": {{
-    "text": "A relevant financial or economic quote that connects thematically to today's news. Must be a real, verifiable quote.",
-    "attribution": "Full name, source, year"
+    "text": "Una cita financiera o económica relevante que conecte temáticamente con las noticias de hoy. Debe ser una cita real y verificable.",
+    "attribution": "Nombre completo, fuente, año"
   }}
 }}
 Rules:
@@ -51,6 +53,7 @@ Rules:
 Articles:
 {news_text}
 """
+
     print("  [summarizer] Sending to Claude...")
     for attempt in range(4):
         try:
