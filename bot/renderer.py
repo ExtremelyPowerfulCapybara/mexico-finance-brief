@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────
 #  renderer.py  —  Gmail-safe table-based layout
 #  All layout uses <table> + inline styles.
-#  No flexbox, no grid, no external CSS classes.
+#  No flexbox, no grid, no external CSS classes. pasidaas
 # ─────────────────────────────────────────────
 
 import hashlib
