@@ -176,24 +176,24 @@ today      = date.today().strftime("%A, %d de %B de %Y").upper()
 issue_date = date.today().strftime("%d de %B de %Y")
 
     # ── Ticker ──
-    tick_items = ""
-    if not tickers:
-        for label in ["EUR/USD", "IBEX 35", "Euro Stoxx", "DAX"]:
-            tick_items += f"""
-      <div class="tick-item">
-        <span class="tick-label">{label}</span>
-        <span class="tick-val">—</span>
-        <span class=""></span>
-      </div>"""
-    else:
-        for t in tickers:
-            chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
-            tick_items += f"""
-      <div class="tick-item">
-        <span class="tick-label">{t['label']}</span>
-        <span class="tick-val">{t['value']}</span>
-        <span class="{chg_cls}">{t['change']}</span>
-      </div>"""
+   tick_items = ""
+   if not tickers:
+       for label in ["EUR/USD", "IBEX 35", "Euro Stoxx", "DAX"]:
+           tick_items += f"""
+     <div class="tick-item">
+       <span class="tick-label">{label}</span>
+       <span class="tick-val">—</span>
+       <span class=""></span>
+     </div>"""
+   else:
+       for t in tickers:
+           chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
+           tick_items += f"""
+     <div class="tick-item">
+       <span class="tick-label">{t['label']}</span>
+       <span class="tick-val">{t['value']}</span>
+       <span class="{chg_cls}">{t['change']}</span>
+     </div>"""
 
     # ── Sentiment gauge ──
     s         = digest.get("sentiment", {})
