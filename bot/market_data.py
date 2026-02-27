@@ -123,43 +123,19 @@ def _fetch_yahoo_rate(symbol: str) -> tuple[float, float, float] | None:
 
 
 def fetch_currency_table() -> list[dict]:
-    """
-    Fetches MXN vs each currency in CURRENCY_PAIRS.
-    CNY is calculated as a cross rate (MXN/USD × USD/CNY)
-    since Yahoo doesn't carry MXNCNY=X directly.
-    """
     rows = []
-
-    # Pre-fetch MXN/USD once for CNY cross rate
-    mxn_usd_data = _fetch_yahoo_rate("MXN=X")
-
-    for currency in CURRENCY_PAIRS:
+    pairs = {
+        "USD": "EURUSD=X",
+        "GBP": "EURGBP=X",
+        "CHF": "EURCHF=X",
+        "JPY": "EURJPY=X",
+    }
+    for currency, symbol in pairs.items():
         try:
-            if currency == "CNY":
-                # Cross rate: MXN/CNY = MXN/USD × USD/CNY
-                usd_cny_data = _fetch_yahoo_rate("USDCNY=X")
-                if not mxn_usd_data or not usd_cny_data:
-                    raise ValueError("Missing data for CNY cross rate")
-
-                mxn_usd, mxn_usd_prev, mxn_usd_week = mxn_usd_data
-                usd_cny, usd_cny_prev, usd_cny_week  = usd_cny_data
-
-                rate      = mxn_usd * usd_cny
-                prev_day  = mxn_usd_prev * usd_cny_prev
-                prev_week = mxn_usd_week * usd_cny_week
-            else:
-                if currency == "USD":
-                    symbol = "MXN=X"
-                    result = _fetch_yahoo_rate(symbol)
-                    if not result:
-                        raise ValueError(f"No data for {symbol}")
-                    rate, prev_day, prev_week = result
-                else:
-                    symbol = f"{currency}MXN=X"
-                    result = _fetch_yahoo_rate(symbol)
-                    if not result:
-                        raise ValueError(f"No data for {symbol}")
-                    rate, prev_day, prev_week = result
+            result = _fetch_yahoo_rate(symbol)
+            if not result:
+                raise ValueError(f"No data for {symbol}")
+            rate, prev_day, prev_week = result
 
             chg_1d = ((rate - prev_day)  / prev_day  * 100) if prev_day  else 0
             chg_1w = ((rate - prev_week) / prev_week * 100) if prev_week else 0
@@ -170,21 +146,19 @@ def fetch_currency_table() -> list[dict]:
                 return {"text": f"{arrow} {abs(val):.2f}%", "cls": cls}
 
             rows.append({
-                "pair":   f"{currency} / MXN",
+                "pair":   f"EUR / {currency}",
                 "rate":   f"{rate:.4f}",
                 "chg_1d": fmt_chg(chg_1d),
                 "chg_1w": fmt_chg(chg_1w),
             })
-
         except Exception as e:
-            print(f"  [currency] Failed MXN/{currency}: {e}")
+            print(f"  [currency] Failed EUR/{currency}: {e}")
             rows.append({
-                "pair":   f"MXN / {currency}",
+                "pair":   f"EUR / {currency}",
                 "rate":   "—",
                 "chg_1d": {"text": "—", "cls": "chg-flat"},
                 "chg_1w": {"text": "—", "cls": "chg-flat"},
             })
-
     return rows
 
 
