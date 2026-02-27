@@ -84,14 +84,14 @@ def _ticker(tickers: list[dict]) -> str:
         </td>"""
     else:
         for i, t in enumerate(tickers):
-        chg_color  = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#888888")
-        left_border = "border-left:1px solid #2e2e2e;" if i > 0 else ""
-        cells += f"""
-        <td style="{left_border} padding:10px 16px; text-align:center; vertical-align:middle;">
-          <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{t['label']}</span>
-          <span style="font-family:{FONT_SANS}; font-size:12px; color:{TEXT_CREAM};">{t['value']}</span>
-          <span style="font-family:{FONT_SANS}; font-size:10px; color:{chg_color}; margin-left:4px;">{t['change']}</span>
-        </td>"""
+            chg_color  = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#888888")
+            left_border = "border-left:1px solid #2e2e2e;" if i > 0 else ""
+            cells += f"""
+            <td style="{left_border} padding:10px 16px; text-align:center; vertical-align:middle;">
+              <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{t['label']}</span>
+              <span style="font-family:{FONT_SANS}; font-size:12px; color:{TEXT_CREAM};">{t['value']}</span>
+              <span style="font-family:{FONT_SANS}; font-size:10px; color:{chg_color}; margin-left:4px;">{t['change']}</span>
+            </td>"""
 
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK}; border-bottom:3px solid {BG_MAIN};">
