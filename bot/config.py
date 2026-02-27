@@ -90,10 +90,10 @@ MAX_ARTICLE_CHARS      = 8092
 
 # ── Market tickers (Yahoo Finance symbols) ────
 TICKER_SYMBOLS = [
-    ("S&P 500",    "SPX"),
-    ("IBEX 35",    "^IBEX"),
-    ("Euro Stoxx", "^STOXX50E"),
-    ("DAX",        "^GDAXI"),
+    ("SPX",    "S&P 500"),
+    ("^IBEX",    "IBEX 35"),
+    ("^STOXX50E", "Euro Stoxx"),
+    ("^GDAXI",     "DAX"),
 ]
 
 # ── Currency table ────────────────────────────
