@@ -1,15 +1,12 @@
 # ─────────────────────────────────────────────
 #  summarizer.py  —  Claude generates digest
 # ─────────────────────────────────────────────
-
 import json
+import re
 import time
 import anthropic
 from config import ANTHROPIC_API_KEY, AUTHOR_NAME
-
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-
-
 def summarize_news(articles: list[dict]) -> dict:
     """
     Sends articles to Claude and returns a structured digest dict with:
@@ -22,20 +19,15 @@ def summarize_news(articles: list[dict]) -> dict:
     for i, a in enumerate(articles, 1):
         content = a['content'][:1500] if a['content'] else ""
         news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{content}\n\n"
-
     prompt = f"""You are a sharp financial news editor producing a daily morning briefing. Address the reader as "Fellow Humans" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
-
 Analyze the articles below and return a JSON object with EXACTLY this structure:
-
 {{
   "editor_note": "2-3 sentences opening the day's briefing. Always open with 'Fellow Humans,' as the first two words. Voice: sharp, dry, occasionally sardonic — like a seasoned markets editor who has seen every cycle and finds the current one both alarming and faintly amusing. Reference the dominant story. First person. Do NOT include any sign-off or signature — that is added separately. No fluff, no filler, no 'it is worth noting'.",
-
   "sentiment": {{
     "label": "Risk-Off" | "Cautious" | "Risk-On",
     "position": <integer 5-95 where 5=extreme risk-off, 50=neutral, 95=extreme risk-on>,
     "context": "One sentence explaining today's sentiment based on the stories."
   }},
-
   "stories": [
     {{
       "source": "Source name",
@@ -45,24 +37,20 @@ Analyze the articles below and return a JSON object with EXACTLY this structure:
       "tag": "One of: Macro | FX | Mexico | Trade | Rates | Markets | Energy | Politics"
     }}
   ],
-
   "quote": {{
     "text": "A relevant financial or economic quote that connects thematically to today's news. Must be a real, verifiable quote.",
     "attribution": "Full name, source, year"
   }}
 }}
-
 Rules:
 - Select 5-7 stories, ordered by importance
 - Skip duplicates covering the same event
 - stories must include the original URL from the article list
 - Respond ONLY with the JSON object, no preamble, no markdown fences
 - sentiment.position must be consistent with sentiment.label: Risk-Off should be 5-35, Cautious 36-64, Risk-On 65-95
-
 Articles:
 {news_text}
 """
-
     print("  [summarizer] Sending to Claude...")
     for attempt in range(4):
         try:
@@ -79,22 +67,18 @@ Articles:
                 time.sleep(wait)
             else:
                 raise
-            
-    raw = message.content[0].text.strip()
 
-    # Strip markdown fences if present
     raw = message.content[0].text.strip()
-# Strip markdown fences if present
-if raw.startswith("```"):
-    raw = raw.split("\n", 1)[1]
-    raw = raw.rsplit("```", 1)[0]
-# Safety net: extract JSON if Claude added extra text
-raw = raw.strip()
-if not raw.startswith("{"):
-    import re
-    match = re.search(r'\{.*\}', raw, re.DOTALL)
-    if match:
-        raw = match.group()
-    else:
-        raise ValueError(f"No JSON found in Claude response. Raw: {raw[:200]}")
-return json.loads(raw)
+    # Strip markdown fences if present
+    if raw.startswith("```"):
+        raw = raw.split("\n", 1)[1]
+        raw = raw.rsplit("```", 1)[0]
+    # Safety net: extract JSON if Claude added extra text
+    raw = raw.strip()
+    if not raw.startswith("{"):
+        match = re.search(r'\{.*\}', raw, re.DOTALL)
+        if match:
+            raw = match.group()
+        else:
+            raise ValueError(f"No JSON found in Claude response. Raw: {raw[:200]}")
+    return json.loads(raw)
