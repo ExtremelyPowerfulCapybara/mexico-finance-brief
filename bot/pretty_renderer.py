@@ -7,12 +7,18 @@
 
 from datetime import date, timedelta
 import hashlib
+import locale
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_NAMES, AUTHOR_TITLES
 
-_seed       = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
+_seed               = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
 AUTHOR_BYLINE_NAME  = AUTHOR_NAMES[_seed % len(AUTHOR_NAMES)]
 AUTHOR_BYLINE_TITLE = AUTHOR_TITLES[(_seed // len(AUTHOR_NAMES)) % len(AUTHOR_TITLES)]
 AUTHOR_BYLINE       = f"{AUTHOR_BYLINE_NAME}, {AUTHOR_BYLINE_TITLE}"
+
+try:
+    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+except:
+    pass
 
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -167,42 +173,37 @@ def build_pretty_html(
     is_friday:    bool = False,
 ) -> str:
 
-  import locale
-  try:
-    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
-  except:
-    pass
-today      = date.today().strftime("%A, %d de %B de %Y").upper()
-issue_date = date.today().strftime("%d de %B de %Y")
+    today      = date.today().strftime("%A, %d de %B de %Y").upper()
+    issue_date = date.today().strftime("%d de %B de %Y")
 
     # ── Ticker ──
-   tick_items = ""
-   if not tickers:
-       for label in ["EUR/USD", "IBEX 35", "Euro Stoxx", "DAX"]:
-           tick_items += f"""
-     <div class="tick-item">
-       <span class="tick-label">{label}</span>
-       <span class="tick-val">—</span>
-       <span class=""></span>
-     </div>"""
-   else:
-       for t in tickers:
-           chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
-           tick_items += f"""
-     <div class="tick-item">
-       <span class="tick-label">{t['label']}</span>
-       <span class="tick-val">{t['value']}</span>
-       <span class="{chg_cls}">{t['change']}</span>
-     </div>"""
+    tick_items = ""
+    if not tickers:
+        for label in ["EUR/USD", "IBEX 35", "Euro Stoxx", "DAX"]:
+            tick_items += f"""
+      <div class="tick-item">
+        <span class="tick-label">{label}</span>
+        <span class="tick-val">—</span>
+        <span class=""></span>
+      </div>"""
+    else:
+        for t in tickers:
+            chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
+            tick_items += f"""
+      <div class="tick-item">
+        <span class="tick-label">{t['label']}</span>
+        <span class="tick-val">{t['value']}</span>
+        <span class="{chg_cls}">{t['change']}</span>
+      </div>"""
 
     # ── Sentiment gauge ──
-    s         = digest.get("sentiment", {})
-    label     = s.get("label", "Cautious")
-    position  = max(5, min(95, int(s.get("position", 50))))
-    context   = s.get("context", "")
-    cls_map   = {"Risk-Off": "risk-off", "Cautious": "cautious", "Risk-On": "risk-on"}
-    sent_cls  = cls_map.get(label, "cautious")
-    label_es  = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(label, label)
+    s        = digest.get("sentiment", {})
+    label    = s.get("label", "Cautious")
+    position = max(5, min(95, int(s.get("position", 50))))
+    context  = s.get("context", "")
+    cls_map  = {"Risk-Off": "risk-off", "Cautious": "cautious", "Risk-On": "risk-on"}
+    sent_cls = cls_map.get(label, "cautious")
+    label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(label, label)
 
     # ── Stories ──
     stories_html = ""
