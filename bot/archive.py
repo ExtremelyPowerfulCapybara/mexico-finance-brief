@@ -11,8 +11,7 @@ from datetime import date, datetime
 from pretty_renderer import build_pretty_html
 from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR
 
-GITHUB_PAGES_URL = ""  # Set this after GitHub Pages is live, e.g. "https://username.github.io/mexico-finance-brief"
-
+GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest"
 
 def save_pretty_issue(
     digest:             dict,
