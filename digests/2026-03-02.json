@@ -1,0 +1,151 @@
+{
+  "date": "2026-03-02",
+  "digest": {
+    "editor_note": "Fellow Humans, the U.S. and Israel have struck Iran, Khamenei is reportedly dead, and six people on a prediction market just made $1.2 million — some apparently hours before the bombs fell. Markets are pricing geopolitical shock across energy, shipping lanes, and Gulf state assets, while SpaceX heads into its historic IPO filing with a bitcoin stack that has shed $235 million in value without the company selling a single coin. Today's briefing is, to put it mildly, not a slow news day.",
+    "sentiment": {
+      "label": "Risk-Off",
+      "position": 18,
+      "context": "U.S.-Israeli strikes on Iran, the reported death of Khamenei, retaliatory strikes across Gulf states, and closure of shipping lanes combine to produce an acute geopolitical risk shock that dominates all other market signals."
+    },
+    "stories": [
+      {
+        "source": "LADbible",
+        "headline": "Six Prediction-Market Traders Pocket $1.2M on Iran Strike Bets — Most Within 24 Hours of Attack",
+        "body": "Analytics platform Bubblemaps identified six accounts on Polymarket that collectively made approximately $1.2 million betting on U.S. airstrikes against Iran on February 28, with most positions entered within 24 hours of the attack. The timing has triggered immediate speculation about insider knowledge, given that Iranian retaliatory strikes followed across Israel, Dubai, Qatar, Bahrain, and Kuwait, and U.S. and Israeli officials confirmed the death of Supreme Leader Ayatollah Ali Khamenei. Regulators will almost certainly take notice — prediction markets have been eager to prove their legitimacy, and this is exactly the kind of episode that invites congressional scrutiny.",
+        "url": "https://www.ladbible.com/news/us-news/gamblers-millions-us-airstrikes-iran-928530-20260301",
+        "tag": "Politics"
+      },
+      {
+        "source": "Advocate.com",
+        "headline": "U.S. and Israel Launch Major Combat Operations Against Iran; Khamenei Reported Dead",
+        "body": "President Trump confirmed U.S. participation in what Israel's defense minister called a 'pre-emptive strike' against Iran, with Iranian state media subsequently confirming the death of Supreme Leader Ayatollah Ali Khamenei. Retaliatory Iranian strikes were reported in Israel, Dubai, Qatar, Bahrain, and Kuwait, with airport closures and disruptions to vital Gulf shipping lanes following. The geopolitical and energy market implications are severe: the Strait of Hormuz handles roughly 20% of global oil trade, and any sustained disruption will reprice energy assets globally.",
+        "url": "https://www.advocate.com/politics/national/rachel-maddow-trump-iran-war",
+        "tag": "Politics"
+      },
+      {
+        "source": "CoinDesk",
+        "headline": "SpaceX's Bitcoin Hoard Has Lost $235M in Value Ahead of Landmark IPO Filing",
+        "body": "SpaceX holds 8,285 BTC across 43 Coinbase Prime custody addresses, worth approximately $544.8 million as of Saturday — down from roughly $780 million in December when bitcoin traded near $92,500, per Arkham Intelligence data. Bloomberg reported the company is targeting a confidential SEC filing as soon as March for a June IPO that would seek a valuation above $1.75 trillion and raise up to $50 billion, eclipsing Saudi Aramco's 2019 record. The S-1 will be the first time SpaceX must publicly account for the bitcoin position, including paper losses in any quarter where BTC declined — an awkward disclosure cadence for a company trying to price the largest IPO in history.",
+        "url": "https://www.coindesk.com/markets/2026/03/01/spacex-s-usd780-million-bitcoin-stack-now-down-to-about-usd545-million-ahead-of-ipo-filing",
+        "tag": "Markets"
+      },
+      {
+        "source": "Freerepublic.com / von der Leyen tweet",
+        "headline": "EU Schedules Iran Crisis Meeting for Monday as Bombs Fall on Friday",
+        "body": "European Commission President Ursula von der Leyen announced she was convening a special Security College meeting 'on Monday' in response to U.S.-Israeli strikes on Iran — a timeline that drew immediate and sharp criticism given active retaliatory strikes, airport closures, an attack on EU-member Cyprus, and the decapitation of Iran's leadership were already underway. The response crystallizes a long-running critique of European institutional speed relative to the pace of geopolitical crisis. For markets, the EU's delayed coordination posture raises questions about unified European energy and sanctions policy at a moment when both matter enormously.",
+        "url": "https://freerepublic.com/focus/f-chat/4368819/posts",
+        "tag": "Macro"
+      },
+      {
+        "source": "The Times of India / Economic Times",
+        "headline": "BYD Posts Steepest Monthly Sales Decline Since Pandemic Amid Brutal Domestic Competition",
+        "body": "BYD recorded its sharpest monthly sales drop in six years in February, driven by intensifying price competition inside China's domestic EV market even as overseas sales continued to grow. The company is responding with new financing incentives and a pipeline of technology upgrades, but the data underscores that even the world's largest EV manufacturer is not immune to the deflationary pricing spiral that has gripped Chinese auto. For investors watching China's consumer demand narrative, BYD's February print is a significant data point.",
+        "url": "https://economictimes.indiatimes.com/news/international/business/byd-february-vehicle-sales-fall-at-steepest-pace-since-pandemic/articleshow/128916592.cms",
+        "tag": "Markets"
+      },
+      {
+        "source": "Ambcrypto.com",
+        "headline": "Cardano Surges 19% to Reclaim Top-10 Crypto Spot as Risk Sentiment Briefly Improved",
+        "body": "Cardano (ADA) rallied from approximately $0.26 to $0.31 — a 19% gain — to overtake Bitcoin Cash and re-enter the top 10 by market capitalization, with its market cap reaching roughly $10.57 billion versus BCH's $9.72 billion, per CoinMarketCap. The move was driven by a broader crypto risk-on wave tied to macroeconomic sentiment improvement before the Iran strikes; ADA has since retraced to around $0.293. The rally serves as a useful pre-shock baseline — how digital assets digest a full-scale Middle East military conflict will be the more consequential data point this week.",
+        "url": "https://ambcrypto.com/cardano-returns-to-the-top-10-following-a-19-rally-as-mutuum-finance-mutm-fundraising-tops-20-6m/",
+        "tag": "Markets"
+      },
+      {
+        "source": "New York Post",
+        "headline": "'Tipper X' Tom Hardin's New Book Details FBI's Operation Perfect Hedge — and a Hole in the Backyard",
+        "body": "Tom Hardin, the FBI's cooperating witness in Operation Perfect Hedge — one of the largest insider trading investigations in Wall Street history — has released 'Wired on Wall Street,' recounting his years wired against hedge fund traders illegally profiting on non-public information. The book includes the detail that Hardin, while meeting a target known as 'Mr. Greenwich,' spotted what appeared to be a freshly dug corpse-sized hole in the man's backyard. It is a useful reminder, as the Polymarket-Iran insider trading speculation dominates headlines, that the line between information edge and criminal conduct has always been Wall Street's most contested boundary.",
+        "url": "https://nypost.com/2026/03/01/us-news/how-tipper-x-helped-bring-down-wall-streets-insider-trading/",
+        "tag": "Markets"
+      }
+    ],
+    "quote": {
+      "text": "The market can stay irrational longer than you can stay solvent.",
+      "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.34",
+        "change": "▲ 0.8%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,879",
+        "change": "▼ 1.0%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.83%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "71,405.77",
+        "change": "▲ 0.0%",
+        "direction": "up"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.3370",
+        "chg_1d": {
+          "text": "▲ 0.78%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.45%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.2927",
+        "chg_1d": {
+          "text": "▼ 0.05%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 0.30%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.6980",
+        "chg_1d": {
+          "text": "▲ 0.95%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.75%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "119.3063",
+        "chg_1d": {
+          "text": "▲ 1.38%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.06%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "7°C",
+    "high_low": "24°C / 7°C",
+    "humidity": "Humidity 62%",
+    "desc": "Clear skies"
+  }
+}
