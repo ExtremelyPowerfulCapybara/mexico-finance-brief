@@ -1,0 +1,144 @@
+{
+  "date": "2026-03-02",
+  "digest": {
+    "editor_note": "Fellow Humans, the U.S.-Israel bombing campaign against Iran has killed Supreme Leader Khamenei and frozen tanker traffic through the Strait of Hormuz — a chokepoint carrying a third of the world's seaborne crude — and markets are only beginning to price the chaos. Brent crude is already eyeing $100, Dubai is taking missile strikes on the Palm Jumeirah, and the World Cup kicks off in three months on U.S. soil with Iran as a qualified participant. History has a remarkable sense of timing.",
+    "sentiment": {
+      "label": "Risk-Off",
+      "position": 12,
+      "context": "U.S.-Israel strikes on Iran, Strait of Hormuz closure fears, oil surging 6%+, and Dubai infrastructure under attack have driven sentiment to near-extreme risk-off territory."
+    },
+    "stories": [
+      {
+        "source": "CNBC",
+        "headline": "Crude Surges 6% as Hormuz Traffic Halts on U.S.-Iran War Fears",
+        "body": "U.S. crude jumped 5.79% to $70.90/bbl and Brent rose 6% to $77.51 after U.S.-Israeli strikes killed Supreme Leader Khamenei and froze tanker traffic through the Strait of Hormuz, which handles roughly 14 million barrels per day — about a third of global seaborne crude exports. Barclays has flagged Brent at $100 as a base-case escalation scenario, with UBS warning of potential spikes above $120 if the disruption is prolonged. Trump says operations are 'ahead of schedule' but Iran's security chief Ali Larijani has flatly rejected any negotiations.",
+        "url": "https://www.cnbc.com/2026/03/01/crude-oil-futures-iran.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "Fortune",
+        "headline": "Iran Missiles Strike Dubai's Palm Jumeirah; DP World Suspends Jebel Ali Port Operations",
+        "body": "Iranian airstrikes and drone attacks hit the Fairmont The Palm Hotel, sent smoke near the Burj Khalifa, and damaged the Etihad Towers in Abu Dhabi, triggering panic-buying and airport rushes across the UAE. DP World suspended operations at Jebel Ali — the Middle East's largest container port, accounting for 36% of Dubai's GDP — after debris from an intercepted missile sparked a fire at a berth. Former JPMorgan chief strategist Marko Kolanovic warned the situation is 'much worse' than Dubai's 2009–10 real estate crisis and 'can send shockwaves globally,' citing the city's 88% expat population and total exposure to tourism, finance, air, and shipping.",
+        "url": "https://fortune.com/2026/03/01/iran-attacks-dubai-tax-free-haven-global-elite-billionaires-global-financial-markets-shockwaves/",
+        "tag": "Markets"
+      },
+      {
+        "source": "BBC News",
+        "headline": "Iran's World Cup Participation in Doubt After U.S.-Israel Strikes Kill Khamenei",
+        "body": "Iran's group matches at the 2026 World Cup — co-hosted by the United States — are scheduled for Los Angeles and Seattle in just over 100 days, but the head of Iran's football federation has publicly cast doubt on the team's participation following the killing of Supreme Leader Khamenei. FIFA says it is 'monitoring developments' and privately expects Iran to attend, though Chatham House's Dr. Sanam Vakil described the conflict as 'existential' for the regime and 'unlikely to end quickly.' Iraq and the UAE have been identified as potential replacement teams from the Asian Football Confederation if Iran withdraws.",
+        "url": "https://www.bbc.com/sport/football/articles/c20j8jnezl8o?xtor=AL-72-%5Bpartner%5D-%5Byahoo.north.america%5D-%5Bheadline%5D-%5Bsport%5D-%5Bbizdev%5D-%5Bisapi%5D",
+        "tag": "Politics"
+      },
+      {
+        "source": "Israelnationalnews.com",
+        "headline": "Israeli Commentary: Khamenei's Death Marks Decisive Shift in Middle East Order",
+        "body": "Israeli nationalist outlet Arutz Sheva published a pointed editorial framing the killing of Khamenei — following the deaths of Nasrallah, Haniyeh, Sinwar, and Deif — as proof that Israel's 'will to live is not negotiable,' while sharply criticizing European governments for issuing only 'lukewarm statements' in response to the U.S.-Israel operation. The piece invokes Michel Houellebecq and the 1979–1981 Iran hostage crisis to argue that Western hesitancy enabled Iran's half-century of regional aggression. The editorial reflects hardening Israeli and American right-wing sentiment that de-escalation would be a strategic error.",
+        "url": "https://www.israelnationalnews.com/news/423188",
+        "tag": "Politics"
+      },
+      {
+        "source": "OilPrice.com",
+        "headline": "China and the U.S. Race for Commercial Nuclear Fusion as Energy Policy Diverges",
+        "body": "Commonwealth Fusion Systems in the U.S. and China's BEST plasma lab are both targeting net-energy fusion milestones by 2027, with Russia also announcing a high-temperature superconductor breakthrough for more compact tokamak designs. The New York Times has noted that 'whoever conquers it could build plants around the world and forge new alliances with energy-hungry countries' — a dimension that carries additional weight as Middle East supply routes are disrupted. China is investing heavily in the energy transition while the U.S. under Trump doubles down on fossil fuels, a divergence that could define the long-term energy geopolitical balance.",
+        "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/China-and-America-Battle-for-the-Future-of-Limitless-Energy.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "Times of India / Economic Times",
+        "headline": "RBI Governor Malhotra: Rates at Current Level or Lower 'for a Long Time'",
+        "body": "Reserve Bank of India Governor Sanjay Malhotra said policy rates are expected to remain at current levels or move lower for an extended period, citing benign inflation and expectations that underlying price pressures will stay subdued. Malhotra acknowledged that the outlook remains subject to growth-inflation dynamics and stressed that 'we are still living in very uncertain times.' The dovish guidance arrives as global oil prices spike on Iran war fears — a direct inflation risk for India, which imports roughly 85% of its crude.",
+        "url": "https://economictimes.indiatimes.com/news/economy/policy/we-expect-policy-rate-to-be-at-current-level-or-lower-for-a-long-time-sanjay-malhotra-governor-rbi/articleshow/128931599.cms",
+        "tag": "Rates"
+      }
+    ],
+    "quote": {
+      "text": "Oil is the currency of currencies.",
+      "attribution": "T. Boone Pickens, CNBC interview, 2008"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.32",
+        "change": "▲ 0.7%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,880",
+        "change": "▼ 0.4%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.83%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "70,500.11",
+        "change": "▼ 1.3%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.3180",
+        "chg_1d": {
+          "text": "▲ 0.67%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.34%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.2440",
+        "chg_1d": {
+          "text": "▼ 0.29%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 0.54%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.6340",
+        "chg_1d": {
+          "text": "▲ 0.44%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.25%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "119.1755",
+        "chg_1d": {
+          "text": "▲ 1.27%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.04%",
+          "cls": "chg-down"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "22°C",
+    "high_low": "25°C / 8°C",
+    "humidity": "Humidity 15%",
+    "desc": "Clear skies"
+  }
+}
