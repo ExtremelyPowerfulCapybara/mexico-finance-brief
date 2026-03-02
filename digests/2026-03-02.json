@@ -1,66 +1,59 @@
 {
   "date": "2026-03-02",
   "digest": {
-    "editor_note": "Fellow Humans, the Middle East just broke the energy markets: oil up 6%, the Strait of Hormuz effectively closed, gold through $5,300, and rate-cut bets evaporating in real time. This is not a drill — it is what happens when a supreme leader gets killed and a refinery goes up in smoke simultaneously, and the world discovers, once again, that it has very little in reserve.",
+    "editor_note": "Fellow Humans, the Middle East just repriced everything. U.S.-Israeli strikes killed Iran's Supreme Leader Khamenei, Tehran is firing back at Gulf states, the Strait of Hormuz is choking, gold is at $5,300, 10-year yields are surging toward their biggest single-day move since April, and the Fed's rate-cut calendar is being shredded in real time. Everything else this morning is noise.",
     "sentiment": {
       "label": "Risk-Off",
       "position": 18,
-      "context": "US-Israeli strikes on Iran, Strait of Hormuz disruption, oil surging 6%, and collapsing Fed rate-cut expectations are driving a sharp risk-off posture across markets."
+      "context": "U.S.-Israeli strikes on Iran, retaliatory missile attacks on Gulf states, Hormuz shipping disruption, and surging oil prices are driving a broad cross-asset risk-off repricing as Monday's U.S. market open approaches."
     },
     "stories": [
       {
         "source": "Financial Post",
-        "headline": "Oil Surges 6%, Dollar Rises as Iran War Disrupts Strait of Hormuz",
-        "body": "Brent crude jumped 6% after US-Israeli strikes killed Iran's Supreme Leader Khamenei and threatened to snarl the Strait of Hormuz, which handles roughly 20% of global oil supply. Ten-year Treasury yields climbed 11 basis points to 4.05% as inflation fears mounted, while traders pushed the first expected Fed rate cut to September — a third cut in 2026 is now nearly fully priced out. Gold topped $5,300 and diesel futures in Europe surged 23%; JPMorgan and Morgan Stanley both called the selloff a buying opportunity in equities, but the bond market is telling a different story.",
+        "headline": "Iran War Sends Oil Surging, Bonds Tumbling, Dollar Higher as Hormuz Threat Bites",
+        "body": "West Texas Intermediate settled above $71 as the near-halt of Strait of Hormuz traffic and a Saudi refinery disruption stoked supply fears, while European natural gas soared after Qatar shuttered the world's largest LNG export facility. Ten-year Treasury yields jumped 11 basis points to 4.05% — their biggest single-day advance since April — as inflation fears evaporated Fed rate-cut bets, with markets now pricing the first cut no earlier than September. Gold topped $5,300 and the dollar rose 0.7%, while airlines sank and the S&P 500 clawed back from a 1%-plus intraday loss.",
         "url": "https://financialpost.com/pmn/business-pmn/dollar-surges-as-traders-brace-for-war-impact",
-        "tag": "Energy"
+        "tag": "Markets"
       },
       {
-        "source": "Business Insider",
-        "headline": "Ships Come Under Fire Near Strait of Hormuz as Major Carriers Reroute",
-        "body": "An oil tanker, the Skylight, was attacked near the Strait of Hormuz, with its 20-person crew evacuated by Omani authorities — no party has claimed responsibility. Major shipping companies are now actively avoiding the route, though no official closure has been communicated through recognized maritime channels. The strait carries approximately 20% of the world's daily oil supply, and any sustained disruption compounds the supply shock already priced into energy markets.",
-        "url": "https://www.businessinsider.com/ships-come-under-fire-around-the-strait-of-hormuz-2026-3",
-        "tag": "Energy"
-      },
-      {
-        "source": "Slashdot / WSJ",
-        "headline": "Oil Markets Enter Iran Conflict With Minimal Spare Capacity",
-        "body": "With Brent already climbing on conflict fears, analysts at Barclays flagged that prices could reach $80 a barrel as US-Iran tensions persist — a relatively modest target that underscores how little buffer exists in global supply. The WSJ notes that oil markets have entered this conflict with negligible spare capacity, leaving prices highly sensitive to any further disruption at refineries, pipelines, or export terminals. European natural gas prices soared separately after Qatar shut the world's largest LNG export facility.",
-        "url": "https://slashdot.org/firehose.pl?op=view&id=180879974",
-        "tag": "Energy"
-      },
-      {
-        "source": "Statetimes.in",
-        "headline": "India Convenes Emergency Security Council Meeting as West Asia Conflict Escalates",
-        "body": "Prime Minister Narendra Modi chaired an emergency Cabinet Committee on Security meeting in New Delhi after US-Israeli strikes killed Ayatollah Khamenei, with the session focusing on the safety of roughly nine million Indian nationals living across the Gulf and West Asia. The near-total closure of West Asian airspace has left hundreds of Indians stranded in Dubai, Doha, and other regional transit hubs. Of particular strategic concern: the closure of the Strait of Hormuz, a critical artery for Indian oil imports.",
-        "url": "https://statetimes.in/pm-modi-chairs-ccs-meet-in-delhi-as-chaos-unfolds-in-middle-east/",
+        "source": "Slashdot / New York Times",
+        "headline": "Iran Strikes Dubai, Abu Dhabi, Qatar, and Bahrain in Retaliation for U.S.-Israeli Bombing Campaign",
+        "body": "Iran widened its retaliatory strike package beyond Israel to target Gulf states hosting U.S. allies and military infrastructure, hitting Dubai, Abu Dhabi, Qatar, and Bahrain. The UAE halted its stock markets for two days following the attacks, a stark signal of how severely the Gulf's image as a stable financial hub has been shaken. Three American service members were confirmed killed, and the U.N. Security Council convened an emergency session with the Secretary-General warning the escalation could spiral into a broader regional conflict.",
+        "url": "https://slashdot.org/firehose.pl?op=view&id=180880070",
         "tag": "Politics"
+      },
+      {
+        "source": "CryptoSlate",
+        "headline": "Bitcoin Holds Near $66,000 Ahead of Monday Open as Hormuz Risk Threatens Macro Repricing",
+        "body": "Bitcoin printed a weekend low of $63,068 before recovering to roughly $66,999, but the real test arrives Monday when U.S. spot ETF flows and institutional liquidity resume. Elevated energy prices feed directly into inflation expectations and rate pricing, which then shape risk appetite for high-beta assets like BTC — meaning if the Hormuz risk premium persists at the open, Bitcoin is likely to trade as a macro proxy rather than a crypto-specific story. The UN Security Council alarm and continued Iran retaliation increase the odds that Monday becomes a broad cross-asset repricing event rather than a contained weekend shock.",
+        "url": "https://cryptoslate.com/bitcoin-price-rebound-meets-un-security-council-alarm-and-hormuz-oil-scare-creating-inflation-fears/",
+        "tag": "Markets"
       },
       {
         "source": "New York Post",
-        "headline": "Iran's Soccer Federation Head Doubts Country Will Participate in 2026 World Cup",
-        "body": "Iranian football federation president Mehdi Taj said Sunday that he cannot envision his country playing World Cup matches on US soil following the American-Israeli bombardment that killed Khamenei. Iran is slated to open Group G play at SoFi Stadium in Los Angeles on June 15 against New Zealand, with further matches scheduled in Seattle. A 40-day national mourning period has already suspended team preparations, and Iranian citizens are subject to a US travel ban — FIFA said it is monitoring the situation but has not commented further.",
+        "headline": "Berkshire Q4 Operating Profit Drops 30% to $10.2B as Insurance Income Collapses and Occidental Written Down",
+        "body": "Berkshire Hathaway reported a 30% fall in fourth-quarter operating profit to $10.2 billion, driven by a 38% collapse in insurance earnings as falling interest rates pressured cash income and Geico faced pricing constraints. The company also took a $4.5 billion writedown on its 26.9% stake in Occidental Petroleum, its second such charge in 2025, though it stated no intention to sell. New CEO Greg Abel inherits a $373.3 billion cash pile and a business CFRA analyst Cathy Seifert described bluntly: 'Top-line growth is a challenge.'",
+        "url": "https://nypost.com/2026/03/01/business/berkshire-hathaway-profit-falls-on-lower-insurance-income-occidental-writedown/",
+        "tag": "Markets"
+      },
+      {
+        "source": "Financial Post / Livemint",
+        "headline": "BYD February Sales Plunge 41% Year-on-Year as Chinese Demand Sputters",
+        "body": "BYD sold 190,190 vehicles in February, down 41% from a year earlier and 9.5% from January, with the two-month combined figure off 36% at 400,241 units as Lunar New Year disruptions compounded a structural demand softening at home. Reduced purchase-tax exemptions, cooling consumer confidence, and buyers delaying purchases ahead of new model launches are all weighing on domestic volumes. International expansion — particularly in Latin America and Europe — is now carrying the growth story, with exports of new energy vehicles reaching 100,600 units last month.",
+        "url": "https://financialpost.com/pmn/business-pmn/byd-february-vehicle-sales-plunge-41-on-waning-domestic-demand",
+        "tag": "Macro"
+      },
+      {
+        "source": "Fox News / New York Post",
+        "headline": "Iran's Soccer Federation Casts Doubt on 2026 World Cup Participation After U.S.-Israeli Strikes",
+        "body": "Iranian football federation president Mehdi Taj said flatly that his country 'cannot be expected to look forward to the World Cup with hope' following the strikes that killed Supreme Leader Khamenei. Iran is slated to play Group G matches in Los Angeles and Seattle beginning June 15, but a 40-day national mourning period has halted team preparations and Iranian citizens already face U.S. travel restrictions. FIFA said it is monitoring the situation, which adds a material logistical complication to a tournament the U.S. is co-hosting.",
         "url": "https://nypost.com/2026/03/01/sports/irans-soccer-federation-head-doubts-country-will-play-in-2026-world-cup-after-us-israeli-strikes/",
         "tag": "Politics"
-      },
-      {
-        "source": "Livemint",
-        "headline": "Amazon India Waives Seller Fees on All Products Under ₹1,000 in Escalating Fee War",
-        "body": "Amazon India has expanded its zero-commission policy to cover goods priced under ₹1,000, up from ₹300 previously — a move that extends fee-free status to 12.5 crore products and directly targets rivals Meesho and Flipkart. The company reported a 50% surge in new seller sign-ups following its initial fee waiver in April, and estimates the policy will cover 70–80% of its 1.7 million-strong seller base. Amazon declined to disclose the revenue impact of the cuts.",
-        "url": "https://www.livemint.com/companies/amazon-india-zero-commission-policy-products-one-thousand-sellers-business-growth-11772360566023.html",
-        "tag": "Markets"
-      },
-      {
-        "source": "Slashdot / Barron's",
-        "headline": "Greg Abel Faces First Real Test as Berkshire Hathaway CEO",
-        "body": "Warren Buffett's successor Greg Abel is navigating his first major public test at the helm of Berkshire Hathaway, with shareholders watching closely for signals on capital deployment of the company's substantial cash pile. Abel addressed investors directly, rejecting the characterization of Berkshire's cash reserves as a strategic problem — a defense that echoes Buffett's long-standing posture of patient accumulation. How Abel manages the geopolitical shock now hitting energy and equity markets may define his early tenure more than any single acquisition.",
-        "url": "https://slashdot.org/firehose.pl?op=view&id=180879972",
-        "tag": "Markets"
       }
     ],
     "quote": {
-      "text": "In the short run, the market is a voting machine, but in the long run, it is a weighing machine.",
-      "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+      "text": "Oil is the lifeblood of the industrialized nations. A cutoff of oil imports would bring the industrialized countries to their knees.",
+      "attribution": "Henry Kissinger, Years of Upheaval, 1982"
     }
   },
   "market": {
@@ -73,8 +66,8 @@
       },
       {
         "label": "S&P 500",
-        "value": "6,880",
-        "change": "▼ 0.4%",
+        "value": "6,886",
+        "change": "▼ 0.3%",
         "direction": "down"
       },
       {
@@ -85,29 +78,29 @@
       },
       {
         "label": "IPC BMV",
-        "value": "70,504.79",
-        "change": "▼ 1.3%",
+        "value": "70,634.20",
+        "change": "▼ 1.1%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.3150",
+        "rate": "17.3120",
         "chg_1d": {
-          "text": "▲ 0.65%",
+          "text": "▲ 0.63%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.32%",
+          "text": "▲ 0.30%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2441",
+        "rate": "20.2452",
         "chg_1d": {
-          "text": "▼ 0.29%",
+          "text": "▼ 0.28%",
           "cls": "chg-down"
         },
         "chg_1w": {
@@ -117,25 +110,25 @@
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.6606",
+        "rate": "12.6588",
         "chg_1d": {
-          "text": "▲ 0.65%",
+          "text": "▲ 0.64%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.46%",
+          "text": "▲ 0.44%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "119.1549",
+        "rate": "119.1343",
         "chg_1d": {
-          "text": "▲ 1.25%",
+          "text": "▲ 1.23%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.06%",
+          "text": "▼ 0.08%",
           "cls": "chg-down"
         }
       }
