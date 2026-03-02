@@ -73,4 +73,6 @@ def get_week_stories() -> list[dict]:
 
 
 def is_friday() -> bool:
+    if os.environ.get("FORCE_FRIDAY", "").lower() == "true":
+        return True
     return date.today().weekday() == 4
