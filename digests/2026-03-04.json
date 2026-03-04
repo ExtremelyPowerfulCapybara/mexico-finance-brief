@@ -1,0 +1,151 @@
+{
+  "date": "2026-03-04",
+  "digest": {
+    "editor_note": "Fellow Humans, the Strait of Hormuz is functionally closed, Brent crude has spiked double digits in two sessions, and Jamie Dimon is already reaching for the skunk metaphor. Markets recovered from their intraday lows on Tuesday after Trump promised naval escorts through the strait, but the S&P still closed down nearly 1% — and the real question isn't whether this is inflationary, it's how long the Fed gets to pretend it isn't.",
+    "sentiment": {
+      "label": "Risk-Off",
+      "position": 22,
+      "context": "U.S.-Iran conflict, Strait of Hormuz closure fears, surging oil prices, and inflation overhang are driving broad equity selling and suppressing rate-cut expectations."
+    },
+    "stories": [
+      {
+        "source": "CNBC",
+        "headline": "Wall Street Slumps as Strait of Hormuz Closure Fears Rattle Markets; Oil Surges 4.7%",
+        "body": "The S&P 500 fell 0.94% to 6,816 and the Dow dropped 403 points Tuesday, recovering from intraday losses of 2.5% after Trump pledged the U.S. Navy would escort tankers through the Strait of Hormuz. Brent crude settled up 4.71% following a 6% spike Monday, with Treasury yields initially surging on renewed inflation fears before paring gains. With roughly 20% of global oil supply transiting the strait, analysts warn that a prolonged closure cannot be priced as a temporary shock.",
+        "url": "https://www.cnbc.com/2026/03/02/stock-market-today-live-updates.html",
+        "tag": "Markets"
+      },
+      {
+        "source": "New York Magazine",
+        "headline": "Oil Analyst: Hormuz Crisis Is 'Most Perilous' Oil Market Situation Since Ukraine Invasion",
+        "body": "Oil market researcher Rory Johnston told New York Magazine that markets had already priced in a $7/barrel Iran risk premium before the conflict began, with another $7-8 added Monday, bringing Brent to roughly $80. The critical variable is duration — the strait has not been formally closed but tanker traffic is near standstill, and Johnston notes that a prolonged shutdown would require a significant further re-pricing. He characterized the situation as the most dangerous for oil markets since Russia's February 2022 invasion of Ukraine.",
+        "url": "http://nymag.com/intelligencer/article/how-iran-war-could-turn-into-an-oil-shock-nightmare.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "Fortune",
+        "headline": "Dimon Warns Inflation Is the 'Skunk at the Party' as Iran Conflict Threatens Fed Rate-Cut Path",
+        "body": "JPMorgan CEO Jamie Dimon, speaking at the bank's annual leveraged-finance conference, cautioned that inflation — already stuck near 3% — risks being pushed higher by the Iran conflict, particularly through oil prices and disrupted trade routes through the Strait of Hormuz and the Red Sea. He described the inflationary threat as modest in an isolated scenario but warned it compounds with medical costs, construction prices, and wages already running hot. Markets are watching whether the Fed can justify further rate cuts if energy-driven price pressures re-accelerate.",
+        "url": "https://fortune.com/2026/03/03/jamie-dimon-inflation-skunk-economic-party-fed-rates/",
+        "tag": "Rates"
+      },
+      {
+        "source": "BusinessLine",
+        "headline": "India Urges Restraint as Iran Conflict Spreads, With 10 Million Citizens at Risk in Gulf Region",
+        "body": "India's Ministry of External Affairs issued a formal statement on Tuesday expressing 'grave concern' over the rapidly deteriorating situation in Iran and the Gulf following the outbreak of conflict on February 28. New Delhi noted that nearly one crore — 10 million — Indian nationals live and work in the Gulf, with some already reported killed or missing in attacks on merchant shipping. India flagged direct risks to its energy supply chains and trade routes, underscoring that the conflict's economic consequences extend well beyond the Middle East.",
+        "url": "https://www.thehindubusinessline.com/news/india-calls-for-dialogue-amid-widening-iran-conflict-monitors-safety-of-1-crore-citizens/article70699358.ece",
+        "tag": "Macro"
+      },
+      {
+        "source": "Fox News",
+        "headline": "Trump Authorized Iran Strikes Mid-Flight; Congress Moves to Debate War Powers Limits",
+        "body": "Chairman of the Joint Chiefs Gen. Dan Caine confirmed Tuesday that President Trump authorized Operation Epic Fury while airborne en route to Corpus Christi, with members of the Texas congressional delegation on Air Force One when he gave the order. Lawmakers from both parties are now pushing for a war powers vote to limit executive authority in the region, though Trump has indicated the conflict could last more than four weeks — a timeline that is increasingly setting the market's risk calculus.",
+        "url": "https://www.foxnews.com/politics/the-right-thing-paxton-cornyn-trade-blows-texas-primary-unite-trumps-iran-strikes",
+        "tag": "Politics"
+      },
+      {
+        "source": "Crypto Briefing",
+        "headline": "Bank of Japan Launches Blockchain Settlement Experiments for Central Bank Reserves",
+        "body": "BOJ Governor Kazuo Ueda announced at the FIN/SUM 2026 conference in Tokyo that the central bank will test distributed ledger technology for settling interbank and securities transactions using central bank money. The BOJ is also participating in Project Agorá, a multi-central-bank initiative exploring tokenized reserves and atomic cross-border transactions. Ueda flagged interoperability across emerging blockchain networks as a key risk, warning that fragmentation could undermine the trust anchor function of central bank money.",
+        "url": "https://cryptobriefing.com/tokenized-central-bank-deposits-japan/",
+        "tag": "Macro"
+      },
+      {
+        "source": "Commercial Observer",
+        "headline": "Benefit Street Partners Closes $10 Billion Real Estate Debt Fund — Six Times Its Predecessor",
+        "body": "Benefit Street Partners completed its BSP Real Estate Opportunistic Debt Fund II in January at $10 billion of investable capital, oversubscribed and roughly six times the size of its first institutional drawdown vehicle. Of the $3 billion equity raise, 40% came from Asia-Pacific and 40% from U.S. investors, reflecting a broadening global appetite for real estate debt as a distinct asset class within private credit allocations. The firm's co-COO Allison Davi noted that as recently as 2022, they struggled to get meetings — a reversal that underlines how rapidly institutional acceptance of the strategy has shifted.",
+        "url": "http://commercialobserver.com/2026/03/benefit-street-partners-michael-comparato-allison-davi-debt/",
+        "tag": "Markets"
+      }
+    ],
+    "quote": {
+      "text": "Oil is the lifeblood of the industrial nations. To disrupt it is to disrupt the entire economy.",
+      "attribution": "Henry Kissinger, Years of Upheaval, 1982"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.60",
+        "change": "▲ 1.7%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,817",
+        "change": "▼ 0.9%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "68,436.26",
+        "change": "▼ 3.0%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.6000",
+        "chg_1d": {
+          "text": "▲ 1.71%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.58%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.4845",
+        "chg_1d": {
+          "text": "▲ 1.22%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.01%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.8855",
+        "chg_1d": {
+          "text": "▲ 1.81%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.66%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "121.3766",
+        "chg_1d": {
+          "text": "▲ 1.93%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.99%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "11°C",
+    "high_low": "24°C / 10°C",
+    "humidity": "Humidity 59%",
+    "desc": "Clear skies"
+  }
+}
