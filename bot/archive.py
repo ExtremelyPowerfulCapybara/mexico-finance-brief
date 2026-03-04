@@ -3,6 +3,12 @@
 #  rebuilds index.html with a full dashboard:
 #  sentiment timeline, volatility, story count,
 #  and issue cards.
+#
+#  CHANGE: digest is now bilingual {es, en}.
+#  All reads from saved digests now go through
+#  digest["es"] for display. The index page
+#  is Spanish-first with English labels as
+#  secondary where needed.
 # ─────────────────────────────────────────────
 
 import os
@@ -11,7 +17,7 @@ from datetime import date, datetime
 from pretty_renderer import build_pretty_html
 from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR
 
-GITHUB_PAGES_URL = ""  # Set this after GitHub Pages is live, e.g. "https://username.github.io/mexico-finance-brief"
+GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest"
 
 
 def save_pretty_issue(
@@ -29,6 +35,7 @@ def save_pretty_issue(
     filename = f"{today}.html"
     filepath = os.path.join(ARCHIVE_DIR, filename)
 
+    # digest is the full bilingual dict — pretty_renderer handles both
     html = build_pretty_html(
         digest             = digest,
         tickers            = tickers,
@@ -51,7 +58,10 @@ def save_pretty_issue(
 def _load_all_digests() -> list[dict]:
     """
     Loads all saved digest JSONs from DIGEST_DIR, sorted oldest first.
-    Each entry: { date, label, position, story_count, headline }
+    Each entry: { date, label_es, label_en, position, story_count, headline }
+
+    CHANGE: reads from digest["es"] for bilingual digests,
+    falls back to flat structure for old digests.
     """
     entries = []
     if not os.path.exists(DIGEST_DIR):
@@ -70,13 +80,22 @@ def _load_all_digests() -> list[dict]:
             data = json.load(f)
 
         digest    = data.get("digest", {})
-        sentiment = digest.get("sentiment", {})
-        stories   = digest.get("stories", [])
-        headline  = stories[0].get("headline", "") if stories else ""
+
+        # CHANGE: support both bilingual and old flat digests
+        digest_es = digest.get("es", digest)
+
+        sentiment  = digest_es.get("sentiment", {})
+        stories    = digest_es.get("stories", [])
+        headline   = stories[0].get("headline", "") if stories else ""
+
+        # CHANGE: read both label variants — fall back gracefully
+        label_es = sentiment.get("label_es", sentiment.get("label", "Cauteloso"))
+        label_en = sentiment.get("label_en", sentiment.get("label", "Cautious"))
 
         entries.append({
             "date":        date_str,
-            "label":       sentiment.get("label", "Cautious"),
+            "label_es":    label_es,
+            "label_en":    label_en,
             "position":    int(sentiment.get("position", 50)),
             "story_count": len(stories),
             "headline":    headline,
@@ -91,17 +110,20 @@ def rebuild_index() -> None:
     # ── Load digest data for charts ───────────
     digest_data = _load_all_digests()
 
-    # ── Build chart data arrays ────────────────
+    # ── Build chart data arrays ───────────────
     chart_dates    = [d["date"]        for d in digest_data]
     chart_position = [d["position"]    for d in digest_data]
     chart_stories  = [d["story_count"] for d in digest_data]
-    chart_labels   = [d["label"]       for d in digest_data]
+    chart_labels   = [d["label_en"]    for d in digest_data]  # English for chart tooltips
 
-    # Point colors per label
-    point_colors = [
-        "#b84a3a" if l == "Risk-Off" else ("#4a9e6a" if l == "Risk-On" else "#e8a030")
-        for l in chart_labels
-    ]
+    # CHANGE: point colors now match Spanish OR English labels
+    def _sent_color(d):
+        en = d.get("label_en", "")
+        if en == "Risk-Off":  return "#b84a3a"
+        if en == "Risk-On":   return "#4a9e6a"
+        return "#e8a030"
+
+    point_colors = [_sent_color(d) for d in digest_data]
 
     # ── Issue cards ───────────────────────────
     issues = sorted(
@@ -113,40 +135,57 @@ def rebuild_index() -> None:
     for i, filename in enumerate(issues):
         issue_date_str = filename.replace(".html", "")
         try:
-            dt    = datetime.strptime(issue_date_str, "%Y-%m-%d")
-            label = dt.strftime("%A, %B %d, %Y")
+            dt = datetime.strptime(issue_date_str, "%Y-%m-%d")
+            # CHANGE: date label in Spanish
+            days_es   = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
+            months_es = ["","enero","febrero","marzo","abril","mayo","junio",
+                         "julio","agosto","septiembre","octubre","noviembre","diciembre"]
+            label = f"{days_es[dt.weekday()]}, {dt.day} de {months_es[dt.month]} de {dt.year}"
         except ValueError:
             label = issue_date_str
 
         issue_num   = len(issues) - i
         digest_path = os.path.join(DIGEST_DIR, f"{issue_date_str}.json")
         headline    = ""
-        sentiment   = ""
+        label_es    = ""
+        label_en    = ""
         story_count = 0
 
         if os.path.exists(digest_path):
             with open(digest_path, encoding="utf-8") as f:
                 data = json.load(f)
+
+            # CHANGE: read from digest["es"] for bilingual digests
             digest_obj  = data.get("digest", {})
-            stories     = digest_obj.get("stories", [])
+            digest_es   = digest_obj.get("es", digest_obj)
+            stories     = digest_es.get("stories", [])
             headline    = stories[0].get("headline", "") if stories else ""
-            sentiment   = digest_obj.get("sentiment", {}).get("label", "")
+            sentiment   = digest_es.get("sentiment", {})
+            label_es    = sentiment.get("label_es", sentiment.get("label", ""))
+            label_en    = sentiment.get("label_en", sentiment.get("label", ""))
             story_count = len(stories)
 
-        sent_color = {"Risk-Off": "#b84a3a", "Cautious": "#9a6a1a", "Risk-On": "#4a9e6a"}.get(sentiment, "#aab4bc")
-        sent_pill  = f'<span style="font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:{sent_color}; padding:3px 10px; border:1px solid {sent_color}; border-radius:20px;">{sentiment}</span>' if sentiment else ""
-        count_html = f'<span style="font-size:9px; color:#aab4bc; margin-left:10px;">{story_count} stories</span>' if story_count else ""
+        # CHANGE: pill shows Spanish label, color keyed off English label
+        sent_color = {"Risk-Off": "#b84a3a", "Cautious": "#9a6a1a", "Risk-On": "#4a9e6a"}.get(label_en, "#aab4bc")
+        sent_pill  = (
+            f'<span style="font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; '
+            f'color:{sent_color}; padding:3px 10px; border:1px solid {sent_color}; border-radius:20px;">'
+            f'{label_es}</span>'
+        ) if label_es else ""
+        count_html = f'<span style="font-size:9px; color:#aab4bc; margin-left:10px;">{story_count} notas</span>' if story_count else ""
 
         cards += f"""
     <a href="{filename}" style="display:block; text-decoration:none; background:#f0f3f5; border:1px solid #cdd4d9; padding:20px 28px; margin-bottom:10px;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-        <span style="font-family:Arial,sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#aab4bc;">ISSUE #{issue_num} &middot; {label}</span>
+        <span style="font-family:Arial,sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#aab4bc;">EDICIÓN #{issue_num} &middot; {label}</span>
         <span>{sent_pill}{count_html}</span>
       </div>
-      <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">{headline or "View issue &rarr;"}</div>
+      <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">{headline or "Ver edición &rarr;"}</div>
     </a>"""
 
-    # ── Build search index (embedded JSON) ───────
+    # ── Build search index ────────────────────
+    # CHANGE: search index now includes both ES and EN text
+    # so users can search in either language
     search_index = []
     for d in digest_data:
         digest_path = os.path.join(DIGEST_DIR, f"{d['date']}.json")
@@ -154,20 +193,29 @@ def rebuild_index() -> None:
             continue
         with open(digest_path, encoding="utf-8") as f:
             data = json.load(f)
+
         digest_obj = data.get("digest", {})
-        stories    = digest_obj.get("stories", [])
-        # Collect all searchable text for this issue
+        digest_es  = digest_obj.get("es", digest_obj)
+        digest_en  = digest_obj.get("en", {})
+
+        stories_es = digest_es.get("stories", [])
+        stories_en = digest_en.get("stories", [])
+
         text_parts = [
-            digest_obj.get("editor_note", ""),
+            digest_es.get("editor_note", ""),
+            digest_en.get("editor_note", ""),
             d["headline"],
         ]
-        for s in stories:
+        for s in stories_es:
             text_parts += [s.get("headline",""), s.get("body",""), s.get("source",""), s.get("tag","")]
+        for s in stories_en:
+            text_parts += [s.get("headline",""), s.get("body","")]
+
         search_index.append({
             "date":     d["date"],
             "filename": f"{d['date']}.html",
             "text":     " ".join(text_parts).lower(),
-            "label":    d["label"],
+            "label":    d["label_en"],
         })
 
     search_index_js = json.dumps(search_index)
@@ -178,24 +226,19 @@ def rebuild_index() -> None:
     stories_js  = json.dumps(chart_stories)
     colors_js   = json.dumps(point_colors)
 
-    # Only render charts if we have data
     charts_html = ""
     if digest_data:
         charts_html = f"""
-  <!-- ── Dashboard charts ─────────────────── -->
   <div style="background:#f0f3f5; border:1px solid #cdd4d9; padding:28px 32px; margin-bottom:24px;">
 
-    <!-- Sentiment timeline -->
-    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Sentiment Timeline</p>
+    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Línea de Sentimiento</p>
     <div style="position:relative; height:120px; margin-bottom:28px;">
       <canvas id="sentimentChart"></canvas>
     </div>
 
-    <!-- Divider -->
     <div style="height:1px; background:#dde3e8; margin-bottom:24px;"></div>
 
-    <!-- Story count -->
-    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Stories per Issue</p>
+    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Notas por Edición</p>
     <div style="position:relative; height:80px;">
       <canvas id="storyChart"></canvas>
     </div>
@@ -208,7 +251,6 @@ def rebuild_index() -> None:
     const stories  = {stories_js};
     const colors   = {colors_js};
 
-    // ── Sentiment chart ──
     new Chart(document.getElementById('sentimentChart'), {{
       type: 'line',
       data: {{
@@ -241,17 +283,12 @@ def rebuild_index() -> None:
           }}
         }},
         scales: {{
-          x: {{
-            ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }},
-            grid: {{ color: '#e8edf0' }}
-          }},
+          x: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }}, grid: {{ color: '#e8edf0' }} }},
           y: {{
-            min: 0,
-            max: 100,
+            min: 0, max: 100,
             ticks: {{
-              font: {{ size: 9 }},
-              color: '#aab4bc',
-              callback: (v) => v === 5 ? 'Risk-Off' : v === 50 ? 'Neutral' : v === 95 ? 'Risk-On' : '',
+              font: {{ size: 9 }}, color: '#aab4bc',
+              callback: (v) => v === 5 ? 'Aversión' : v === 50 ? 'Neutral' : v === 95 ? 'Apetito' : '',
               stepSize: 45,
             }},
             grid: {{ color: '#e8edf0' }}
@@ -260,21 +297,16 @@ def rebuild_index() -> None:
       }}
     }});
 
-    // ── Story count chart ──
     new Chart(document.getElementById('storyChart'), {{
       type: 'bar',
       data: {{
         labels: dates,
-        datasets: [{{
-          data: stories,
-          backgroundColor: '#c8d4da',
-          borderRadius: 2,
-        }}]
+        datasets: [{{ data: stories, backgroundColor: '#c8d4da', borderRadius: 2 }}]
       }},
       options: {{
         responsive: true,
         maintainAspectRatio: false,
-        plugins: {{ legend: {{ display: false }}, tooltip: {{ callbacks: {{ label: (ctx) => ctx.raw + ' stories' }} }} }},
+        plugins: {{ legend: {{ display: false }}, tooltip: {{ callbacks: {{ label: (ctx) => ctx.raw + ' notas' }} }} }},
         scales: {{
           x: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }}, grid: {{ display: false }} }},
           y: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', stepSize: 1 }}, grid: {{ color: '#e8edf0' }} }}
@@ -283,13 +315,12 @@ def rebuild_index() -> None:
     }});
   </script>"""
 
-    # ── Full index page ───────────────────────
     index_html = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{NEWSLETTER_NAME} — Archive</title>
+  <title>{NEWSLETTER_NAME} — Archivo</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
@@ -301,7 +332,6 @@ def rebuild_index() -> None:
     .masthead-sub {{ font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#555; }}
     .masthead-count {{ font-size:11px; color:#444; letter-spacing:1px; text-align:right; }}
     a {{ color:inherit; }}
-    .issue-card:hover div {{ color:#555 !important; }}
     .search-wrap {{ position:relative; margin-bottom:16px; }}
     .search-input {{
       width:100%; padding:12px 40px 12px 16px;
@@ -329,48 +359,36 @@ def rebuild_index() -> None:
 <body>
 <div class="wrap">
 
-  <!-- Masthead -->
   <div class="masthead">
     <div>
       <div class="masthead-name">{NEWSLETTER_NAME}</div>
-      <div class="masthead-sub">Archive &mdash; by {AUTHOR_NAME}</div>
+      <div class="masthead-sub">Archivo &mdash; por {AUTHOR_NAME}</div>
     </div>
-    <div class="masthead-count">{len(issues)} issue{"s" if len(issues) != 1 else ""}</div>
+    <div class="masthead-count">{len(issues)} edición{"es" if len(issues) != 1 else ""}</div>
   </div>
 
   {charts_html}
 
-  <!-- Search -->
   <div class="search-wrap">
-    <input class="search-input" id="searchInput" type="text" placeholder="Search issues — try 'Banxico', 'tariff', 'peso'...">
+    <input class="search-input" id="searchInput" type="text" placeholder="Buscar ediciones — prueba 'Banxico', 'aranceles', 'peso'...">
     <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
   </div>
   <div class="search-count" id="searchCount"></div>
 
-  <!-- Section label -->
-  <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;" id="allIssuesLabel">All Issues</p>
+  <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;" id="allIssuesLabel">Todas las Ediciones</p>
 
   <div id="cardsContainer">
-  {cards if cards else '<p style="color:#aab4bc; font-size:13px;">No issues yet.</p>'}
+  {cards if cards else '<p style="color:#aab4bc; font-size:13px;">No hay ediciones aún.</p>'}
   </div>
 
   <script>
     const searchIndex = {search_index_js};
-
     const input     = document.getElementById('searchInput');
     const clearBtn  = document.getElementById('searchClear');
     const container = document.getElementById('cardsContainer');
     const countEl   = document.getElementById('searchCount');
     const labelEl   = document.getElementById('allIssuesLabel');
     const allCards  = Array.from(container.querySelectorAll('a'));
-
-    // Map date string to card element
-    const cardMap = {{}};
-    allCards.forEach(card => {{
-      const href = card.getAttribute('href');
-      const date = href.replace('.html','');
-      cardMap[date] = card;
-    }});
 
     input.addEventListener('input', () => {{
       const q = input.value.trim().toLowerCase();
@@ -379,7 +397,7 @@ def rebuild_index() -> None:
       if (!q) {{
         allCards.forEach(c => c.style.display = 'block');
         countEl.textContent = '';
-        labelEl.textContent = 'All Issues';
+        labelEl.textContent = 'Todas las Ediciones';
         return;
       }}
 
@@ -391,27 +409,21 @@ def rebuild_index() -> None:
 
       let shown = 0;
       allCards.forEach(card => {{
-        const href = card.getAttribute('href');
-        const date = href.replace('.html','');
-        if (matchDates.has(date)) {{
-          card.style.display = 'block';
-          shown++;
-        }} else {{
-          card.style.display = 'none';
-        }}
+        const date = card.getAttribute('href').replace('.html','');
+        if (matchDates.has(date)) {{ card.style.display = 'block'; shown++; }}
+        else {{ card.style.display = 'none'; }}
       }});
 
-      labelEl.textContent = shown > 0 ? 'Matching Issues' : '';
+      labelEl.textContent = shown > 0 ? 'Resultados' : '';
       countEl.textContent = shown > 0
-        ? shown + ' result' + (shown !== 1 ? 's' : '') + ' for "' + input.value.trim() + '"'
+        ? shown + ' resultado' + (shown !== 1 ? 's' : '') + ' para "' + input.value.trim() + '"'
         : '';
 
       if (shown === 0) {{
         if (!document.getElementById('noResults')) {{
           const msg = document.createElement('p');
-          msg.id        = 'noResults';
-          msg.className = 'no-results';
-          msg.textContent = 'No issues found for "' + input.value.trim() + '"';
+          msg.id = 'noResults'; msg.className = 'no-results';
+          msg.textContent = 'No se encontraron ediciones para "' + input.value.trim() + '"';
           container.appendChild(msg);
         }}
       }} else {{

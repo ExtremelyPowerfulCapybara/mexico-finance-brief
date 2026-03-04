@@ -23,32 +23,44 @@ def get_issue_number() -> int:
 
 def run():
     print("=" * 50)
-    print("  Mexico Finance Brief — starting run")
+    print("  News Digest — starting run")
     print("=" * 50)
 
     # ── 1. Fetch market data (fast, no LLM needed) ──
-    print("\n[1/5] Fetching market data...")
+    print("\n[1/6] Fetching market data...")
     tickers  = fetch_tickers()
     currency = fetch_currency_table()
     weather  = fetch_weather()
 
     # ── 2. Fetch news articles ──────────────────────
-    print("\n[2/5] Fetching news articles...")
+    print("\n[2/6] Fetching news articles...")
     articles = fetch_news()
     if not articles:
         print("  No articles found. Check your NewsAPI key or topics.")
         return
 
     # ── 3. Summarize with Claude ────────────────────
-    print(f"\n[3/5] Summarizing {len(articles)} articles with Claude...")
+    # We immediately split it into two variables for clarity.
+    # digest_es is used for the email (Spanish = primary).
+    # digest_en is passed to the archive for the EN/ES toggle.
+    # digest (full) is saved to disk so nothing is lost.
+
+    print(f"\n[3/6] Summarizing {len(articles)} articles with Claude...")
     digest = summarize_news(articles)
+    digest_es = digest["es"]   # Spanish — primary, used in email
+    digest_en = digest["en"]   # English — used in archive toggle
 
     # ── 4. Save digest to disk ──────────────────────
-    print("\n[4/5] Saving digest...")
+    # CHANGE: We save the full bilingual digest as-is.
+    # The JSON on disk will have both "es" and "en" keys.
+    # storage.py and wordcloud_gen.py read from digest["es"]
+    # when they need to access stories — see those files.
+
+    print("\n[4/6] Saving digest...")
     save_digest(digest, {"tickers": tickers, "currency": currency}, weather)
 
     # ── 5. Build and send email ─────────────────────
-    print("\n[5/5] Building and sending email...")
+    print("\n[5/6] Building and sending email...")
     friday       = is_friday()
     week_stories = get_week_stories() if friday else []
     issue_num    = get_issue_number()
@@ -62,7 +74,7 @@ def run():
         wordcloud_filename = generate_wordcloud()
 
     html  = build_html(
-        digest         = digest,
+        digest         = digest_es,
         tickers        = tickers,
         currency       = currency,
         weather        = weather,
@@ -71,11 +83,15 @@ def run():
         is_friday      = friday,
         wordcloud_b64  = wordcloud_b64,
     )
-    plain = build_plain(digest)
+    plain = build_plain(digest_es)
 
     send_email(html, plain)
 
     # ── 6. Save pretty HTML to archive ─────────────────
+    # save_pretty_issue receives the FULL bilingual
+    # digest so the archive page can render both languages
+    # and wire up the EN/ES toggle button.
+
     print("\n[6/6] Saving to archive...")
     save_pretty_issue(
         digest             = digest,

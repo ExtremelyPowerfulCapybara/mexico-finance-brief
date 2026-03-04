@@ -2,6 +2,12 @@
 #  renderer.py  —  Gmail-safe table-based layout
 #  All layout uses <table> + inline styles.
 #  No flexbox, no grid, no external CSS classes.
+#
+#  CHANGE: Spanish-first. All static labels are
+#  now in Spanish. Sentiment pills match Spanish
+#  labels from the bilingual digest. Preheader
+#  includes a "Leer en inglés" link to the archive
+#  where the EN/ES toggle lives.
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
@@ -49,12 +55,15 @@ def _divider() -> str:
 
 def _preheader(issue_date: str) -> str:
     """
-    Slim top bar with 'View in browser' and 'Browse archive' links.
-    Only renders if GITHUB_PAGES_URL is set in archive.py.
+    Slim top bar with archive links.
+    CHANGE: Labels are now in Spanish.
+    CHANGE: Added 'Leer en inglés' link pointing to the archive
+    page where the EN/ES toggle lives — so email readers who
+    prefer English can switch without leaving their inbox.
     """
     if not GITHUB_PAGES_URL:
         return ""
-    issue_url  = f"{GITHUB_PAGES_URL}/{issue_date}.html"
+    issue_url   = f"{GITHUB_PAGES_URL}/{issue_date}.html"
     archive_url = f"{GITHUB_PAGES_URL}/index.html"
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_OUTER};">
@@ -63,9 +72,11 @@ def _preheader(issue_date: str) -> str:
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
         <tr>
           <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888;">
-            <a href="{issue_url}" style="color:#555555; text-decoration:none;">View in browser</a>
+            <a href="{issue_url}" style="color:#555555; text-decoration:none;">Ver en navegador</a>
             &nbsp;&middot;&nbsp;
-            <a href="{archive_url}" style="color:#555555; text-decoration:none;">Browse all issues</a>
+            <a href="{archive_url}" style="color:#555555; text-decoration:none;">Ver todos los números</a>
+            &nbsp;&middot;&nbsp;
+            <a href="{issue_url}?lang=en" style="color:#555555; text-decoration:none;">Read in English</a>
           </td>
         </tr>
       </table>
@@ -75,7 +86,16 @@ def _preheader(issue_date: str) -> str:
 
 
 def _header(issue_number: int) -> str:
-    today = date.today().strftime("%A, %B %d, %Y").upper()
+    # CHANGE: Date formatted in Spanish
+    # strftime doesn't have built-in Spanish month/day names,
+    # so we map them manually. This gives us "LUNES, 02 DE MARZO DE 2026"
+    # instead of "MONDAY, MARCH 02, 2026".
+    today = date.today()
+    days_es   = ["LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES","SÁBADO","DOMINGO"]
+    months_es = ["","ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO",
+                 "JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"]
+    today_str = f"{days_es[today.weekday()]}, {today.day:02d} DE {months_es[today.month]} DE {today.year}"
+
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
@@ -84,8 +104,8 @@ def _header(issue_number: int) -> str:
       <p style="margin:0 0 14px 0; font-family:{FONT_SERIF}; font-size:34px; font-weight:bold; color:{TEXT_DARK}; line-height:1.1;">{NEWSLETTER_NAME}</p>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">{today}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">ISSUE NO. {issue_number}</td>
+          <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">{today_str}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">EDICIÓN NO. {issue_number}</td>
         </tr>
       </table>
     </td>
@@ -94,9 +114,10 @@ def _header(issue_number: int) -> str:
 
 
 def _ticker(tickers: list[dict]) -> str:
+    # Unchanged — ticker labels come from config.py (already set by user)
     cells = ""
     for i, t in enumerate(tickers):
-        chg_color  = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#888888")
+        chg_color   = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#888888")
         left_border = "border-left:1px solid #2e2e2e;" if i > 0 else ""
         cells += f"""
         <td style="{left_border} padding:10px 16px; text-align:center; vertical-align:middle;">
@@ -119,6 +140,7 @@ def _ticker(tickers: list[dict]) -> str:
 
 
 def _weather(w: dict) -> str:
+    # Unchanged — weather values are numeric, city name comes from config
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK}; margin-top:3px;">
   <tr>
@@ -137,6 +159,7 @@ def _weather(w: dict) -> str:
 
 
 def _editor_note(note: str) -> str:
+    # Unchanged structurally — the note text itself comes from Claude in Spanish
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
@@ -149,19 +172,23 @@ def _editor_note(note: str) -> str:
 
 
 def _sentiment(s: dict) -> str:
-    label   = s.get("label", "Cautious")
-    context = s.get("context", "")
+    # CHANGE: pills now use Spanish labels matching digest["es"]["sentiment"]["label_es"]
+    # CHANGE: section label changed from "Today's Mood" to "Sentimiento del Día"
+    # CHANGE: context now reads from "context_es" instead of "context"
+    label   = s.get("label_es", "Cauteloso")
+    context = s.get("context_es", "")
 
+    # Spanish label → pill style mapping
     style_map = {
-        "Risk-Off": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),
-        "Cautious": ("background:#fef3e2; color:#9a6a1a; border:1px solid #f0d8a0;", "#e8a030"),
-        "Risk-On":  ("background:#e6f4ec; color:#2e7a4a; border:1px solid #b0d8c0;", "#4a9e6a"),
+        "Aversión al Riesgo": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),
+        "Cauteloso":          ("background:#fef3e2; color:#9a6a1a; border:1px solid #f0d8a0;", "#e8a030"),
+        "Apetito por Riesgo": ("background:#e6f4ec; color:#2e7a4a; border:1px solid #b0d8c0;", "#4a9e6a"),
     }
     inactive_style = f"background:transparent; color:#bbc8d0; border:1px solid {BORDER_DIM};"
     inactive_dot   = "#cdd4d9"
 
     pills_html = ""
-    for p in ["Risk-Off", "Cautious", "Risk-On"]:
+    for p in ["Aversión al Riesgo", "Cauteloso", "Apetito por Riesgo"]:
         pill_style, dot_color = style_map[p] if p == label else (inactive_style, inactive_dot)
         pills_html += f"""
           <td style="padding-right:8px; white-space:nowrap;">
@@ -176,7 +203,7 @@ def _sentiment(s: dict) -> str:
     <td style="padding:24px 48px;">
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:{TEXT_LIGHT}; vertical-align:middle; padding-right:12px; white-space:nowrap;">Today&#39;s Mood</td>
+          <td style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:{TEXT_LIGHT}; vertical-align:middle; padding-right:12px; white-space:nowrap;">Sentimiento del D&#237;a</td>
           {pills_html}
         </tr>
       </table>
@@ -187,6 +214,7 @@ def _sentiment(s: dict) -> str:
 
 
 def _story_block(story: dict) -> str:
+    # CHANGE: "Read more →" → "Leer más →"
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
@@ -197,13 +225,15 @@ def _story_block(story: dict) -> str:
       </p>
       <p style="margin:0 0 10px 0; font-family:{FONT_SERIF}; font-size:20px; font-weight:bold; color:{TEXT_DARK}; line-height:1.3;">{story['headline']}</p>
       <p style="margin:0 0 10px 0; font-family:{FONT_SANS}; font-size:13px; color:{TEXT_MID}; line-height:1.75;">{story['body']}</p>
-      <a href="{story['url']}" style="font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_DARK}; text-decoration:none; border-bottom:1px solid {TEXT_DARK}; padding-bottom:1px;">Read more &#8594;</a>
+      <a href="{story['url']}" style="font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_DARK}; text-decoration:none; border-bottom:1px solid {TEXT_DARK}; padding-bottom:1px;">Leer m&#225;s &#8594;</a>
     </td>
   </tr>
 </table>"""
 
 
 def _currency_table(rows: list[dict]) -> str:
+    # CHANGE: "Currency Table" → "Tipo de Cambio"
+    # CHANGE: "Pair" → "Par", "Rate" → "Tipo", "1W" → "1S" (semana)
     th = f"font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_LIGHT}; padding:0 0 8px 0; border-bottom:1px solid {BORDER};"
     tbody = ""
     for r in rows:
@@ -221,13 +251,13 @@ def _currency_table(rows: list[dict]) -> str:
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:24px 48px;">
-      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Currency Table</p>
+      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Tipo de Cambio</p>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <th align="left"  style="{th}">Pair</th>
-          <th align="right" style="{th}">Rate</th>
+          <th align="left"  style="{th}">Par</th>
+          <th align="right" style="{th}">Tipo</th>
           <th align="right" style="{th} padding-left:12px;">1D</th>
-          <th align="right" style="{th} padding-left:12px;">1W</th>
+          <th align="right" style="{th} padding-left:12px;">1S</th>
         </tr>
         {tbody}
       </table>
@@ -237,6 +267,7 @@ def _currency_table(rows: list[dict]) -> str:
 
 
 def _quote(q: dict) -> str:
+    # Unchanged — quote text comes from Claude, already in the right language
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_QUOTE};">
   <tr>
@@ -250,12 +281,18 @@ def _quote(q: dict) -> str:
 
 
 def _week_review(stories: list[dict]) -> str:
+    # CHANGE: "Week in Review" → "Resumen Semanal"
+    # Day abbreviations already come from storage.py in Spanish (Lun, Mar, etc.)
     if not stories:
         return ""
     today  = date.today()
     monday = today - timedelta(days=today.weekday())
     friday = monday + timedelta(days=4)
-    label  = f"{monday.strftime('%b %d')}&#8211;{friday.strftime('%d, %Y')}"
+
+    # CHANGE: Date range formatted in Spanish
+    months_es = ["","ene","feb","mar","abr","may","jun",
+                 "jul","ago","sep","oct","nov","dic"]
+    label = f"{monday.day} {months_es[monday.month]}&#8211;{friday.day} {months_es[friday.month]}, {friday.year}"
 
     rows = ""
     for s in stories:
@@ -278,7 +315,7 @@ def _week_review(stories: list[dict]) -> str:
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:24px 48px;">
-      <p style="margin:0 0 18px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Week in Review &middot; {label}</p>
+      <p style="margin:0 0 18px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Resumen Semanal &middot; {label}</p>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         {rows}
       </table>
@@ -288,9 +325,10 @@ def _week_review(stories: list[dict]) -> str:
 
 
 def _footer(issue_date: str = "") -> str:
+    # CHANGE: "Archive" → "Archivo", "Unsubscribe" → "Cancelar suscripción"
     archive_link = ""
     if GITHUB_PAGES_URL and issue_date:
-        archive_link = f'&nbsp;&middot;&nbsp;<a href="{GITHUB_PAGES_URL}/index.html" style="color:#666666; text-decoration:none; letter-spacing:1px;">Archive</a>'
+        archive_link = f'&nbsp;&middot;&nbsp;<a href="{GITHUB_PAGES_URL}/index.html" style="color:#666666; text-decoration:none; letter-spacing:1px;">Archivo</a>'
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK};">
   <tr>
@@ -298,7 +336,7 @@ def _footer(issue_date: str = "") -> str:
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="font-family:{FONT_SERIF}; font-size:14px; color:#f5f2ed;">{NEWSLETTER_NAME}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; letter-spacing:1px;">by {AUTHOR_NAME} &middot; Unsubscribe{archive_link}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; letter-spacing:1px;">por {AUTHOR_NAME} &middot; Cancelar suscripci&#243;n{archive_link}</td>
         </tr>
       </table>
     </td>
@@ -318,6 +356,8 @@ def build_html(
     is_friday:     bool = False,
     wordcloud_b64: str | None = None,
 ) -> str:
+    # digest here is already digest["es"] — passed from main.py
+    # so all .get() calls work the same as before, just on Spanish content
 
     stories_html = ""
     for i, story in enumerate(digest.get("stories", [])):
@@ -329,15 +369,15 @@ def build_html(
     if is_friday and week_stories:
         week_html = _divider() + _week_review(week_stories)
 
-    # Word cloud block for email (base64 embedded image)
+    # Word cloud block
     wordcloud_html = ""
     if is_friday and wordcloud_b64:
         wordcloud_html = f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:24px 48px 8px;">
-      <div style="font-family:{FONT_SANS}; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT}; margin-bottom:14px;">Week in Words</div>
-      <img src="{wordcloud_b64}" width="504" style="width:100%; max-width:504px; display:block; border:1px solid {BORDER};" alt="Weekly word cloud"/>
+      <div style="font-family:{FONT_SANS}; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT}; margin-bottom:14px;">La Semana en Palabras</div>
+      <img src="{wordcloud_b64}" width="504" style="width:100%; max-width:504px; display:block; border:1px solid {BORDER};" alt="Nube de palabras semanal"/>
     </td>
   </tr>
 </table>"""
@@ -348,7 +388,7 @@ def build_html(
     preheader = _preheader(today_iso)
 
     return f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -384,8 +424,13 @@ def build_html(
 
 
 def build_plain(digest: dict) -> str:
-    today = date.today().strftime("%B %d, %Y")
-    lines = [f"{NEWSLETTER_NAME} — {today}", "=" * 40, ""]
+    # CHANGE: Section labels in Spanish
+    # digest here is already digest["es"]
+    today = date.today()
+    months_es = ["","enero","febrero","marzo","abril","mayo","junio",
+                 "julio","agosto","septiembre","octubre","noviembre","diciembre"]
+    today_str = f"{today.day} de {months_es[today.month]} de {today.year}"
+    lines = [f"{NEWSLETTER_NAME} — {today_str}", "=" * 40, ""]
 
     note = digest.get("editor_note", "")
     if note:
@@ -393,13 +438,13 @@ def build_plain(digest: dict) -> str:
 
     sentiment = digest.get("sentiment", {})
     if sentiment:
-        lines += [f"Market Sentiment: {sentiment.get('label','')} — {sentiment.get('context','')}", ""]
+        lines += [f"Sentimiento del Mercado: {sentiment.get('label_es','')} — {sentiment.get('context_es','')}", ""]
 
     for s in digest.get("stories", []):
         lines += [
             f"[{s['source']}] {s['headline']}",
             s["body"],
-            f"Read more: {s['url']}",
+            f"Leer más: {s['url']}",
             "",
         ]
 
