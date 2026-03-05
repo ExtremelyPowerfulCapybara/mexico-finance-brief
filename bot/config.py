@@ -83,7 +83,7 @@ AUTHOR_TITLES = [
 ]
 
 # ── News preferences ──────────────────────────
-TOPICS = ["finanzas", "economía", "México", "comercio", "mercados", "política", "criptonmonedas"]
+TOPICS                 = ["finanzas", "economía", "México", "comercio", "mercados", "política", "criptomonedas"]
 LANGUAGE               = "es"
 MAX_ARTICLES_PER_TOPIC = 5
 MAX_ARTICLE_CHARS      = 3000

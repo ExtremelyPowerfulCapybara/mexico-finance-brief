@@ -50,22 +50,18 @@ def get_week_stories() -> list[dict]:
 
         if not data:
             continue
-        # CHANGE: digest is now bilingual — read from ["es"] for Spanish.
-        # Old: data.get("digest", {}).get("stories", [])
-        # New: data.get("digest", {}).get("es", {}).get("stories", [])
 
-        digest_es = data.get("digest", {}).get("es", {})
+        digest_obj = data.get("digest", {})
+        digest_es  = digest_obj.get("es", digest_obj)  # bilingual fallback
         top_stories = digest_es.get("stories", [])
-        
         if not top_stories:
             continue
 
         top = top_stories[0]
         # Mark as "active" (darker dot) if it was a high-impact day
-        # Simple heuristic: risk-off or risk-on sentiment = active
+        # Simple heuristic: non-neutral sentiment = active
         sentiment = digest_es.get("sentiment", {})
-        active    = sentiment.get("label_es", "Cauteloso") != "Cauteloso"
-        
+        active    = sentiment.get("label_es", sentiment.get("label", "Cauteloso")) != "Cauteloso"
 
         stories.append({
             "day":      day_label,
@@ -79,6 +75,4 @@ def get_week_stories() -> list[dict]:
 
 
 def is_friday() -> bool:
-    if os.environ.get("FORCE_FRIDAY", "").lower() == "true":
-        return True
     return date.today().weekday() == 4

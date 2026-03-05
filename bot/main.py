@@ -3,17 +3,16 @@
 # ─────────────────────────────────────────────
 
 import os
-from fetcher        import fetch_news
-from summarizer     import summarize_news
-from market_data    import fetch_tickers, fetch_currency_table, fetch_weather
-from storage        import save_digest, get_week_stories, is_friday
-from renderer       import build_html, build_plain
-from delivery       import send_email
-from archive        import save_pretty_issue
-from config         import DIGEST_DIR
-from wordcloud_gen  import generate_wordcloud, wordcloud_as_base64
 import random
-from config import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES
+from fetcher     import fetch_news
+from summarizer  import summarize_news
+from market_data import fetch_tickers, fetch_currency_table, fetch_weather
+from storage     import save_digest, get_week_stories, is_friday
+from renderer    import build_html, build_plain
+from delivery    import send_email
+from archive     import save_pretty_issue
+from config      import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES
+from wordcloud_gen import generate_wordcloud, wordcloud_as_base64
 
 
 def get_issue_number() -> int:
@@ -25,49 +24,41 @@ def get_issue_number() -> int:
 
 def run():
     print("=" * 50)
-    print("  News Digest — starting run")
+    print("  Mexico Finance Brief — starting run")
     print("=" * 50)
 
     # ── 1. Fetch market data (fast, no LLM needed) ──
-    print("\n[1/6] Fetching market data...")
+    print("\n[1/5] Fetching market data...")
     tickers  = fetch_tickers()
     currency = fetch_currency_table()
     weather  = fetch_weather()
 
     # ── 2. Fetch news articles ──────────────────────
-    print("\n[2/6] Fetching news articles...")
+    print("\n[2/5] Fetching news articles...")
     articles = fetch_news()
     if not articles:
         print("  No articles found. Check your NewsAPI key or topics.")
         return
 
     # ── 3. Summarize with Claude ────────────────────
-    # We immediately split it into two variables for clarity.
-    # digest_es is used for the email (Spanish = primary).
-    # digest_en is passed to the archive for the EN/ES toggle.
-    # digest (full) is saved to disk so nothing is lost.
-
-    print(f"\n[3/6] Summarizing {len(articles)} articles with Claude...")
-    digest = summarize_news(articles)
-    digest_es = digest["es"]   # Spanish — primary, used in email
-    digest_en = digest["en"]   # English — used in archive toggle
+    print(f"\n[3/5] Summarizing {len(articles)} articles with Claude...")
+    digest    = summarize_news(articles)
+    digest_es = digest.get("es", digest)  # Spanish — used in email
+    digest_en = digest.get("en", digest)  # English — used in archive toggle
 
     # ── 4. Save digest to disk ──────────────────────
-    # CHANGE: We save the full bilingual digest as-is.
-    # The JSON on disk will have both "es" and "en" keys.
-    # storage.py and wordcloud_gen.py read from digest["es"]
-    # when they need to access stories — see those files.
-
-    print("\n[4/6] Saving digest...")
+    print("\n[4/5] Saving digest...")
     save_digest(digest, {"tickers": tickers, "currency": currency}, weather)
-    
-
 
     # ── 5. Build and send email ─────────────────────
-    print("\n[5/6] Building and sending email...")
+    print("\n[5/5] Building and sending email...")
     friday       = is_friday()
     week_stories = get_week_stories() if friday else []
     issue_num    = get_issue_number()
+
+    # Pick a random pen name + title — generated once so email and archive match
+    author = f"{random.choice(AUTHOR_NAMES)}, {random.choice(AUTHOR_TITLES)}"
+    print(f"  [author] Today's byline: {author}")
 
     # Generate word cloud on Fridays
     wordcloud_b64      = None
@@ -86,16 +77,13 @@ def run():
         issue_number   = issue_num,
         is_friday      = friday,
         wordcloud_b64  = wordcloud_b64,
+        author         = author,
     )
-    plain = build_plain(digest_es)
+    plain = build_plain(digest_es, author=author)
 
     send_email(html, plain)
 
     # ── 6. Save pretty HTML to archive ─────────────────
-    # save_pretty_issue receives the FULL bilingual
-    # digest so the archive page can render both languages
-    # and wire up the EN/ES toggle button.
-
     print("\n[6/6] Saving to archive...")
     save_pretty_issue(
         digest             = digest,
@@ -106,6 +94,7 @@ def run():
         issue_number       = issue_num,
         is_friday          = friday,
         wordcloud_filename = wordcloud_filename,
+        author             = author,
     )
 
     print("\n" + "=" * 50)
