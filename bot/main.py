@@ -12,6 +12,8 @@ from delivery       import send_email
 from archive        import save_pretty_issue
 from config         import DIGEST_DIR
 from wordcloud_gen  import generate_wordcloud, wordcloud_as_base64
+import random
+from config import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES
 
 
 def get_issue_number() -> int:
@@ -58,6 +60,8 @@ def run():
 
     print("\n[4/6] Saving digest...")
     save_digest(digest, {"tickers": tickers, "currency": currency}, weather)
+    
+
 
     # ── 5. Build and send email ─────────────────────
     print("\n[5/6] Building and sending email...")
