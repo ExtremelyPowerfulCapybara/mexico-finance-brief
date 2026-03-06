@@ -86,7 +86,7 @@ AUTHOR_TITLES = [
 TOPICS                 = ["finanzas", "economía", "México", "comercio", "mercados", "política", "criptomonedas"]
 LANGUAGE               = "es"
 MAX_ARTICLES_PER_TOPIC  = 5
-MAX_ARTICLES_PER_SOURCE = 2   # cap per outlet across all topics
+MAX_ARTICLES_PER_SOURCE = 1   # cap per outlet across all topics
 MAX_ARTICLE_CHARS       = 3000
 
 # ── Domain allowlist ─────────────────────────
