@@ -2,133 +2,133 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, mientras el mundo arde literalmente en el Mediterráneo y Washington amenaza a socios europeos con embargos, México y Estados Unidos se sientan a revisar el T-MEC con la compostura de quienes negocian la hipoteca durante un incendio. La fecha del 16 de marzo ya está marcada en el calendario; lo que no está claro es qué tan dispuesto estará Trump a construir cuando su postura por defecto sigue siendo demoler.",
+      "editor_note": "Estimados humanos, mientras el T-MEC entra en su fase de revisión bilateral y la geopolítica del Mediterráneo arde literalmente con fragatas europeas navegando hacia Chipre, los mercados siguen procesando un cóctel de incertidumbre comercial, tensión militar y cripto-invierno corporativo que haría palidecer a cualquier gestor de riesgos. El mundo de 2026 resulta ser exactamente tan complicado como prometía, y esta mañana tenemos evidencia suficiente para demostrarlo.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
         "position": 38,
-        "context_es": "La apertura de negociaciones T-MEC es un gesto constructivo, pero el ruido geopolítico en torno a Irán, las amenazas comerciales a España y la caída del apetito institucional por cripto pesan sobre el ánimo general.",
-        "context_en": "The opening of USMCA negotiations is a constructive gesture, but geopolitical noise around Iran, trade threats against Spain, and declining institutional crypto appetite weigh on overall sentiment."
+        "context_es": "La apertura de negociaciones T-MEC ofrece un ancla positiva, pero la escalada militar en torno a Irán, las amenazas comerciales de Trump a España y el enfriamiento institucional en cripto mantienen el tono defensivo.",
+        "context_en": "The opening of USMCA negotiations provides a positive anchor, but military escalation around Iran, Trump's trade threats against Spain, and the institutional crypto cooldown keep the tone defensive."
       },
       "stories": [
         {
           "source": "Boston Herald / AP",
-          "headline": "México y EE.UU. arrancan el 16 de marzo la revisión bilateral del T-MEC con agenda técnica definida",
-          "body": "El secretario de Economía Marcelo Ebrard y el representante comercial estadounidense Jamieson Greer confirmaron que el 16 de marzo iniciará la primera ronda bilateral de conversaciones sobre el T-MEC, centrada en reglas de origen, integración productiva y seguridad de cadenas de suministro. La revisión formal del tratado está prevista para julio, pero analistas como Gabriela Siller de Banco Base leen el adelanto como señal de que 'ya hay algunas cosas acordadas'. El sector automotriz, que vio caer su producción 2,7% en enero respecto al año anterior, será el campo de batalla más vigilado.",
+          "headline": "México y EE.UU. arrancan el 16 de marzo la revisión bilateral del T-MEC con reglas de origen y cadenas de suministro en la mesa",
+          "body": "El secretario de Economía Marcelo Ebrard y el representante comercial estadounidense Jamieson Greer confirmaron que el 16 de marzo comenzará una 'discusión exploratoria' sobre reglas de origen, competitividad y seguridad de cadenas de suministro, adelantando el proceso formal previsto para julio. El contexto es tenso: los productos mexicanos fuera del T-MEC enfrentan aranceles del 25%, el acero y aluminio pagan 50%, y la producción automotriz cayó 2,7% en enero interanual. La analista Gabriela Siller de Banco Base califica el movimiento de 'positivo' e insinúa que ya podría haber acuerdos preliminares sobre la mesa.",
           "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
           "tag": "Comercio"
         },
         {
+          "source": "Eldiario.es",
+          "headline": "Trump amenaza con cortar todo el comercio con España mientras Europa despliega fuerzas navales ante la crisis con Irán",
+          "body": "Trump declaró al New York Post que España es 'una perdedora' y reiteró instrucciones a su secretario del Tesoro Scott Bessent para cortar 'todos los tratos' con Madrid, en represalia por la negativa española a ceder las bases de Rota y Morón para operaciones contra Irán. La ministra de Defensa Margarita Robles fue categórica: 'No se va a autorizar el uso de las bases. La violencia no es el camino.' En paralelo, España envió la fragata Cristóbal Colón al Mediterráneo oriental, donde Italia, Francia y Países Bajos también despliegan buques para proteger Chipre tras un ataque con drones contra una base británica en la isla.",
+          "url": "https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html",
+          "tag": "Macro"
+        },
+        {
           "source": "La Nacion",
-          "headline": "Argentina busca préstamos bilaterales con EE.UU., Israel e Italia para evitar regresar a Wall Street antes del vencimiento de julio",
-          "body": "El gobierno de Milei mantiene conversaciones con al menos tres países aliados —Estados Unidos, Israel e Italia— para obtener créditos bilaterales que le permitan cubrir el vencimiento de 4.200 millones de dólares con bonistas privados el 9 de julio, sin pagar las tasas superiores al 9,5% anual que estimaba el mercado para un bono a diez años. El Tesoro, la Cancillería y el Banco Central participan en paralelo de estas gestiones, mientras el FMI ya comprometió un programa de 20.000 millones y el Tesoro norteamericano activó un swap de 2.500 millones. La escalada del conflicto en Medio Oriente, advierten analistas, podría complicar el cierre de algunas de estas líneas al elevar la aversión al riesgo global.",
+          "headline": "Argentina busca créditos bilaterales con EE.UU., Israel e Italia para evitar Wall Street ante vencimiento de $4.200 millones en julio",
+          "body": "El equipo económico de Luis Caputo explora préstamos entre Estados con aliados geopolíticos de Milei —EE.UU., Israel e Italia— como alternativa a una colocación en mercados internacionales donde los rendimientos para Argentina superaban el 9,5% anual a diez años. El próximo vencimiento crítico es el pago de US$4.200 millones a bonistas privados el 9 de julio. Analistas advierten que la escalada del conflicto con Irán podría complicar estas gestiones al aumentar la cautela global hacia emergentes.",
           "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
           "tag": "Macro"
         },
         {
-          "source": "Eldiario.es",
-          "headline": "Trump amenaza con cortar todo el comercio con España por negarse a ceder bases militares para operaciones contra Irán",
-          "body": "Donald Trump declaró al New York Post que España es una 'perdedora' hostil a la OTAN y ordenó a su secretario del Tesoro, Scott Bessent, cortar los tratos comerciales con el país, después de que Madrid se negara a autorizar el uso de las bases de Rota y Morón para operaciones contra Irán. La ministra de Defensa Margarita Robles fue tajante: 'Nuestra posición es clara, contundente y sin matices'. La amenaza de Trump es en la práctica compleja de ejecutar porque la política comercial europea se gestiona desde Bruselas y cualquier arancel afectaría a los 27 estados miembros.",
-          "url": "https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html",
-          "tag": "Política"
-        },
-        {
-          "source": "RT / actualidad.rt.com",
-          "headline": "Europa despliega fragatas en el Mediterráneo mientras escala el conflicto en torno a Irán",
-          "body": "Italia, Francia, España y Países Bajos enviarán buques de guerra a aguas de Chipre tras un ataque con drones contra la base aérea británica de Akrotiri, en respuesta a la escalada del conflicto entre EE.UU. e Israel contra Irán. España contribuye con la fragata Cristóbal Colón, que se unirá al portaaviones francés Charles de Gaulle y unidades griegas; el Reino Unido suma el destructor HMS Dragon con helicópteros antimisiles. El despliegue está oficialmente enmarcado como protección de civiles y apoyo europeo, no como participación en la ofensiva estadounidense.",
-          "url": "https://actualidad.rt.com/actualidad/590952-paises-europeos-desplegar-fuerzas-militares-chipre",
-          "tag": "Macro"
-        },
-        {
           "source": "Cointelegraph",
-          "headline": "Intercontinental Exchange —dueña de la NYSE— invierte en OKX con valuación de 25.000 millones de dólares y anuncia acciones tokenizadas",
-          "body": "Intercontinental Exchange tomó un puesto en el consejo de OKX tras invertir un monto no revelado en el exchange cripto valorado en 25.000 millones de dólares, con planes de llevar acciones tokenizadas y derivados listados en la NYSE a los aproximadamente 120 millones de cuentas de OKX en el segundo semestre de 2026. La operación se suma a la inversión de 2.000 millones de dólares de ICE en Polymarket anunciada en noviembre pasado, confirmando un giro institucional sostenido hacia la infraestructura blockchain. OKX, que regresó al mercado estadounidense en abril de 2025, ve su presencia en el país como 'hoja en blanco'.",
+          "headline": "NYSE-ICE invierte en OKX a valuación de $25.000 millones y planea llevar acciones tokenizadas a 120 millones de usuarios cripto",
+          "body": "Intercontinental Exchange, propietaria de la Bolsa de Nueva York, adquirió una participación no revelada en el exchange OKX y ocupará un asiento en su consejo directivo. El acuerdo prevé que OKX ofrezca a sus aproximadamente 120 millones de cuentas acceso a futuros de ICE y a valores tokenizados de la NYSE en el segundo semestre de 2026. La operación es la apuesta más concreta hasta ahora de la infraestructura bursátil tradicional por fusionarse con las finanzas digitales, y llega cuando ICE también desarrolla su propia plataforma blockchain e invirtió US$2.000 millones en Polymarket.",
           "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
           "tag": "Mercados"
         },
         {
           "source": "Criptonoticias.com",
-          "headline": "Las compras corporativas de Bitcoin se desploman a mínimos de 2024: solo 555 millones de dólares en febrero",
-          "body": "Las empresas cotizadas con tesorerías en activos digitales compraron apenas 555 millones de dólares en Bitcoin durante febrero de 2026, el nivel más bajo desde octubre de 2024 y un abismo respecto a los 12.300 millones registrados en noviembre de 2024 tras la victoria de Trump. La caída acompaña un retroceso de 52% en el precio de BTC desde su máximo histórico de octubre de 2025, y está empujando a varias firmas a pivotar hacia la tokenización de activos del mundo real en busca de rendimientos más predecibles. El 'criptoinvierno corporativo', como lo describe el reporte, es la otra cara de la narrativa institucional que dominó el discurso del año pasado.",
+          "headline": "Las compras de bitcoin por tesorerías corporativas se desploman a mínimos de octubre de 2024 tras caída del 52% en el precio",
+          "body": "En febrero de 2026, las empresas cotizadas con tesorerías en criptoactivos compraron apenas US$555 millones en bitcoin, frente a los US$12.300 millones registrados en noviembre de 2024 tras la victoria electoral de Trump. BTC tocó un mínimo de US$60.074 el 6 de febrero, representando una caída del 52% desde su máximo histórico de octubre de 2025. El enfriamiento es tal que algunas firmas, como ETHZilla —rebautizada Forum Markets—, abandonaron por completo la estrategia de acumulación cripto para pivotar hacia la tokenización de activos reales.",
           "url": "https://www.criptonoticias.com/mercados/compras-tesorerias-bitcoin-niveles-2024/",
           "tag": "Mercados"
         },
         {
           "source": "Eldiario.es",
-          "headline": "VW y Stellantis presionan por un estándar 'made in Europe' mientras la UE exige 70% de componentes locales para acceder a subsidios",
-          "body": "La Comisión Europea propuso que a partir de seis meses tras la aprobación de la Ley de Aceleración Industrial, el 70% de los componentes de vehículos eléctricos —excluida la batería— deba fabricarse en la UE para acceder a ayudas públicas o licitaciones. Los CEO de Volkswagen y Stellantis respaldaron la medida en una carta abierta, recordando que la industria automotriz europea genera el 8% del PIB regional y emplea a 13 millones de personas. La tensión: atraer inversión china para producir localmente sin construir, en palabras de los propios fabricantes, 'un cerco proteccionista'.",
+          "headline": "Volkswagen y Stellantis exigen una estrategia 'made in Europe' mientras la UE propone que el 70% de componentes de autos eléctricos se fabriquen en el bloque",
+          "body": "La Comisión Europea propuso en su Ley de Aceleración Industrial que, seis meses tras su aprobación, el 70% de los componentes de un vehículo eléctrico —excluida la batería— deba fabricarse en la UE para acceder a ayudas públicas o licitaciones. Los CEOs de Volkswagen y Stellantis respaldaron la medida con una carta abierta, recordando que el sector genera el 8% del PIB europeo y emplea a 13 millones de personas. El dilema es evidente: atraer inversión china para construir fábricas en Europa mientras se levanta un muro regulatorio contra los vehículos importados de China.",
           "url": "https://www.eldiario.es/economia/fabricantes-coches-equilibrios-defender-made-in-europe-atraer-inversiones-china_1_13027680.html",
           "tag": "Comercio"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Cardano puede usarse para pagar en 137 supermercados Spar en Suiza, reduciendo costos de transacción en dos tercios",
+          "body": "La Cardano Foundation anunció que los usuarios de ADA pueden pagar en 137 tiendas Spar en Suiza mediante el sistema Open Crypto Pay de DFX.swiss, que procesa transacciones en tiempo real directamente desde wallets sin pasar por exchanges centralizados. Para los comerciantes, el ahorro frente a tarjetas tradicionales es de aproximadamente dos tercios en comisiones. La integración se suma al esfuerzo de Lugano, que junto a Tether comprometió 5 millones de francos suizos para consolidarse como hub global de activos digitales entre 2026 y 2030.",
+          "url": "https://es.cointelegraph.com/news/cardano-checkout-rails-137-swiss-spar-stores",
+          "tag": "Mercados"
         }
       ],
       "quote": {
-        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
-        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+        "text": "Trade wars are easy to start but hard to stop — they take on a life of their own.",
+        "attribution": "Douglas Irwin, Clashing over Commerce: A History of US Trade Policy, 2017"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, while the world literally burns in the Mediterranean and Washington threatens European partners with embargoes, Mexico and the United States sit down to review the USMCA with the composure of people renegotiating a mortgage during a fire. The date of March 16 is already on the calendar; what remains unclear is how willing Trump will be to build anything when his default posture is still demolition.",
+      "editor_note": "Estimados humanos, as the USMCA enters its bilateral review phase and Mediterranean geopolitics literally burns with European frigates sailing toward Cyprus, markets continue to process a cocktail of trade uncertainty, military tension, and corporate crypto-winter that would make any risk manager pale. The world of 2026 is turning out to be exactly as complicated as it promised, and this morning we have more than enough evidence to prove it.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
         "position": 38,
-        "context_es": "La apertura de negociaciones T-MEC es un gesto constructivo, pero el ruido geopolítico en torno a Irán, las amenazas comerciales a España y la caída del apetito institucional por cripto pesan sobre el ánimo general.",
-        "context_en": "The opening of USMCA negotiations is a constructive gesture, but geopolitical noise around Iran, trade threats against Spain, and declining institutional crypto appetite weigh on overall sentiment."
+        "context_es": "La apertura de negociaciones T-MEC ofrece un ancla positiva, pero la escalada militar en torno a Irán, las amenazas comerciales de Trump a España y el enfriamiento institucional en cripto mantienen el tono defensivo.",
+        "context_en": "The opening of USMCA negotiations provides a positive anchor, but military escalation around Iran, Trump's trade threats against Spain, and the institutional crypto cooldown keep the tone defensive."
       },
       "stories": [
         {
           "source": "Boston Herald / AP",
-          "headline": "Mexico and U.S. launch USMCA bilateral review on March 16 with defined technical agenda",
-          "body": "Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer confirmed that the first bilateral round of USMCA talks will begin on March 16, focusing on rules of origin, productive integration, and supply chain security. The formal treaty review is scheduled for July, but analysts such as Gabriela Siller of Banco Base read the early start as a signal that 'some things are already agreed upon.' The automotive sector, which saw production fall 2.7% in January compared to the prior year, will be the most closely watched battleground.",
+          "headline": "Mexico and the U.S. launch USMCA bilateral review on March 16 with rules of origin and supply chain security on the table",
+          "body": "Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer confirmed that an 'exploratory discussion' on rules of origin, competitiveness, and supply chain security will begin on March 16, advancing the formal process originally slated for July. The backdrop is tense: Mexican products outside USMCA face 25% tariffs, steel and aluminum pay 50%, and auto production fell 2.7% year-on-year in January. Banco Base analyst Gabriela Siller calls the move 'positive' and hints that preliminary agreements may already be in place.",
           "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
           "tag": "Comercio"
         },
         {
+          "source": "Eldiario.es",
+          "headline": "Trump threatens to cut all trade with Spain as Europe deploys naval forces amid the Iran crisis",
+          "body": "Trump told the New York Post that Spain is 'a loser' and reiterated instructions to Treasury Secretary Scott Bessent to cut 'all dealings' with Madrid, in retaliation for Spain's refusal to allow use of the Rota and Morón bases for operations against Iran. Defense Minister Margarita Robles was categorical: 'The use of the bases will not be authorized. Violence is not the way.' At the same time, Spain dispatched the frigate Cristóbal Colón to the eastern Mediterranean, where Italy, France, and the Netherlands are also deploying warships to protect Cyprus after a drone attack on a British base on the island.",
+          "url": "https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html",
+          "tag": "Macro"
+        },
+        {
           "source": "La Nacion",
-          "headline": "Argentina pursues bilateral loans from U.S., Israel, and Italy to avoid returning to Wall Street ahead of July deadline",
-          "body": "The Milei government is in talks with at least three allied nations—the United States, Israel, and Italy—to secure bilateral credit lines that would allow it to cover a $4.2 billion payment to private bondholders on July 9, without paying the market-estimated rates above 9.5% annually for a ten-year bond. The Treasury, Foreign Ministry, and Central Bank are all engaged in parallel in these discussions, while the IMF has already committed a $20 billion program and the U.S. Treasury activated a $2.5 billion swap. Analysts warn that escalation of the Middle East conflict could complicate the closing of some of these lines by raising global risk aversion.",
+          "headline": "Argentina seeks bilateral loans from the U.S., Israel, and Italy to avoid Wall Street ahead of a $4.2 billion payment due in July",
+          "body": "Luis Caputo's economic team is exploring government-to-government loans with Milei's geopolitical allies — the U.S., Israel, and Italy — as an alternative to tapping international markets, where yields for Argentina exceeded 9.5% annually on ten-year bonds. The next critical deadline is a US$4.2 billion payment to private bondholders on July 9. Analysts warn that the escalating Iran conflict could complicate these efforts by increasing global caution toward emerging markets.",
           "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
           "tag": "Macro"
         },
         {
-          "source": "Eldiario.es",
-          "headline": "Trump threatens to cut all trade with Spain after Madrid refuses to offer military bases for operations against Iran",
-          "body": "Donald Trump told the New York Post that Spain is a 'loser' hostile to NATO and instructed Treasury Secretary Scott Bessent to sever commercial dealings with the country, after Madrid refused to authorize the use of Rota and Morón bases for operations against Iran. Defense Minister Margarita Robles was unequivocal: 'Our position is clear, firm, and without nuance.' Trump's threat is practically complex to execute because European trade policy is managed from Brussels and any tariff would affect all 27 member states.",
-          "url": "https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html",
-          "tag": "Política"
-        },
-        {
-          "source": "RT / actualidad.rt.com",
-          "headline": "Europe deploys frigates to the Mediterranean as the conflict around Iran escalates",
-          "body": "Italy, France, Spain, and the Netherlands will send warships to Cypriot waters following a drone attack on the British Akrotiri air base, as the conflict between the U.S. and Israel against Iran intensifies. Spain is contributing the frigate Cristóbal Colón, which will join the French aircraft carrier Charles de Gaulle and Greek naval units; the UK adds the destroyer HMS Dragon with anti-missile helicopters. The deployment is officially framed as civilian protection and European support, not as participation in the U.S.-led offensive.",
-          "url": "https://actualidad.rt.com/actualidad/590952-paises-europeos-desplegar-fuerzas-militares-chipre",
-          "tag": "Macro"
-        },
-        {
           "source": "Cointelegraph",
-          "headline": "Intercontinental Exchange — NYSE owner — invests in OKX at $25 billion valuation and announces tokenized equities",
-          "body": "Intercontinental Exchange took a board seat at OKX after investing an undisclosed amount in the crypto exchange valued at $25 billion, with plans to bring tokenized equities and NYSE-listed derivatives to OKX's approximately 120 million accounts in the second half of 2026. The deal follows ICE's $2 billion investment in Polymarket announced last November, confirming a sustained institutional pivot toward blockchain infrastructure. OKX, which re-entered the U.S. market in April 2025, views its presence in the country as a 'blank slate.'",
+          "headline": "NYSE-ICE invests in OKX at a $25 billion valuation, plans to bring tokenized stocks to 120 million crypto users",
+          "body": "Intercontinental Exchange, owner of the New York Stock Exchange, acquired an undisclosed stake in OKX and will take a seat on its board of directors. The deal envisions OKX offering its approximately 120 million account holders access to ICE futures and NYSE-tokenized securities in the second half of 2026. The transaction is the most concrete bet yet by traditional exchange infrastructure on a merger with digital finance, arriving as ICE also develops its own blockchain platform and invested US$2 billion in Polymarket.",
           "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
           "tag": "Mercados"
         },
         {
           "source": "Criptonoticias.com",
-          "headline": "Corporate Bitcoin purchases collapse to 2024 lows: just $555 million in February",
-          "body": "Publicly traded companies with digital asset treasuries purchased only $555 million worth of Bitcoin in February 2026, the lowest level since October 2024 and a stark contrast to the $12.3 billion recorded in November 2024 following Trump's election victory. The drop accompanies a 52% decline in BTC's price from its October 2025 all-time high, pushing several firms to pivot toward real-world asset tokenization in search of more predictable returns. The 'corporate crypto winter,' as the report describes it, is the other side of the institutional narrative that dominated last year's conversation.",
+          "headline": "Corporate bitcoin treasury purchases collapse to October 2024 lows after a 52% price drop",
+          "body": "In February 2026, publicly traded companies with crypto treasuries purchased just US$555 million in bitcoin, down from US$12.3 billion in November 2024 following Trump's election victory. BTC hit a low of US$60,074 on February 6, a 52% decline from its all-time high in October 2025. The cooldown is so severe that some firms, like ETHZilla — now rebranded as Forum Markets — have abandoned crypto accumulation entirely to pivot toward real-world asset tokenization.",
           "url": "https://www.criptonoticias.com/mercados/compras-tesorerias-bitcoin-niveles-2024/",
           "tag": "Mercados"
         },
         {
           "source": "Eldiario.es",
-          "headline": "VW and Stellantis push for 'made in Europe' standard as EU mandates 70% local components for subsidy eligibility",
-          "body": "The European Commission proposed that six months after the approval of the Industrial Acceleration Act, 70% of electric vehicle components—excluding the battery—must be manufactured in the EU to qualify for public subsidies or procurement contracts. The CEOs of Volkswagen and Stellantis endorsed the measure in an open letter, noting that the European auto industry generates 8% of regional GDP and employs 13 million people. The tension: attracting Chinese investment to produce locally without building, in the manufacturers' own words, 'a protectionist fence.'",
+          "headline": "Volkswagen and Stellantis demand a 'made in Europe' strategy as the EU proposes that 70% of EV components be manufactured within the bloc",
+          "body": "The European Commission proposed in its Industrial Acceleration Act that, six months after approval, 70% of an electric vehicle's components — excluding the battery — must be made in the EU to qualify for public subsidies or tenders. The CEOs of Volkswagen and Stellantis backed the measure in an open letter, noting that the sector generates 8% of European GDP and employs 13 million people. The dilemma is stark: attract Chinese investment to build factories in Europe while erecting a regulatory wall against Chinese-imported vehicles.",
           "url": "https://www.eldiario.es/economia/fabricantes-coches-equilibrios-defender-made-in-europe-atraer-inversiones-china_1_13027680.html",
           "tag": "Comercio"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Cardano accepted as payment in 137 Spar supermarkets across Switzerland, cutting transaction costs by two-thirds",
+          "body": "The Cardano Foundation announced that ADA users can pay at 137 Spar stores in Switzerland via DFX.swiss's Open Crypto Pay system, which processes transactions in real time directly from ADA wallets without routing through centralized exchanges. For merchants, the savings versus traditional card fees amount to roughly two-thirds in commissions. The integration complements Lugano's efforts, where Tether and the city committed 5 million Swiss francs to consolidate the city as a global digital asset hub between 2026 and 2030.",
+          "url": "https://es.cointelegraph.com/news/cardano-checkout-rails-137-swiss-spar-stores",
+          "tag": "Mercados"
         }
       ],
       "quote": {
-        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
-        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+        "text": "Trade wars are easy to start but hard to stop — they take on a life of their own.",
+        "attribution": "Douglas Irwin, Clashing over Commerce: A History of US Trade Policy, 2017"
       }
     }
   },
@@ -136,8 +136,8 @@
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.80",
-        "change": "▲ 1.2%",
+        "value": "17.78",
+        "change": "▲ 1.1%",
         "direction": "up"
       },
       {
@@ -154,7 +154,7 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,288.57",
+        "value": "67,293.17",
         "change": "▼ 1.6%",
         "direction": "down"
       }
@@ -162,49 +162,49 @@
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.7940",
+        "rate": "17.7830",
         "chg_1d": {
-          "text": "▲ 1.14%",
+          "text": "▲ 1.08%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.75%",
+          "text": "▲ 2.69%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6692",
+        "rate": "20.6593",
         "chg_1d": {
-          "text": "▲ 0.97%",
+          "text": "▲ 0.93%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.50%",
+          "text": "▲ 1.46%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.1096",
+        "rate": "13.1116",
         "chg_1d": {
-          "text": "▲ 1.67%",
+          "text": "▲ 1.68%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.48%",
+          "text": "▲ 3.50%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.7426",
+        "rate": "122.6316",
         "chg_1d": {
-          "text": "▲ 1.16%",
+          "text": "▲ 1.06%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.36%",
+          "text": "▲ 3.26%",
           "cls": "chg-up"
         }
       }
