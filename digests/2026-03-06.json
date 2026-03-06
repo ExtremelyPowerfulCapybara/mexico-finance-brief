@@ -2,133 +2,133 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, el estrecho de Ormuz se ha convertido en el árbitro silencioso de los mercados globales: con apenas 40 tránsitos de buques donde normalmente circulan 3.000 al mes, el conflicto en Irán está reescribiendo los flujos de energía, derrumbando bolsas y, paradójicamente, engordando las arcas del Kremlin. El Ibex 35 ya perdió 70.000 millones de euros en cuatro sesiones, Rusia vende su Urals con prima sobre el Brent, y los inversores siguen procesando que esto no es un titular de un día sino una reconfiguración geopolítica de duración indefinida.",
+      "editor_note": "Estimados humanos, el estrecho de Ormuz acaba de recordarle al mundo que la geografía sigue siendo el activo más duro de sustituir: la guerra en Irán ha borrado 70.000 millones de euros del Ibex 35 en cuatro sesiones, disparado el crudo ruso de 40 a 62 dólares por barril y convertido a Rusia en el gran beneficiario accidental del caos. Mientras tanto, en México se confirma que las negociaciones del T-MEC arrancan el 16 de marzo, justo cuando los mercados tienen los nervios de punta y Washington tiene todas las cartas. El calendario aprieta en todos los frentes.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
         "position": 18,
-        "context_es": "El bloqueo de facto del estrecho de Ormuz, el desplome de bolsas europeas y la huida hacia activos refugio configuran un ambiente de aversión al riesgo pronunciada.",
-        "context_en": "The de facto blockade of the Strait of Hormuz, collapsing European equities, and a flight to safe-haven assets define a sharply risk-off environment."
+        "context_es": "El conflicto en Irán, el bloqueo de facto del estrecho de Ormuz y el desplome de las bolsas europeas configuran un entorno de aversión al riesgo pronunciada, con el petróleo disparado y la logística global bajo presión severa.",
+        "context_en": "The Iran conflict, the de facto blockade of the Strait of Hormuz, and the sharp selloff across European equities define a deeply risk-off environment, with oil prices surging and global logistics under severe strain."
       },
       "stories": [
         {
           "source": "El Periódico",
-          "headline": "Guerra en Irán dispara precios del crudo y reordena flujos globales de energía",
-          "body": "El estrecho de Ormuz registró apenas 40 tránsitos de buques frente a los 3.000 mensuales habituales, mientras refinerías indias compran alrededor de 20 millones de barriles de crudo ruso para compensar el corte de suministro de Oriente Próximo. El petróleo Urals ruso, que en diciembre se vendía por debajo de 40 dólares el barril, ronda ahora los 62 dólares, con futuros tocando los 81 dólares, una manna inesperada para el presupuesto del Kremlin en plena guerra de Ucrania. Asia absorbe entre el 84% y el 90% del crudo que cruza Ormuz, lo que convierte este conflicto en una crisis energética asiática de primera magnitud.",
+          "headline": "La guerra en Irán paraliza el estrecho de Ormuz y dispara el crudo ruso a 62 dólares por barril",
+          "body": "El conflicto en Irán ha reducido el tráfico por el estrecho de Ormuz a apenas 40 tránsitos desde el domingo, frente a los 3.000 mensuales habituales, reordenando el mercado global de crudo. Refinadores indios —Indian Oil Corp, Bharat Petroleum y otros— han comprado ya unos 20 millones de barriles de crudo ruso, cuyo precio ha saltado de menos de 40 dólares en diciembre a cerca de 62 dólares por barril, beneficiando directamente al presupuesto del Kremlin. Los futuros del petróleo alcanzan los 81 dólares, y la paralización del GNL qatarí intensificará la competencia global por cargamentos disponibles, amenazando con una espiral de estanflación en Asia y Europa.",
           "url": "https://www.elperiodico.com/es/opinion/20260305/guerra-iran-remueve-petroleo-anima-caos-la-bolsa-y-la-vida-127612520",
           "tag": "Energía"
         },
         {
           "source": "El Español / Invertia",
-          "headline": "El Ibex 35 pierde 70.000 millones en cuatro sesiones por el shock geopolítico de Irán",
-          "body": "El selectivo español retrocedió un 6,1% desde el estallido del conflicto, pasando de 18.360 a 17.245 puntos, siendo una de las bolsas europeas más castigadas junto al CAC 40. Los sectores de banca, energéticas y cíclicas concentraron las ventas, con Acciona, IAG y Solaria entre los mayores caídas; Repsol fue la excepción al subir un 6,3% apoyada en el repunte del petróleo. El mercado, según el analista Antonio Castelo de iBroker, pasó de 'descontar el titular a descontar la duración y el daño económico potencial', lo que sugiere que la presión vendedora no ha terminado.",
+          "headline": "El Ibex 35 pierde 70.000 millones de euros en cuatro sesiones por el shock geopolítico iraní",
+          "body": "El índice español cayó un 6,1% desde el estallido del conflicto en Irán, pasando de 18.360 a 17.245 puntos y borrando más de 70.440 millones de euros en capitalización, convirtiéndose en una de las bolsas europeas más golpeadas junto al CAC 40. Los sectores de banca, energéticas y cíclicas lideraron las pérdidas, con Acciona, IAG y Solaria entre los mayores descensos; Repsol fue la excepción, sumando un 6,3% gracias al repunte del crudo. Según el analista Antonio Castelo de iBroker, el mercado ha pasado de descontar el titular a descontar la duración y el daño económico del conflicto: bloqueo de Ormuz, fricción logística y riesgo de estanflación.",
           "url": "https://www.elespanol.com/invertia/mercados/20260305/guerra-iran-borra-millones-ibex-convierte-bolsa-espanola-castigadas-europa/1003744155808_0.html",
           "tag": "Mercados"
         },
         {
+          "source": "Reforma",
+          "headline": "México y EU arrancan negociaciones del T-MEC el 16 de marzo",
+          "body": "El secretario de Economía Marcelo Ebrard y el representante comercial de EU, Jamieson Greer, confirmaron que la primera ronda de discusiones bilaterales en preparación para la revisión conjunta del T-MEC se realizará la semana del 16 de marzo. La negociación llega en un momento de máxima tensión arancelaria, con el T-MEC operando como prácticamente el único tratado comercial vigente relevante para Washington. El resultado de estas conversaciones tendrá repercusiones directas sobre el peso mexicano y las cadenas de manufactura regional.",
+          "url": "https://www.reforma.com/arranca-el-lunes-16-de-marzo-negociacion-con-eu-sobre-t-mec/ar3164096",
+          "tag": "Comercio"
+        },
+        {
           "source": "La Tercera",
-          "headline": "China anuncia plan quinquenal para independizarse de tecnología occidental y sube gasto militar un 7%",
-          "body": "El primer ministro Li Qiang reveló en la apertura del Parlamento anual un incremento del presupuesto de defensa del 7% para 2026, la tasa más baja en cinco años pero superior al objetivo de crecimiento del PIB de entre 4,5% y 5%. El plan quinquenal contempla inversión acelerada en inteligencia artificial, computación cuántica y capacidades de combate avanzadas, dentro de una estrategia de Xi Jinping para ganar la rivalidad tecnológica con Estados Unidos. El anuncio llega en medio de la mayor purga de altos mandos militares en décadas, con solo dos de los siete miembros habituales de la Comisión Militar Central activos.",
+          "headline": "China anuncia plan quinquenal para reducir dependencia tecnológica occidental y eleva gasto de defensa 7% en 2026",
+          "body": "El primer ministro Li Qiang reveló en la apertura del Parlamento chino un plan quinquenal orientado a la autosuficiencia tecnológica militar e industrial, con inversiones prioritarias en inteligencia artificial, computación cuántica y capacidades de combate avanzadas. El presupuesto de defensa crecerá un 7% en 2026, la tasa más baja en cinco años pero que sigue superando el objetivo de crecimiento del PIB, fijado en una banda del 4,5% al 5%. La purga de altos mandos —con solo dos de los siete miembros habituales de la Comisión Militar Central activos— añade incertidumbre sobre la cohesión del aparato militar en plena escalada de tensiones sobre Taiwán.",
           "url": "https://www.latercera.com/mundo/noticia/beijing-anuncio-un-plan-quinquenal-para-tratar-de-reducir-la-dependencia-de-su-ejercito-e-industria-de-la-tecnologia-occidental/",
           "tag": "Macro"
         },
         {
-          "source": "Xataka",
-          "headline": "Cable submarino de China Mobile a Chile enfrenta a Washington y Pekín, y hereda el problema el nuevo presidente Kast",
-          "body": "Estados Unidos revocó los visados de tres funcionarios chilenos tras la firma —y posterior anulación— de un decreto que autorizaba a China Mobile a instalar un cable submarino entre Valparaíso y Hong Kong, con el secretario de Estado Marco Rubio acusando a los funcionarios de comprometer 'infraestructura crítica de telecomunicaciones'. Chile calificó la medida de 'unilateral' y contraria a su soberanía, mientras China acusó a Washington de actuar de forma hegemónica. El conflicto aterriza en el escritorio de José Antonio Kast, quien asume la presidencia el 11 de marzo con la relación bilateral convertida en campo de batalla geopolítico.",
-          "url": "https://www.xataka.com/ingenieria-y-megaconstrucciones/china-quiere-tender-cable-chile-hong-kong-ha-metido-a-chile-tormenta-eeuu",
-          "tag": "Comercio"
-        },
-        {
           "source": "Criptonoticias",
-          "headline": "ICE — dueño de la NYSE — invierte en OKX a valuación de 25.000 millones de dólares; token OKB sube 40%",
-          "body": "Intercontinental Exchange anunció una participación estratégica minoritaria en el exchange OKX con un asiento en su junta directiva, en un acuerdo que valora la plataforma en 25.000 millones de dólares sin revelar el monto invertido. El plan incluye que ICE licencie precios spot de OKX para lanzar contratos de futuros de criptomonedas regulados en EE.UU., mientras OKX podría ofrecer a sus 120 millones de cuentas globales acceso a futuros de ICE y 'acciones tokenizadas' del NYSE. El token OKB respondió con una subida vertical de hasta el 40% en 24 horas, en un mercado cripto que busca catalizadores positivos en medio del ruido geopolítico.",
+          "headline": "ICE valora OKX en 25.000 millones de dólares e impulsa el token OKB un 40%",
+          "body": "Intercontinental Exchange, operador de la Bolsa de Nueva York, anunció una inversión estratégica en el exchange de criptomonedas OKX, valorándolo en 25.000 millones de dólares y obteniendo un asiento en su directorio. El acuerdo contempla que ICE licencie precios spot de OKX para lanzar futuros de criptomonedas regulados en EE. UU., mientras OKX evaluará ofrecer acceso a futuros de ICE y acciones tokenizadas del NYSE a sus más de 120 millones de cuentas globales. El anuncio disparó el token OKB hasta un 40% en su punto máximo, señalando el apetito institucional por infraestructura cripto regulada incluso en un entorno de aversión al riesgo generalizada.",
           "url": "https://www.criptonoticias.com/mercados/token-okb-sube-inversion-okx/",
           "tag": "Mercados"
         },
         {
-          "source": "Criptonoticias",
-          "headline": "Banqueros y Jamie Dimon atacan la cuenta maestra de la Fed concedida a Kraken: 'el caballo nunca alcanzará al carro'",
-          "body": "La Asociación de Banqueros Estadounidenses (ABA), el BPI y la ICBA expresaron oposición formal tras la decisión del Banco de la Reserva Federal de Kansas de otorgar a Kraken Financial una cuenta maestra de propósito limitado, que le da acceso directo a la infraestructura de pagos de EE.UU. Jamie Dimon, CEO de JP Morgan, exigió igualdad regulatoria: 'Si quieren ser un banco, que así sea, pero bajo las leyes bancarias', advirtiendo que la competencia actual está 'completamente sesgada'. El episodio ilustra la tensión creciente entre la banca tradicional y la criptomoneda institucional en un momento en que el marco regulatorio federal aún está en construcción.",
-          "url": "https://www.criptonoticias.com/regulacion/banqueros-cuestionan-decision-kraken/",
+          "source": "Boston Herald / AP",
+          "headline": "Derrumbe en mina de coltán en el Congo bajo control rebelde deja al menos 200 muertos",
+          "body": "Varios túneles excavados a mano colapsaron en la mina de coltán de Rubaya, en el este de la República Democrática del Congo, controlada por el grupo rebelde M23 respaldado por Ruanda, causando al menos 200 muertos según el Ministerio de Minas. La cifra real podría ser mayor: según testimonios recogidos por AP, los propietarios tienen incentivos para ocultar víctimas, ya que deben pagar 300 dólares por cada muerto. Es el segundo derrumbe masivo en la zona en pocos meses, en una región que abastece de coltán —mineral crítico para electrónica y tecnología— a mercados globales, sin regulación efectiva desde que el M23 expulsó a la sociedad civil y los servicios estatales.",
+          "url": "https://www.bostonherald.com/2026/03/05/silencio-miedo-y-cifras-en-disputa-tras-el-derrumbe-fatal-de-una-mina-en-el-congo/",
           "tag": "Macro"
         },
         {
-          "source": "El Financiero",
-          "headline": "CNTE anuncia paro nacional de 72 horas del 18 al 20 de marzo con plantón en el Zócalo de CDMX",
-          "body": "La Coordinadora Nacional de Trabajadores de la Educación confirmó un paro de labores de tres días y una marcha del Ángel de la Independencia al Zócalo capitalino, con movilizaciones simultáneas en Oaxaca, Michoacán, Chiapas, Guerrero y Estado de México. Las demandas centrales incluyen la abrogación de la reforma educativa y de la Ley del ISSSTE de 2007, en un contexto de tensión creciente con la presidenta Claudia Sheinbaum, a quien la sección 22 acusa de responder con 'vallas, policías y gas lacrimógeno' en lugar de diálogo. El paro afectará la Línea 7 del Metrobús y generará disrupciones viales significativas en la capital.",
-          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/05/cnte-se-la-cumple-a-sheinbaum-va-a-paro-nacional-de-3-dias-y-planton-en-cdmx-cuando-es/",
-          "tag": "México"
+          "source": "Criptonoticias",
+          "headline": "Banqueros y Jamie Dimon cuestionan acceso de Kraken al sistema de pagos de la Fed",
+          "body": "La Asociación de Banqueros Estadounidenses (ABA) y el CEO de JP Morgan, Jamie Dimon, reaccionaron con dureza a la decisión del Banco de la Reserva Federal de Kansas de otorgar una cuenta maestra de propósito limitado a Kraken Financial, dándole acceso a la infraestructura de pagos de EE. UU. Dimon advirtió que la competencia está «completamente sesgada» si las entidades cripto operan sin las mismas exigencias regulatorias —seguros FDIC, normas AML y requisitos de capital— que los bancos tradicionales. La tensión refleja el choque de fondo entre el sistema bancario convencional y la creciente institucionalización cripto impulsada por la Ley GENIUS y las señales regulatorias de la nueva administración.",
+          "url": "https://www.criptonoticias.com/regulacion/banqueros-cuestionan-decision-kraken/",
+          "tag": "Macro"
         }
       ],
       "quote": {
-        "text": "Oil is the lifeblood of the industrial civilization and the petroleum interval is a unique event in human history.",
-        "attribution": "M. King Hubbert, geofísico del U.S. Geological Survey, 1956"
+        "text": "Geography is the most fundamental factor in the foreign policy of any state.",
+        "attribution": "Napoleon Bonaparte, atribuido, circa 1800"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, the Strait of Hormuz has become the silent arbiter of global markets: with barely 40 ship transits where 3,000 normally pass each month, the conflict in Iran is rewriting energy flows, hammering stock exchanges and, paradoxically, fattening the Kremlin's coffers. The Ibex 35 has already shed €70 billion in four sessions, Russia is selling its Urals crude at a premium to Brent, and investors are still processing the fact that this is not a one-day headline but a geopolitical reconfiguration of indefinite duration.",
+      "editor_note": "Estimados humanos, the Strait of Hormuz has just reminded the world that geography remains the hardest asset to substitute: the war in Iran has wiped €70 billion from Spain's Ibex 35 in four sessions, sent Russian crude surging from $40 to $62 a barrel, and turned Russia into the accidental grand beneficiary of the chaos. Meanwhile, Mexico has confirmed that USMCA renegotiation talks begin on March 16, just as markets are fraying and Washington holds every card. The calendar is tightening on all fronts.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
         "position": 18,
-        "context_es": "El bloqueo de facto del estrecho de Ormuz, el desplome de bolsas europeas y la huida hacia activos refugio configuran un ambiente de aversión al riesgo pronunciada.",
-        "context_en": "The de facto blockade of the Strait of Hormuz, collapsing European equities, and a flight to safe-haven assets define a sharply risk-off environment."
+        "context_es": "El conflicto en Irán, el bloqueo de facto del estrecho de Ormuz y el desplome de las bolsas europeas configuran un entorno de aversión al riesgo pronunciada, con el petróleo disparado y la logística global bajo presión severa.",
+        "context_en": "The Iran conflict, the de facto blockade of the Strait of Hormuz, and the sharp selloff across European equities define a deeply risk-off environment, with oil prices surging and global logistics under severe strain."
       },
       "stories": [
         {
           "source": "El Periódico",
-          "headline": "Iran war sends crude prices surging and reshuffles global energy flows",
-          "body": "The Strait of Hormuz recorded just 40 ship transits against the usual 3,000 per month, as Indian refiners rush to buy roughly 20 million barrels of Russian crude to offset the cut in Middle Eastern supply. Russian Urals crude, which traded below $40 per barrel in December, is now fetching around $62, with futures touching $81 — an unexpected windfall for the Kremlin's budget amid the war in Ukraine. Asia absorbs between 84% and 90% of the crude that transits Hormuz, making this conflict a first-order Asian energy crisis.",
+          "headline": "Iran War Paralyzes the Strait of Hormuz and Sends Russian Crude to $62 a Barrel",
+          "body": "The conflict in Iran has reduced traffic through the Strait of Hormuz to just 40 transits since Sunday, against the usual 3,000 per month, reshaping the global crude market. Indian refiners — Indian Oil Corp, Bharat Petroleum, and others — have already bought some 20 million barrels of Russian crude, whose price has jumped from under $40 in December to around $62 a barrel, directly benefiting the Kremlin's budget. Oil futures have reached $81, and the halt of Qatari LNG shipments will intensify global competition for available cargoes, threatening a stagflationary spiral across Asia and Europe.",
           "url": "https://www.elperiodico.com/es/opinion/20260305/guerra-iran-remueve-petroleo-anima-caos-la-bolsa-y-la-vida-127612520",
           "tag": "Energía"
         },
         {
           "source": "El Español / Invertia",
-          "headline": "Spain's Ibex 35 sheds €70 billion in four sessions as Iran geopolitical shock hits European markets",
-          "body": "The Spanish benchmark fell 6.1% since the conflict erupted, dropping from 18,360 to 17,245 points, making it one of the hardest-hit major European indices alongside France's CAC 40. Banking, energy and cyclical sectors bore the brunt of selling, with Acciona, IAG and Solaria among the steepest decliners; Repsol was the exception, gaining 6.3% on the back of rising oil prices. According to analyst Antonio Castelo of iBroker, the market has moved from 'pricing in the headline to pricing in the duration and the potential economic damage,' suggesting the selling pressure is far from over.",
+          "headline": "Spain's Ibex 35 Loses €70 Billion in Four Sessions on Geopolitical Shock From Iran",
+          "body": "Spain's benchmark index fell 6.1% since the outbreak of the Iran conflict, dropping from 18,360 to 17,245 points and erasing more than €70.44 billion in market capitalization, making it one of Europe's worst-performing exchanges alongside the CAC 40. Banking, energy, and cyclical sectors led the losses, with Acciona, IAG, and Solaria among the steepest decliners; Repsol was the exception, gaining 6.3% on the back of rising crude. According to iBroker analyst Antonio Castelo, the market has shifted from pricing the headline to pricing the duration and potential economic damage of the conflict: an effective Hormuz blockade, logistics disruption, and stagflation risk.",
           "url": "https://www.elespanol.com/invertia/mercados/20260305/guerra-iran-borra-millones-ibex-convierte-bolsa-espanola-castigadas-europa/1003744155808_0.html",
           "tag": "Mercados"
         },
         {
+          "source": "Reforma",
+          "headline": "Mexico and the U.S. to Launch USMCA Negotiations on March 16",
+          "body": "Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer confirmed that the first round of bilateral discussions in preparation for the USMCA joint review will take place the week of March 16. The talks arrive at a moment of maximum tariff tension, with USMCA operating as virtually the only relevant trade agreement still in force for Washington. The outcome of these negotiations will have direct implications for the Mexican peso and regional manufacturing supply chains.",
+          "url": "https://www.reforma.com/arranca-el-lunes-16-de-marzo-negociacion-con-eu-sobre-t-mec/ar3164096",
+          "tag": "Comercio"
+        },
+        {
           "source": "La Tercera",
-          "headline": "China unveils five-year plan to cut dependence on Western technology and raises defense spending 7%",
-          "body": "Premier Li Qiang revealed a 7% increase in the defense budget for 2026 at the opening of the annual Parliament session — the lowest rate in five years but still above the 4.5%-5% GDP growth target. The five-year plan accelerates investment in artificial intelligence, quantum computing and advanced combat capabilities as part of Xi Jinping's strategy to win the technological rivalry with the United States. The announcement comes amid the largest purge of senior military commanders in decades, with only two of the usual seven members of the Central Military Commission still in active standing.",
+          "headline": "China Unveils Five-Year Plan to Cut Western Tech Dependence and Raises Defense Spending 7% in 2026",
+          "body": "Premier Li Qiang unveiled at the opening of China's parliament a five-year plan aimed at military and industrial technological self-sufficiency, with priority investments in artificial intelligence, quantum computing, and advanced combat capabilities. The defense budget will grow 7% in 2026, the lowest rate in five years but still outpacing the GDP growth target set in a band of 4.5% to 5%. The ongoing purge of senior military commanders — with only two of the usual seven Central Military Commission members active — adds uncertainty about the cohesion of the military apparatus amid escalating tensions over Taiwan.",
           "url": "https://www.latercera.com/mundo/noticia/beijing-anuncio-un-plan-quinquenal-para-tratar-de-reducir-la-dependencia-de-su-ejercito-e-industria-de-la-tecnologia-occidental/",
           "tag": "Macro"
         },
         {
-          "source": "Xataka",
-          "headline": "China Mobile's submarine cable to Chile pits Washington against Beijing — and leaves the problem on Kast's desk",
-          "body": "The United States revoked the visas of three Chilean officials following the signing — and subsequent cancellation — of a decree authorizing China Mobile to install a submarine cable between Valparaíso and Hong Kong, with Secretary of State Marco Rubio accusing the officials of compromising 'critical telecommunications infrastructure.' Chile called the measure 'unilateral' and a violation of its sovereignty, while China accused Washington of acting hegemonically. The dispute lands on the desk of incoming president José Antonio Kast, who takes office on March 11 to find the bilateral relationship turned into a geopolitical battlefield.",
-          "url": "https://www.xataka.com/ingenieria-y-megaconstrucciones/china-quiere-tender-cable-chile-hong-kong-ha-metido-a-chile-tormenta-eeuu",
-          "tag": "Comercio"
-        },
-        {
           "source": "Criptonoticias",
-          "headline": "ICE — NYSE owner — invests in OKX at $25 billion valuation; OKB token surges 40%",
-          "body": "Intercontinental Exchange announced a strategic minority stake in exchange OKX with a board seat, in a deal that values the platform at $25 billion without disclosing the invested amount. The agreement includes ICE licensing OKX spot prices to launch regulated cryptocurrency futures contracts in the U.S., while OKX could offer its 120 million global accounts access to ICE futures and NYSE 'tokenized stocks.' The OKB utility token responded with a near-vertical 40% jump in 24 hours, as the crypto market hunts for positive catalysts amid the geopolitical noise.",
+          "headline": "ICE Values OKX at $25 Billion in Strategic Investment, Sending OKB Token Up 40%",
+          "body": "Intercontinental Exchange, operator of the New York Stock Exchange, announced a strategic investment in crypto exchange OKX valuing it at $25 billion and securing a board seat. The deal envisions ICE licensing OKX spot prices to launch regulated crypto futures in the U.S., while OKX will evaluate offering access to ICE futures and tokenized NYSE equities to its 120-million-plus global account base. The announcement sent the OKB utility token surging as much as 40% at its peak, signaling sustained institutional appetite for regulated crypto infrastructure even in a broadly risk-off environment.",
           "url": "https://www.criptonoticias.com/mercados/token-okb-sube-inversion-okx/",
           "tag": "Mercados"
         },
         {
-          "source": "Criptonoticias",
-          "headline": "Bankers and Jamie Dimon attack Fed's master account grant to Kraken: 'the horse will never catch the cart'",
-          "body": "The American Bankers Association (ABA), BPI and ICBA filed formal opposition after the Federal Reserve Bank of Kansas granted Kraken Financial a limited-purpose master account, giving it direct access to the U.S. payments infrastructure. JPMorgan CEO Jamie Dimon demanded regulatory equality: 'If they want to be a bank, so be it, but under banking laws,' warning that current competition is 'completely skewed.' The episode illustrates the growing friction between traditional banking and institutional crypto at a moment when the federal regulatory framework is still being written.",
-          "url": "https://www.criptonoticias.com/regulacion/banqueros-cuestionan-decision-kraken/",
+          "source": "Boston Herald / AP",
+          "headline": "Mine Collapse at Rebel-Held Coltan Site in Congo Kills at Least 200",
+          "body": "Several hand-dug tunnels collapsed at the Rubaya coltan mine in eastern Democratic Republic of Congo, controlled by the Rwanda-backed M23 rebel group, killing at least 200 people according to the Ministry of Mines. The true toll may be higher: AP testimony indicates mine owners have financial incentives to conceal victims, since they owe $300 per fatality to families. It is the second mass collapse in the area within months, in a region that supplies coltan — a critical mineral for electronics and technology — to global markets, with no effective regulation since M23 drove out civil society organizations and state services.",
+          "url": "https://www.bostonherald.com/2026/03/05/silencio-miedo-y-cifras-en-disputa-tras-el-derrumbe-fatal-de-una-mina-en-el-congo/",
           "tag": "Macro"
         },
         {
-          "source": "El Financiero",
-          "headline": "Mexico's CNTE teachers' union announces 72-hour national strike March 18-20, with sit-in at Mexico City's Zócalo",
-          "body": "The National Coordination of Education Workers confirmed a three-day work stoppage and a march from the Angel of Independence to the capital's Zócalo, with simultaneous mobilizations in Oaxaca, Michoacán, Chiapas, Guerrero and the State of Mexico. Core demands include repealing the education reform and the 2007 ISSSTE law, amid rising tensions with President Claudia Sheinbaum, whom Section 22 accuses of responding with 'barriers, police and tear gas' rather than dialogue. The strike will disrupt Metrobús Line 7 and cause significant traffic disruptions across the capital.",
-          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/05/cnte-se-la-cumple-a-sheinbaum-va-a-paro-nacional-de-3-dias-y-planton-en-cdmx-cuando-es/",
-          "tag": "México"
+          "source": "Criptonoticias",
+          "headline": "Bankers and Jamie Dimon Challenge Kraken's Access to the Fed Payment System",
+          "body": "The American Bankers Association and JPMorgan CEO Jamie Dimon pushed back sharply against the Kansas Federal Reserve Bank's decision to grant Kraken Financial a limited-purpose master account, giving it access to U.S. payment infrastructure. Dimon warned that competition is 'completely skewed' if crypto entities operate without the same regulatory requirements — FDIC insurance, AML rules, and capital standards — as traditional banks. The tension reflects the broader collision between conventional banking and the growing institutionalization of crypto driven by the GENIUS Act and regulatory signals from the new administration.",
+          "url": "https://www.criptonoticias.com/regulacion/banqueros-cuestionan-decision-kraken/",
+          "tag": "Macro"
         }
       ],
       "quote": {
-        "text": "Oil is the lifeblood of the industrial civilization and the petroleum interval is a unique event in human history.",
-        "attribution": "M. King Hubbert, geofísico del U.S. Geological Survey, 1956"
+        "text": "Geography is the most fundamental factor in the foreign policy of any state.",
+        "attribution": "Napoleon Bonaparte, atribuido, circa 1800"
       }
     }
   },
@@ -136,14 +136,14 @@
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.80",
-        "change": "▲ 1.2%",
+        "value": "17.79",
+        "change": "▲ 1.1%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,760",
-        "change": "▼ 1.6%",
+        "value": "6,764",
+        "change": "▼ 1.5%",
         "direction": "down"
       },
       {
@@ -154,57 +154,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,730.01",
-        "change": "▼ 0.9%",
+        "value": "67,698.11",
+        "change": "▼ 1.0%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.7994",
+        "rate": "17.7904",
         "chg_1d": {
-          "text": "▲ 1.17%",
+          "text": "▲ 1.12%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.79%",
+          "text": "▲ 2.73%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6628",
+        "rate": "20.6465",
         "chg_1d": {
-          "text": "▲ 0.94%",
+          "text": "▲ 0.86%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.47%",
+          "text": "▲ 1.39%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.1043",
+        "rate": "13.1053",
         "chg_1d": {
-          "text": "▲ 1.63%",
+          "text": "▲ 1.64%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.44%",
+          "text": "▲ 3.45%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.7447",
+        "rate": "122.6826",
         "chg_1d": {
-          "text": "▲ 1.16%",
+          "text": "▲ 1.11%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.36%",
+          "text": "▲ 3.30%",
           "cls": "chg-up"
         }
       }
@@ -214,7 +214,7 @@
     "city": "Mexico City",
     "temp": "21°C",
     "high_low": "21°C / 9°C",
-    "humidity": "Humidity 34%",
+    "humidity": "Humidity 33%",
     "desc": "Partly cloudy"
   }
 }
