@@ -2,133 +2,133 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, el conflicto en Irán sigue siendo el motor que mueve los mercados globales esta semana: el Ibex 35 ha borrado 70.000 millones de euros en cuatro sesiones y las tasas hipotecarias en EEUU rompen su racha bajista impulsadas por el rebote del petróleo. Mientras tanto, China anuncia un plan quinquenal de autonomía tecnológica militar y mete a Chile en una disputa geopolítica de primer orden por un cable submarino — por si la semana no tuviera ya suficiente material. Los que pensaban que 2026 sería aburrido pueden actualizar sus previsiones.",
+      "editor_note": "Estimados humanos, el estrecho de Ormuz se ha convertido en el árbitro silencioso de los mercados globales: con apenas 40 tránsitos de buques donde normalmente circulan 3.000 al mes, el conflicto en Irán está reescribiendo los flujos de energía, derrumbando bolsas y, paradójicamente, engordando las arcas del Kremlin. El Ibex 35 ya perdió 70.000 millones de euros en cuatro sesiones, Rusia vende su Urals con prima sobre el Brent, y los inversores siguen procesando que esto no es un titular de un día sino una reconfiguración geopolítica de duración indefinida.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
-        "position": 22,
-        "context_es": "El shock geopolítico por la guerra con Irán, la caída del Ibex 35, el repunte del petróleo y la presión al alza sobre tasas e inflación configuran un entorno claramente dominado por la aversión al riesgo.",
-        "context_en": "The geopolitical shock from the Iran conflict, the Ibex 35 sell-off, oil price surge, and upward pressure on rates and inflation paint a clearly risk-off picture across global markets."
+        "position": 18,
+        "context_es": "El bloqueo de facto del estrecho de Ormuz, el desplome de bolsas europeas y la huida hacia activos refugio configuran un ambiente de aversión al riesgo pronunciada.",
+        "context_en": "The de facto blockade of the Strait of Hormuz, collapsing European equities, and a flight to safe-haven assets define a sharply risk-off environment."
       },
       "stories": [
         {
+          "source": "El Periódico",
+          "headline": "Guerra en Irán dispara precios del crudo y reordena flujos globales de energía",
+          "body": "El estrecho de Ormuz registró apenas 40 tránsitos de buques frente a los 3.000 mensuales habituales, mientras refinerías indias compran alrededor de 20 millones de barriles de crudo ruso para compensar el corte de suministro de Oriente Próximo. El petróleo Urals ruso, que en diciembre se vendía por debajo de 40 dólares el barril, ronda ahora los 62 dólares, con futuros tocando los 81 dólares, una manna inesperada para el presupuesto del Kremlin en plena guerra de Ucrania. Asia absorbe entre el 84% y el 90% del crudo que cruza Ormuz, lo que convierte este conflicto en una crisis energética asiática de primera magnitud.",
+          "url": "https://www.elperiodico.com/es/opinion/20260305/guerra-iran-remueve-petroleo-anima-caos-la-bolsa-y-la-vida-127612520",
+          "tag": "Energía"
+        },
+        {
           "source": "El Español / Invertia",
-          "headline": "Guerra en Irán borra 70.000 millones del Ibex 35 en cuatro sesiones; Repsol, la excepción",
-          "body": "El Ibex 35 ha caído un 6,1% desde el estallido del conflicto en Irán, perdiendo más de 70.000 millones de euros en capitalización y situándose en los 17.245 puntos, siendo uno de los índices más castigados de Europa junto al CAC 40. Los sectores de banca, energéticas y cíclicas encabezaron las caídas, con Acciona, IAG y Solaria entre los peores, mientras Repsol subió un 6,3% aprovechando el repunte del crudo. El mercado ya no solo descuenta el titular del conflicto: está poniendo precio al bloqueo del estrecho de Ormuz, la fricción logística y el riesgo de estanflación.",
+          "headline": "El Ibex 35 pierde 70.000 millones en cuatro sesiones por el shock geopolítico de Irán",
+          "body": "El selectivo español retrocedió un 6,1% desde el estallido del conflicto, pasando de 18.360 a 17.245 puntos, siendo una de las bolsas europeas más castigadas junto al CAC 40. Los sectores de banca, energéticas y cíclicas concentraron las ventas, con Acciona, IAG y Solaria entre los mayores caídas; Repsol fue la excepción al subir un 6,3% apoyada en el repunte del petróleo. El mercado, según el analista Antonio Castelo de iBroker, pasó de 'descontar el titular a descontar la duración y el daño económico potencial', lo que sugiere que la presión vendedora no ha terminado.",
           "url": "https://www.elespanol.com/invertia/mercados/20260305/guerra-iran-borra-millones-ibex-convierte-bolsa-espanola-castigadas-europa/1003744155808_0.html",
           "tag": "Mercados"
         },
         {
-          "source": "Boston Herald",
-          "headline": "Tasa hipotecaria a 30 años en EEUU sube a 6% y rompe racha de tres semanas a la baja",
-          "body": "Freddie Mac reportó que la tasa promedio de hipotecas fijas a 30 años subió a 6% desde 5,98%, cortando una caída de tres semanas consecutivas impulsada por el alza del petróleo y el consiguiente aumento de los rendimientos del bono del Tesoro a 10 años, que llegó al 4,14%. El economista Joel Berner de Realtor.com advirtió que para que las tasas retomen el descenso se necesitarán señales claras de que el conflicto no presiona los precios al consumidor, algo difícil de conseguir dado el salto energético de esta semana. El mercado inmobiliario estadounidense, ya estancado en mínimos de 30 años en ventas, enfrenta otro obstáculo inesperado.",
-          "url": "https://www.bostonherald.com/2026/03/05/tasa-hipotecaria-promedio-a-largo-plazo-en-eeuu-sube-a-6-y-corta-racha-de-3-semanas/",
-          "tag": "Tasas"
-        },
-        {
           "source": "La Tercera",
-          "headline": "China lanza plan quinquenal para reducir dependencia tecnológica occidental y sube gasto de defensa 7%",
-          "body": "El primer ministro Li Qiang anunció en la apertura del Congreso Nacional Popular un aumento del presupuesto de defensa del 7% para 2026 — el más bajo en cinco años pero aún por encima del crecimiento económico — y un ambicioso plan quinquenal centrado en inteligencia artificial, computación cuántica y autonomía tecnológica frente a Occidente. La modernización militar apunta al horizonte de 2035, mientras Xi Jinping ejerce un control casi unilateral sobre la Comisión Militar Central tras la purga de los dos generales de mayor rango. El objetivo de crecimiento del PIB se fijó entre 4,5% y 5%.",
+          "headline": "China anuncia plan quinquenal para independizarse de tecnología occidental y sube gasto militar un 7%",
+          "body": "El primer ministro Li Qiang reveló en la apertura del Parlamento anual un incremento del presupuesto de defensa del 7% para 2026, la tasa más baja en cinco años pero superior al objetivo de crecimiento del PIB de entre 4,5% y 5%. El plan quinquenal contempla inversión acelerada en inteligencia artificial, computación cuántica y capacidades de combate avanzadas, dentro de una estrategia de Xi Jinping para ganar la rivalidad tecnológica con Estados Unidos. El anuncio llega en medio de la mayor purga de altos mandos militares en décadas, con solo dos de los siete miembros habituales de la Comisión Militar Central activos.",
           "url": "https://www.latercera.com/mundo/noticia/beijing-anuncio-un-plan-quinquenal-para-tratar-de-reducir-la-dependencia-de-su-ejercito-e-industria-de-la-tecnologia-occidental/",
           "tag": "Macro"
         },
         {
           "source": "Xataka",
-          "headline": "EEUU revoca visas a funcionarios chilenos por cable submarino chino; Kast hereda la crisis geopolítica",
-          "body": "Washington revocó los visados de tres funcionarios del gobierno saliente de Boric tras la firma de un decreto que permitía a China Mobile instalar un cable submarino entre Valparaíso y Hong Kong, acusándolos de comprometer infraestructura crítica de telecomunicaciones. Chile anuló el decreto 48 horas después alegando errores técnicos, pero el daño diplomático ya estaba hecho: el secretario de Estado Marco Rubio calificó la decisión de amenaza a la seguridad regional. El presidente electo José Antonio Kast, que asume el 11 de marzo, hereda el enredo con China, EEUU y la soberanía chilena como primer plato de su gestión.",
+          "headline": "Cable submarino de China Mobile a Chile enfrenta a Washington y Pekín, y hereda el problema el nuevo presidente Kast",
+          "body": "Estados Unidos revocó los visados de tres funcionarios chilenos tras la firma —y posterior anulación— de un decreto que autorizaba a China Mobile a instalar un cable submarino entre Valparaíso y Hong Kong, con el secretario de Estado Marco Rubio acusando a los funcionarios de comprometer 'infraestructura crítica de telecomunicaciones'. Chile calificó la medida de 'unilateral' y contraria a su soberanía, mientras China acusó a Washington de actuar de forma hegemónica. El conflicto aterriza en el escritorio de José Antonio Kast, quien asume la presidencia el 11 de marzo con la relación bilateral convertida en campo de batalla geopolítico.",
           "url": "https://www.xataka.com/ingenieria-y-megaconstrucciones/china-quiere-tender-cable-chile-hong-kong-ha-metido-a-chile-tormenta-eeuu",
           "tag": "Comercio"
         },
         {
           "source": "Criptonoticias",
-          "headline": "ICE valora OKX en 25.000 millones de dólares; token OKB sube 40% en un día",
-          "body": "Intercontinental Exchange, operador de la Bolsa de Nueva York, anunció una inversión estratégica en el exchange de criptomonedas OKX valorándolo en 25.000 millones de dólares y obteniendo un asiento en su directorio. El acuerdo contempla que ICE licencie precios spot de OKX para lanzar futuros de criptomonedas regulados en EEUU, mientras OKX podría ofrecer a sus 120 millones de clientes acceso a futuros y 'acciones tokenizadas' del NYSE. El token OKB se disparó hasta un 40% en las 24 horas siguientes al anuncio, en una de las mayores reacciones de precio del año en el sector.",
+          "headline": "ICE — dueño de la NYSE — invierte en OKX a valuación de 25.000 millones de dólares; token OKB sube 40%",
+          "body": "Intercontinental Exchange anunció una participación estratégica minoritaria en el exchange OKX con un asiento en su junta directiva, en un acuerdo que valora la plataforma en 25.000 millones de dólares sin revelar el monto invertido. El plan incluye que ICE licencie precios spot de OKX para lanzar contratos de futuros de criptomonedas regulados en EE.UU., mientras OKX podría ofrecer a sus 120 millones de cuentas globales acceso a futuros de ICE y 'acciones tokenizadas' del NYSE. El token OKB respondió con una subida vertical de hasta el 40% en 24 horas, en un mercado cripto que busca catalizadores positivos en medio del ruido geopolítico.",
           "url": "https://www.criptonoticias.com/mercados/token-okb-sube-inversion-okx/",
           "tag": "Mercados"
         },
         {
           "source": "Criptonoticias",
-          "headline": "Banqueros de EEUU atacan a la Fed de Kansas por otorgar acceso al sistema de pagos a Kraken",
-          "body": "La Asociación de Banqueros Estadounidenses (ABA), el Instituto de Políticas Bancarias y la ICBA emitieron comunicados de rechazo tras la decisión del Banco de la Reserva Federal de Kansas de conceder una cuenta maestra de propósito limitado a Kraken Financial, dándole acceso a la infraestructura de pagos del país. Jamie Dimon, CEO de JPMorgan, fue directo: 'No puede ser que estas personas hagan una cosa sin ninguna regulación y que nosotros hagamos otra.' La ABA advirtió que la medida pone 'el carro tan adelante que el caballo nunca podrá alcanzarlo', mientras el debate regulatorio cripto-banca escala de tono en Washington.",
+          "headline": "Banqueros y Jamie Dimon atacan la cuenta maestra de la Fed concedida a Kraken: 'el caballo nunca alcanzará al carro'",
+          "body": "La Asociación de Banqueros Estadounidenses (ABA), el BPI y la ICBA expresaron oposición formal tras la decisión del Banco de la Reserva Federal de Kansas de otorgar a Kraken Financial una cuenta maestra de propósito limitado, que le da acceso directo a la infraestructura de pagos de EE.UU. Jamie Dimon, CEO de JP Morgan, exigió igualdad regulatoria: 'Si quieren ser un banco, que así sea, pero bajo las leyes bancarias', advirtiendo que la competencia actual está 'completamente sesgada'. El episodio ilustra la tensión creciente entre la banca tradicional y la criptomoneda institucional en un momento en que el marco regulatorio federal aún está en construcción.",
           "url": "https://www.criptonoticias.com/regulacion/banqueros-cuestionan-decision-kraken/",
           "tag": "Macro"
         },
         {
-          "source": "Diariomotor",
-          "headline": "Toyota y Stellantis abandonan el pool de emisiones con Tesla; ingresos por créditos caen 28%",
-          "body": "Según documentos presentados ante la Unión Europea, Toyota y Stellantis han decidido salir del pool de emisiones compartido con Tesla de cara a 2026, tras concluir que pueden cumplir los objetivos climáticos por sí solas. Tesla ingresó 1.993 millones de dólares por créditos de emisiones en 2025 — una caída del 28% respecto a 2024 — y los analistas estiman que cerca de la mitad provenían del mercado europeo. Aunque los créditos ya solo representan el 2% de los ingresos totales de Tesla, la salida de dos de sus mayores clientes señala que este flujo de 'dinero gratis' está en declive estructural.",
-          "url": "https://www.diariomotor.com/noticia/toyota-stellantis-abandonan-pool-emisiones-tesla/",
-          "tag": "Mercados"
+          "source": "El Financiero",
+          "headline": "CNTE anuncia paro nacional de 72 horas del 18 al 20 de marzo con plantón en el Zócalo de CDMX",
+          "body": "La Coordinadora Nacional de Trabajadores de la Educación confirmó un paro de labores de tres días y una marcha del Ángel de la Independencia al Zócalo capitalino, con movilizaciones simultáneas en Oaxaca, Michoacán, Chiapas, Guerrero y Estado de México. Las demandas centrales incluyen la abrogación de la reforma educativa y de la Ley del ISSSTE de 2007, en un contexto de tensión creciente con la presidenta Claudia Sheinbaum, a quien la sección 22 acusa de responder con 'vallas, policías y gas lacrimógeno' en lugar de diálogo. El paro afectará la Línea 7 del Metrobús y generará disrupciones viales significativas en la capital.",
+          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/05/cnte-se-la-cumple-a-sheinbaum-va-a-paro-nacional-de-3-dias-y-planton-en-cdmx-cuando-es/",
+          "tag": "México"
         }
       ],
       "quote": {
-        "text": "The market can remain irrational longer than you can remain solvent.",
-        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+        "text": "Oil is the lifeblood of the industrial civilization and the petroleum interval is a unique event in human history.",
+        "attribution": "M. King Hubbert, geofísico del U.S. Geological Survey, 1956"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, the Iran conflict remains the week's market driver: Spain's Ibex 35 has wiped out €70 billion in four sessions and U.S. mortgage rates have snapped their three-week decline as oil surges. Meanwhile, China unveils a five-year plan for military tech autonomy and drags Chile into a first-order geopolitical dispute over a submarine cable — as if the week needed more material. Those who thought 2026 would be quiet can go ahead and revise their forecasts.",
+      "editor_note": "Estimados humanos, the Strait of Hormuz has become the silent arbiter of global markets: with barely 40 ship transits where 3,000 normally pass each month, the conflict in Iran is rewriting energy flows, hammering stock exchanges and, paradoxically, fattening the Kremlin's coffers. The Ibex 35 has already shed €70 billion in four sessions, Russia is selling its Urals crude at a premium to Brent, and investors are still processing the fact that this is not a one-day headline but a geopolitical reconfiguration of indefinite duration.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
-        "position": 22,
-        "context_es": "El shock geopolítico por la guerra con Irán, la caída del Ibex 35, el repunte del petróleo y la presión al alza sobre tasas e inflación configuran un entorno claramente dominado por la aversión al riesgo.",
-        "context_en": "The geopolitical shock from the Iran conflict, the Ibex 35 sell-off, oil price surge, and upward pressure on rates and inflation paint a clearly risk-off picture across global markets."
+        "position": 18,
+        "context_es": "El bloqueo de facto del estrecho de Ormuz, el desplome de bolsas europeas y la huida hacia activos refugio configuran un ambiente de aversión al riesgo pronunciada.",
+        "context_en": "The de facto blockade of the Strait of Hormuz, collapsing European equities, and a flight to safe-haven assets define a sharply risk-off environment."
       },
       "stories": [
         {
+          "source": "El Periódico",
+          "headline": "Iran war sends crude prices surging and reshuffles global energy flows",
+          "body": "The Strait of Hormuz recorded just 40 ship transits against the usual 3,000 per month, as Indian refiners rush to buy roughly 20 million barrels of Russian crude to offset the cut in Middle Eastern supply. Russian Urals crude, which traded below $40 per barrel in December, is now fetching around $62, with futures touching $81 — an unexpected windfall for the Kremlin's budget amid the war in Ukraine. Asia absorbs between 84% and 90% of the crude that transits Hormuz, making this conflict a first-order Asian energy crisis.",
+          "url": "https://www.elperiodico.com/es/opinion/20260305/guerra-iran-remueve-petroleo-anima-caos-la-bolsa-y-la-vida-127612520",
+          "tag": "Energía"
+        },
+        {
           "source": "El Español / Invertia",
-          "headline": "Iran war wipes €70 billion off Spain's Ibex 35 in four sessions; Repsol the lone exception",
-          "body": "The Ibex 35 has dropped 6.1% since the Iran conflict erupted, shedding over €70 billion in market cap and falling to 17,245 points — one of Europe's worst-performing indices alongside France's CAC 40. Banking, energy, and cyclical sectors led the declines, with Acciona, IAG, and Solaria among the hardest hit, while Repsol gained 6.3% on the back of rising crude prices. The market is no longer just pricing the headline: it is now pricing the duration of a de facto Strait of Hormuz blockage, logistical disruption, and stagflation risk.",
+          "headline": "Spain's Ibex 35 sheds €70 billion in four sessions as Iran geopolitical shock hits European markets",
+          "body": "The Spanish benchmark fell 6.1% since the conflict erupted, dropping from 18,360 to 17,245 points, making it one of the hardest-hit major European indices alongside France's CAC 40. Banking, energy and cyclical sectors bore the brunt of selling, with Acciona, IAG and Solaria among the steepest decliners; Repsol was the exception, gaining 6.3% on the back of rising oil prices. According to analyst Antonio Castelo of iBroker, the market has moved from 'pricing in the headline to pricing in the duration and the potential economic damage,' suggesting the selling pressure is far from over.",
           "url": "https://www.elespanol.com/invertia/mercados/20260305/guerra-iran-borra-millones-ibex-convierte-bolsa-espanola-castigadas-europa/1003744155808_0.html",
           "tag": "Mercados"
         },
         {
-          "source": "Boston Herald",
-          "headline": "U.S. 30-year mortgage rate rises to 6%, snapping three-week decline",
-          "body": "Freddie Mac reported the average 30-year fixed mortgage rate ticked up to 6% from 5.98%, ending a three-week slide driven by rising oil prices pushing the 10-year Treasury yield to 4.14%. Realtor.com chief economist Joel Berner warned that resuming the downward rate trend will require clear evidence that the conflict is not pushing up consumer prices — a tall order given the week's energy spike. The U.S. housing market, already stuck at 30-year sales lows, now faces yet another unexpected headwind.",
-          "url": "https://www.bostonherald.com/2026/03/05/tasa-hipotecaria-promedio-a-largo-plazo-en-eeuu-sube-a-6-y-corta-racha-de-3-semanas/",
-          "tag": "Tasas"
-        },
-        {
           "source": "La Tercera",
-          "headline": "China unveils five-year plan to cut reliance on Western military tech; defense budget up 7%",
-          "body": "Premier Li Qiang announced a 7% increase in China's 2026 defense budget at the opening of the National People's Congress — the lowest rate in five years but still outpacing broader economic growth — alongside an ambitious five-year plan focused on AI, quantum computing, and technological self-sufficiency away from the West. Military modernization targets the 2035 horizon, as Xi Jinping consolidates near-unilateral control over the Central Military Commission following the purge of the two highest-ranking generals. The GDP growth target was set at 4.5%–5%.",
+          "headline": "China unveils five-year plan to cut dependence on Western technology and raises defense spending 7%",
+          "body": "Premier Li Qiang revealed a 7% increase in the defense budget for 2026 at the opening of the annual Parliament session — the lowest rate in five years but still above the 4.5%-5% GDP growth target. The five-year plan accelerates investment in artificial intelligence, quantum computing and advanced combat capabilities as part of Xi Jinping's strategy to win the technological rivalry with the United States. The announcement comes amid the largest purge of senior military commanders in decades, with only two of the usual seven members of the Central Military Commission still in active standing.",
           "url": "https://www.latercera.com/mundo/noticia/beijing-anuncio-un-plan-quinquenal-para-tratar-de-reducir-la-dependencia-de-su-ejercito-e-industria-de-la-tecnologia-occidental/",
           "tag": "Macro"
         },
         {
           "source": "Xataka",
-          "headline": "U.S. revokes Chilean officials' visas over Chinese submarine cable; Kast inherits geopolitical crisis",
-          "body": "Washington revoked the visas of three outgoing Boric administration officials after a decree was signed allowing China Mobile to install a submarine cable between Valparaíso and Hong Kong, accusing them of compromising critical telecommunications infrastructure. Chile annulled the decree 48 hours later citing technical errors, but the diplomatic damage was done: Secretary of State Marco Rubio called the decision a threat to regional security. President-elect José Antonio Kast, taking office on March 11, inherits the mess involving China, the U.S., and Chilean sovereignty as his very first course.",
+          "headline": "China Mobile's submarine cable to Chile pits Washington against Beijing — and leaves the problem on Kast's desk",
+          "body": "The United States revoked the visas of three Chilean officials following the signing — and subsequent cancellation — of a decree authorizing China Mobile to install a submarine cable between Valparaíso and Hong Kong, with Secretary of State Marco Rubio accusing the officials of compromising 'critical telecommunications infrastructure.' Chile called the measure 'unilateral' and a violation of its sovereignty, while China accused Washington of acting hegemonically. The dispute lands on the desk of incoming president José Antonio Kast, who takes office on March 11 to find the bilateral relationship turned into a geopolitical battlefield.",
           "url": "https://www.xataka.com/ingenieria-y-megaconstrucciones/china-quiere-tender-cable-chile-hong-kong-ha-metido-a-chile-tormenta-eeuu",
           "tag": "Comercio"
         },
         {
           "source": "Criptonoticias",
-          "headline": "ICE values OKX at $25 billion in strategic investment; OKB token surges 40% in a day",
-          "body": "Intercontinental Exchange, operator of the New York Stock Exchange, announced a strategic investment in crypto exchange OKX valuing it at $25 billion and securing a board seat. The deal envisions ICE licensing OKX spot prices to launch regulated crypto futures in the U.S., while OKX could offer its 120 million global users access to ICE futures and NYSE tokenized equities. The OKB utility token surged as much as 40% in the 24 hours following the announcement, marking one of the year's sharpest single-day crypto moves.",
+          "headline": "ICE — NYSE owner — invests in OKX at $25 billion valuation; OKB token surges 40%",
+          "body": "Intercontinental Exchange announced a strategic minority stake in exchange OKX with a board seat, in a deal that values the platform at $25 billion without disclosing the invested amount. The agreement includes ICE licensing OKX spot prices to launch regulated cryptocurrency futures contracts in the U.S., while OKX could offer its 120 million global accounts access to ICE futures and NYSE 'tokenized stocks.' The OKB utility token responded with a near-vertical 40% jump in 24 hours, as the crypto market hunts for positive catalysts amid the geopolitical noise.",
           "url": "https://www.criptonoticias.com/mercados/token-okb-sube-inversion-okx/",
           "tag": "Mercados"
         },
         {
           "source": "Criptonoticias",
-          "headline": "U.S. bankers blast Kansas Fed for granting Kraken access to payments infrastructure",
-          "body": "The American Bankers Association, the Bank Policy Institute, and the ICBA issued sharp statements of opposition after the Federal Reserve Bank of Kansas granted Kraken Financial a limited-purpose master account, giving it access to the U.S. payments system. JPMorgan CEO Jamie Dimon was blunt: 'It can't be that these people do one thing with no regulation and we do another.' The ABA warned the move puts 'the cart so far ahead that the horse can never catch it,' as the crypto-banking regulatory battle escalates sharply in Washington.",
+          "headline": "Bankers and Jamie Dimon attack Fed's master account grant to Kraken: 'the horse will never catch the cart'",
+          "body": "The American Bankers Association (ABA), BPI and ICBA filed formal opposition after the Federal Reserve Bank of Kansas granted Kraken Financial a limited-purpose master account, giving it direct access to the U.S. payments infrastructure. JPMorgan CEO Jamie Dimon demanded regulatory equality: 'If they want to be a bank, so be it, but under banking laws,' warning that current competition is 'completely skewed.' The episode illustrates the growing friction between traditional banking and institutional crypto at a moment when the federal regulatory framework is still being written.",
           "url": "https://www.criptonoticias.com/regulacion/banqueros-cuestionan-decision-kraken/",
           "tag": "Macro"
         },
         {
-          "source": "Diariomotor",
-          "headline": "Toyota and Stellantis exit Tesla emissions pool; credit revenues fall 28%",
-          "body": "According to documents filed with the European Union, Toyota and Stellantis have decided to leave their shared EU emissions pool with Tesla for 2026, having determined they can meet climate targets independently. Tesla earned $1.993 billion from emissions credits in 2025 — a 28% drop from 2024 — with analysts estimating roughly half came from the European market. Although credits now represent only 2% of Tesla's total revenues, the departure of two of its largest clients signals this 'free money' stream is in structural decline.",
-          "url": "https://www.diariomotor.com/noticia/toyota-stellantis-abandonan-pool-emisiones-tesla/",
-          "tag": "Mercados"
+          "source": "El Financiero",
+          "headline": "Mexico's CNTE teachers' union announces 72-hour national strike March 18-20, with sit-in at Mexico City's Zócalo",
+          "body": "The National Coordination of Education Workers confirmed a three-day work stoppage and a march from the Angel of Independence to the capital's Zócalo, with simultaneous mobilizations in Oaxaca, Michoacán, Chiapas, Guerrero and the State of Mexico. Core demands include repealing the education reform and the 2007 ISSSTE law, amid rising tensions with President Claudia Sheinbaum, whom Section 22 accuses of responding with 'barriers, police and tear gas' rather than dialogue. The strike will disrupt Metrobús Line 7 and cause significant traffic disruptions across the capital.",
+          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/05/cnte-se-la-cumple-a-sheinbaum-va-a-paro-nacional-de-3-dias-y-planton-en-cdmx-cuando-es/",
+          "tag": "México"
         }
       ],
       "quote": {
-        "text": "The market can remain irrational longer than you can remain solvent.",
-        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+        "text": "Oil is the lifeblood of the industrial civilization and the petroleum interval is a unique event in human history.",
+        "attribution": "M. King Hubbert, geofísico del U.S. Geological Survey, 1956"
       }
     }
   },
@@ -136,14 +136,14 @@
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.81",
-        "change": "▲ 1.3%",
+        "value": "17.80",
+        "change": "▲ 1.2%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,752",
-        "change": "▼ 1.7%",
+        "value": "6,760",
+        "change": "▼ 1.6%",
         "direction": "down"
       },
       {
@@ -154,57 +154,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,707.63",
-        "change": "▼ 1.0%",
+        "value": "67,730.01",
+        "change": "▼ 0.9%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.8158",
+        "rate": "17.7994",
         "chg_1d": {
-          "text": "▲ 1.27%",
+          "text": "▲ 1.17%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.88%",
+          "text": "▲ 2.79%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6632",
+        "rate": "20.6628",
         "chg_1d": {
           "text": "▲ 0.94%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.48%",
+          "text": "▲ 1.47%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.1072",
+        "rate": "13.1043",
         "chg_1d": {
-          "text": "▲ 1.65%",
+          "text": "▲ 1.63%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.46%",
+          "text": "▲ 3.44%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.8405",
+        "rate": "122.7447",
         "chg_1d": {
-          "text": "▲ 1.24%",
+          "text": "▲ 1.16%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.44%",
+          "text": "▲ 3.36%",
           "cls": "chg-up"
         }
       }
@@ -212,9 +212,9 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "20°C",
+    "temp": "21°C",
     "high_low": "21°C / 9°C",
-    "humidity": "Humidity 35%",
+    "humidity": "Humidity 34%",
     "desc": "Partly cloudy"
   }
 }
