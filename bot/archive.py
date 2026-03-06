@@ -11,7 +11,7 @@ from datetime import date, datetime
 from pretty_renderer import build_pretty_html
 from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR
 
-GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest/"  
+GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest/"
 
 def save_pretty_issue(
     digest:             dict,
@@ -50,10 +50,6 @@ def save_pretty_issue(
 
 
 def _load_all_digests() -> list[dict]:
-    """
-    Loads all saved digest JSONs from DIGEST_DIR, sorted oldest first.
-    Each entry: { date, label, position, story_count, headline }
-    """
     entries = []
     if not os.path.exists(DIGEST_DIR):
         return entries
@@ -71,7 +67,7 @@ def _load_all_digests() -> list[dict]:
             data = json.load(f)
 
         digest    = data.get("digest", {})
-        digest_es = digest.get("es", digest)  # bilingual fallback for old digests
+        digest_es = digest.get("es", digest)
         sentiment = digest_es.get("sentiment", {})
         stories   = digest_es.get("stories", [])
         headline  = stories[0].get("headline", "") if stories else ""
@@ -81,8 +77,8 @@ def _load_all_digests() -> list[dict]:
 
         entries.append({
             "date":        date_str,
-            "label":       label_en,   # used for chart colors (English keys)
-            "label_es":    label_es,   # used for pills display
+            "label":       label_en,
+            "label_es":    label_es,
             "position":    int(sentiment.get("position", 50)),
             "story_count": len(stories),
             "headline":    headline,
@@ -94,22 +90,18 @@ def _load_all_digests() -> list[dict]:
 def rebuild_index() -> None:
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
 
-    # ── Load digest data for charts ───────────
     digest_data = _load_all_digests()
 
-    # ── Build chart data arrays ────────────────
     chart_dates    = [d["date"]        for d in digest_data]
     chart_position = [d["position"]    for d in digest_data]
     chart_stories  = [d["story_count"] for d in digest_data]
     chart_labels   = [d["label"]       for d in digest_data]
 
-    # Point colors per label
     point_colors = [
         "#b84a3a" if l == "Risk-Off" else ("#4a9e6a" if l == "Risk-On" else "#e8a030")
         for l in chart_labels
     ]
 
-    # ── Issue cards ───────────────────────────
     issues = sorted(
         [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html") and f != "index.html"],
         reverse=True,
@@ -135,7 +127,7 @@ def rebuild_index() -> None:
             with open(digest_path, encoding="utf-8") as f:
                 data = json.load(f)
             digest_obj  = data.get("digest", {})
-            digest_es   = digest_obj.get("es", digest_obj)  # bilingual fallback
+            digest_es   = digest_obj.get("es", digest_obj)
             stories     = digest_es.get("stories", [])
             headline    = stories[0].get("headline", "") if stories else ""
             sentiment   = digest_es.get("sentiment", {})
@@ -156,7 +148,6 @@ def rebuild_index() -> None:
       <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">{headline or "View issue &rarr;"}</div>
     </a>"""
 
-    # ── Build search index (embedded JSON) ───────
     search_index = []
     for d in digest_data:
         digest_path = os.path.join(DIGEST_DIR, f"{d['date']}.json")
@@ -165,12 +156,9 @@ def rebuild_index() -> None:
         with open(digest_path, encoding="utf-8") as f:
             data = json.load(f)
         digest_obj = data.get("digest", {})
-        digest_es  = digest_obj.get("es", digest_obj)  # bilingual fallback
+        digest_es  = digest_obj.get("es", digest_obj)
         stories    = digest_es.get("stories", [])
-        text_parts = [
-            digest_es.get("editor_note", ""),
-            d["headline"],
-        ]
+        text_parts = [digest_es.get("editor_note", ""), d["headline"]]
         for s in stories:
             text_parts += [s.get("headline",""), s.get("body",""), s.get("source",""), s.get("tag","")]
         search_index.append({
@@ -181,35 +169,24 @@ def rebuild_index() -> None:
         })
 
     search_index_js = json.dumps(search_index)
-
-    # ── Chart JS data ─────────────────────────
     dates_js    = json.dumps(chart_dates)
     position_js = json.dumps(chart_position)
     stories_js  = json.dumps(chart_stories)
     colors_js   = json.dumps(point_colors)
 
-    # Only render charts if we have data
     charts_html = ""
     if digest_data:
         charts_html = f"""
-  <!-- ── Dashboard charts ─────────────────── -->
   <div style="background:#f0f3f5; border:1px solid #cdd4d9; padding:28px 32px; margin-bottom:24px;">
-
-    <!-- Sentiment timeline -->
     <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Sentiment Timeline</p>
     <div style="position:relative; height:120px; margin-bottom:28px;">
       <canvas id="sentimentChart"></canvas>
     </div>
-
-    <!-- Divider -->
     <div style="height:1px; background:#dde3e8; margin-bottom:24px;"></div>
-
-    <!-- Story count -->
     <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Stories per Issue</p>
     <div style="position:relative; height:80px;">
       <canvas id="storyChart"></canvas>
     </div>
-
   </div>
 
   <script>
@@ -218,7 +195,6 @@ def rebuild_index() -> None:
     const stories  = {stories_js};
     const colors   = {colors_js};
 
-    // ── Sentiment chart ──
     new Chart(document.getElementById('sentimentChart'), {{
       type: 'line',
       data: {{
@@ -251,16 +227,11 @@ def rebuild_index() -> None:
           }}
         }},
         scales: {{
-          x: {{
-            ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }},
-            grid: {{ color: '#e8edf0' }}
-          }},
+          x: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }}, grid: {{ color: '#e8edf0' }} }},
           y: {{
-            min: 0,
-            max: 100,
+            min: 0, max: 100,
             ticks: {{
-              font: {{ size: 9 }},
-              color: '#aab4bc',
+              font: {{ size: 9 }}, color: '#aab4bc',
               callback: (v) => v === 5 ? 'Risk-Off' : v === 50 ? 'Neutral' : v === 95 ? 'Risk-On' : '',
               stepSize: 45,
             }},
@@ -270,16 +241,11 @@ def rebuild_index() -> None:
       }}
     }});
 
-    // ── Story count chart ──
     new Chart(document.getElementById('storyChart'), {{
       type: 'bar',
       data: {{
         labels: dates,
-        datasets: [{{
-          data: stories,
-          backgroundColor: '#c8d4da',
-          borderRadius: 2,
-        }}]
+        datasets: [{{ data: stories, backgroundColor: '#c8d4da', borderRadius: 2 }}]
       }},
       options: {{
         responsive: true,
@@ -293,13 +259,12 @@ def rebuild_index() -> None:
     }});
   </script>"""
 
-    # ── Full index page ───────────────────────
     index_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{NEWSLETTER_NAME} — Archive</title>
+  <title>{NEWSLETTER_NAME} -- Archive</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
@@ -311,7 +276,6 @@ def rebuild_index() -> None:
     .masthead-sub {{ font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#555; }}
     .masthead-count {{ font-size:11px; color:#444; letter-spacing:1px; text-align:right; }}
     a {{ color:inherit; }}
-    .issue-card:hover div {{ color:#555 !important; }}
     .search-wrap {{ position:relative; margin-bottom:16px; }}
     .search-input {{
       width:100%; padding:12px 40px 12px 16px;
@@ -339,25 +303,22 @@ def rebuild_index() -> None:
 <body>
 <div class="wrap">
 
-  <!-- Masthead -->
   <div class="masthead">
     <div>
       <div class="masthead-name">{NEWSLETTER_NAME}</div>
-      <div class="masthead-sub">Archive &mdash; by {AUTHOR_NAME}</div>
+      <div class="masthead-sub">Archive -- by {AUTHOR_NAME}</div>
     </div>
     <div class="masthead-count">{len(issues)} issue{"s" if len(issues) != 1 else ""}</div>
   </div>
 
   {charts_html}
 
-  <!-- Search -->
   <div class="search-wrap">
-    <input class="search-input" id="searchInput" type="text" placeholder="Search issues — try 'Banxico', 'tariff', 'peso'...">
-    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+    <input class="search-input" id="searchInput" type="text" placeholder="Search issues...">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">x</button>
   </div>
   <div class="search-count" id="searchCount"></div>
 
-  <!-- Section label -->
   <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:14px;" id="allIssuesLabel">All Issues</p>
 
   <div id="cardsContainer">
@@ -366,7 +327,6 @@ def rebuild_index() -> None:
 
   <script>
     const searchIndex = {search_index_js};
-
     const input     = document.getElementById('searchInput');
     const clearBtn  = document.getElementById('searchClear');
     const container = document.getElementById('cardsContainer');
@@ -374,53 +334,30 @@ def rebuild_index() -> None:
     const labelEl   = document.getElementById('allIssuesLabel');
     const allCards  = Array.from(container.querySelectorAll('a'));
 
-    // Map date string to card element
-    const cardMap = {{}};
-    allCards.forEach(card => {{
-      const href = card.getAttribute('href');
-      const date = href.replace('.html','');
-      cardMap[date] = card;
-    }});
-
     input.addEventListener('input', () => {{
       const q = input.value.trim().toLowerCase();
       clearBtn.style.display = q ? 'block' : 'none';
-
       if (!q) {{
         allCards.forEach(c => c.style.display = 'block');
         countEl.textContent = '';
         labelEl.textContent = 'All Issues';
         return;
       }}
-
       const tokens  = q.split(/\s+/).filter(Boolean);
-      const matches = searchIndex.filter(item =>
-        tokens.every(t => item.text.includes(t))
-      );
+      const matches = searchIndex.filter(item => tokens.every(t => item.text.includes(t)));
       const matchDates = new Set(matches.map(m => m.date));
-
       let shown = 0;
       allCards.forEach(card => {{
-        const href = card.getAttribute('href');
-        const date = href.replace('.html','');
-        if (matchDates.has(date)) {{
-          card.style.display = 'block';
-          shown++;
-        }} else {{
-          card.style.display = 'none';
-        }}
+        const date = card.getAttribute('href').replace('.html','');
+        if (matchDates.has(date)) {{ card.style.display = 'block'; shown++; }}
+        else card.style.display = 'none';
       }});
-
       labelEl.textContent = shown > 0 ? 'Matching Issues' : '';
-      countEl.textContent = shown > 0
-        ? shown + ' result' + (shown !== 1 ? 's' : '') + ' for "' + input.value.trim() + '"'
-        : '';
-
+      countEl.textContent = shown > 0 ? shown + ' result' + (shown !== 1 ? 's' : '') + ' for "' + input.value.trim() + '"' : '';
       if (shown === 0) {{
         if (!document.getElementById('noResults')) {{
           const msg = document.createElement('p');
-          msg.id        = 'noResults';
-          msg.className = 'no-results';
+          msg.id = 'noResults'; msg.className = 'no-results';
           msg.textContent = 'No issues found for "' + input.value.trim() + '"';
           container.appendChild(msg);
         }}
