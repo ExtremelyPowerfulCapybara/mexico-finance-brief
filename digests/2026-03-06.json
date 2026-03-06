@@ -2,133 +2,133 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, el estrecho de Ormuz acaba de recordarle al mundo que la geografía sigue siendo el activo más duro de sustituir: la guerra en Irán ha borrado 70.000 millones de euros del Ibex 35 en cuatro sesiones, disparado el crudo ruso de 40 a 62 dólares por barril y convertido a Rusia en el gran beneficiario accidental del caos. Mientras tanto, en México se confirma que las negociaciones del T-MEC arrancan el 16 de marzo, justo cuando los mercados tienen los nervios de punta y Washington tiene todas las cartas. El calendario aprieta en todos los frentes.",
+      "editor_note": "Estimados humanos, arrancamos la jornada con el T-MEC como telón de fondo: México y Estados Unidos formalizan el 16 de marzo como fecha de inicio de negociaciones bilaterales, mientras el reloj de julio —revisión oficial del tratado— sigue corriendo. Entre aranceles al acero, la industria automotriz en contracción y Jamieson Greer instruyendo a sus negociadores, esto no es una reunión de cortesía. El resto del tablero tampoco inspira serenidad: Argentina busca financiamiento bilateral para evitar Wall Street, bitcoin rebota sobre la guerra en Irán, y la NYSE compra entrada en el casino cripto.",
       "sentiment": {
-        "label_es": "Aversión al Riesgo",
-        "label_en": "Risk-Off",
-        "position": 18,
-        "context_es": "El conflicto en Irán, el bloqueo de facto del estrecho de Ormuz y el desplome de las bolsas europeas configuran un entorno de aversión al riesgo pronunciada, con el petróleo disparado y la logística global bajo presión severa.",
-        "context_en": "The Iran conflict, the de facto blockade of the Strait of Hormuz, and the sharp selloff across European equities define a deeply risk-off environment, with oil prices surging and global logistics under severe strain."
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Los mercados navegan entre señales mixtas: negociaciones comerciales que abren una válvula de presión en América del Norte, pero la guerra en Irán, la volatilidad cripto y las maniobras financieras de Argentina mantienen el apetito por riesgo contenido.",
+        "context_en": "Markets navigate mixed signals: trade negotiations offering a pressure release in North America, but the Iran war, crypto volatility, and Argentina's financial maneuvering keep risk appetite firmly in check."
       },
       "stories": [
         {
-          "source": "El Periódico",
-          "headline": "La guerra en Irán paraliza el estrecho de Ormuz y dispara el crudo ruso a 62 dólares por barril",
-          "body": "El conflicto en Irán ha reducido el tráfico por el estrecho de Ormuz a apenas 40 tránsitos desde el domingo, frente a los 3.000 mensuales habituales, reordenando el mercado global de crudo. Refinadores indios —Indian Oil Corp, Bharat Petroleum y otros— han comprado ya unos 20 millones de barriles de crudo ruso, cuyo precio ha saltado de menos de 40 dólares en diciembre a cerca de 62 dólares por barril, beneficiando directamente al presupuesto del Kremlin. Los futuros del petróleo alcanzan los 81 dólares, y la paralización del GNL qatarí intensificará la competencia global por cargamentos disponibles, amenazando con una espiral de estanflación en Asia y Europa.",
-          "url": "https://www.elperiodico.com/es/opinion/20260305/guerra-iran-remueve-petroleo-anima-caos-la-bolsa-y-la-vida-127612520",
-          "tag": "Energía"
-        },
-        {
-          "source": "El Español / Invertia",
-          "headline": "El Ibex 35 pierde 70.000 millones de euros en cuatro sesiones por el shock geopolítico iraní",
-          "body": "El índice español cayó un 6,1% desde el estallido del conflicto en Irán, pasando de 18.360 a 17.245 puntos y borrando más de 70.440 millones de euros en capitalización, convirtiéndose en una de las bolsas europeas más golpeadas junto al CAC 40. Los sectores de banca, energéticas y cíclicas lideraron las pérdidas, con Acciona, IAG y Solaria entre los mayores descensos; Repsol fue la excepción, sumando un 6,3% gracias al repunte del crudo. Según el analista Antonio Castelo de iBroker, el mercado ha pasado de descontar el titular a descontar la duración y el daño económico del conflicto: bloqueo de Ormuz, fricción logística y riesgo de estanflación.",
-          "url": "https://www.elespanol.com/invertia/mercados/20260305/guerra-iran-borra-millones-ibex-convierte-bolsa-espanola-castigadas-europa/1003744155808_0.html",
-          "tag": "Mercados"
-        },
-        {
-          "source": "Reforma",
-          "headline": "México y EU arrancan negociaciones del T-MEC el 16 de marzo",
-          "body": "El secretario de Economía Marcelo Ebrard y el representante comercial de EU, Jamieson Greer, confirmaron que la primera ronda de discusiones bilaterales en preparación para la revisión conjunta del T-MEC se realizará la semana del 16 de marzo. La negociación llega en un momento de máxima tensión arancelaria, con el T-MEC operando como prácticamente el único tratado comercial vigente relevante para Washington. El resultado de estas conversaciones tendrá repercusiones directas sobre el peso mexicano y las cadenas de manufactura regional.",
-          "url": "https://www.reforma.com/arranca-el-lunes-16-de-marzo-negociacion-con-eu-sobre-t-mec/ar3164096",
+          "source": "Boston Herald / AP",
+          "headline": "México y EEUU arrancan el 16 de marzo la primera ronda bilateral de negociación del T-MEC",
+          "body": "El secretario de Economía Marcelo Ebrard y el representante comercial estadounidense Jamieson Greer instruyeron a sus negociadores para iniciar una 'discusión exploratoria' sobre reglas de origen, seguridad de cadenas de suministro e integración regional, con la primera reunión programada para la semana del 16 de marzo. El arranque anticipado —la revisión formal está prevista para julio— se interpreta en algunos círculos como señal de que ya hay acuerdos preliminares sobre la mesa. La analista Gabriela Siller de Banco Base señala que el sector automotriz, que registró una caída de producción de 2,7% en enero, será uno de los temas más sensibles de la negociación.",
+          "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
           "tag": "Comercio"
         },
         {
-          "source": "La Tercera",
-          "headline": "China anuncia plan quinquenal para reducir dependencia tecnológica occidental y eleva gasto de defensa 7% en 2026",
-          "body": "El primer ministro Li Qiang reveló en la apertura del Parlamento chino un plan quinquenal orientado a la autosuficiencia tecnológica militar e industrial, con inversiones prioritarias en inteligencia artificial, computación cuántica y capacidades de combate avanzadas. El presupuesto de defensa crecerá un 7% en 2026, la tasa más baja en cinco años pero que sigue superando el objetivo de crecimiento del PIB, fijado en una banda del 4,5% al 5%. La purga de altos mandos —con solo dos de los siete miembros habituales de la Comisión Militar Central activos— añade incertidumbre sobre la cohesión del aparato militar en plena escalada de tensiones sobre Taiwán.",
-          "url": "https://www.latercera.com/mundo/noticia/beijing-anuncio-un-plan-quinquenal-para-tratar-de-reducir-la-dependencia-de-su-ejercito-e-industria-de-la-tecnologia-occidental/",
+          "source": "La Nacion",
+          "headline": "Argentina explora créditos bilaterales con EEUU, Israel e Italia para esquivar Wall Street ante vencimiento de $4,200 millones",
+          "body": "El equipo económico de Luis Caputo mantiene conversaciones con al menos tres países —Estados Unidos, Israel e Italia— para obtener préstamos bilaterales más baratos que una colocación de deuda en mercados internacionales, donde el rendimiento exigido a Argentina supera el 9,5% anual para un bono a diez años. El vencimiento crítico es el 9 de julio: $4,200 millones a bonistas privados. La escalada del conflicto en Medio Oriente se identifica como un factor que podría complicar y retrasar estas alternativas.",
+          "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
           "tag": "Macro"
         },
         {
+          "source": "El Financiero",
+          "headline": "La sucesión del líder supremo de Irán, bloqueada por divisiones internas y la presión de la Guardia Revolucionaria",
+          "body": "Seis días después del asesinato de Alí Jamenei, la Asamblea de 88 clérigos encargada de elegir al sucesor sigue sin resolver la sucesión, complicada por las divisiones políticas entre facciones y la influencia del Cuerpo de la Guardia Revolucionaria Islámica, que controla hasta el 40% de la economía iraní. Entre los candidatos figura Mojtaba Jamenei, hijo del líder asesinado, con vínculos estrechos con la Guardia y un vasto imperio inversor que se extiende de Teherán a Dubái y Fráncfort. Israel atacó el martes la sede principal de la Asamblea de Expertos, matando a tres empleados administrativos.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-complica-la-eleccion-del-nuevo-lider-supremo-de-iran/",
+          "tag": "Política"
+        },
+        {
           "source": "Criptonoticias",
-          "headline": "ICE valora OKX en 25.000 millones de dólares e impulsa el token OKB un 40%",
-          "body": "Intercontinental Exchange, operador de la Bolsa de Nueva York, anunció una inversión estratégica en el exchange de criptomonedas OKX, valorándolo en 25.000 millones de dólares y obteniendo un asiento en su directorio. El acuerdo contempla que ICE licencie precios spot de OKX para lanzar futuros de criptomonedas regulados en EE. UU., mientras OKX evaluará ofrecer acceso a futuros de ICE y acciones tokenizadas del NYSE a sus más de 120 millones de cuentas globales. El anuncio disparó el token OKB hasta un 40% en su punto máximo, señalando el apetito institucional por infraestructura cripto regulada incluso en un entorno de aversión al riesgo generalizada.",
-          "url": "https://www.criptonoticias.com/mercados/token-okb-sube-inversion-okx/",
+          "headline": "Bitcoin rebota a $73,000 en medio de la guerra en Irán, impulsado por $1,144 millones en entradas a ETFs",
+          "body": "Tras tocar mínimos de $60,000 el 6 de febrero, bitcoin superó los $73,000 el 5 de marzo, en un rally que analistas atribuyen a flujos hacia ETFs estadounidenses —$1,144 millones entre el 2 y el 4 de marzo— y a una cascada de liquidaciones de posiciones cortas que amplificó el movimiento al alza. El interés abierto en derivados saltó de $21,000 millones a $25,000 millones en lo que va de marzo, según XWIN Research. La narrativa de bitcoin como refugio en conflictos bélicos gana tracción, aunque la compra corporativa de tesorerías cayó a apenas $555 millones en febrero, su nivel más bajo desde octubre de 2024.",
+          "url": "https://www.criptonoticias.com/mercados/por-que-reboto-bitcoin-shock-guerra-iran/",
           "tag": "Mercados"
         },
         {
-          "source": "Boston Herald / AP",
-          "headline": "Derrumbe en mina de coltán en el Congo bajo control rebelde deja al menos 200 muertos",
-          "body": "Varios túneles excavados a mano colapsaron en la mina de coltán de Rubaya, en el este de la República Democrática del Congo, controlada por el grupo rebelde M23 respaldado por Ruanda, causando al menos 200 muertos según el Ministerio de Minas. La cifra real podría ser mayor: según testimonios recogidos por AP, los propietarios tienen incentivos para ocultar víctimas, ya que deben pagar 300 dólares por cada muerto. Es el segundo derrumbe masivo en la zona en pocos meses, en una región que abastece de coltán —mineral crítico para electrónica y tecnología— a mercados globales, sin regulación efectiva desde que el M23 expulsó a la sociedad civil y los servicios estatales.",
-          "url": "https://www.bostonherald.com/2026/03/05/silencio-miedo-y-cifras-en-disputa-tras-el-derrumbe-fatal-de-una-mina-en-el-congo/",
-          "tag": "Macro"
+          "source": "Cointelegraph",
+          "headline": "NYSE-Intercontinental Exchange invierte en OKX con valoración de $25,000 millones y planea llevar acciones tokenizadas a 120 millones de usuarios",
+          "body": "Intercontinental Exchange, propietaria de la Bolsa de Nueva York, realizó una inversión de monto no revelado en el exchange de criptomonedas OKX —valorado en $25,000 millones— y obtendrá un asiento en su consejo directivo. El plan contempla que OKX ofrezca a sus 120 millones de cuentas acceso a los mercados de futuros de ICE y a valores tokenizados de la NYSE en el segundo semestre de 2026. La operación se suma a la inversión de ICE de $2,000 millones en Polymarket anunciada en noviembre pasado, dibujando con bastante claridad hacia dónde creen que va el mercado de capitales.",
+          "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
+          "tag": "Mercados"
         },
         {
-          "source": "Criptonoticias",
-          "headline": "Banqueros y Jamie Dimon cuestionan acceso de Kraken al sistema de pagos de la Fed",
-          "body": "La Asociación de Banqueros Estadounidenses (ABA) y el CEO de JP Morgan, Jamie Dimon, reaccionaron con dureza a la decisión del Banco de la Reserva Federal de Kansas de otorgar una cuenta maestra de propósito limitado a Kraken Financial, dándole acceso a la infraestructura de pagos de EE. UU. Dimon advirtió que la competencia está «completamente sesgada» si las entidades cripto operan sin las mismas exigencias regulatorias —seguros FDIC, normas AML y requisitos de capital— que los bancos tradicionales. La tensión refleja el choque de fondo entre el sistema bancario convencional y la creciente institucionalización cripto impulsada por la Ley GENIUS y las señales regulatorias de la nueva administración.",
-          "url": "https://www.criptonoticias.com/regulacion/banqueros-cuestionan-decision-kraken/",
+          "source": "RT",
+          "headline": "Trump amenaza con cortar todo el comercio con España tras negativa a permitir uso de bases para atacar Irán",
+          "body": "El presidente Donald Trump instruyó al Secretario del Tesoro Scott Bessent a 'cortar todos los tratos con España', después de que Madrid se negara a autorizar el uso de sus bases militares para operaciones contra Irán y rechazara elevar su gasto en defensa al 5% del PIB exigido por Washington en el marco de la OTAN. La concreción de la amenaza es jurídicamente compleja: cualquier arancel unilateral a España afectaría a todo el bloque de la Unión Europea, que maneja la política comercial de los 27 desde Bruselas. Bessent mencionó dos artículos de la ley de comercio estadounidense aplicables, sin precisar medidas concretas.",
+          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Revolut presenta su segunda solicitud de licencia bancaria en EEUU y nombra nuevo CEO para el mercado norteamericano",
+          "body": "La fintech británica Revolut, valorada en $75,000 millones, presentó ante la OCC y la FDIC una solicitud para establecer 'Revolut Bank US, N.A.', su segundo intento tras el fracaso de 2021 por obstáculos regulatorios. La empresa nombró a Cetin Duransoy —ex CEO para EEUU de Raisin— como su nuevo responsable en el mercado norteamericano. Si se aprueba, la licencia le permitiría operar bajo un único marco federal en los 50 estados y acceder directamente a los sistemas de pago Fedwire y ACH.",
+          "url": "https://es.cointelegraph.com/news/revolut-second-us-bank-charter-application-new-us-ceo",
           "tag": "Macro"
         }
       ],
       "quote": {
-        "text": "Geography is the most fundamental factor in the foreign policy of any state.",
-        "attribution": "Napoleon Bonaparte, atribuido, circa 1800"
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, the Strait of Hormuz has just reminded the world that geography remains the hardest asset to substitute: the war in Iran has wiped €70 billion from Spain's Ibex 35 in four sessions, sent Russian crude surging from $40 to $62 a barrel, and turned Russia into the accidental grand beneficiary of the chaos. Meanwhile, Mexico has confirmed that USMCA renegotiation talks begin on March 16, just as markets are fraying and Washington holds every card. The calendar is tightening on all fronts.",
+      "editor_note": "Estimados humanos, we open the session with USMCA front and center: Mexico and the United States have formalized March 16 as the kickoff date for bilateral negotiations, while the July clock — the treaty's formal review — keeps ticking. With steel tariffs, a contracting auto sector, and Jamieson Greer briefing his negotiators, this is no courtesy call. The rest of the board offers little comfort: Argentina hunts bilateral credit to avoid Wall Street, bitcoin bounces on the Iran war, and the NYSE buys a ticket into the crypto casino.",
       "sentiment": {
-        "label_es": "Aversión al Riesgo",
-        "label_en": "Risk-Off",
-        "position": 18,
-        "context_es": "El conflicto en Irán, el bloqueo de facto del estrecho de Ormuz y el desplome de las bolsas europeas configuran un entorno de aversión al riesgo pronunciada, con el petróleo disparado y la logística global bajo presión severa.",
-        "context_en": "The Iran conflict, the de facto blockade of the Strait of Hormuz, and the sharp selloff across European equities define a deeply risk-off environment, with oil prices surging and global logistics under severe strain."
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Los mercados navegan entre señales mixtas: negociaciones comerciales que abren una válvula de presión en América del Norte, pero la guerra en Irán, la volatilidad cripto y las maniobras financieras de Argentina mantienen el apetito por riesgo contenido.",
+        "context_en": "Markets navigate mixed signals: trade negotiations offering a pressure release in North America, but the Iran war, crypto volatility, and Argentina's financial maneuvering keep risk appetite firmly in check."
       },
       "stories": [
         {
-          "source": "El Periódico",
-          "headline": "Iran War Paralyzes the Strait of Hormuz and Sends Russian Crude to $62 a Barrel",
-          "body": "The conflict in Iran has reduced traffic through the Strait of Hormuz to just 40 transits since Sunday, against the usual 3,000 per month, reshaping the global crude market. Indian refiners — Indian Oil Corp, Bharat Petroleum, and others — have already bought some 20 million barrels of Russian crude, whose price has jumped from under $40 in December to around $62 a barrel, directly benefiting the Kremlin's budget. Oil futures have reached $81, and the halt of Qatari LNG shipments will intensify global competition for available cargoes, threatening a stagflationary spiral across Asia and Europe.",
-          "url": "https://www.elperiodico.com/es/opinion/20260305/guerra-iran-remueve-petroleo-anima-caos-la-bolsa-y-la-vida-127612520",
-          "tag": "Energía"
-        },
-        {
-          "source": "El Español / Invertia",
-          "headline": "Spain's Ibex 35 Loses €70 Billion in Four Sessions on Geopolitical Shock From Iran",
-          "body": "Spain's benchmark index fell 6.1% since the outbreak of the Iran conflict, dropping from 18,360 to 17,245 points and erasing more than €70.44 billion in market capitalization, making it one of Europe's worst-performing exchanges alongside the CAC 40. Banking, energy, and cyclical sectors led the losses, with Acciona, IAG, and Solaria among the steepest decliners; Repsol was the exception, gaining 6.3% on the back of rising crude. According to iBroker analyst Antonio Castelo, the market has shifted from pricing the headline to pricing the duration and potential economic damage of the conflict: an effective Hormuz blockade, logistics disruption, and stagflation risk.",
-          "url": "https://www.elespanol.com/invertia/mercados/20260305/guerra-iran-borra-millones-ibex-convierte-bolsa-espanola-castigadas-europa/1003744155808_0.html",
-          "tag": "Mercados"
-        },
-        {
-          "source": "Reforma",
-          "headline": "Mexico and the U.S. to Launch USMCA Negotiations on March 16",
-          "body": "Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer confirmed that the first round of bilateral discussions in preparation for the USMCA joint review will take place the week of March 16. The talks arrive at a moment of maximum tariff tension, with USMCA operating as virtually the only relevant trade agreement still in force for Washington. The outcome of these negotiations will have direct implications for the Mexican peso and regional manufacturing supply chains.",
-          "url": "https://www.reforma.com/arranca-el-lunes-16-de-marzo-negociacion-con-eu-sobre-t-mec/ar3164096",
+          "source": "Boston Herald / AP",
+          "headline": "Mexico and U.S. launch first bilateral USMCA negotiating round on March 16",
+          "body": "Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer have instructed their negotiators to begin an 'exploratory discussion' on rules of origin, supply chain security, and regional integration, with the first meeting set for the week of March 16. The early start — the formal review is scheduled for July — is interpreted in some circles as a signal that preliminary agreements may already be in place. Analyst Gabriela Siller of Banco Base flags the auto sector, which posted a 2.7% production decline in January, as one of the most sensitive items on the agenda.",
+          "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
           "tag": "Comercio"
         },
         {
-          "source": "La Tercera",
-          "headline": "China Unveils Five-Year Plan to Cut Western Tech Dependence and Raises Defense Spending 7% in 2026",
-          "body": "Premier Li Qiang unveiled at the opening of China's parliament a five-year plan aimed at military and industrial technological self-sufficiency, with priority investments in artificial intelligence, quantum computing, and advanced combat capabilities. The defense budget will grow 7% in 2026, the lowest rate in five years but still outpacing the GDP growth target set in a band of 4.5% to 5%. The ongoing purge of senior military commanders — with only two of the usual seven Central Military Commission members active — adds uncertainty about the cohesion of the military apparatus amid escalating tensions over Taiwan.",
-          "url": "https://www.latercera.com/mundo/noticia/beijing-anuncio-un-plan-quinquenal-para-tratar-de-reducir-la-dependencia-de-su-ejercito-e-industria-de-la-tecnologia-occidental/",
+          "source": "La Nacion",
+          "headline": "Argentina explores bilateral loans from U.S., Israel, and Italy to sidestep Wall Street ahead of $4.2B payment",
+          "body": "Economy Minister Luis Caputo's team is in talks with at least three countries — the United States, Israel, and Italy — to secure bilateral loans cheaper than tapping international debt markets, where Argentina faces yields above 9.5% annually on a ten-year bond. The critical deadline is July 9: $4.2 billion owed to private bondholders. The escalating conflict in the Middle East has been identified as a factor that could complicate and delay these financing alternatives.",
+          "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
           "tag": "Macro"
         },
         {
+          "source": "El Financiero",
+          "headline": "Iran's supreme leader succession stalled by internal divisions and Revolutionary Guard pressure",
+          "body": "Six days after the assassination of Ali Khamenei, the 88-member clerical assembly tasked with choosing his successor remains deadlocked, hampered by factional divisions and the influence of the Islamic Revolutionary Guard Corps, which controls up to 40% of the Iranian economy. Among the candidates is Mojtaba Khamenei, the slain leader's son, with close ties to the Guard and a vast investment empire stretching from Tehran to Dubai and Frankfurt. Israel struck the assembly's main headquarters on Tuesday, killing three administrative staff.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-complica-la-eleccion-del-nuevo-lider-supremo-de-iran/",
+          "tag": "Política"
+        },
+        {
           "source": "Criptonoticias",
-          "headline": "ICE Values OKX at $25 Billion in Strategic Investment, Sending OKB Token Up 40%",
-          "body": "Intercontinental Exchange, operator of the New York Stock Exchange, announced a strategic investment in crypto exchange OKX valuing it at $25 billion and securing a board seat. The deal envisions ICE licensing OKX spot prices to launch regulated crypto futures in the U.S., while OKX will evaluate offering access to ICE futures and tokenized NYSE equities to its 120-million-plus global account base. The announcement sent the OKB utility token surging as much as 40% at its peak, signaling sustained institutional appetite for regulated crypto infrastructure even in a broadly risk-off environment.",
-          "url": "https://www.criptonoticias.com/mercados/token-okb-sube-inversion-okx/",
+          "headline": "Bitcoin bounces to $73,000 amid Iran war, driven by $1.14B in ETF inflows",
+          "body": "After hitting a low of $60,000 on February 6, bitcoin surpassed $73,000 on March 5 in a rally analysts attribute to flows into U.S. ETFs — $1.144 billion between March 2 and 4 — and a cascade of short liquidations that amplified the upward move. Open interest in derivatives jumped from $21 billion to $25 billion so far in March, according to XWIN Research. The narrative of bitcoin as a safe haven in armed conflicts is gaining traction, although corporate treasury purchases fell to just $555 million in February, their lowest level since October 2024.",
+          "url": "https://www.criptonoticias.com/mercados/por-que-reboto-bitcoin-shock-guerra-iran/",
           "tag": "Mercados"
         },
         {
-          "source": "Boston Herald / AP",
-          "headline": "Mine Collapse at Rebel-Held Coltan Site in Congo Kills at Least 200",
-          "body": "Several hand-dug tunnels collapsed at the Rubaya coltan mine in eastern Democratic Republic of Congo, controlled by the Rwanda-backed M23 rebel group, killing at least 200 people according to the Ministry of Mines. The true toll may be higher: AP testimony indicates mine owners have financial incentives to conceal victims, since they owe $300 per fatality to families. It is the second mass collapse in the area within months, in a region that supplies coltan — a critical mineral for electronics and technology — to global markets, with no effective regulation since M23 drove out civil society organizations and state services.",
-          "url": "https://www.bostonherald.com/2026/03/05/silencio-miedo-y-cifras-en-disputa-tras-el-derrumbe-fatal-de-una-mina-en-el-congo/",
-          "tag": "Macro"
+          "source": "Cointelegraph",
+          "headline": "NYSE parent Intercontinental Exchange invests in OKX at $25B valuation, plans tokenized stocks for 120 million users",
+          "body": "Intercontinental Exchange, owner of the New York Stock Exchange, made an undisclosed investment in crypto exchange OKX — valued at $25 billion — and will receive a board seat. The plan envisions OKX offering its 120 million accounts access to ICE futures markets and NYSE tokenized securities in the second half of 2026. The deal follows ICE's $2 billion investment in Polymarket announced last November, drawing a fairly clear picture of where the firm believes capital markets are headed.",
+          "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
+          "tag": "Mercados"
         },
         {
-          "source": "Criptonoticias",
-          "headline": "Bankers and Jamie Dimon Challenge Kraken's Access to the Fed Payment System",
-          "body": "The American Bankers Association and JPMorgan CEO Jamie Dimon pushed back sharply against the Kansas Federal Reserve Bank's decision to grant Kraken Financial a limited-purpose master account, giving it access to U.S. payment infrastructure. Dimon warned that competition is 'completely skewed' if crypto entities operate without the same regulatory requirements — FDIC insurance, AML rules, and capital standards — as traditional banks. The tension reflects the broader collision between conventional banking and the growing institutionalization of crypto driven by the GENIUS Act and regulatory signals from the new administration.",
-          "url": "https://www.criptonoticias.com/regulacion/banqueros-cuestionan-decision-kraken/",
+          "source": "RT",
+          "headline": "Trump threatens to cut all trade with Spain after Madrid refuses to allow use of its bases to attack Iran",
+          "body": "President Donald Trump instructed Treasury Secretary Scott Bessent to 'cut all deals with Spain' after Madrid refused to authorize use of its military bases for operations against Iran and rejected Washington's NATO demand to raise defense spending to 5% of GDP. The legal execution of the threat is complex: any unilateral tariff on Spain would hit the entire European Union, which manages trade policy for all 27 member states from Brussels. Bessent cited two applicable articles of U.S. trade law without specifying concrete measures.",
+          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Revolut files second U.S. bank charter application and names new CEO for the American market",
+          "body": "British fintech Revolut, valued at $75 billion, filed with the OCC and FDIC to establish 'Revolut Bank US, N.A.,' its second attempt after its 2021 bid collapsed over regulatory hurdles. The company named Cetin Duransoy — former U.S. CEO of fintech marketplace Raisin — as its new head for the American market. If approved, the charter would allow Revolut to operate under a single federal framework across all 50 states and gain direct access to the Fedwire and ACH payment systems.",
+          "url": "https://es.cointelegraph.com/news/revolut-second-us-bank-charter-application-new-us-ceo",
           "tag": "Macro"
         }
       ],
       "quote": {
-        "text": "Geography is the most fundamental factor in the foreign policy of any state.",
-        "attribution": "Napoleon Bonaparte, atribuido, circa 1800"
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
       }
     }
   },
@@ -136,14 +136,14 @@
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.79",
-        "change": "▲ 1.1%",
+        "value": "17.81",
+        "change": "▲ 1.3%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,764",
-        "change": "▼ 1.5%",
+        "value": "6,732",
+        "change": "▼ 2.0%",
         "direction": "down"
       },
       {
@@ -154,57 +154,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,698.11",
-        "change": "▼ 1.0%",
+        "value": "67,499.33",
+        "change": "▼ 1.3%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.7904",
+        "rate": "17.8132",
         "chg_1d": {
-          "text": "▲ 1.12%",
+          "text": "▲ 1.25%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.73%",
+          "text": "▲ 2.87%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6465",
+        "rate": "20.6726",
         "chg_1d": {
-          "text": "▲ 0.86%",
+          "text": "▲ 0.99%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.39%",
+          "text": "▲ 1.52%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.1053",
+        "rate": "13.1146",
         "chg_1d": {
-          "text": "▲ 1.64%",
+          "text": "▲ 1.71%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.45%",
+          "text": "▲ 3.52%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.6826",
+        "rate": "122.8040",
         "chg_1d": {
-          "text": "▲ 1.11%",
+          "text": "▲ 1.21%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.30%",
+          "text": "▲ 3.41%",
           "cls": "chg-up"
         }
       }
