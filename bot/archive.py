@@ -11,7 +11,13 @@ from datetime import date, datetime
 from pretty_renderer import build_pretty_html
 from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR
 
-GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest/"
+# In production, GitHub Pages serves from main.
+# In dev runs, GITHUB_RAW_URL is injected by the workflow to serve
+# assets (e.g. wordcloud PNGs) directly from the dev branch via raw.githubusercontent.com.
+GITHUB_PAGES_URL = os.environ.get(
+    "GITHUB_RAW_URL",
+    "https://extremelypowerfulcapybara.github.io/News-Digest/"
+)
 
 def save_pretty_issue(
     digest:             dict,

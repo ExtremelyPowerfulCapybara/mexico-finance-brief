@@ -71,6 +71,7 @@ jobs:
           SUBSCRIBERS:       ${{ secrets.DEV_SUBSCRIBERS_CSV }}
           BANXICO_API_KEY:   ${{ secrets.BANXICO_API_KEY }}
           FORCE_FRIDAY:      ${{ github.event.inputs.friday_mode }}
+          GITHUB_RAW_URL:    "https://raw.githubusercontent.com/ExtremelyPowerfulCapybara/News-Digest/Dev-Nigg/docs/"
         run: python main.py
 
       - name: Commit and push archive
