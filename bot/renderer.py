@@ -314,8 +314,9 @@ def build_html(
 
     preheader = ""
     if GITHUB_PAGES_URL:
-        issue_url   = f"{GITHUB_PAGES_URL}/{today_iso}.html"
-        archive_url = f"{GITHUB_PAGES_URL}/index.html"
+        base        = GITHUB_PAGES_URL.rstrip("/")
+        issue_url   = f"{base}/{today_iso}.html"
+        archive_url = f"{base}/index.html"
         preheader = f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_OUTER};">
   <tr>

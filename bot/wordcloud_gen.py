@@ -9,21 +9,57 @@ import base64
 from datetime import date, timedelta
 from config import DIGEST_DIR, ARCHIVE_DIR
 
-# Words to exclude from the cloud
+# Words to exclude from the cloud — bilingual (ES + EN)
 STOPWORDS = {
+    # ── Spanish articles & prepositions ──────────────────────────────────
+    "el", "la", "los", "las", "un", "una", "unos", "unas",
+    "de", "del", "al", "a", "en", "con", "por", "para", "sin", "sobre",
+    "entre", "hasta", "desde", "hacia", "ante", "bajo", "contra", "durante",
+    "mediante", "según", "tras", "versus", "via",
+    # ── Spanish conjunctions ─────────────────────────────────────────────
+    "y", "e", "o", "u", "ni", "que", "pero", "sino", "aunque", "porque",
+    "como", "cuando", "si", "donde", "mientras", "pues", "ya", "sea",
+    # ── Spanish pronouns ─────────────────────────────────────────────────
+    "yo", "tú", "él", "ella", "nosotros", "ellos", "ellas", "se", "le",
+    "lo", "les", "nos", "su", "sus", "este", "esta", "estos", "estas",
+    "ese", "esa", "esos", "esas", "aquel", "aquella", "ello",
+    # ── Spanish common verbs & auxiliaries ───────────────────────────────
+    "es", "son", "fue", "ser", "estar", "ha", "han", "hay", "había",
+    "tiene", "tienen", "tuvo", "tener", "hace", "hizo", "hacer",
+    "puede", "pueden", "pudo", "poder", "dijo", "dice", "decir",
+    "va", "van", "fue", "ir", "sería", "será", "serán",
+    # ── Spanish adverbs & fillers ─────────────────────────────────────────
+    "más", "muy", "bien", "también", "así", "aún", "aun", "solo",
+    "sólo", "no", "sí", "tan", "tanto", "menos", "mismo", "misma",
+    "cada", "todo", "toda", "todos", "todas", "otro", "otra", "otros",
+    "otras", "nuevo", "nueva", "nuevos", "nuevas",
+    # ── Spanish time words ────────────────────────────────────────────────
+    "año", "años", "mes", "día", "días", "semana", "hoy", "ayer",
+    "lunes", "martes", "miércoles", "jueves", "viernes",
+    "enero", "febrero", "marzo", "abril", "mayo", "junio",
+    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+    # ── English articles, prepositions & conjunctions ─────────────────────
     "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
-    "of", "with", "by", "from", "as", "is", "was", "are", "were", "be",
-    "been", "being", "have", "has", "had", "do", "does", "did", "will",
-    "would", "could", "should", "may", "might", "shall", "can", "that",
-    "this", "these", "those", "it", "its", "it's", "they", "their", "them",
-    "he", "she", "his", "her", "we", "our", "us", "you", "your", "i",
-    "my", "me", "not", "no", "so", "if", "up", "out", "about", "into",
-    "over", "after", "more", "also", "than", "then", "when", "what",
-    "which", "who", "how", "all", "both", "each", "such", "other", "new",
-    "said", "says", "say", "while", "amid", "week", "monday", "tuesday",
-    "wednesday", "thursday", "friday", "january", "february", "march",
-    "april", "may", "june", "july", "august", "september", "october",
-    "november", "december", "2024", "2025", "2026",
+    "of", "with", "by", "from", "as", "into", "over", "after", "about",
+    "than", "then", "when", "while", "amid", "against", "across",
+    # ── English pronouns & determiners ───────────────────────────────────
+    "it", "its", "they", "their", "them", "he", "she", "his", "her",
+    "we", "our", "us", "you", "your", "i", "my", "me", "this", "that",
+    "these", "those", "such", "each", "both", "all", "other",
+    # ── English auxiliaries & common verbs ───────────────────────────────
+    "is", "was", "are", "were", "be", "been", "being",
+    "have", "has", "had", "do", "does", "did",
+    "will", "would", "could", "should", "may", "might", "shall", "can",
+    "said", "says", "say",
+    # ── English adverbs & fillers ─────────────────────────────────────────
+    "not", "no", "so", "up", "out", "more", "also", "what",
+    "which", "who", "how", "new", "already", "nine", "sunday",
+    # ── English time words ────────────────────────────────────────────────
+    "week", "monday", "tuesday", "wednesday", "thursday", "friday",
+    "january", "february", "march", "april", "june", "july",
+    "august", "september", "october", "november", "december",
+    # ── Years ─────────────────────────────────────────────────────────────
+    "2024", "2025", "2026",
 }
 
 
