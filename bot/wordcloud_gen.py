@@ -43,6 +43,7 @@ def _collect_week_text() -> str:
             with open(path, encoding="utf-8") as f:
                 data = json.load(f)
             digest  = data.get("digest", {})
+            digest  = digest.get("es", digest)  # unwrap bilingual structure
             stories = digest.get("stories", [])
             for s in stories:
                 text_parts.append(s.get("headline", ""))
