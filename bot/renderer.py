@@ -6,7 +6,7 @@
 
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
-from archive import GITHUB_PAGES_URL
+from config import GITHUB_PAGES_URL
 
 # ── Shared style constants ────────────────────
 BG_OUTER   = "#dde3e8"

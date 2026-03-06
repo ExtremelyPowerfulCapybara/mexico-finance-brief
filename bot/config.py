@@ -138,3 +138,12 @@ import pathlib
 REPO_ROOT   = pathlib.Path(__file__).parent.parent
 DIGEST_DIR  = str(REPO_ROOT / "digests")
 ARCHIVE_DIR = str(REPO_ROOT / "docs")
+
+# ── Archive / asset URL ───────────────────────
+# In production, GitHub Pages serves from main.
+# In dev runs, GITHUB_RAW_URL is injected by the workflow
+# to serve assets directly from the dev branch.
+GITHUB_PAGES_URL = os.environ.get(
+    "GITHUB_RAW_URL",
+    "https://extremelypowerfulcapybara.github.io/News-Digest/"
+)

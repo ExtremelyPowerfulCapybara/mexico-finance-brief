@@ -7,7 +7,7 @@
 
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
-from archive import GITHUB_PAGES_URL
+from config import GITHUB_PAGES_URL
 
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }
