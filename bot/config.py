@@ -85,8 +85,9 @@ AUTHOR_TITLES = [
 # ── News preferences ──────────────────────────
 TOPICS                 = ["finanzas", "economía", "México", "comercio", "mercados", "política", "criptomonedas"]
 LANGUAGE               = "es"
-MAX_ARTICLES_PER_TOPIC = 5
-MAX_ARTICLE_CHARS      = 3000
+MAX_ARTICLES_PER_TOPIC  = 5
+MAX_ARTICLES_PER_SOURCE = 2   # cap per outlet across all topics
+MAX_ARTICLE_CHARS       = 3000
 
 # ── Domain allowlist ─────────────────────────
 # NewsAPI accepts up to 20 domains as a comma-separated string.

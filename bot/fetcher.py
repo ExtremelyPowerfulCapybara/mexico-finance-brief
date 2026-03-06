@@ -7,12 +7,13 @@ from scraper import scrape_article
 from config import (
     NEWS_API_KEY, TOPICS, LANGUAGE,
     MAX_ARTICLES_PER_TOPIC, MAX_ARTICLE_CHARS,
-    NEWS_DOMAINS_STR
+    NEWS_DOMAINS_STR, MAX_ARTICLES_PER_SOURCE
 )
 
 
 def fetch_news() -> list[dict]:
-    seen_urls = set()
+    seen_urls    = set()
+    source_count = {}   # tracks how many articles we've kept per source domain
     all_articles = []
 
     for topic in TOPICS:
@@ -39,11 +40,17 @@ def fetch_news() -> list[dict]:
                 continue
             seen_urls.add(article_url)
 
+            # ── Per-source cap ────────────────────────────
+            source_name = a.get("source", {}).get("name", "Unknown")
+            if source_count.get(source_name, 0) >= MAX_ARTICLES_PER_SOURCE:
+                continue
+
             full_text = scrape_article(article_url, max_chars=MAX_ARTICLE_CHARS)
             content   = full_text if full_text else a.get("description", "")
             if not content:
                 continue
 
+            source_count[source_name] = source_count.get(source_name, 0) + 1
             all_articles.append({
                 "title":   a.get("title", "").strip(),
                 "content": content,
