@@ -1,0 +1,144 @@
+{
+  "date": "2026-03-09",
+  "digest": {
+    "editor_note": "Fellow Humans, the Middle East war that nobody in fixed income needed has arrived anyway — PIMCO's Daniel Ivascyn had already stripped back credit and was hoarding cash when the bombs fell, and now bond markets are juggling oil shocks, surprise payroll weakness, and a stagflation scenario that central banks have no clean answer for. The 'collect 4% and wait for cuts' trade still technically works, but the number of things that have to go right keeps growing.",
+    "sentiment": {
+      "label": "Risk-Off",
+      "position": 28,
+      "context": "A US-Israeli strike on Iran has sent crude surging, driven Treasury yields higher on inflation fears, and introduced stagflation risk just as payrolls unexpectedly weakened — a combination that forces asset managers into defensive repositioning across nearly every asset class."
+    },
+    "stories": [
+      {
+        "source": "Financial Post (Bloomberg)",
+        "headline": "PIMCO's Ivascyn Cuts Credit, Hoards Cash as Middle East War Upends Bond Market Playbook",
+        "body": "PIMCO CIO Daniel Ivascyn had already trimmed corporate credit and built cash buffers to exploit dislocations when the US-Israeli attack on Iran broke out, adding a new inflation shock to an already complicated setup. Instead of rallying as a safe haven, Treasuries sold off as crude prices surged — 10-year yields climbed as high as 4.21% — while a surprise drop in US payrolls simultaneously raised the specter of stagflation. UBS chief strategist Bhanu Baweja warned bluntly: 'If the oil problem persists, it'll become a growth problem.'",
+        "url": "https://financialpost.com/pmn/business-pmn/bond-traders-already-had-their-hands-full-then-a-war-breaks-out",
+        "tag": "Rates"
+      },
+      {
+        "source": "RT",
+        "headline": "Hungary Seizes $75M+ in Cash and Gold from Ukrainian Armored Convoy Near Budapest",
+        "body": "Hungarian counter-terrorism officers intercepted two Oschadbank armored vehicles carrying $40 million, €35 million, and nine kilograms of gold sourced from Raiffeisen Bank International — with a former SBU general reportedly overseeing the operation. Budapest labeled it a potential 'war mafia' money-laundering run; Kyiv called it 'state banditism' and theft. The incident has detonated into a full diplomatic crisis between the two countries, compounding existing disputes over oil transit and Hungary's resistance to EU support for Ukraine.",
+        "url": "https://www.rt.com/news/634170-hungary-ukraine-clash-war-maffia-convoy/",
+        "tag": "Politics"
+      },
+      {
+        "source": "BusinessLine",
+        "headline": "Crude Shock Threatens Indian FMCG Margins as Packaging and Freight Costs Climb",
+        "body": "If crude holds above $90 per barrel, Indian FMCG companies face 100–150 basis points of gross margin pressure and likely price hikes of 1–3% over the next two quarters, according to LKP Securities analyst Sandeep Abhange. Packaging — PET bottles, HDPE containers, laminated wrappers — accounts for 12–18% of COGS and is directly indexed to crude derivatives, while logistics adds another 6–8% of sales exposure. Mid-tier players with limited pricing power are most exposed, and potential Strait of Hormuz freight disruptions could amplify the hit further.",
+        "url": "https://www.thehindubusinessline.com/economy/crude-oil-shock-looms-over-fmcg-as-packaging-and-freight-costs-climb-price-hikes-may-squeeze-margins/article70719019.ece",
+        "tag": "Markets"
+      },
+      {
+        "source": "The Star Online",
+        "headline": "Malaysia's Zafrul: Government Monitoring Oil Price Volatility 'Every Hour' Amid Middle East Conflict",
+        "body": "Senior Political Advisor to Malaysia's Prime Minister, Tengku Zafrul Abdul Aziz, said Kuala Lumpur is tracking geopolitical developments in real time, with particular concern for petrol subsidy implications if crude remains elevated. He noted oil has previously reached $100 per barrel and stressed that Malaysia's Finance and Economy ministries have contingency plans in place. As an open-economy, neutral state with significant Middle East trade ties, Malaysia's exposure to energy price swings is both fiscal and diplomatic.",
+        "url": "https://www.thestar.com.my/news/nation/2026/03/08/govt-prepared-for-economic-impact-of-middle-east-conflict-says-zafrul",
+        "tag": "Energy"
+      },
+      {
+        "source": "CNBC",
+        "headline": "AI-Driven White-Collar Recession Fuels Surge in Skilled Trades Enrollment",
+        "body": "As large employers accelerate layoffs and AI erodes entry-level white-collar roles, career experts and enrollment data point to a structural rotation toward skilled trades — fields that require physical presence and cannot be offshored or automated. Electricians earn a median $1,376 per week — 14% above the national median — and the sector faces a net deficit of roughly 80,000 workers as 20,000 union electricians retire annually with insufficient replacements. Citrini Research has described the dynamic as a 'negative feedback loop with no natural brake,' while Monster career expert Vicki Salemi calls the trades 'the underdog and AI-proof.'",
+        "url": "https://www.cnbc.com/2026/03/08/jobs-apocalypse-ai-proof-skilled-trades.html",
+        "tag": "Macro"
+      },
+      {
+        "source": "The Times of India / Economic Times",
+        "headline": "India Forms 17-Member Committee to Overhaul SEZ Policy Under 'SEZ 2.0' Blueprint",
+        "body": "New Delhi has constituted a 17-member advisory body to design a structural overhaul of its Special Economic Zone framework, tasked with evaluating the SEZ Act's effectiveness, its interaction with export support programs, and recent policy adaptations. The initiative, branded SEZ 2.0, reflects broader efforts to sharpen India's export competitiveness at a moment when global trade routes and tariff regimes are in flux. No timeline for recommendations has been published.",
+        "url": "https://economictimes.indiatimes.com/news/economy/policy/government-sets-up-17-member-committee-for-larger-reforms-in-sez-policy/articleshow/129273437.cms",
+        "tag": "Trade"
+      }
+    ],
+    "quote": {
+      "text": "The most important thing to do if you find yourself in a hole is to stop digging.",
+      "attribution": "Warren Buffett, Berkshire Hathaway Annual Letter, 2009"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.79",
+        "change": "▲ 0.5%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,651",
+        "change": "▼ 2.6%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "66,092.90",
+        "change": "▼ 1.8%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.7926",
+        "chg_1d": {
+          "text": "▲ 0.51%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.83%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.5953",
+        "chg_1d": {
+          "text": "▲ 0.23%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.77%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.1220",
+        "chg_1d": {
+          "text": "▲ 1.33%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.68%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "123.0536",
+        "chg_1d": {
+          "text": "▲ 0.79%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.34%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "—",
+    "high_low": "—",
+    "humidity": "—",
+    "desc": "Weather unavailable"
+  }
+}
