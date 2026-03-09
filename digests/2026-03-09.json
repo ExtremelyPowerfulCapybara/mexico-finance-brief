@@ -1,59 +1,66 @@
 {
   "date": "2026-03-09",
   "digest": {
-    "editor_note": "Fellow Humans, the Middle East war that nobody in fixed income needed has arrived anyway — PIMCO's Daniel Ivascyn had already stripped back credit and was hoarding cash when the bombs fell, and now bond markets are juggling oil shocks, surprise payroll weakness, and a stagflation scenario that central banks have no clean answer for. The 'collect 4% and wait for cuts' trade still technically works, but the number of things that have to go right keeps growing.",
+    "editor_note": "Fellow Humans, the dominant story this morning is a hot war with Iran that has crude north of $91 a barrel, tanker traffic through the Strait of Hormuz reduced to a trickle, and Energy Secretary Wright on Sunday television promising relief is weeks away — a timeline that will age poorly if history is any guide. Markets are pricing in a world where 20% of global energy supply is being negotiated at gunpoint, and bond yields are already bending to the gravity of it.",
     "sentiment": {
       "label": "Risk-Off",
-      "position": 28,
-      "context": "A US-Israeli strike on Iran has sent crude surging, driven Treasury yields higher on inflation fears, and introduced stagflation risk just as payrolls unexpectedly weakened — a combination that forces asset managers into defensive repositioning across nearly every asset class."
+      "position": 18,
+      "context": "An active U.S.-Iran conflict is disrupting Strait of Hormuz tanker flows, spiking Brent crude above $92, triggering downstream fuel price surges globally, and pulling bond yields lower as investors seek safety."
     },
     "stories": [
       {
-        "source": "Financial Post (Bloomberg)",
-        "headline": "PIMCO's Ivascyn Cuts Credit, Hoards Cash as Middle East War Upends Bond Market Playbook",
-        "body": "PIMCO CIO Daniel Ivascyn had already trimmed corporate credit and built cash buffers to exploit dislocations when the US-Israeli attack on Iran broke out, adding a new inflation shock to an already complicated setup. Instead of rallying as a safe haven, Treasuries sold off as crude prices surged — 10-year yields climbed as high as 4.21% — while a surprise drop in US payrolls simultaneously raised the specter of stagflation. UBS chief strategist Bhanu Baweja warned bluntly: 'If the oil problem persists, it'll become a growth problem.'",
-        "url": "https://financialpost.com/pmn/business-pmn/bond-traders-already-had-their-hands-full-then-a-war-breaks-out",
-        "tag": "Rates"
-      },
-      {
-        "source": "RT",
-        "headline": "Hungary Seizes $75M+ in Cash and Gold from Ukrainian Armored Convoy Near Budapest",
-        "body": "Hungarian counter-terrorism officers intercepted two Oschadbank armored vehicles carrying $40 million, €35 million, and nine kilograms of gold sourced from Raiffeisen Bank International — with a former SBU general reportedly overseeing the operation. Budapest labeled it a potential 'war mafia' money-laundering run; Kyiv called it 'state banditism' and theft. The incident has detonated into a full diplomatic crisis between the two countries, compounding existing disputes over oil transit and Hungary's resistance to EU support for Ukraine.",
-        "url": "https://www.rt.com/news/634170-hungary-ukraine-clash-war-maffia-convoy/",
-        "tag": "Politics"
-      },
-      {
-        "source": "BusinessLine",
-        "headline": "Crude Shock Threatens Indian FMCG Margins as Packaging and Freight Costs Climb",
-        "body": "If crude holds above $90 per barrel, Indian FMCG companies face 100–150 basis points of gross margin pressure and likely price hikes of 1–3% over the next two quarters, according to LKP Securities analyst Sandeep Abhange. Packaging — PET bottles, HDPE containers, laminated wrappers — accounts for 12–18% of COGS and is directly indexed to crude derivatives, while logistics adds another 6–8% of sales exposure. Mid-tier players with limited pricing power are most exposed, and potential Strait of Hormuz freight disruptions could amplify the hit further.",
-        "url": "https://www.thehindubusinessline.com/economy/crude-oil-shock-looms-over-fmcg-as-packaging-and-freight-costs-climb-price-hikes-may-squeeze-margins/article70719019.ece",
-        "tag": "Markets"
-      },
-      {
-        "source": "The Star Online",
-        "headline": "Malaysia's Zafrul: Government Monitoring Oil Price Volatility 'Every Hour' Amid Middle East Conflict",
-        "body": "Senior Political Advisor to Malaysia's Prime Minister, Tengku Zafrul Abdul Aziz, said Kuala Lumpur is tracking geopolitical developments in real time, with particular concern for petrol subsidy implications if crude remains elevated. He noted oil has previously reached $100 per barrel and stressed that Malaysia's Finance and Economy ministries have contingency plans in place. As an open-economy, neutral state with significant Middle East trade ties, Malaysia's exposure to energy price swings is both fiscal and diplomatic.",
-        "url": "https://www.thestar.com.my/news/nation/2026/03/08/govt-prepared-for-economic-impact-of-middle-east-conflict-says-zafrul",
+        "source": "CNBC",
+        "headline": "Energy Secretary Wright says oil prices will fall once U.S. neutralizes Iran's Strait of Hormuz threat — crude already above $91",
+        "body": "Energy Secretary Chris Wright told Fox News Sunday that the U.S. is 'massively attriting' Iran's missile and drone capability and that energy will 'flow soon,' describing disruption in terms of 'weeks, certainly not months.' U.S. crude has surged past $91 a barrel and Brent above $92, with roughly 20% of global energy supply transiting the strait daily — currently at a fraction of its normal 100-tanker throughput. Gas prices have hit $3.46 per gallon nationally, directly undermining Trump's core economic promise heading into November midterms.",
+        "url": "https://www.cnbc.com/2026/03/08/iran-war-energy-prices-wright.html",
         "tag": "Energy"
       },
       {
-        "source": "CNBC",
-        "headline": "AI-Driven White-Collar Recession Fuels Surge in Skilled Trades Enrollment",
-        "body": "As large employers accelerate layoffs and AI erodes entry-level white-collar roles, career experts and enrollment data point to a structural rotation toward skilled trades — fields that require physical presence and cannot be offshored or automated. Electricians earn a median $1,376 per week — 14% above the national median — and the sector faces a net deficit of roughly 80,000 workers as 20,000 union electricians retire annually with insufficient replacements. Citrini Research has described the dynamic as a 'negative feedback loop with no natural brake,' while Monster career expert Vicki Salemi calls the trades 'the underdog and AI-proof.'",
-        "url": "https://www.cnbc.com/2026/03/08/jobs-apocalypse-ai-proof-skilled-trades.html",
+        "source": "Premium Times",
+        "headline": "Dangote refinery raises petrol price a second time in four days as Brent crude spikes 7.9% on Iran war disruption",
+        "body": "Nigeria's Dangote refinery lifted its gantry price by N121 to N995 per litre, with Abuja pump prices jumping to N1,100 — up from N960 just days earlier. Brent crude surged 7.9% over 24 hours to $87.44, and analysts are projecting $100-plus per barrel if the conflict escalates further. Dangote says it absorbed 20% of cost increases to cushion domestic impact, but the math is visibly losing that battle.",
+        "url": "https://www.premiumtimesng.com/business/business-news/862361-again-dangote-refinery-raises-petrol-gantry-price-as-iran-conflict-rattles-oil-market.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "BusinessLine",
+        "headline": "India awaits operational details on U.S. DFC maritime reinsurance facility as Gulf shipping risk escalates",
+        "body": "India is holding for clarity from the U.S. Treasury on the DFC's $20 billion rolling maritime reinsurance facility announced March 6 by DFC CEO Ben Black and Treasury Secretary Scott Bessent, including which vessels qualify and at what insured amounts. The facility covers hull, machinery, and cargo — including war risk — for vessels transiting the Strait of Hormuz, and is being coordinated directly with CENTCOM. Until vessel selection criteria are published, India's oil ministry and international shippers are operating in a guidance vacuum during the most acute Gulf disruption in years.",
+        "url": "https://www.thehindubusinessline.com/economy/logistics/india-awaits-clarity-on-us-maritime-reinsurance-push-for-gulf/article70719277.ece",
+        "tag": "Trade"
+      },
+      {
+        "source": "Military Times",
+        "headline": "Pentagon and FAA agree to anti-drone laser tests in New Mexico after two unauthorized airspace closures over Texas",
+        "body": "The Pentagon and FAA announced joint anti-drone laser testing at White Sands Missile Range following two February incidents in which military laser deployment — including one that accidentally shot down a CBP drone — forced sudden airspace closures over El Paso and Fort Hancock without FAA notification. The coordination breakdown drew congressional scrutiny, with Sen. Tammy Duckworth calling for an independent investigation. The incidents expose a structural gap in interagency protocol as counter-drone operations along the southern border intensify.",
+        "url": "https://www.militarytimes.com/native/2026/03/08/pentagon-and-faa-agree-to-conduct-anti-drone-laser-tests-in-new-mexico/",
+        "tag": "Politics"
+      },
+      {
+        "source": "247 Wall St.",
+        "headline": "Bond yields sliding — analysts flag dividend stocks as the better passive income play with rate cuts likely",
+        "body": "With 10-year Treasury yields under pressure and further cuts anticipated, analysts at 247 Wall St. are pointing investors toward dividend-paying equities including Lockheed Martin (2.06% yield, $75B in 2025 revenue), Cisco Systems (2.1% yield, $14.9B in quarterly revenue), and Bank of America (2.25% yield, $28.4B Q4 revenue). The thesis is straightforward: blended dividend-plus-appreciation returns from quality names can outpace a declining risk-free rate without taking on duration risk. In a war-driven, rate-softening environment, the rotation logic is gaining traction fast.",
+        "url": "https://247wallst.com/investing/2026/03/08/bond-yields-are-getting-slashed-these-dividend-stocks-are-the-smarter-play-right-now/",
+        "tag": "Markets"
+      },
+      {
+        "source": "CBS News",
+        "headline": "Blankfein warns another financial crisis is inevitable: 'Some spark will set the forest on fire'",
+        "body": "Former Goldman Sachs CEO Lloyd Blankfein, promoting his memoir 'Streetwise,' offered a blunt assessment that another financial crisis is a matter of when, not if — invoking the image of accumulated kindling waiting for a spark. He noted it has been 17 years since the last major crisis, a gap he treats not as evidence of stability but of complacency. Given that his comments land on a day when Brent crude is above $92 and a Middle East war is live, the metaphor lands with some force.",
+        "url": "https://www.cbsnews.com/news/former-goldman-sachs-ceo-lloyd-blankfein-talks-wall-street-crises-past-and-future/",
         "tag": "Macro"
       },
       {
-        "source": "The Times of India / Economic Times",
-        "headline": "India Forms 17-Member Committee to Overhaul SEZ Policy Under 'SEZ 2.0' Blueprint",
-        "body": "New Delhi has constituted a 17-member advisory body to design a structural overhaul of its Special Economic Zone framework, tasked with evaluating the SEZ Act's effectiveness, its interaction with export support programs, and recent policy adaptations. The initiative, branded SEZ 2.0, reflects broader efforts to sharpen India's export competitiveness at a moment when global trade routes and tariff regimes are in flux. No timeline for recommendations has been published.",
-        "url": "https://economictimes.indiatimes.com/news/economy/policy/government-sets-up-17-member-committee-for-larger-reforms-in-sez-policy/articleshow/129273437.cms",
-        "tag": "Trade"
+        "source": "BusinessLine",
+        "headline": "Enterprise AI 'deployment gap' widens as 88% of companies report AI use but most remain stuck in pilot stage",
+        "body": "Infosys co-founder Nandan Nilekani described a widening gap between AI model capability and real-world enterprise deployment at the company's Investors AI Day, a view echoed by Forrester analyst Biswajeet Mahapatra, who noted that very few firms can connect AI initiatives to P&L outcomes. Beyond Key CEO Piyush Goel put a number on it: 88% of companies claim AI usage, but implementation failures stem from fragmented data governance, legacy infrastructure, and misaligned ownership rather than model limitations. The practical implication is that the AI capex wave is running well ahead of demonstrable enterprise returns.",
+        "url": "https://www.thehindubusinessline.com/info-tech/deployment-gap-widens-as-companies-struggle-to-operationalise-ai/article70719137.ece",
+        "tag": "Macro"
       }
     ],
     "quote": {
-      "text": "The most important thing to do if you find yourself in a hole is to stop digging.",
-      "attribution": "Warren Buffett, Berkshire Hathaway Annual Letter, 2009"
+      "text": "The time to buy is when there's blood in the streets.",
+      "attribution": "Baron Nathan Mayer Rothschild, attributed, circa 1815"
     }
   },
   "market": {
@@ -66,8 +73,8 @@
       },
       {
         "label": "S&P 500",
-        "value": "6,651",
-        "change": "▼ 2.6%",
+        "value": "6,661",
+        "change": "▼ 2.5%",
         "direction": "down"
       },
       {
@@ -78,57 +85,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "66,092.90",
-        "change": "▼ 1.8%",
+        "value": "65,477.33",
+        "change": "▼ 2.7%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.7926",
+        "rate": "17.7800",
         "chg_1d": {
-          "text": "▲ 0.51%",
+          "text": "▲ 0.44%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.83%",
+          "text": "▲ 2.76%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.5953",
+        "rate": "20.5652",
         "chg_1d": {
-          "text": "▲ 0.23%",
+          "text": "▲ 0.08%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.77%",
+          "text": "▲ 1.62%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.1220",
+        "rate": "13.1064",
         "chg_1d": {
-          "text": "▲ 1.33%",
+          "text": "▲ 1.21%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.68%",
+          "text": "▲ 3.56%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "123.0536",
+        "rate": "122.9309",
         "chg_1d": {
-          "text": "▲ 0.79%",
+          "text": "▲ 0.68%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.34%",
+          "text": "▲ 3.23%",
           "cls": "chg-up"
         }
       }
@@ -136,9 +143,9 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "—",
-    "high_low": "—",
-    "humidity": "—",
-    "desc": "Weather unavailable"
+    "temp": "14°C",
+    "high_low": "25°C / 13°C",
+    "humidity": "Humidity 76%",
+    "desc": "Partly cloudy"
   }
 }
