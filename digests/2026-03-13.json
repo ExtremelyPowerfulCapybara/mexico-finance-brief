@@ -183,13 +183,13 @@
           },
           {
             "pair": "MXN / BRL",
-            "rate": "0.2968",
+            "rate": "0.2969",
             "chg_1d": {
-              "text": "▲ 0.95%",
+              "text": "▲ 0.97%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 1.85%",
+              "text": "▲ 1.87%",
               "cls": "chg-up"
             }
           },
@@ -269,13 +269,13 @@
           },
           {
             "pair": "USD / BRL",
-            "rate": "5.3282",
+            "rate": "5.3292",
             "chg_1d": {
-              "text": "▲ 1.61%",
+              "text": "▲ 1.63%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 1.62%",
+              "text": "▲ 1.63%",
               "cls": "chg-up"
             }
           },
@@ -343,85 +343,85 @@
         "BRL": [
           {
             "pair": "BRL / MXN",
-            "rate": "3.3689",
+            "rate": "3.3682",
             "chg_1d": {
-              "text": "▼ 0.94%",
+              "text": "▼ 0.96%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.82%",
+              "text": "▼ 1.84%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "BRL / USD",
-            "rate": "0.18768",
+            "rate": "0.18765",
             "chg_1d": {
-              "text": "▼ 1.58%",
+              "text": "▼ 1.60%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.59%",
+              "text": "▼ 1.61%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "BRL / EUR",
-            "rate": "0.16430",
+            "rate": "0.16427",
             "chg_1d": {
-              "text": "▼ 0.73%",
+              "text": "▼ 0.75%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.73%",
+              "text": "▼ 0.74%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "BRL / CNY",
-            "rate": "1.2942",
+            "rate": "1.2939",
             "chg_1d": {
-              "text": "▼ 1.20%",
+              "text": "▼ 1.22%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.60%",
+              "text": "▼ 1.62%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "BRL / CAD",
-            "rate": "0.2575",
+            "rate": "0.2574",
             "chg_1d": {
-              "text": "▼ 0.97%",
+              "text": "▼ 0.98%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.75%",
+              "text": "▼ 0.77%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "BRL / GBP",
-            "rate": "0.14193",
+            "rate": "0.14191",
             "chg_1d": {
-              "text": "▼ 0.62%",
+              "text": "▼ 0.64%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.01%",
+              "text": "▼ 1.03%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "BRL / JPY",
-            "rate": "29.98",
+            "rate": "29.97",
             "chg_1d": {
-              "text": "▼ 1.26%",
+              "text": "▼ 1.28%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.79%",
+              "text": "▼ 0.81%",
               "cls": "chg-down"
             }
           }
@@ -453,13 +453,13 @@
           },
           {
             "pair": "EUR / BRL",
-            "rate": "6.0864",
+            "rate": "6.0875",
             "chg_1d": {
-              "text": "▲ 0.74%",
+              "text": "▲ 0.76%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.73%",
+              "text": "▲ 0.75%",
               "cls": "chg-up"
             }
           },
@@ -539,13 +539,13 @@
           },
           {
             "pair": "CNY / BRL",
-            "rate": "0.7727",
+            "rate": "0.7728",
             "chg_1d": {
-              "text": "▲ 1.21%",
+              "text": "▲ 1.23%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 1.63%",
+              "text": "▲ 1.65%",
               "cls": "chg-up"
             }
           },
@@ -605,7 +605,7 @@
     "city": "Mexico City",
     "temp": "22°C",
     "high_low": "22°C / 10°C",
-    "humidity": "Humidity 33%",
+    "humidity": "Humidity 34%",
     "desc": "Partly cloudy"
   }
 }
