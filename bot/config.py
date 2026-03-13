@@ -124,7 +124,12 @@ TICKER_SYMBOLS = [
 ]
 
 # ── Currency table ────────────────────────────
-CURRENCY_PAIRS = ["USD", "EUR", "CAD", "CNY"]
+# Base currencies available as toggle options in the frontend.
+# The table shows all other currencies relative to the selected base.
+CURRENCY_BASES = ["MXN", "USD", "BRL", "EUR", "CNY"]
+
+# All individual currencies to include in the matrix.
+CURRENCY_PAIRS = ["MXN", "USD", "BRL", "EUR", "CNY", "CAD", "GBP", "JPY"]
 
 # ── Weather (Open-Meteo, no API key needed) ───
 WEATHER_LAT  = 19.4326

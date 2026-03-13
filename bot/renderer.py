@@ -289,7 +289,7 @@ def _footer(issue_date: str = "", author: str = "") -> str:
 def build_html(
     digest:             dict,
     tickers:            list[dict],
-    currency:           list[dict],
+    currency:           dict,
     weather:            dict,
     week_stories:       list[dict],
     issue_number:       int = 1,
@@ -356,7 +356,7 @@ def build_html(
         <tr><td>{_divider()}</td></tr>
         <tr><td>{stories_html}</td></tr>
         <tr><td>{_divider()}</td></tr>
-        <tr><td>{_currency_table(currency)}</td></tr>
+        <tr><td>{_currency_table(currency.get('matrix', {}).get('MXN', []))}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}

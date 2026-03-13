@@ -5,7 +5,7 @@
 import os
 import requests
 from config import (
-    TICKER_SYMBOLS, CURRENCY_PAIRS,
+    TICKER_SYMBOLS, CURRENCY_PAIRS, CURRENCY_BASES,
     WEATHER_LAT, WEATHER_LON, WEATHER_CITY
 )
 
@@ -126,70 +126,116 @@ def _fetch_yahoo_rate(symbol: str) -> tuple[float, float, float] | None:
         return None
 
 
-def fetch_currency_table() -> list[dict]:
+# Yahoo Finance symbols for each currency vs USD
+_USD_SYMBOLS = {
+    "USD": None,       # base, always 1.0
+    "MXN": "MXN=X",   # MXN per USD
+    "BRL": "BRL=X",
+    "EUR": "EURUSD=X", # EUR per USD (inverted)
+    "CNY": "USDCNY=X",
+    "CAD": "CAD=X",
+    "GBP": "GBPUSD=X", # GBP per USD (inverted)
+    "JPY": "JPY=X",
+}
+# Currencies where Yahoo returns units-per-USD (i.e. not inverted)
+_DIRECT = {"MXN", "BRL", "CNY", "CAD", "JPY"}
+# Currencies where Yahoo returns USD-per-unit (inverted, multiply to get units-per-USD)
+_INVERTED = {"EUR", "GBP"}
+
+
+def _fetch_usd_rates() -> dict[str, tuple[float, float, float]]:
     """
-    Fetches MXN vs each currency in CURRENCY_PAIRS.
-    CNY is calculated as a cross rate (MXN/USD × USD/CNY)
-    since Yahoo doesn't carry MXNCNY=X directly.
+    Returns a dict of currency -> (rate_vs_usd, prev_day_vs_usd, prev_week_vs_usd)
+    where rate_vs_usd = units of that currency per 1 USD.
+    USD itself is always (1.0, 1.0, 1.0).
     """
-    rows = []
+    rates = {"USD": (1.0, 1.0, 1.0)}
+    for currency, symbol in _USD_SYMBOLS.items():
+        if symbol is None:
+            continue
+        result = _fetch_yahoo_rate(symbol)
+        if result is None:
+            print(f"  [currency] Could not fetch {currency}")
+            continue
+        rate, prev_day, prev_week = result
+        if currency in _INVERTED:
+            # Yahoo gives USD-per-unit; invert to get units-per-USD
+            rate      = 1.0 / rate      if rate      else 0
+            prev_day  = 1.0 / prev_day  if prev_day  else 0
+            prev_week = 1.0 / prev_week if prev_week else 0
+        rates[currency] = (rate, prev_day, prev_week)
+    return rates
 
-    # Pre-fetch MXN/USD once for CNY cross rate
-    mxn_usd_data = _fetch_yahoo_rate("MXN=X")
 
-    for currency in CURRENCY_PAIRS:
-        try:
-            if currency == "CNY":
-                # Cross rate: MXN/CNY = MXN/USD × USD/CNY
-                usd_cny_data = _fetch_yahoo_rate("USDCNY=X")
-                if not mxn_usd_data or not usd_cny_data:
-                    raise ValueError("Missing data for CNY cross rate")
+def fetch_currency_table() -> dict:
+    """
+    Returns a dict with:
+      - 'bases': list of base currency codes (for toggle buttons)
+      - 'matrix': dict of base -> list of row dicts for the table
+    Each row: { pair, rate, chg_1d, chg_1w }
+    The default base shown first is MXN.
+    """
+    def fmt_chg(val):
+        arrow = "▲" if val >= 0 else "▼"
+        cls   = "chg-up" if val >= 0 else "chg-down"
+        return {"text": f"{arrow} {abs(val):.2f}%", "cls": cls}
 
-                mxn_usd, mxn_usd_prev, mxn_usd_week = mxn_usd_data
-                usd_cny, usd_cny_prev, usd_cny_week  = usd_cny_data
+    def fmt_rate(rate, quote):
+        # Format based on typical magnitude
+        if quote in ("JPY",):
+            return f"{rate:.2f}"
+        if quote in ("BRL", "MXN", "CNY", "CAD"):
+            return f"{rate:.4f}"
+        return f"{rate:.5f}"
 
-                rate      = mxn_usd * usd_cny
-                prev_day  = mxn_usd_prev * usd_cny_prev
-                prev_week = mxn_usd_week * usd_cny_week
-            else:
-                if currency == "USD":
-                    symbol = "MXN=X"
-                    result = _fetch_yahoo_rate(symbol)
-                    if not result:
-                        raise ValueError(f"No data for {symbol}")
-                    rate, prev_day, prev_week = result
-                else:
-                    symbol = f"{currency}MXN=X"
-                    result = _fetch_yahoo_rate(symbol)
-                    if not result:
-                        raise ValueError(f"No data for {symbol}")
-                    rate, prev_day, prev_week = result
+    usd_rates = _fetch_usd_rates()
+    matrix    = {}
 
-            chg_1d = ((rate - prev_day)  / prev_day  * 100) if prev_day  else 0
-            chg_1w = ((rate - prev_week) / prev_week * 100) if prev_week else 0
+    for base in CURRENCY_BASES:
+        if base not in usd_rates:
+            continue
+        base_rate, base_prev, base_week = usd_rates[base]
+        rows = []
+        for quote in CURRENCY_PAIRS:
+            if quote == base:
+                continue
+            if quote not in usd_rates:
+                rows.append({
+                    "pair":   f"{base} / {quote}",
+                    "rate":   "—",
+                    "chg_1d": {"text": "—", "cls": "chg-flat"},
+                    "chg_1w": {"text": "—", "cls": "chg-flat"},
+                })
+                continue
+            try:
+                q_rate, q_prev, q_week = usd_rates[quote]
+                # cross rate: quote units per 1 base
+                # base -> USD -> quote
+                # 1 base = (1/base_rate) USD = (1/base_rate) * q_rate quote
+                rate      = q_rate / base_rate      if base_rate      else 0
+                prev_day  = q_prev / base_prev      if base_prev      else 0
+                prev_week = q_week / base_week      if base_week      else 0
 
-            def fmt_chg(val):
-                arrow = "▲" if val >= 0 else "▼"
-                cls   = "chg-up" if val >= 0 else ("chg-down" if val < 0 else "chg-flat")
-                return {"text": f"{arrow} {abs(val):.2f}%", "cls": cls}
+                chg_1d = ((rate - prev_day)  / prev_day  * 100) if prev_day  else 0
+                chg_1w = ((rate - prev_week) / prev_week * 100) if prev_week else 0
 
-            rows.append({
-                "pair":   f"{currency} / MXN",
-                "rate":   f"{rate:.4f}",
-                "chg_1d": fmt_chg(chg_1d),
-                "chg_1w": fmt_chg(chg_1w),
-            })
+                rows.append({
+                    "pair":   f"{base} / {quote}",
+                    "rate":   fmt_rate(rate, quote),
+                    "chg_1d": fmt_chg(chg_1d),
+                    "chg_1w": fmt_chg(chg_1w),
+                })
+            except Exception as e:
+                print(f"  [currency] Failed cross {base}/{quote}: {e}")
+                rows.append({
+                    "pair":   f"{base} / {quote}",
+                    "rate":   "—",
+                    "chg_1d": {"text": "—", "cls": "chg-flat"},
+                    "chg_1w": {"text": "—", "cls": "chg-flat"},
+                })
+        matrix[base] = rows
 
-        except Exception as e:
-            print(f"  [currency] Failed MXN/{currency}: {e}")
-            rows.append({
-                "pair":   f"MXN / {currency}",
-                "rate":   "—",
-                "chg_1d": {"text": "—", "cls": "chg-flat"},
-                "chg_1w": {"text": "—", "cls": "chg-flat"},
-            })
-
-    return rows
+    return {"bases": CURRENCY_BASES, "matrix": matrix}
 
 
 # ── Weather ───────────────────────────────────

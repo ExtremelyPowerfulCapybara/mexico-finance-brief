@@ -85,6 +85,16 @@ CSS = """
 
   .currency { padding: 24px 48px; }
   .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .currency-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .currency-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 8px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .currency-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .currency-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
   .currency-table { width: 100%; border-collapse: collapse; }
   .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
   .currency-table th:not(:first-child) { text-align: right; }
@@ -155,6 +165,20 @@ LANG_TOGGLE_JS = """
   (function(){
     var saved = localStorage.getItem('nlLang') || 'es';
     setLang(saved);
+  })();
+
+  function setCurrencyBase(base) {
+    document.querySelectorAll('.currency-view').forEach(el => {
+      el.style.display = el.dataset.base === base ? '' : 'none';
+    });
+    document.querySelectorAll('.currency-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.base === base);
+    });
+    localStorage.setItem('nlCurrencyBase', base);
+  }
+  (function(){
+    var savedBase = localStorage.getItem('nlCurrencyBase') || 'MXN';
+    setCurrencyBase(savedBase);
   })();
 </script>
 """
@@ -238,20 +262,52 @@ def build_pretty_html(
   </div>
 </div>"""
 
-    # ── Currency table (language-neutral) ────────────────────────────────
-    tbody = ""
-    for r in currency:
-        c1 = "up" if r['chg_1d']['cls'] == 'chg-up' else ("down" if r['chg_1d']['cls'] == 'chg-down' else "flat")
-        c7 = "up" if r['chg_1w']['cls'] == 'chg-up' else ("down" if r['chg_1w']['cls'] == 'chg-down' else "flat")
-        chg1_color = "#4a9e6a" if c1 == "up" else ("#b84a3a" if c1 == "down" else "#aab4bc")
-        chg7_color = "#4a9e6a" if c7 == "up" else ("#b84a3a" if c7 == "down" else "#aab4bc")
-        tbody += f"""
+    # ── Currency table (base-toggle, language-neutral) ───────────────────
+    # currency is now a dict: {bases: [...], matrix: {base: [rows]}}
+    currency_bases  = currency.get("bases", ["MXN"])
+    currency_matrix = currency.get("matrix", {})
+
+    def build_tbody(rows):
+        tbody = ""
+        for r in rows:
+            c1 = "up" if r['chg_1d']['cls'] == 'chg-up' else ("down" if r['chg_1d']['cls'] == 'chg-down' else "flat")
+            c7 = "up" if r['chg_1w']['cls'] == 'chg-up' else ("down" if r['chg_1w']['cls'] == 'chg-down' else "flat")
+            chg1_color = "#4a9e6a" if c1 == "up" else ("#b84a3a" if c1 == "down" else "#aab4bc")
+            chg7_color = "#4a9e6a" if c7 == "up" else ("#b84a3a" if c7 == "down" else "#aab4bc")
+            tbody += f"""
       <tr>
         <td class="pair">{r['pair']}</td>
         <td>{r['rate']}</td>
         <td style="color:{chg1_color}; text-align:right;">{r['chg_1d']['text']}</td>
         <td style="color:{chg7_color}; text-align:right;">{r['chg_1w']['text']}</td>
       </tr>"""
+        return tbody
+
+    currency_tables_html = ""
+    for i, base in enumerate(currency_bases):
+        rows  = currency_matrix.get(base, [])
+        tbody = build_tbody(rows)
+        display = "" if i == 0 else "display:none;"
+        currency_tables_html += f"""
+    <div class="currency-view" data-base="{base}" style="{display}">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>{tbody}
+        </tbody>
+      </table>
+    </div>"""
+
+    currency_btns_html = ""
+    for i, base in enumerate(currency_bases):
+        active = "active" if i == 0 else ""
+        currency_btns_html += f'<button class="currency-btn {active}" data-base="{base}" onclick="setCurrencyBase(\'{base}\')">{base}</button>'
 
     # ── Quote (both languages) ────────────────────────────────────────────
     q_es = digest_es.get("quote", {})
@@ -378,21 +434,13 @@ def build_pretty_html(
   {DIVIDER}
 
   <div class="currency">
-    <div class="section-title"
-         data-es="Tipo de Cambio"
-         data-en="Exchange Rates">Tipo de Cambio</div>
-    <table class="currency-table">
-      <thead>
-        <tr>
-          <th data-es="Par"  data-en="Pair">Par</th>
-          <th data-es="Tipo" data-en="Rate">Tipo</th>
-          <th style="text-align:right;">1D</th>
-          <th style="text-align:right;">1W</th>
-        </tr>
-      </thead>
-      <tbody>{tbody}
-      </tbody>
-    </table>
+    <div class="currency-header">
+      <div class="section-title"
+           data-es="Tipo de Cambio"
+           data-en="Exchange Rates">Tipo de Cambio</div>
+      <div class="currency-toggle">{currency_btns_html}</div>
+    </div>
+    {currency_tables_html}
   </div>
 
   {DIVIDER}
