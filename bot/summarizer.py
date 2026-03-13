@@ -110,14 +110,41 @@ Artículos:
             else:
                 raise
 
+    def clean_and_parse(text: str) -> dict:
+        """Strip markdown fences and parse JSON, raising JSONDecodeError on failure."""
+        text = text.strip()
+        # Strip markdown fences
+        if text.startswith("```"):
+            text = text.split("\n", 1)[1]
+            text = text.rsplit("```", 1)[0].strip()
+        # Trim anything before the first '{' or after the last '}'
+        start = text.find("{")
+        end   = text.rfind("}")
+        if start != -1 and end != -1:
+            text = text[start:end+1]
+        return json.loads(text)
+
+    # Try to parse; if malformed, re-ask Claude once with a repair prompt
     raw = message.content[0].text.strip()
-
-    # Strip markdown fences if present
-    if raw.startswith("```"):
-        raw = raw.split("\n", 1)[1]
-        raw = raw.rsplit("```", 1)[0]
-
-    digest = json.loads(raw)
+    for parse_attempt in range(2):
+        try:
+            digest = clean_and_parse(raw)
+            break
+        except json.JSONDecodeError as e:
+            if parse_attempt == 0:
+                print(f"  [summarizer] JSON parse failed ({e}), asking Claude to repair...")
+                repair_message = client.messages.create(
+                    model="claude-sonnet-4-6",
+                    max_tokens=6000,
+                    messages=[
+                        {"role": "user",    "content": prompt},
+                        {"role": "assistant", "content": raw},
+                        {"role": "user",    "content": "Tu respuesta anterior contiene JSON malformado. Devuelve exactamente el mismo contenido pero como JSON válido y bien escapado. Sin preámbulo, sin markdown fences."},
+                    ]
+                )
+                raw = repair_message.content[0].text.strip()
+            else:
+                raise ValueError(f"[summarizer] JSON malformado tras intento de reparación: {e}")
 
     # Validate bilingual structure
     if "es" not in digest or "en" not in digest:
