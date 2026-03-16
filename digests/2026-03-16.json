@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-16",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, mientras el estrecho de Ormuz permanece bloqueado y Dubái aplaga incendios en el Burj Al Arab con una campaña de Instagram, los mercados globales digieren una realidad incómoda: esta guerra no tiene fecha de vencimiento visible. Trump dice que Irán quiere negociar; Irán dice que nadie ha propuesto nada — ambos probablemente tienen razón en su propia dimensión de la realidad.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El conflicto Israel-EE.UU.-Irán paraliza el estrecho de Ormuz, dispara los fletes petroleros a máximos históricos y obliga a empresas globales a diseñar planes de contingencia ante el encarecimiento de materias primas.",
+        "context_en": "The Israel-US-Iran conflict is paralyzing the Strait of Hormuz, sending tanker rates to record highs, and forcing global companies to draft contingency plans amid surging commodity costs."
+      },
+      "stories": [
+        {
+          "source": "Df.cl",
+          "headline": "Trump dice que Irán quiere negociar; Teherán responde que no hay ninguna propuesta sobre la mesa",
+          "body": "El presidente Donald Trump afirmó el sábado que Irán busca un acuerdo para poner fin al conflicto, pero que Washington exige condiciones más duras — incluyendo el abandono de las ambiciones nucleares de Teherán. El canciller iraní Abbas Araghchi lo desmintió parcialmente: Irán está abierto a iniciativas regionales, pero aclaró que nadie ha presentado una propuesta concreta. Entretanto, los ataques de represalia iraní contra instalaciones del Golfo continuaron durante el domingo, y los EAU reportaron haber interceptado misiles y drones sobre zonas de Dubái.",
+          "url": "https://www.df.cl/internacional/trump-afirma-que-iran-quiere-poner-fin-a-la-guerra-y-teheran-dice-que-no",
+          "tag": "Macro"
+        },
+        {
+          "source": "RT Actualidad",
+          "headline": "El magnate surcoreano que apostó a la guerra: Sinokor controla el 40% de los superpetroleros libres y cobra $500,000 diarios por buque",
+          "body": "Ga-hyun Chung, al frente del grupo naviero Sinokor, acumuló discretamente unos 150 superpetroleros antes del inicio del conflicto israelí-estadounidense contra Irán el 28 de febrero, trasladando al menos seis buques vacíos al Golfo Pérsico semanas antes del ataque. Con el estrecho de Ormuz bloqueado y el almacenamiento regional al límite, sus embarcaciones ahora se alquilan como almacenes flotantes a 500,000 dólares diarios, casi diez veces la tarifa del año anterior. La interrupción del transporte marítimo, según veteranos del sector, tardará en resolverse incluso tras el cese de hostilidades, garantizando beneficios extraordinarios para Sinokor durante semanas adicionales.",
+          "url": "https://actualidad.rt.com/actualidad/593039-asi-misterioso-magnate-beneficiarse-guerra-iran",
+          "tag": "Energía"
+        },
+        {
+          "source": "Nacion.com",
+          "headline": "Dubái intenta preservar su imagen de 'ciudad segura' con influencers mientras el Burj Al Arab arde y el aeropuerto es atacado",
+          "body": "Emiratos Árabes Unidos ha recibido más de 1,800 misiles y drones iraníes desde el inicio del conflicto, la mayoría interceptados, pero algunos han alcanzado la fachada del Burj Al Arab, el aeropuerto y el puerto de Jebel Ali. Las autoridades respondieron con una campaña en Instagram —5.8 millones de seguidores del canal oficial de Dubái— y videos de influencers proclamando que el emirato es 'el país más seguro del mundo', mientras reprimen la difusión de imágenes de los ataques. El 90% de los residentes son extranjeros, y las tumbonas de Jumeirah Beach Residence, en plena temporada alta, empiezan a quedar vacías.",
+          "url": "https://www.nacion.com/el-mundo/dubai-intenta-proteger-su-imagen-turistica-tras/ITDJSLMFOBHATDPZPXETTTQKOQ/story/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "El 44% de los empresarios españoles ya rediseña su estrategia ante el encarecimiento de materias primas por la guerra en Irán",
+          "body": "Un informe de KPMG y CEOE revela que casi la mitad de los directivos españoles encuestados está elaborando planes de contingencia frente al impacto del conflicto en Oriente Próximo sobre sus cadenas de suministro. La consultora Funcas proyecta que el IPC escalaría hasta el 3.6% en marzo, aunque advierte una alta incertidumbre en sus cálculos. Los riesgos más citados son pérdida de competitividad (41%), incremento en costes de materias primas (41%) y mayor exposición geopolítica mediante ruptura de cadenas de suministro (39%).",
+          "url": "https://www.expansion.com/economia/2026/03/15/69b455c3e5fdea023c8b45b5.html",
+          "tag": "Macro"
+        },
+        {
+          "source": "RT Actualidad",
+          "headline": "China y EE.UU. reanudan consultas comerciales en París con los aranceles y las tierras raras como ejes centrales",
+          "body": "El vice primer ministro chino He Lifeng y el secretario del Tesoro estadounidense Scott Bessent encabezan una nueva ronda de negociaciones en la sede de la OCDE en París, orientada a preparar la visita de Trump a Pekín en abril. Los temas sobre la mesa incluyen la modificación de aranceles, el flujo de minerales de tierras raras, los controles de exportación tecnológica y las compras chinas de productos agrícolas. El experto Scott Kennedy resumió el objetivo mínimo de ambas partes: reunirse y evitar 'una ruptura y una nueva escalada de tensiones'.",
+          "url": "https://actualidad.rt.com/actualidad/593061-china-eeuu-francia-consultas-comercio",
+          "tag": "Comercio"
+        },
+        {
+          "source": "DW Español",
+          "headline": "Países nórdicos y Canadá pactan reforzar cooperación en el Ártico ante las ambiciones de Rusia y EE.UU.",
+          "body": "Los mandatarios de Suecia, Dinamarca, Finlandia, Islandia, Noruega y Canadá se reunieron en Oslo para reafirmar su compromiso conjunto en defensa, energía limpia, tecnología y acceso a recursos minerales, en un comunicado que menciona explícitamente 'la guerra en Ucrania, el levantamiento de sanciones contra Rusia por parte de EE.UU. y la guerra en Medio Oriente'. La primera ministra danesa Mette Frederiksen fue la más directa: 'Países como los nuestros deben permanecer unidos'. Los seis estados son miembros de la OTAN.",
+          "url": "https://www.dw.com/es/pa%C3%ADses-n%C3%B3rdicos-y-canad%C3%A1-refuerzan-cooperaci%C3%B3n-en-el-%C3%A1rtico-ante-las-crecientes-amenazas/a-76366907",
+          "tag": "Política"
+        },
+        {
+          "source": "Xataka México",
+          "headline": "Home Depot invertirá 4,790 millones de pesos en México en 2026, apuntando al programa de Viviendas del Bienestar",
+          "body": "La cadena estadounidense de materiales de construcción anunció un incremento de inversión del 25% respecto a 2025, distribuyendo el capital entre apertura de tiendas, tecnología con inteligencia artificial y logística. El catalizador declarado es el programa de vivienda social del gobierno federal, con el que Home Depot ya colabora junto a desarrolladores e Infonavit, aunque con márgenes más ajustados. La empresa planea crecer de 142 a entre 160 y 165 tiendas en México, como parte de un plan de 1,300 millones de dólares para el período 2025-2028.",
+          "url": "https://www.xataka.com.mx/otros-1/home-depot-invertira-4-790-millones-pesos-mexico-tiene-objetivo-aprovechar-viviendas-bienestar",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "Oil is the lifeblood of the industrial civilisation and the despoliation of nature is built into our economic system.",
+        "attribution": "James Lovelock, The Revenge of Gaia, 2006"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, while the Strait of Hormuz remains blocked and Dubai is trying to put out fires at the Burj Al Arab with an Instagram campaign, global markets are digesting an uncomfortable reality: this war has no visible expiration date. Trump says Iran wants to negotiate; Iran says no one has proposed anything — both are probably right in their own dimension of reality.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El conflicto Israel-EE.UU.-Irán paraliza el estrecho de Ormuz, dispara los fletes petroleros a máximos históricos y obliga a empresas globales a diseñar planes de contingencia ante el encarecimiento de materias primas.",
+        "context_en": "The Israel-US-Iran conflict is paralyzing the Strait of Hormuz, sending tanker rates to record highs, and forcing global companies to draft contingency plans amid surging commodity costs."
+      },
+      "stories": [
+        {
+          "source": "Df.cl",
+          "headline": "Trump says Iran wants to negotiate; Tehran responds that no proposal is on the table",
+          "body": "President Donald Trump stated on Saturday that Iran is seeking a deal to end the conflict, but that Washington demands tougher conditions — including Tehran abandoning its nuclear ambitions. Iranian Foreign Minister Abbas Araghchi partially contradicted him: Iran is open to regional initiatives, but clarified that no specific proposal has been presented. Meanwhile, Iranian retaliatory strikes against Gulf installations continued through Sunday, with the UAE reporting the interception of missiles and drones over areas of Dubai.",
+          "url": "https://www.df.cl/internacional/trump-afirma-que-iran-quiere-poner-fin-a-la-guerra-y-teheran-dice-que-no",
+          "tag": "Macro"
+        },
+        {
+          "source": "RT Actualidad",
+          "headline": "The South Korean tycoon who bet on the war: Sinokor controls 40% of unsanctioned supertankers and charges $500,000 per vessel per day",
+          "body": "Ga-hyun Chung, head of the Sinokor shipping group, quietly accumulated around 150 supertankers before the Israeli-American conflict against Iran began on February 28, moving at least six empty vessels into the Persian Gulf weeks ahead of the attack. With the Strait of Hormuz blocked and regional storage near capacity, his ships are now being rented as floating storage at $500,000 per day — nearly ten times last year's rate. Industry veterans say the shipping disruption will take time to resolve even after hostilities cease, guaranteeing extraordinary profits for Sinokor for weeks to come.",
+          "url": "https://actualidad.rt.com/actualidad/593039-asi-misterioso-magnate-beneficiarse-guerra-iran",
+          "tag": "Energía"
+        },
+        {
+          "source": "Nacion.com",
+          "headline": "Dubai tries to preserve its 'safe city' image with influencers while the Burj Al Arab burns and the airport is attacked",
+          "body": "The United Arab Emirates has received more than 1,800 Iranian missiles and drones since the conflict began, most intercepted, but some have struck the façade of the Burj Al Arab, the airport, and the port of Jebel Ali. Authorities responded with an Instagram campaign — the official Dubai channel has 5.8 million followers — and influencer videos proclaiming the emirate is 'the safest country in the world,' while suppressing the spread of images showing the attacks. With 90% of residents being foreign nationals, the sun loungers at Jumeirah Beach Residence, normally packed during peak season, are beginning to empty out.",
+          "url": "https://www.nacion.com/el-mundo/dubai-intenta-proteger-su-imagen-turistica-tras/ITDJSLMFOBHATDPZPXETTTQKOQ/story/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "44% of Spanish business leaders are already redesigning their strategy amid rising commodity costs from the Iran war",
+          "body": "A report by KPMG and Spain's CEOE business confederation reveals that nearly half of surveyed executives are drafting contingency plans to absorb the impact of the Middle East conflict on their supply chains. The think tank Funcas projects CPI could climb to 3.6% in March, though it flags high uncertainty in its calculations. The most commonly cited risks are loss of competitiveness (41%), rising raw material costs (41%), and increased geopolitical exposure through supply chain disruption (39%).",
+          "url": "https://www.expansion.com/economia/2026/03/15/69b455c3e5fdea023c8b45b5.html",
+          "tag": "Macro"
+        },
+        {
+          "source": "RT Actualidad",
+          "headline": "China and US resume trade consultations in Paris with tariffs and rare earths as central issues",
+          "body": "Chinese Vice Premier He Lifeng and US Treasury Secretary Scott Bessent are leading a new round of negotiations at OECD headquarters in Paris, aimed at preparing for Trump's visit to Beijing in April. Items on the table include tariff modifications, rare earth mineral flows, technology export controls, and Chinese purchases of US agricultural products. Expert Scott Kennedy summarized the minimum objective for both sides: meet and avoid 'a breakdown and a new escalation of tensions.'",
+          "url": "https://actualidad.rt.com/actualidad/593061-china-eeuu-francia-consultas-comercio",
+          "tag": "Comercio"
+        },
+        {
+          "source": "DW Español",
+          "headline": "Nordic countries and Canada agree to strengthen Arctic cooperation in the face of Russian and US ambitions",
+          "body": "The leaders of Sweden, Denmark, Finland, Iceland, Norway, and Canada met in Oslo to reaffirm their joint commitment to defense, clean energy, technology, and access to mineral resources, in a communiqué that explicitly references 'the war in Ukraine, the US lifting of sanctions against Russia, and the war in the Middle East.' Danish Prime Minister Mette Frederiksen was the most direct: 'Countries like ours must remain united.' All six states are NATO members.",
+          "url": "https://www.dw.com/es/pa%C3%ADses-n%C3%B3rdicos-y-canad%C3%A1-refuerzan-cooperaci%C3%B3n-en-el-%C3%A1rtico-ante-las-crecientes-amenazas/a-76366907",
+          "tag": "Política"
+        },
+        {
+          "source": "Xataka México",
+          "headline": "Home Depot will invest 4.79 billion pesos in Mexico in 2026, targeting the government's social housing program",
+          "body": "The US home improvement chain announced a 25% increase in investment versus 2025, allocating capital across store openings, AI-integrated technology, and logistics. The stated catalyst is the federal government's social housing program, with which Home Depot already works alongside developers and Infonavit, albeit at tighter margins. The company plans to grow from 142 to between 160 and 165 stores in Mexico, as part of a $1.3 billion plan covering the 2025–2028 period.",
+          "url": "https://www.xataka.com.mx/otros-1/home-depot-invertira-4-790-millones-pesos-mexico-tiene-objetivo-aprovechar-viviendas-bienestar",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "Oil is the lifeblood of the industrial civilisation and the despoliation of nature is built into our economic system.",
+        "attribution": "James Lovelock, The Revenge of Gaia, 2006"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.77",
+        "change": "▼ 0.4%",
+        "direction": "down"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,706",
+        "change": "▲ 0.5%",
+        "direction": "up"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "65,648.91",
+        "change": "▼ 0.7%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.7736",
+        "chg_1d": {
+          "text": "▼ 0.34%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 0.57%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.4345",
+        "chg_1d": {
+          "text": "▼ 0.55%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 0.53%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.0147",
+        "chg_1d": {
+          "text": "▼ 0.52%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 0.06%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "122.5490",
+        "chg_1d": {
+          "text": "▲ 0.04%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.34%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "17°C",
+    "high_low": "22°C / 11°C",
+    "humidity": "Humidity 41%",
+    "desc": "Partly cloudy"
+  }
+}
