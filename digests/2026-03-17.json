@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-17",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, mientras Israel planifica tres semanas más de guerra y Europa calcula cuánto le costará cada barril adicional, los mercados cripto decidieron que era buen momento para un rally de alivio — Bitcoin toca máximos de seis semanas y los cortos se evaporan. En Buenos Aires, los peritajes judiciales sobre el caso $LIBRA siguen complicando al presidente Milei con cada nuevo intercambio telefónico que emerge, recordándonos que en la política cripto, los metadatos siempre sobreviven a las buenas intenciones.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "El rally cripto y las liquidaciones de cortos inyectan algo de apetito, pero el conflicto en Medio Oriente, el choque energético europeo y la huelga en JBS mantienen el tono general en modo defensivo.",
+        "context_en": "A crypto relief rally and short liquidations add some appetite, but the Middle East conflict, the European energy shock, and the JBS strike keep the overall tone in defensive mode."
+      },
+      "stories": [
+        {
+          "source": "La Nacion / Perfil.com",
+          "headline": "Caso $LIBRA: peritajes revelan cinco contactos entre Milei y el lobista Novelli minutos antes del lanzamiento",
+          "body": "Peritajes judiciales sobre los teléfonos de Mauricio Novelli confirmaron que el presidente Javier Milei interactuó al menos cinco veces con el lobista desde su celular personal en los minutos previos al lanzamiento de $LIBRA, contradiciendo la versión oficial de que actuó de buena fe y sin conocimiento previo. Los dispositivos también registran 35 llamadas entre Novelli y figuras clave del entorno presidencial — Karina Milei y Santiago Caputo — mientras un documento hallado en el celular del empresario describe un presunto acuerdo de 5 millones de dólares vinculado a la promoción del token. Las pérdidas de inversores superan los 100 millones de dólares y la causa sigue expandiéndose hacia nuevos actores políticos y mediáticos.",
+          "url": "https://www.lanacion.com.ar/politica/que-es-el-caso-libra-las-claves-de-la-investigacion-sobre-la-estafa-con-criptomonedas-que-involucra-nid16032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Israel planea al menos tres semanas más de guerra y avanza sobre el sur del Líbano",
+          "body": "El vocero militar israelí, teniente coronel Nadav Shoshani, confirmó que existen planes operativos detallados para continuar la guerra con Irán durante las próximas tres semanas, con más de 110.000 reservistas movilizados y miles de objetivos pendientes en territorio iraní. En paralelo, las fuerzas terrestres israelíes avanzaron hacia nuevas posiciones en el sur del Líbano, rodeando la localidad estratégica de Khiyam — a 6 km de la frontera — en un movimiento que podría dejar amplias zonas del sur libanés aisladas del resto del país. Más de 800 personas han muerto en el Líbano y 800.000 han sido desplazadas desde el inicio de la escalada.",
+          "url": "https://www.lanacion.com.ar/el-mundo/israel-avanza-sobre-el-libano-y-preve-al-menos-tres-semanas-mas-de-guerra-nid16032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "RT / Wall Street Journal",
+          "headline": "Conflicto en Medio Oriente desata choque energético en Europa: deuda récord y riesgo de recesión si el petróleo supera 125 dólares",
+          "body": "El gobernador del Banco de Francia, François Villeroy de Galhau, resumió la situación con crudeza: 'No tenemos más dinero', mientras la deuda pública de Reino Unido y Francia alcanza niveles no vistos en 60 años en relación al PIB. Según Ursula von der Leyen, solo en los primeros 10 días de la crisis el bloque europeo pagó 3.400 millones de dólares adicionales en importaciones de combustibles fósiles, y empresas alemanas ya reportan aumentos en costos logísticos y energéticos. El economista jefe de Capital Economics, Neil Shearing, advierte que un barril a 125 dólares o más podría ser suficiente para empujar a Europa a una recesión.",
+          "url": "https://actualidad.rt.com/actualidad/593191-no-tenemos-dinero-agresion-iran-golpea-europa-choque-energetico",
+          "tag": "Energía"
+        },
+        {
+          "source": "Cointelegraph.es",
+          "headline": "Bitcoin alcanza máximo de seis semanas en 74.400 dólares y liquida 300 millones en posiciones cortas",
+          "body": "El precio de Bitcoin subió 2,5% el lunes hasta los 74.400 dólares — su nivel más alto desde el 4 de febrero — superando la media móvil simple de 50 días en 71.120 dólares por primera vez en 55 días. El rally arrastró al mercado cripto en general: Ether ganó 7%, Solana avanzó 6% y la capitalización total del sector subió 4% hasta 2,49 billones de dólares, mientras el interés abierto en futuros de Bitcoin saltó 6% hasta 49.200 millones. Analistas señalan que el mismo patrón de aumento del precio junto con mayor interés abierto 'precedió los últimos picos de volatilidad'.",
+          "url": "https://cointelegraph.es/markets/bitcoin-hits-74-4k-six-week-high-analysts-more-upside-for-btc",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Associated Press",
+          "headline": "Cerca de 3.800 trabajadores de JBS en huelga en Colorado: el primer paro en un matadero de EEUU en cuatro décadas",
+          "body": "Empleados de Swift Beef Co. — propiedad de JBS, la mayor empacadora de carne del mundo — iniciaron el lunes una huelga de dos semanas en Greeley, Colorado, con el 99% de los trabajadores sindicalizados votando a favor del paro. El sindicato United Food and Commercial Workers Local 7 acusa a la empresa de represalias y de ofrecer aumentos salariales inferiores al 2% anual, por debajo de la inflación de Colorado, mientras cobra a muchos trabajadores más de 1.100 dólares por equipos de protección personal. La huelga amenaza con encarecer aún más la carne de res para los consumidores estadounidenses, ya bajo presión inflacionaria.",
+          "url": "https://apnews.com/article/colorado-trabajadores-huelga-empaquetadora-carne-swift-3cbae2b926ec424943025216e19b0ac2",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Tercera",
+          "headline": "Cierre del Estrecho de Ormuz dispara fletes marítimos: el índice Drewry ya supera los 2.100 dólares",
+          "body": "Tras el cierre parcial del Estrecho de Ormuz por parte de Irán a finales de febrero, las navieras redirigieron sus rutas al Cabo de Buena Esperanza, encareciéndose el transporte de contenedores. El índice Drewry subió desde 1.899 dólares el 26 de febrero hasta superar los 2.100 dólares en los primeros días de marzo, mientras el Global Container Freight Index llegó a 1.766 dólares tras una caída inicial. Según George Lever, de la Cámara de Comercio de Santiago, la combinación de desvíos de ruta, mayores primas de seguro y encarecimiento del combustible ya se está traspasando a los importadores.",
+          "url": "https://www.latercera.com/pulso/noticia/conflicto-belico-en-medio-oriente-encarece-el-precio-de-los-fletes-maritimos/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "JD.com lanza Joybuy en Europa: entrega en horas en seis países para competir con Amazon",
+          "body": "JD.com, la empresa china de comercio electrónico valorada en 40.000 millones de dólares, comenzó el lunes a operar en Europa bajo la marca Joybuy, vendiendo más de 100.000 productos — desde Apple y Samsung hasta comestibles — con promesa de entrega el mismo día en Reino Unido, Alemania, Francia, Bélgica, Luxemburgo y Países Bajos. La expansión llega tras registrar sus primeras pérdidas trimestrales en casi cuatro años y una caída de casi un tercio en el valor de sus acciones en el último año, forzando a la compañía a buscar crecimiento fuera de un mercado chino cada vez más saturado. JD.com ya adquirió el minorista alemán Ceconomy por 2.200 millones de euros el año pasado como parte de su estrategia de internacionalización.",
+          "url": "https://www.expansion.com/economia/financial-times/2026/03/16/69b812a4468aeb623d8b459b.html",
+          "tag": "Comercio"
+        }
+      ],
+      "quote": {
+        "text": "Markets can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, as Israel plans three more weeks of war and Europe calculates the cost of each additional barrel, crypto markets decided it was a fine moment for a relief rally — Bitcoin hits a six-week high while short positions evaporate. In Buenos Aires, judicial forensics on the $LIBRA case keep tightening around President Milei with every new phone exchange that surfaces, reminding us that in crypto politics, metadata always outlasts good intentions.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "El rally cripto y las liquidaciones de cortos inyectan algo de apetito, pero el conflicto en Medio Oriente, el choque energético europeo y la huelga en JBS mantienen el tono general en modo defensivo.",
+        "context_en": "A crypto relief rally and short liquidations add some appetite, but the Middle East conflict, the European energy shock, and the JBS strike keep the overall tone in defensive mode."
+      },
+      "stories": [
+        {
+          "source": "La Nacion / Perfil.com",
+          "headline": "$LIBRA Case: Forensics Reveal Five Contacts Between Milei and Lobbyist Novelli Minutes Before Token Launch",
+          "body": "Judicial forensics on Mauricio Novelli's phones confirmed that President Javier Milei interacted at least five times with the lobbyist from his personal cell phone in the minutes before the $LIBRA token launch, directly contradicting the official narrative that he acted in good faith and without prior knowledge. The devices also log 35 calls between Novelli and key figures in the presidential circle — Karina Milei and Santiago Caputo — while a document found on the businessman's phone describes an alleged $5 million agreement tied to the token's promotion. Investor losses exceed $100 million and the case continues to expand toward new political and media figures.",
+          "url": "https://www.lanacion.com.ar/politica/que-es-el-caso-libra-las-claves-de-la-investigacion-sobre-la-estafa-con-criptomonedas-que-involucra-nid16032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Israel Plans At Least Three More Weeks of War and Advances Into Southern Lebanon",
+          "body": "Israeli military spokesman Lt. Col. Nadav Shoshani confirmed that detailed operational plans exist to continue the war with Iran for at least the next three weeks, with over 110,000 reservists mobilized and thousands of targets still pending inside Iranian territory. Meanwhile, Israeli ground forces advanced into new positions in southern Lebanon, surrounding the strategic town of Khiyam — 6 km from the border — in a move that could leave large swaths of southern Lebanon isolated from the rest of the country. More than 800 people have been killed in Lebanon and 800,000 displaced since the escalation began.",
+          "url": "https://www.lanacion.com.ar/el-mundo/israel-avanza-sobre-el-libano-y-preve-al-menos-tres-semanas-mas-de-guerra-nid16032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "RT / Wall Street Journal",
+          "headline": "Middle East Conflict Triggers Energy Shock in Europe: Record Debt and Recession Risk if Oil Tops $125",
+          "body": "Bank of France Governor François Villeroy de Galhau bluntly summarized the situation: 'We have no more money,' as UK and French public debt reaches levels not seen in 60 years relative to GDP. According to Ursula von der Leyen, the bloc paid an additional $3.4 billion in fossil fuel imports in just the first 10 days of the crisis, and German companies are already reporting higher logistics and energy costs. Capital Economics chief economist Neil Shearing warns that oil at $125 or above could be enough to push Europe into recession.",
+          "url": "https://actualidad.rt.com/actualidad/593191-no-tenemos-dinero-agresion-iran-golpea-europa-choque-energetico",
+          "tag": "Energía"
+        },
+        {
+          "source": "Cointelegraph.es",
+          "headline": "Bitcoin Hits Six-Week High at $74,400, Liquidating $300 Million in Short Positions",
+          "body": "Bitcoin's price rose 2.5% on Monday to $74,400 — its highest level since February 4 — clearing the 50-day simple moving average at $71,120 for the first time in 55 days. The rally lifted the broader crypto market: Ether gained 7%, Solana advanced 6%, and total crypto market capitalization rose 4% to $2.49 trillion, while Bitcoin futures open interest jumped 6% to $49.2 billion. Analysts note that the same pattern of rising price alongside increasing open interest 'preceded the last volatility peaks.'",
+          "url": "https://cointelegraph.es/markets/bitcoin-hits-74-4k-six-week-high-analysts-more-upside-for-btc",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Associated Press",
+          "headline": "Nearly 3,800 JBS Workers Strike in Colorado: First US Slaughterhouse Walkout in Four Decades",
+          "body": "Employees of Swift Beef Co. — owned by JBS, the world's largest meat packer — launched a two-week strike Monday in Greeley, Colorado, with 99% of unionized workers voting in favor of the action. The United Food and Commercial Workers Local 7 accuses the company of retaliation and offering wage increases below 2% annually, under Colorado's inflation rate, while charging many workers over $1,100 for personal protective equipment. The strike threatens to further increase beef prices for American consumers already under inflationary pressure.",
+          "url": "https://apnews.com/article/colorado-trabajadores-huelga-empaquetadora-carne-swift-3cbae2b926ec424943025216e19b0ac2",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Tercera",
+          "headline": "Strait of Hormuz Closure Drives Up Shipping Rates: Drewry Index Tops $2,100",
+          "body": "Following Iran's partial closure of the Strait of Hormuz in late February, shipping companies rerouted vessels around the Cape of Good Hope, driving up container freight costs. The Drewry Index rose from $1,899 on February 26 to over $2,100 in early March, while the Global Container Freight Index reached $1,766 after an initial dip. According to George Lever of the Santiago Chamber of Commerce, the combination of route diversions, higher insurance premiums, and rising fuel costs is already being passed on to importers.",
+          "url": "https://www.latercera.com/pulso/noticia/conflicto-belico-en-medio-oriente-encarece-el-precio-de-los-fletes-maritimos/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "JD.com Launches Joybuy in Europe: Same-Day Delivery in Six Countries to Compete with Amazon",
+          "body": "JD.com, the Chinese e-commerce company valued at $40 billion, began operating in Europe on Monday under the Joybuy brand, selling over 100,000 products — from Apple and Samsung to groceries — with same-day delivery promises in the UK, Germany, France, Belgium, Luxembourg, and the Netherlands. The expansion comes after the company posted its first quarterly losses in nearly four years and a nearly one-third drop in share value over the past year, forcing it to seek growth outside an increasingly saturated Chinese market. JD.com already acquired German electronics retailer Ceconomy for €2.2 billion last year as part of its internationalization strategy.",
+          "url": "https://www.expansion.com/economia/financial-times/2026/03/16/69b812a4468aeb623d8b459b.html",
+          "tag": "Comercio"
+        }
+      ],
+      "quote": {
+        "text": "Markets can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.69",
+        "change": "▼ 1.1%",
+        "direction": "down"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,742",
+        "change": "▲ 1.7%",
+        "direction": "up"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "66,295.57",
+        "change": "▲ 1.0%",
+        "direction": "up"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.6863",
+        "chg_1d": {
+          "text": "▼ 1.12%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 0.55%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.4011",
+        "chg_1d": {
+          "text": "▼ 0.23%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 0.13%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.9204",
+        "chg_1d": {
+          "text": "▼ 0.95%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 0.18%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "121.7843",
+        "chg_1d": {
+          "text": "▼ 1.27%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 0.68%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "14°C",
+    "high_low": "20°C / 11°C",
+    "humidity": "Humidity 66%",
+    "desc": "Partly cloudy"
+  }
+}
