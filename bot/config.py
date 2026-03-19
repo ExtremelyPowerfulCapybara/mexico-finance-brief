@@ -116,11 +116,46 @@ NEWS_DOMAINS = [
 NEWS_DOMAINS_STR = ",".join(NEWS_DOMAINS)
 
 # ── Market tickers (Yahoo Finance symbols) ────
+# Main ticker bar: global macro conditions
 TICKER_SYMBOLS = [
-    ("S&P 500",    "^GSPC"),
-    ("IBEX 35",    "^IBEX"),
-    ("Euro Stoxx", "^STOXX50E"),
-    ("DAX",        "^GDAXI"),
+    ("DXY",     "DX-Y.NYB"),
+    ("10Y UST", "^TNX"),
+    ("VIX",     "^VIX"),
+    ("MSCI EM", "EEM"),
+]
+
+# Secondary ticker groups: equities, commodities, crypto
+# Used in tabbed strip (archive) and 3-column dashboard (email)
+SECONDARY_TICKER_GROUPS = [
+    {
+        "group": "eq",
+        "label": "Global Equities",
+        "tickers": [
+            ("S&P 500",    "^GSPC"),
+            ("Nasdaq",     "^IXIC"),
+            ("Euro Stoxx", "^STOXX50E"),
+            ("Nikkei",     "^N225"),
+        ],
+    },
+    {
+        "group": "co",
+        "label": "Commodities",
+        "tickers": [
+            ("Brent",  "BZ=F"),
+            ("Gold",   "GC=F"),
+            ("Copper", "HG=F"),
+            ("Wheat",  "ZW=F"),
+        ],
+    },
+    {
+        "group": "cr",
+        "label": "Crypto",
+        "tickers": [
+            ("Bitcoin",  "BTC-USD"),
+            ("Ethereum", "ETH-USD"),
+            ("Solana",   "SOL-USD"),
+        ],
+    },
 ]
 # ── Currency table ────────────────────────────
 # Base currencies available as toggle options in the browser version.

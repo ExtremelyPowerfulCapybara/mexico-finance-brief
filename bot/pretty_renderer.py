@@ -51,11 +51,23 @@ CSS = """
   .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
   .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
 
-  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
-  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
-  .weather-temp { font-size: 11px; color: #ccc; }
-  .weather-humidity { font-size: 11px; color: #ccc; }
-  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+  /* ── Secondary market strip (tabbed) ── */
+  .mkt-strip { background: #1a1a1a; }
+  .mkt-tab-nav { display: flex; padding: 0 48px; border-bottom: 1px solid #222; }
+  .mkt-tab-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 7px 14px 6px; cursor: pointer; border: none; background: transparent;
+    color: #444; border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .mkt-tab-btn[data-group="eq"].active { color: #a8c8a0; border-bottom-color: #a8c8a0; }
+  .mkt-tab-btn[data-group="co"].active { color: #d4b87a; border-bottom-color: #d4b87a; }
+  .mkt-tab-btn[data-group="cr"].active { color: #b49ed4; border-bottom-color: #b49ed4; }
+  .mkt-tab-btn:not(.active):hover { color: #777; }
+  .mkt-panel { display: none; padding: 0 48px; }
+  .mkt-panel.visible { display: flex; }
+  .mkt-panel .tick-item { padding: 9px 8px; }
 
   .editor-note { padding: 28px 48px; }
   .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
@@ -140,8 +152,9 @@ CSS = """
     .ticker { padding: 6px 8px; }
     .ticker-inner { flex-wrap: wrap; }
     .tick-item { flex: 1 1 45%; padding: 8px 4px; }
-    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
-    .weather-desc { margin-left: 0; width: 100%; }
+    .mkt-tab-nav { padding: 0 12px; }
+    .mkt-panel { padding: 0 8px; flex-wrap: wrap; }
+    .mkt-panel .tick-item { flex: 1 1 45%; }
     .editor-note { padding: 20px 20px; }
     .divider { padding: 0 20px; }
     .sentiment { padding: 20px 20px; }
@@ -185,6 +198,16 @@ LANG_TOGGLE_JS = """
     var savedBase = localStorage.getItem('nlCurrencyBase') || 'MXN';
     setCurrencyBase(savedBase);
   })();
+
+  function setMktTab(group) {
+    document.querySelectorAll('.mkt-panel').forEach(function(p) { p.classList.remove('visible'); });
+    var panel = document.getElementById('mkt-' + group);
+    if (panel) panel.classList.add('visible');
+    document.querySelectorAll('.mkt-tab-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.group === group);
+    });
+  }
+  (function(){ setMktTab('eq'); })();
 </script>
 """
 
@@ -202,15 +225,17 @@ DIVIDER = """
 
 
 def build_pretty_html(
-    digest:             dict,
-    tickers:            list[dict],
-    currency:           list[dict],
-    weather:            dict,
-    week_stories:       list[dict],
-    issue_number:       int = 1,
-    is_friday:          bool = False,
-    wordcloud_filename: str | None = None,
-    author:             str = "",
+    digest:              dict,
+    tickers:             list[dict],
+    currency:            list[dict],
+    week_stories:        list[dict],
+    issue_number:        int = 1,
+    is_friday:           bool = False,
+    wordcloud_filename:  str | None = None,
+    author:              str = "",
+    secondary_tickers:   list[dict] | None = None,
+    # weather kept for backwards-compat but no longer rendered
+    weather:             dict | None = None,
 ) -> str:
 
     # Bilingual support: unwrap es/en, fallback for old flat digests
@@ -365,6 +390,32 @@ def build_pretty_html(
   </div>
 </div>"""
 
+    # ── Secondary tickers (tabbed strip) ─────────────────────────────────
+    tabbed_strip_html = ""
+    if secondary_tickers:
+        tab_btns = ""
+        panels   = ""
+        for g in secondary_tickers:
+            gid = g["group"]
+            tab_btns += (
+                f'<button class="mkt-tab-btn" data-group="{gid}"'
+                f' onclick="setMktTab(\'{gid}\')">{g["label"]}</button>'
+            )
+            items = ""
+            for t in g["tickers"]:
+                chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
+                items += f"""
+        <div class="tick-item">
+          <span class="tick-label">{t['label']}</span>
+          <span class="tick-val">{t['value']}</span>
+          <span class="{chg_cls}">{t['change']}</span>
+        </div>"""
+            panels += f'\n    <div class="mkt-panel" id="mkt-{gid}">{items}\n    </div>'
+        tabbed_strip_html = f"""
+  <div class="mkt-strip">
+    <div class="mkt-tab-nav">{tab_btns}</div>{panels}
+  </div>"""
+
     # ── Wordcloud ─────────────────────────────────────────────────────────
     wordcloud_html = ""
     if wordcloud_filename:
@@ -408,12 +459,7 @@ def build_pretty_html(
     </div>
   </div>
 
-  <div class="weather">
-    <span class="weather-city">{weather['city']}</span>
-    <span class="weather-temp">{weather['high_low']}</span>
-    <span class="weather-humidity">{weather['humidity']}</span>
-    <span class="weather-desc">{weather['desc']}</span>
-  </div>
+  {tabbed_strip_html}
 
   <div class="editor-note">
     <div class="lang-es"><p>{digest_es.get('editor_note','')}</p></div>

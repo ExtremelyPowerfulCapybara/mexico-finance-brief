@@ -104,17 +104,40 @@ def _ticker(tickers: list[dict]) -> str:
 </table>"""
 
 
-def _weather(w: dict) -> str:
+def _secondary_dashboard(groups: list[dict] | None) -> str:
+    """3-column Gmail-safe table: Equities | Commodities | Crypto."""
+    if not groups:
+        return ""
+
+    accent_map = {"eq": "#a8c8a0", "co": "#d4b87a", "cr": "#b49ed4"}
+
+    cols = ""
+    for i, g in enumerate(groups):
+        accent      = accent_map.get(g["group"], "#888888")
+        left_border = "border-left:1px solid #2a2a2a; padding-left:14px;" if i > 0 else "padding-left:0;"
+
+        rows = ""
+        for t in g["tickers"]:
+            chg_color = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#777777")
+            rows += f"""
+              <tr>
+                <td style="font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:#555555; padding-bottom:5px; white-space:nowrap;">{t['label']}</td>
+                <td align="right" style="font-family:{FONT_SANS}; font-size:10.5px; color:#d4cfc8; padding-bottom:5px; padding-left:8px; white-space:nowrap;">{t['value']} <span style="color:{chg_color}; font-size:8.5px;">{t['change']}</span></td>
+              </tr>"""
+
+        cols += f"""
+          <td style="width:33%; vertical-align:top; {left_border}">
+            <p style="margin:0 0 8px 0; font-family:{FONT_SANS}; font-size:7px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:{accent}; padding-bottom:5px; border-bottom:1px solid #2a2a2a;">{g['label']}</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">{rows}
+            </table>
+          </td>"""
+
     return f"""
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK}; margin-top:3px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK}; border-top:1px solid #2a2a2a;">
   <tr>
-    <td style="padding:10px 48px;">
+    <td style="padding:12px 32px;">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td style="font-family:{FONT_SANS}; font-size:11px; font-weight:bold; color:#f5f2ed; white-space:nowrap;">{w['city']}</td>
-          <td style="font-family:{FONT_SANS}; font-size:11px; color:#cccccc; padding-left:16px; white-space:nowrap;">{w['high_low']}</td>
-          <td style="font-family:{FONT_SANS}; font-size:11px; color:#cccccc; padding-left:16px; white-space:nowrap;">{w['humidity']}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; font-style:italic;">{w['desc']}</td>
+        <tr>{cols}
         </tr>
       </table>
     </td>
@@ -301,12 +324,14 @@ def build_html(
     digest:             dict,
     tickers:            list[dict],
     currency:           dict,
-    weather:            dict,
     week_stories:       list[dict],
     issue_number:       int = 1,
     is_friday:          bool = False,
     wordcloud_filename: str | None = None,
     author:             str = "",
+    secondary_tickers:  list[dict] | None = None,
+    # weather kept for backwards-compat but no longer rendered
+    weather:            dict | None = None,
 ) -> str:
 
     stories_html = ""
@@ -360,7 +385,7 @@ def build_html(
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background:{BG_MAIN}; border:1px solid {BORDER};">
         <tr><td>{_header(issue_number)}</td></tr>
         <tr><td>{_ticker(tickers)}</td></tr>
-        <tr><td>{_weather(weather)}</td></tr>
+        <tr><td>{_secondary_dashboard(secondary_tickers)}</td></tr>
         <tr><td>{_editor_note(digest.get('editor_note', ''), author)}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_sentiment(sentiment)}</td></tr>

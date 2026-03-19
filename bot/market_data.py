@@ -5,7 +5,8 @@
 import os
 import requests
 from config import (
-    TICKER_SYMBOLS, CURRENCY_PAIRS, CURRENCY_BASES,
+    TICKER_SYMBOLS, SECONDARY_TICKER_GROUPS,
+    CURRENCY_PAIRS, CURRENCY_BASES,
     WEATHER_LAT, WEATHER_LON, WEATHER_CITY
 )
 
@@ -33,12 +34,14 @@ def fetch_tickers() -> list[dict]:
             pct_chg   = ((price - prev) / prev * 100) if prev else 0
             direction = "up" if pct_chg >= 0 else "down"
 
-            if "IBEX" in label or "DAX" in label or "Stoxx" in label:
-                val_str = f"{price:,.2f}"
-            elif label == "S&P 500":
-                val_str = f"{price:,.0f}"
+            if label == "10Y UST":
+                val_str = f"{price:.2f}%"
+            elif label in ("DXY", "VIX"):
+                val_str = f"{price:.2f}"
+            elif label == "MSCI EM":
+                val_str = f"${price:.2f}"
             else:
-                val_str = f"{price:.4f}"
+                val_str = f"{price:.2f}"
 
             chg_str = f"{'▲' if direction == 'up' else '▼'} {abs(pct_chg):.1f}%"
 
@@ -56,6 +59,72 @@ def fetch_tickers() -> list[dict]:
                 "change":    "",
                 "direction": "flat",
             })
+
+    return results
+
+
+def _fmt_secondary(label: str, group: str, price: float) -> str:
+    """Format a secondary ticker price based on its group and label."""
+    if group == "eq":
+        if "Stoxx" in label or "Nikkei" in label:
+            return f"{price:,.0f}"
+        return f"{price:,.0f}"
+    elif group == "co":
+        if label == "Wheat":
+            return f"${price / 100:.2f}"   # ZW=F quotes in cents/bu
+        if label == "Copper":
+            return f"${price:.2f}"
+        return f"${price:,.0f}"            # Gold, Brent
+    elif group == "cr":
+        if price >= 1000:
+            return f"${price:,.0f}"
+        return f"${price:.2f}"
+    return f"{price:.2f}"
+
+
+def fetch_secondary_tickers() -> list[dict]:
+    """
+    Fetches market data for secondary ticker groups (equities, commodities, crypto).
+    Returns a list of group dicts, each with 'group', 'label', and 'tickers' keys.
+    """
+    results = []
+    for group_cfg in SECONDARY_TICKER_GROUPS:
+        group_id = group_cfg["group"]
+        tickers  = []
+        for label, symbol in group_cfg["tickers"]:
+            try:
+                url     = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
+                headers = {"User-Agent": "Mozilla/5.0"}
+                data    = __import__("requests").get(url, headers=headers, timeout=8).json()
+                meta    = data["chart"]["result"][0]["meta"]
+
+                price     = meta.get("regularMarketPrice", 0)
+                prev      = meta.get("chartPreviousClose", price)
+                pct_chg   = ((price - prev) / prev * 100) if prev else 0
+                direction = "up" if pct_chg >= 0 else "down"
+                val_str   = _fmt_secondary(label, group_id, price)
+                chg_str   = f"{'▲' if direction == 'up' else '▼'} {abs(pct_chg):.1f}%"
+
+                tickers.append({
+                    "label":     label,
+                    "value":     val_str,
+                    "change":    chg_str,
+                    "direction": direction,
+                })
+            except Exception as e:
+                print(f"  [market] Failed secondary {label}: {e}")
+                tickers.append({
+                    "label":     label,
+                    "value":     "—",
+                    "change":    "",
+                    "direction": "flat",
+                })
+
+        results.append({
+            "group":   group_id,
+            "label":   group_cfg["label"],
+            "tickers": tickers,
+        })
 
     return results
 

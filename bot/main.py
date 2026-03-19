@@ -6,7 +6,7 @@ import os
 import random
 from fetcher     import fetch_news
 from summarizer  import summarize_news
-from market_data import fetch_tickers, fetch_currency_table, fetch_weather
+from market_data import fetch_tickers, fetch_secondary_tickers, fetch_currency_table, fetch_weather
 from storage     import save_digest, get_week_stories, is_friday
 from renderer    import build_html, build_plain
 from delivery    import send_email
@@ -34,9 +34,10 @@ def run():
 
     # ── 1. Fetch market data (fast, no LLM needed) ──
     print("\n[1/5] Fetching market data...")
-    tickers  = fetch_tickers()
-    currency = fetch_currency_table()
-    weather  = fetch_weather()
+    tickers            = fetch_tickers()
+    secondary_tickers  = fetch_secondary_tickers()
+    currency           = fetch_currency_table()
+    weather            = fetch_weather()
 
     # -- 2+3. Fetch news + summarize (or load mock) --
     if MOCK_MODE:
@@ -79,8 +80,8 @@ def run():
     html  = build_html(
         digest             = digest_es,
         tickers            = tickers,
+        secondary_tickers  = secondary_tickers,
         currency           = currency,
-        weather            = weather,
         week_stories       = week_stories,
         issue_number       = issue_num,
         is_friday          = friday,
@@ -99,8 +100,8 @@ def run():
     save_pretty_issue(
         digest             = digest,
         tickers            = tickers,
+        secondary_tickers  = secondary_tickers,
         currency           = currency,
-        weather            = weather,
         week_stories       = week_stories,
         issue_number       = issue_num,
         is_friday          = friday,

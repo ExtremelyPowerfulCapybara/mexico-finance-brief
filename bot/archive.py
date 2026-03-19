@@ -15,12 +15,13 @@ def save_pretty_issue(
     digest:             dict,
     tickers:            list[dict],
     currency:           list[dict],
-    weather:            dict,
     week_stories:       list[dict],
     issue_number:       int,
     is_friday:          bool = False,
     wordcloud_filename: str | None = None,
     author:             str = "",
+    secondary_tickers:  list[dict] | None = None,
+    weather:            dict | None = None,
 ) -> str:
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
     today    = date.today().isoformat()
@@ -30,8 +31,8 @@ def save_pretty_issue(
     html = build_pretty_html(
         digest             = digest,
         tickers            = tickers,
+        secondary_tickers  = secondary_tickers,
         currency           = currency,
-        weather            = weather,
         week_stories       = week_stories,
         issue_number       = issue_number,
         is_friday          = is_friday,
