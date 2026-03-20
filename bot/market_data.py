@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────
-#  market_data.py  —  Tickers, FX, Weatherssss
+#  market_data.py  —  Tickers, FX, Weather
 # ─────────────────────────────────────────────
 
 import os
@@ -66,8 +66,6 @@ def fetch_tickers() -> list[dict]:
 def _fmt_secondary(label: str, group: str, price: float) -> str:
     """Format a secondary ticker price based on its group and label."""
     if group == "eq":
-        if "Stoxx" in label or "Nikkei" in label:
-            return f"{price:,.0f}"
         return f"{price:,.0f}"
     elif group == "co":
         if label == "Wheat":
@@ -95,7 +93,7 @@ def fetch_secondary_tickers() -> list[dict]:
             try:
                 url     = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
                 headers = {"User-Agent": "Mozilla/5.0"}
-                data    = __import__("requests").get(url, headers=headers, timeout=8).json()
+                data    = requests.get(url, headers=headers, timeout=8).json()
                 meta    = data["chart"]["result"][0]["meta"]
 
                 price     = meta.get("regularMarketPrice", 0)

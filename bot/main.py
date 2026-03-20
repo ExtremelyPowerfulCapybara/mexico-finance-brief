@@ -4,6 +4,7 @@
 
 import os
 import random
+from concurrent.futures import ThreadPoolExecutor
 from fetcher     import fetch_news
 from summarizer  import summarize_news
 from market_data import fetch_tickers, fetch_secondary_tickers, fetch_currency_table, fetch_weather
@@ -13,7 +14,7 @@ from delivery    import send_email
 from archive     import save_pretty_issue
 from config      import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES, MOCK_MODE, SKIP_EMAIL
 from mock_data   import load_mock
-from wordcloud_gen import generate_wordcloud, wordcloud_as_base64
+from wordcloud_gen import generate_wordcloud
 
 
 def get_issue_number() -> int:
@@ -34,10 +35,15 @@ def run():
 
     # ── 1. Fetch market data (fast, no LLM needed) ──
     print("\n[1/5] Fetching market data...")
-    tickers            = fetch_tickers()
-    secondary_tickers  = fetch_secondary_tickers()
-    currency           = fetch_currency_table()
-    weather            = fetch_weather()
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        fut_tickers   = pool.submit(fetch_tickers)
+        fut_secondary = pool.submit(fetch_secondary_tickers)
+        fut_currency  = pool.submit(fetch_currency_table)
+        fut_weather   = pool.submit(fetch_weather)
+        tickers           = fut_tickers.result()
+        secondary_tickers = fut_secondary.result()
+        currency          = fut_currency.result()
+        weather           = fut_weather.result()
 
     # -- 2+3. Fetch news + summarize (or load mock) --
     if MOCK_MODE:

@@ -10,13 +10,14 @@
 #  lang-en blocks hidden until toggled.
 # ─────────────────────────────────────────────
 
+import locale
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
 from config import GITHUB_PAGES_URL, ASSET_BASE_URL
 
 try:
     locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
-except:
+except Exception:
     pass
 
 CSS = """
@@ -248,7 +249,7 @@ def build_pretty_html(
     # ── Ticker (language-neutral) ─────────────────────────────────────────
     tick_items = ""
     if not tickers:
-        for label in ["EUR/USD", "IBEX 35", "Euro Stoxx", "DAX"]:
+        for label in ["DXY", "10Y UST", "VIX", "MSCI EM"]:
             tick_items += f"""
       <div class="tick-item">
         <span class="tick-label">{label}</span>

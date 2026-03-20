@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────
 #  renderer.py  —  Gmail-safe table-based layout
 #  All layout uses <table> + inline styles.
-#  No flexbox, no grid, no external CSS classes. pasidaas
+#  No flexbox, no grid, no external CSS classes.
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
@@ -74,7 +74,7 @@ def _header(issue_number: int) -> str:
 def _ticker(tickers: list[dict]) -> str:
     cells = ""
     if not tickers:
-        for label in ["SPX", "IBEX 35", "Euro Stoxx", "DAX"]:
+        for label in ["DXY", "10Y UST", "VIX", "MSCI EM"]:
             cells += f"""
         <td style="padding:10px 16px; text-align:center; vertical-align:middle;">
           <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{label}</span>
@@ -162,7 +162,7 @@ def _sentiment(s: dict) -> str:
     label_es = s.get("label_es", s.get("label", "Cauteloso"))
     context  = s.get("context_es", s.get("context", ""))
 
-    label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(label_en, label_en)
+    label_es = {"Risk-Off": "Aversión al Riesgo", "Cautious": "Cauteloso", "Risk-On": "Apetito por Riesgo"}.get(label_en, label_en)
 
     style_map = {
         "Aversión al Riesgo": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),

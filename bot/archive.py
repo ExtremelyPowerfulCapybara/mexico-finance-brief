@@ -74,6 +74,10 @@ def _load_all_digests() -> list[dict]:
         label_es = sentiment.get("label_es", sentiment.get("label", "Cautious"))
         label_en = sentiment.get("label_en", sentiment.get("label", "Cautious"))
 
+        text_parts = [digest_es.get("editor_note", ""), headline]
+        for s in stories:
+            text_parts += [s.get("headline", ""), s.get("body", ""), s.get("source", ""), s.get("tag", "")]
+
         entries.append({
             "date":        date_str,
             "label":       label_en,
@@ -81,6 +85,7 @@ def _load_all_digests() -> list[dict]:
             "position":    int(sentiment.get("position", 50)),
             "story_count": len(stories),
             "headline":    headline,
+            "search_text": " ".join(text_parts).lower(),
         })
 
     return entries
@@ -89,7 +94,8 @@ def _load_all_digests() -> list[dict]:
 def rebuild_index() -> None:
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
 
-    digest_data = _load_all_digests()
+    digest_data    = _load_all_digests()
+    digest_by_date = {d["date"]: d for d in digest_data}
 
     chart_dates    = [d["date"]        for d in digest_data]
     chart_position = [d["position"]    for d in digest_data]
@@ -116,23 +122,11 @@ def rebuild_index() -> None:
             label = issue_date_str
 
         issue_num   = len(issues) - i
-        digest_path = os.path.join(DIGEST_DIR, f"{issue_date_str}.json")
-        headline    = ""
-        label_en    = ""
-        label_es    = ""
-        story_count = 0
-
-        if os.path.exists(digest_path):
-            with open(digest_path, encoding="utf-8") as f:
-                data = json.load(f)
-            digest_obj  = data.get("digest", {})
-            digest_es   = digest_obj.get("es", digest_obj)
-            stories     = digest_es.get("stories", [])
-            headline    = stories[0].get("headline", "") if stories else ""
-            sentiment   = digest_es.get("sentiment", {})
-            label_en    = sentiment.get("label_en", sentiment.get("label", ""))
-            label_es    = sentiment.get("label_es", sentiment.get("label", ""))
-            story_count = len(stories)
+        d           = digest_by_date.get(issue_date_str, {})
+        headline    = d.get("headline", "")
+        label_en    = d.get("label", "")
+        label_es    = d.get("label_es", "")
+        story_count = d.get("story_count", 0)
 
         sent_color = {"Risk-Off": "#b84a3a", "Cautious": "#9a6a1a", "Risk-On": "#4a9e6a"}.get(label_en, "#aab4bc")
         sent_pill  = f'<span style="font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:{sent_color}; padding:3px 10px; border:1px solid {sent_color}; border-radius:20px;">{label_es}</span>' if label_es else ""
@@ -147,25 +141,15 @@ def rebuild_index() -> None:
       <div style="font-family:Georgia,serif; font-size:17px; font-weight:700; color:#1a1a1a; line-height:1.35;">{headline or "View issue &rarr;"}</div>
     </a>"""
 
-    search_index = []
-    for d in digest_data:
-        digest_path = os.path.join(DIGEST_DIR, f"{d['date']}.json")
-        if not os.path.exists(digest_path):
-            continue
-        with open(digest_path, encoding="utf-8") as f:
-            data = json.load(f)
-        digest_obj = data.get("digest", {})
-        digest_es  = digest_obj.get("es", digest_obj)
-        stories    = digest_es.get("stories", [])
-        text_parts = [digest_es.get("editor_note", ""), d["headline"]]
-        for s in stories:
-            text_parts += [s.get("headline",""), s.get("body",""), s.get("source",""), s.get("tag","")]
-        search_index.append({
+    search_index = [
+        {
             "date":     d["date"],
             "filename": f"{d['date']}.html",
-            "text":     " ".join(text_parts).lower(),
+            "text":     d["search_text"],
             "label":    d["label"],
-        })
+        }
+        for d in digest_data
+    ]
 
     search_index_js = json.dumps(search_index)
     dates_js    = json.dumps(chart_dates)

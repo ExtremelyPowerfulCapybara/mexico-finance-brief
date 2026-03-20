@@ -15,9 +15,10 @@ def summarize_news(articles: list[dict]) -> dict:
     - "es": { editor_note, sentiment, stories, quote }  <- Spanish (primary)
     - "en": { editor_note, sentiment, stories, quote }  <- English translation
     """
-    news_text = ""
+    parts = []
     for i, a in enumerate(articles, 1):
-        news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n"
+        parts.append(f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n")
+    news_text = "".join(parts)
 
     prompt = f"""Eres un editor de noticias financieras produciendo un briefing matutino diario para una audiencia hispanohablante sofisticada. Voz: directa, seca, ocasionalmente sardónica — como un editor de mercados veterano que ha visto cada ciclo y encuentra el actual tanto alarmante como vagamente entretenido.
 
