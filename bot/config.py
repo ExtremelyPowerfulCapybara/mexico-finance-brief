@@ -115,6 +115,16 @@ NEWS_DOMAINS = [
 ]
 NEWS_DOMAINS_STR = ",".join(NEWS_DOMAINS)
 
+# ── Domain blocklist ──────────────────────────
+# URLs whose domain matches any entry here are dropped before scraping.
+# Use this to quickly suppress low-signal or consistently broken sources
+# without touching the NewsAPI allowlist above.
+# All entries should be lowercase without "www." prefix.
+NEWS_DOMAIN_BLOCKLIST: set[str] = {
+    # Add domains here as needed, e.g.:
+    # "example-aggregator.com",
+}
+
 # ── Market tickers (Yahoo Finance symbols) ────
 # Main ticker bar: global macro conditions
 TICKER_SYMBOLS = [
@@ -173,11 +183,6 @@ MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
 
 # Skip email delivery (preview/archive only).
 SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
-
-# ── Weather (Open-Meteo, no API key needed) ───
-WEATHER_LAT  = 40.4168
-WEATHER_LON  = -3.7038
-WEATHER_CITY = "Madrid"
 
 # ── Storage paths ─────────────────────────────
 # Paths are relative to the repo root, not bot/

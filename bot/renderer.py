@@ -330,8 +330,6 @@ def build_html(
     wordcloud_filename: str | None = None,
     author:             str = "",
     secondary_tickers:  list[dict] | None = None,
-    # weather kept for backwards-compat but no longer rendered
-    weather:            dict | None = None,
 ) -> str:
 
     stories_html = ""

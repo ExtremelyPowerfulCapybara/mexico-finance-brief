@@ -8,14 +8,13 @@ from datetime import date, timedelta
 from config import DIGEST_DIR, ARCHIVE_DIR
 
 
-def save_digest(digest: dict, market: dict, weather: dict) -> None:
+def save_digest(digest: dict, market: dict) -> None:
     os.makedirs(DIGEST_DIR, exist_ok=True)
     today = date.today().isoformat()
     payload = {
-        "date":    today,
-        "digest":  digest,
-        "market":  market,
-        "weather": weather,
+        "date":   today,
+        "digest": digest,
+        "market": market,
     }
     path = os.path.join(DIGEST_DIR, f"{today}.json")
     with open(path, "w", encoding="utf-8") as f:

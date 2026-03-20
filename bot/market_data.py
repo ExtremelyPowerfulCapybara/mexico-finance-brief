@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────
-#  market_data.py  —  Tickers, FX, Weather
+#  market_data.py  —  Tickers, FX
 # ─────────────────────────────────────────────
 
 import os
@@ -7,7 +7,6 @@ import requests
 from config import (
     TICKER_SYMBOLS, SECONDARY_TICKER_GROUPS,
     CURRENCY_PAIRS, CURRENCY_BASES,
-    WEATHER_LAT, WEATHER_LON, WEATHER_CITY
 )
 
 
@@ -264,56 +263,3 @@ def fetch_currency_table() -> dict:
     return {"bases": CURRENCY_BASES, "matrix": matrix}
 
 
-# ── Weather ───────────────────────────────────
-
-def fetch_weather() -> dict:
-    """
-    Fetches current weather from Open-Meteo (no API key needed).
-    """
-    try:
-        url = (
-            f"https://api.open-meteo.com/v1/forecast"
-            f"?latitude={WEATHER_LAT}&longitude={WEATHER_LON}"
-            f"&current=temperature_2m,relative_humidity_2m,weather_code"
-            f"&daily=temperature_2m_max,temperature_2m_min"
-            f"&timezone=Europe/Madrid&forecast_days=1"
-        )
-        data    = requests.get(url, timeout=8).json()
-        current = data["current"]
-        daily   = data["daily"]
-
-        temp     = round(current["temperature_2m"])
-        humidity = current["relative_humidity_2m"]
-        code     = current["weather_code"]
-        temp_max = round(daily["temperature_2m_max"][0])
-        temp_min = round(daily["temperature_2m_min"][0])
-        desc     = _weather_description(code)
-
-        return {
-            "city":     WEATHER_CITY,
-            "temp":     f"{temp}°C",
-            "high_low": f"{temp_max}°C / {temp_min}°C",
-            "humidity": f"Humedad {humidity}%",
-            "desc":     desc,
-        }
-    except Exception as e:
-        print(f"  [weather] Failed: {e}")
-        return {
-            "city":     WEATHER_CITY,
-            "temp":     "—",
-            "high_low": "—",
-            "humidity": "—",
-            "desc":     "Weather unavailable",
-        }
-
-
-def _weather_description(code: int) -> str:
-    if code == 0:               return "Cielo despejado"
-    if code in (1, 2, 3):       return "Parcialmente nublado"
-    if code in (45, 48):        return "Niebla"
-    if code in (51, 53, 55):    return "Llovizna"
-    if code in (61, 63, 65):    return "Lluvia"
-    if code in (71, 73, 75):    return "Nieve"
-    if code in (80, 81, 82):    return "Chubascos"
-    if code in (95, 96, 99):    return "Tormenta"
-    return "Condiciones variables"

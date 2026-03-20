@@ -7,7 +7,7 @@ import random
 from concurrent.futures import ThreadPoolExecutor
 from fetcher     import fetch_news
 from summarizer  import summarize_news
-from market_data import fetch_tickers, fetch_secondary_tickers, fetch_currency_table, fetch_weather
+from market_data import fetch_tickers, fetch_secondary_tickers, fetch_currency_table
 from storage     import save_digest, get_week_stories, is_friday
 from renderer    import build_html, build_plain
 from delivery    import send_email
@@ -35,15 +35,13 @@ def run():
 
     # ── 1. Fetch market data (fast, no LLM needed) ──
     print("\n[1/5] Fetching market data...")
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=3) as pool:
         fut_tickers   = pool.submit(fetch_tickers)
         fut_secondary = pool.submit(fetch_secondary_tickers)
         fut_currency  = pool.submit(fetch_currency_table)
-        fut_weather   = pool.submit(fetch_weather)
         tickers           = fut_tickers.result()
         secondary_tickers = fut_secondary.result()
         currency          = fut_currency.result()
-        weather           = fut_weather.result()
 
     # -- 2+3. Fetch news + summarize (or load mock) --
     if MOCK_MODE:
@@ -65,7 +63,7 @@ def run():
 
     # -- 4. Save digest to disk --
     print("\n[4/5] Saving digest...")
-    save_digest(digest, {"tickers": tickers, "currency": currency}, weather)
+    save_digest(digest, {"tickers": tickers, "currency": currency})
 
     # ── 5. Build and send email ─────────────────────
     print("\n[5/5] Building and sending email...")
