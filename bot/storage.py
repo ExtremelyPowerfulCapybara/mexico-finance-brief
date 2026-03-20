@@ -73,5 +73,25 @@ def get_week_stories() -> list[dict]:
     return stories
 
 
+def get_recent_urls(days: int = 5) -> set[str]:
+    """
+    Returns all article URLs that appeared in the last N digests.
+    Used by the fetcher to skip stories already covered this week.
+    """
+    urls  = set()
+    today = date.today()
+    for i in range(1, days + 1):
+        data = load_digest((today - timedelta(days=i)).isoformat())
+        if not data:
+            continue
+        digest_es = data.get("digest", {})
+        digest_es = digest_es.get("es", digest_es)
+        for story in digest_es.get("stories", []):
+            url = story.get("url", "")
+            if url:
+                urls.add(url)
+    return urls
+
+
 def is_friday() -> bool:
     return date.today().weekday() == 4

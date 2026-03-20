@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from fetcher     import fetch_news
 from summarizer  import summarize_news
 from market_data import fetch_tickers, fetch_secondary_tickers, fetch_currency_table
-from storage     import save_digest, get_week_stories, is_friday
+from storage     import save_digest, get_week_stories, get_recent_urls, is_friday
 from renderer    import build_html, build_plain
 from delivery    import send_email
 from archive     import save_pretty_issue
@@ -51,7 +51,9 @@ def run():
         digest   = mock["digest"]
     else:
         print("\n[2/5] Fetching news articles...")
-        articles = fetch_news()
+        prior_urls = get_recent_urls(days=5)
+        print(f"  [dedup] Excluding {len(prior_urls)} URLs seen in the last 5 days")
+        articles = fetch_news(prior_urls=prior_urls)
         if not articles:
             print("  No articles found. Check your NewsAPI key or topics.")
             return

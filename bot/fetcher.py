@@ -12,8 +12,8 @@ from config import (
 )
 
 
-def fetch_news() -> list[dict]:
-    seen_urls    = set()
+def fetch_news(prior_urls: set[str] | None = None) -> list[dict]:
+    seen_urls    = set(prior_urls) if prior_urls else set()
     all_articles = []
 
     for topic in TOPICS:
