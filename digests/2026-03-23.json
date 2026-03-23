@@ -1,0 +1,598 @@
+{
+  "date": "2026-03-23",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el estrecho de Ormuz lleva tres semanas efectivamente cerrado, el Brent cotiza a 112 dólares y Washington sigue sin tener claro qué quiere conseguir en Medio Oriente — lo cual, técnicamente, es la peor combinación posible para cualquier cosa que cueste energía. Los mercados han dejado de descontar riesgo geopolítico y han empezado a descontar improvisación institucional, que es un activo bastante más difícil de cubrir.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El cierre del estrecho de Ormuz, el Brent en 112 dólares, el VIX cerca de 27 y cuatro semanas consecutivas de caídas en el S&P 500 configuran un entorno de aversión al riesgo pronunciada impulsada tanto por geopolítica como por incertidumbre estratégica en Washington.",
+        "context_en": "The closure of the Strait of Hormuz, Brent at $112, the VIX near 27, and four consecutive weeks of S&P 500 losses paint a sharply risk-off picture driven by geopolitics and Washington's strategic incoherence."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Conflicto en Medio Oriente: Ormuz cerrado tres semanas, Brent en 112 dólares y Washington sin estrategia clara",
+          "body": "El estrecho de Ormuz, por el que transita el 20% del suministro mundial de petróleo, lleva casi tres semanas bloqueado por la actividad militar iraní, llevando el crudo Brent a 112 dólares por barril —más de 35 dólares por encima del nivel de hace un año. El S&P 500 acumula cuatro semanas consecutivas de pérdidas con una caída del 1.5% el viernes, mientras el VIX roza 27 puntos, señal de un mercado en régimen de alta volatilidad. Lo que inquieta a los mercados no es solo el riesgo bélico, sino la contradicción abierta entre señales de desescalada y filtraciones del Pentágono que contemplan tropas terrestres en Irán: Washington no está conduciendo el conflicto, está reaccionando a él.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/03/21/eu-da-palos-de-ciego-la-guerra-con-iran/",
+          "tag": "Energía"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Caso $LIBRA: el lobista Novelli construyó una red offshore en Delaware, BVI, Miami y Panamá con un presunto memo de pagos por 5 millones de dólares",
+          "body": "Mauricio Novelli, nexo entre el presidente argentino Javier Milei y el promotor de $LIBRA Hayden Davis, operó una arquitectura financiera offshore que incluye sociedades en Delaware y las Islas Vírgenes Británicas, cuentas en el Apollo Bank de Miami y conexiones en Panamá y las Islas Caimán, según datos recuperados de su teléfono por peritos del Ministerio Público Fiscal. En el dispositivo también se encontró un presunto memo que estipulaba pagos por 5 millones de dólares, y al menos dos fechas de notificaciones bancarias coinciden con momentos clave de la investigación. La misma red operativa estuvo vinculada a $Vulcano, otro token que colapsó con pérdidas reportadas superiores a 285 millones de dólares según análisis de la blockchain Solana.",
+          "url": "https://www.lanacion.com.ar/politica/caso-libra-novelli-monto-un-entramado-de-sociedades-offshore-y-cuentas-bancarias-en-paraisos-nid22032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "SAT cancela permisos de donativos deducibles a 336 organizaciones, entre ellas Mexicanos Primero, México Evalúa e IMCO",
+          "body": "El Servicio de Administración Tributaria retiró la autorización para emitir recibos deducibles de impuestos a 336 fundaciones y organizaciones civiles que operan en áreas de educación, salud, cultura y atención a grupos vulnerables. Entre las afectadas destacan Mexicanos Primero, México Evalúa y el Instituto Mexicano para la Competitividad (IMCO), tres de las organizaciones de análisis de política pública más influyentes del país. Las causales incluyen incumplimiento de la Miscelánea Fiscal, falta de declaraciones informativas y cancelación del RFC, lo que en la práctica interrumpe su capacidad de captar financiamiento privado deducible.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/21/sat-se-pone-vivo-cancela-permisos-a-336-organizaciones-para-recibir-donativos-deducibles-en-2026/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "India lanza genéricos de semaglutida desde 14 dólares al mes, abriendo el primer gran mercado post-patente de Ozempic",
+          "body": "Natco Pharma planea comercializar una inyección de semaglutida —el principio activo de Ozempic y Wegovy de Novo Nordisk— a 1.290 rupias mensuales (14 dólares), frente a los aproximadamente 199 dólares que cuesta en Estados Unidos. Al menos 12 grandes farmacéuticas y cerca de 42 fabricantes en total preparan versiones genéricas en India, el primer gran mercado en experimentar la pérdida de exclusividad de la molécula. El caso es observado de cerca por la industria dado que Novo Nordisk enfrenta vencimientos de patente próximos en China, Brasil y Turquía, mercados donde la guerra de precios podría erosionar significativamente sus ingresos.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/21/copias-de-ozempic-se-venden-a-14-dolares-india-lanza-genericos-de-semaglutida-tras-expirar-la-patente/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Asimetría fiscal en Argentina: los futuros de granos tributan hasta 35% mientras Bitcoin paga solo 15%",
+          "body": "Un análisis tributario revela que los instrumentos derivados sobre granos —futuros y opciones de soja, maíz y trigo— quedan excluidos del artículo 98 de la Ley de Impuesto a las Ganancias, que fija una alícuota cedular del 15% para acciones, bonos y monedas digitales incluyendo criptoactivos. En la práctica, un productor agropecuario que cubre su precio en mercados a término puede tributar hasta el 35% con restricciones adicionales para compensar pérdidas, mientras que una ganancia equivalente en Bitcoin tributa al 15%. La reforma es urgente: la asimetría desincentiva la gestión de riesgo en el sector que genera la mayor parte de las divisas del país.",
+          "url": "https://www.lanacion.com.ar/economia/campo/la-trampa-de-los-derivados-granarios-el-laberinto-del-articulo-98-y-una-asimetria-impositiva-nid22032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Éxodo financiero: los dominicanos abandonan Nueva York por el costo de vida, reduciendo su población en la ciudad un 13% desde 2021",
+          "body": "Un estudio del CUNY Graduate Center revela que la población dominicana en Nueva York cayó de 761.333 a 663.169 personas entre 2021 y 2024, una reducción del 13% impulsada no por menor inmigración sino por la salida masiva hacia estados de menor costo como Pensilvania, Nueva Jersey y Florida. Los dominicanos registran el ingreso familiar medio más bajo —64.000 dólares anuales— entre los cinco grupos latinos más numerosos de la ciudad, y el alza de alquileres en el Bronx y Manhattan aceleró la dispersión. Más de 123.000 personas abandonaron el estado de Nueva York por completo en apenas tres años, con implicaciones directas sobre el peso electoral y comercial de una comunidad que históricamente ha sido protagonista en la ciudad.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/nueva-york/exodo-de-dominicanos-en-nueva-york-estudio-revela-por-que-la-poblacion-migrante-cayo-en-los-ultimos-nid22032026/",
+          "tag": "Macro"
+        }
+      ],
+      "quote": {
+        "text": "Markets can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the Strait of Hormuz has been effectively closed for three weeks, Brent is trading at $112, and Washington still has no clear idea what it wants to achieve in the Middle East — which is, technically, the worst possible combination for anything that runs on energy. Markets have stopped pricing in geopolitical risk and started pricing in institutional improvisation, which is a considerably harder asset to hedge.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El cierre del estrecho de Ormuz, el Brent en 112 dólares, el VIX cerca de 27 y cuatro semanas consecutivas de caídas en el S&P 500 configuran un entorno de aversión al riesgo pronunciada impulsada tanto por geopolítica como por incertidumbre estratégica en Washington.",
+        "context_en": "The closure of the Strait of Hormuz, Brent at $112, the VIX near 27, and four consecutive weeks of S&P 500 losses paint a sharply risk-off picture driven by geopolitics and Washington's strategic incoherence."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Middle East conflict: Hormuz closed three weeks, Brent at $112, and Washington with no clear strategy",
+          "body": "The Strait of Hormuz, through which 20% of the world's oil supply passes, has been effectively blocked by Iranian military activity for nearly three weeks, pushing Brent crude to $112 per barrel — more than $35 above year-ago levels. The S&P 500 has logged four consecutive weeks of losses, falling 1.5% on Friday, while the VIX hovers near 27, signaling a high-volatility market regime. What is unsettling markets is not just the war risk, but the open contradiction between de-escalation signals and Pentagon leaks contemplating ground troops in Iran: Washington is not driving the conflict, it is reacting to it.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/03/21/eu-da-palos-de-ciego-la-guerra-con-iran/",
+          "tag": "Energía"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "$LIBRA case: lobbyist Novelli built an offshore network in Delaware, BVI, Miami, and Panama with an alleged $5 million payment memo",
+          "body": "Mauricio Novelli, the intermediary between Argentine President Javier Milei and $LIBRA promoter Hayden Davis, operated an offshore financial architecture that includes companies in Delaware and the British Virgin Islands, accounts at Apollo Bank in Miami, and connections in Panama and the Cayman Islands, according to data recovered from his phone by federal prosecutors' forensic experts. The device also contained an alleged memo stipulating $5 million in payments, and at least two banking notification dates coincide with key moments in the investigation. The same operational network was tied to $Vulcano, another token that collapsed with reported investor losses exceeding $285 million according to Solana blockchain analysis.",
+          "url": "https://www.lanacion.com.ar/politica/caso-libra-novelli-monto-un-entramado-de-sociedades-offshore-y-cuentas-bancarias-en-paraisos-nid22032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico's SAT cancels tax-deductible donation permits for 336 organizations, including Mexicanos Primero, México Evalúa, and IMCO",
+          "body": "Mexico's Tax Administration Service revoked the authorization to issue tax-deductible receipts from 336 civil foundations and organizations operating in education, health, culture, and services to vulnerable groups. Among those affected are Mexicanos Primero, México Evalúa, and the Mexican Institute for Competitiveness (IMCO), three of the country's most influential public policy think tanks. Grounds include non-compliance with the Fiscal Miscellaneous package, failure to file mandatory informational returns, and RFC cancellations — effectively cutting off their ability to raise tax-deductible private funding.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/21/sat-se-pone-vivo-cancela-permisos-a-336-organizaciones-para-recibir-donativos-deducibles-en-2026/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "India launches semaglutide generics from $14 a month, opening the first major post-patent Ozempic market",
+          "body": "Natco Pharma plans to market a semaglutide injection — the active ingredient in Novo Nordisk's Ozempic and Wegovy — at 1,290 rupees per month ($14), compared to approximately $199 in the United States. At least 12 major pharmaceutical companies and roughly 42 manufacturers in total are preparing generic versions in India, making it the first large market to experience the molecule's loss of exclusivity. The case is being closely watched by the industry as Novo Nordisk faces upcoming patent expirations in China, Brazil, and Turkey — markets where a price war could significantly erode its revenues.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/21/copias-de-ozempic-se-venden-a-14-dolares-india-lanza-genericos-de-semaglutida-tras-expirar-la-patente/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina's fiscal asymmetry: grain futures taxed up to 35% while Bitcoin pays just 15%",
+          "body": "A tax analysis reveals that derivative instruments on grains — futures and options on soybeans, corn, and wheat — are excluded from Article 98 of Argentina's Income Tax Law, which sets a flat 15% rate for stocks, bonds, and digital currencies including crypto assets. In practice, an agricultural producer hedging prices in futures markets can be taxed up to 35% with additional restrictions on loss offsets, while an equivalent gain in Bitcoin is taxed at 15%. The reform is urgent: the asymmetry actively discourages risk management in the sector that generates the vast majority of the country's foreign exchange earnings.",
+          "url": "https://www.lanacion.com.ar/economia/campo/la-trampa-de-los-derivados-granarios-el-laberinto-del-articulo-98-y-una-asimetria-impositiva-nid22032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Financial exodus: Dominicans are leaving New York over cost of living, cutting the community's city population 13% since 2021",
+          "body": "A CUNY Graduate Center study reveals that the Dominican population in New York fell from 761,333 to 663,169 between 2021 and 2024 — a 13% drop driven not by lower immigration but by mass out-migration to lower-cost states such as Pennsylvania, New Jersey, and Florida. Dominicans record the lowest median household income — $64,000 annually — among the five largest Latino groups in the city, and rising rents in the Bronx and Manhattan have accelerated the dispersal. More than 123,000 people left New York State entirely in just three years, with direct implications for the political and commercial weight of a community that has historically been central to the city's identity.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/nueva-york/exodo-de-dominicanos-en-nueva-york-estudio-revela-por-que-la-poblacion-migrante-cayo-en-los-ultimos-nid22032026/",
+          "tag": "Macro"
+        }
+      ],
+      "quote": {
+        "text": "Markets can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "98.93",
+        "change": "▼ 0.7%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.34%",
+        "change": "▼ 1.3%",
+        "direction": "down",
+        "chg_1w": "▲ 3.2%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "24.20",
+        "change": "▼ 9.6%",
+        "direction": "down",
+        "chg_1w": "▲ 8.2%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$57.61",
+        "change": "▲ 3.5%",
+        "direction": "up",
+        "chg_1w": "▼ 1.9%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05645",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.18%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2950",
+            "chg_1d": {
+              "text": "▲ 0.25%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04854",
+            "chg_1d": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.28%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3884",
+            "chg_1d": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.26%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0773",
+            "chg_1d": {
+              "text": "▼ 0.22%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04194",
+            "chg_1d": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.25%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.94",
+            "chg_1d": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.62%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.7157",
+            "chg_1d": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.18%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.2262",
+            "chg_1d": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.85999",
+            "chg_1d": {
+              "text": "▼ 0.43%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.10%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8805",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3688",
+            "chg_1d": {
+              "text": "▼ 0.35%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74300",
+            "chg_1d": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.07%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "158.40",
+            "chg_1d": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.44%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3898",
+            "chg_1d": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19134",
+            "chg_1d": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16455",
+            "chg_1d": {
+              "text": "▼ 0.55%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.97%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3165",
+            "chg_1d": {
+              "text": "▼ 0.40%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.94%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2619",
+            "chg_1d": {
+              "text": "▼ 0.47%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14217",
+            "chg_1d": {
+              "text": "▼ 0.37%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.94%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.31",
+            "chg_1d": {
+              "text": "▲ 0.18%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5998",
+            "chg_1d": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.16280",
+            "chg_1d": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.0770",
+            "chg_1d": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.98%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "8.0006",
+            "chg_1d": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.5916",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.15%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86396",
+            "chg_1d": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "184.19",
+            "chg_1d": {
+              "text": "▲ 0.74%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.67%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5748",
+            "chg_1d": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.27%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14534",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.09%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7596",
+            "chg_1d": {
+              "text": "▲ 0.40%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.95%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12499",
+            "chg_1d": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.1989",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10799",
+            "chg_1d": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.00%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.02",
+            "chg_1d": {
+              "text": "▲ 0.58%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.64%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
