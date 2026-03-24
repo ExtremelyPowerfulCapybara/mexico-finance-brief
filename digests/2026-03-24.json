@@ -1,0 +1,612 @@
+{
+  "date": "2026-03-24",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el petróleo cayó más de un 13% en una sola jornada después de que Trump aplazara cinco días su amenaza de atacar instalaciones eléctricas iraníes — el tipo de alivio que dura exactamente hasta que deja de durar. Los mercados de renta variable celebraron con subidas en Europa y futuros al alza en Wall Street, mientras los analistas se preguntan en voz baja si una pausa diplomática con contradicciones desde Teherán cuenta realmente como resolución. Mientras tanto, el acuerdo UE-Mercosur entra en aplicación provisional el 1 de mayo, y las negociaciones del TMEC 2.0 avanzan con una pregunta estructural sin respuesta: ¿quién ratifica qué?",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 48,
+        "context_es": "El rebote en bolsas y la caída del petróleo generan alivio, pero la tregua iraní es frágil, las contradicciones diplomáticas son inmediatas y los riesgos estructurales del conflicto no han desaparecido.",
+        "context_en": "Equity markets and falling oil prices provide relief, but the Iran truce is fragile, diplomatic contradictions are immediate, and the structural risks of the conflict have not gone away."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "El petróleo cae más de 13% tras la pausa de Trump en amenazas contra Irán, pero Teherán niega contactos con Washington",
+          "body": "Trump anunció en Truth Social que aplazará cinco días cualquier ataque a centrales eléctricas iraníes tras 'conversaciones muy positivas', lo que derrumbó el WTI un 7,52% a US$90,84 y el Brent un 6,55% a US$104,84, mientras las bolsas europeas y los futuros de Wall Street rebotaban con fuerza. El problema es que minutos después dos agencias semioficiales iraníes negaron cualquier comunicación con Washington, convirtiendo la pausa en un ejercicio de fe. El conflicto, que arrancó el 28 de febrero con ataques estadounidenses e israelíes contra Irán, ya redujo a casi cero el tránsito por el estrecho de Ormuz — punto de paso del 20% del petróleo y gas mundial — y provocó el cierre de pozos en Irak y Kuwait por saturación de almacenamiento.",
+          "url": "https://www.lanacion.com.ar/el-mundo/el-petroleo-baja-un-13-tras-el-anuncio-de-donald-trump-de-suspender-los-ataques-sobre-iran-por-cinco-nid23032026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "El acuerdo UE-Mercosur entrará en vigencia provisional el 1 de mayo; Argentina fue el primer país en completar sus trámites internos",
+          "body": "La Comisión Europea confirmó la aplicación provisional del tratado a partir del 1 de mayo, lo que abre el acceso preferencial a un mercado de más de 450 millones de consumidores europeos sin esperar la ratificación de todos los parlamentos nacionales de la UE. El canciller Pablo Quirno destacó que Argentina fue el primer miembro del bloque en cerrar sus procedimientos internos, sellados con la promulgación de la Ley N.º 27.800 tras la aprobación del Senado a fines de febrero. Las cuotas de exportación acordadas — relevantes para sectores agropecuarios e industriales — comenzarán a operar de inmediato.",
+          "url": "https://www.lanacion.com.ar/politica/el-acuerdo-entre-la-ue-y-el-mercosur-se-aplicara-provisionalmente-desde-el-1-de-mayo-nid23032026/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "TMEC 2.0: el Congreso de EE.UU., la influencia china y los minerales críticos, los tres ejes que definirán el nuevo tratado",
+          "body": "Con las negociaciones entre México y Estados Unidos en marcha, el principal nudo es si el Congreso estadounidense deberá ratificar los acuerdos alcanzados — algo que México quiere evitar para no repetir los cambios de última hora que históricamente han desnaturalizado los textos negociados. Trump tampoco quiere la intervención legislativa, especialmente porque anticipa perder la mayoría en la Cámara Baja en enero, aunque cualquier acuerdo sin ratificación tendrá menor permanencia institucional. El tercer eje es la negociación separada de minerales críticos — que Washington impulsa y Canadá rechaza por ser su principal carta de presión — en un tratado que, en la práctica, tendrá mucho menos de trilateral que su predecesor.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jorge-molina-larrondo/2026/03/23/tmec-20-tres-variables-muy-importantes/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Al menos 15 provincias argentinas enfrentan conflictos salariales docentes mientras su frente fiscal se deteriora",
+          "body": "Los gobernadores argentinos admiten en privado que sus cuentas ya no cierran: la recaudación propia es débil, los giros nacionales cayeron y el superávit provincial acumulado durante 2024 se habría licuado en la mayoría de los distritos. Los maestros exigen aumentos que los mandatarios dicen no poder financiar, y la palabra 'blindaje' comenzó a circular en las conversaciones con la Casa Rosada como eufemismo para pedir que Nación ceda fondos — algo que el ministro Caputo, quien sostuvo superávit primario del 0,4% del PIB en el primer bimestre, no tiene incentivos para conceder. La apuesta oficial es que el ingreso de la primera cuota del impuesto a las Ganancias corporativas en mayo aporte alivio transitorio, aunque un ministro provincial lo resumió con precisión: 'Con eso no alcanza, si no hay reactivación volvemos a las bajas'.",
+          "url": "https://www.lanacion.com.ar/politica/en-al-menos-15-provincias-los-gobernadores-enfrentan-conflictos-salariales-y-se-les-complica-el-nid22032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Banca mexicana desbloquea temas con Banxico y refuerza coordinación antilawado con autoridades de EE.UU. en la Convención de la ABM",
+          "body": "La edición 89 de la Convención Bancaria dejó como resultado práctico la destraba de varios asuntos pendientes con el banco central y un mensaje de la Secretaría de Hacienda de disposición para trabajar en conjunto con el sector en el incremento del financiamiento a empresas. En paralelo, el Comité de Compliance sostuvo una de las reuniones más esperadas del evento con representantes del Tesoro, OFAC, FinCEN e IRS acreditados en México, donde se presentó la plataforma de intercambio de información sobre lavado de dinero — con proveedor ya elegido — que la banca pondrá en marcha próximamente. El encuentro ocurre en un contexto de mayor escrutinio regulatorio transfronterizo tras las tensiones del año previo.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/03/23/detras-de-la-convencion-bancaria/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Bahco cierra su planta en Santa Fe tras 140 años: 40 operarios pierden el empleo y la producción se traslada a Europa",
+          "body": "SNA Europe Argentina, filial de Snap-on Incorporated y propietaria de la marca Bahco, comunicó el cese de fabricación en su planta de Santo Tomé, Santa Fe, alegando la necesidad de 'adaptar su modelo operativo al actual contexto económico regional'. Los 40 operarios afectados ya fueron notificados, y la empresa garantizó el cumplimiento de las obligaciones legales correspondientes. La planta, que estaba por celebrar su 140 aniversario y es conocida por haber inventado la llave ajustable en 1892, concentrará en adelante solo funciones comerciales y de distribución para el mercado argentino.",
+          "url": "https://www.lanacion.com.ar/economia/un-gigante-de-las-herramientas-deja-de-producir-en-santa-fe-nid23032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Apple alerta sobre spyware que compromete entre 220 y 270 millones de iPhones, incluyendo billeteras de criptomonedas",
+          "body": "Apple emitió una alerta de seguridad tras identificar un software espía sofisticado capaz de acceder a mensajes, correos, ubicación y billeteras de criptomonedas en dispositivos con versiones de iOS desde 18.4 hasta 18.7, un universo estimado en hasta 270 millones de equipos. El spyware opera a través de vulnerabilidades en Safari y recursos gráficos del sistema, borra sus rastros tras extraer los datos y ya fue utilizado en campañas contra usuarios en Ucrania, Arabia Saudita, Turquía y Malasia, según investigaciones de Google, Lookout e iVerify. Apple recomienda actualizar de inmediato al sistema operativo más reciente y activar el 'modo de bloqueo' en perfiles de riesgo elevado.",
+          "url": "https://www.lanacion.com.ar/tecnologia/apple-advierte-sobre-el-software-espia-que-puede-infiltrarse-en-los-iphones-y-robar-datos-de-los-nid23032026/",
+          "tag": "Mercados"
+        }
+      ],
+      "quote": {
+        "text": "Oil prices have gone up and down, but the geopolitical risk premium never fully disappears — it just goes into hibernation.",
+        "attribution": "Daniel Yergin, The New Map: Energy, Climate, and the Clash of Nations, 2021"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, oil dropped more than 13% in a single session after Trump delayed his threat to strike Iranian power plants by five days — the kind of relief that lasts exactly until it doesn't. Equity markets celebrated with gains across Europe and Wall Street futures, while analysts quietly wonder whether a diplomatic pause riddled with contradictions from Tehran qualifies as an actual resolution. Meanwhile, the EU-Mercosur agreement enters provisional application on May 1st, and USMCA 2.0 negotiations press forward with one structural question still unanswered: who ratifies what?",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 48,
+        "context_es": "El rebote en bolsas y la caída del petróleo generan alivio, pero la tregua iraní es frágil, las contradicciones diplomáticas son inmediatas y los riesgos estructurales del conflicto no han desaparecido.",
+        "context_en": "Equity markets and falling oil prices provide relief, but the Iran truce is fragile, diplomatic contradictions are immediate, and the structural risks of the conflict have not gone away."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "Oil falls more than 13% after Trump's pause on Iran threats, but Tehran denies any contact with Washington",
+          "body": "Trump announced on Truth Social that he would delay any attack on Iranian power plants for five days following 'very positive conversations,' sending WTI down 7.52% to US$90.84 and Brent down 6.55% to US$104.84, while European equities and Wall Street futures staged a sharp rebound. The problem: minutes later, two semi-official Iranian news agencies denied any communication with Washington, turning the pause into an act of faith. The conflict, which began on February 28 with U.S. and Israeli strikes against Iran, has reduced traffic through the Strait of Hormuz — a chokepoint for 20% of global oil and gas flows — to near zero, and has forced Iraq and Kuwait to shut in wells due to storage saturation.",
+          "url": "https://www.lanacion.com.ar/el-mundo/el-petroleo-baja-un-13-tras-el-anuncio-de-donald-trump-de-suspender-los-ataques-sobre-iran-por-cinco-nid23032026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "EU-Mercosur deal to enter provisional force on May 1st; Argentina first bloc member to complete internal procedures",
+          "body": "The European Commission confirmed the treaty will apply provisionally from May 1st, opening preferential access to a market of more than 450 million European consumers without waiting for ratification by all EU national parliaments. Foreign Minister Pablo Quirno highlighted that Argentina was the first Mercosur member to close its domestic procedures, sealed with the enactment of Law No. 27,800 after Senate approval in late February. Agreed export quotas — significant for agricultural and industrial sectors — will begin operating immediately.",
+          "url": "https://www.lanacion.com.ar/politica/el-acuerdo-entre-la-ue-y-el-mercosur-se-aplicara-provisionalmente-desde-el-1-de-mayo-nid23032026/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "USMCA 2.0: Congressional ratification, Chinese influence, and critical minerals are the three axes that will define the new treaty",
+          "body": "With negotiations between Mexico and the United States underway, the central knot is whether the U.S. Congress will need to ratify whatever is agreed — something Mexico wants to avoid in order not to repeat the last-minute changes that have historically distorted negotiated texts. Trump also wants to bypass Congress, partly because he anticipates losing the House majority in January, though any deal lacking ratification will carry weaker institutional staying power. The third axis is the separate negotiation of critical minerals — which Washington is pushing and Canada rejects as one of its main leverage cards — in a treaty that will in practice be far less trilateral than its predecessor.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jorge-molina-larrondo/2026/03/23/tmec-20-tres-variables-muy-importantes/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "At least 15 Argentine provinces face teacher salary conflicts as their fiscal position deteriorates",
+          "body": "Argentine governors are privately admitting their books no longer balance: local revenue is weak, federal transfers have fallen, and the fiscal surpluses most provinces accumulated through 2024 appear to have been wiped out. Teachers are demanding wage increases that governors say they cannot afford, and the word 'shield' has begun circulating in conversations with the Casa Rosada as a euphemism for asking the federal government to cede funds — something Finance Minister Caputo, who held a 0.4% of GDP primary surplus in the first two months of the year, has no incentive to grant. The official bet is that the first installment of corporate income tax arriving in May will provide temporary relief, though one provincial economy minister put it plainly: 'That's not enough — without a real recovery, we're back to the same shortfalls.'",
+          "url": "https://www.lanacion.com.ar/politica/en-al-menos-15-provincias-los-gobernadores-enfrentan-conflictos-salariales-y-se-les-complica-el-nid22032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexican banking sector unblocks issues with Banxico and deepens anti-money laundering coordination with U.S. authorities at ABM Convention",
+          "body": "The 89th Banking Convention produced two concrete outcomes: several pending matters with the central bank were unblocked, and the Finance Ministry signaled genuine willingness to work with the sector on expanding business lending. At the same time, the Compliance Committee held one of the event's most anticipated meetings with accredited representatives from the Treasury, OFAC, FinCEN, and the IRS, during which the banks presented a forthcoming information-sharing platform on money laundering — with a provider already selected. The gathering took place amid heightened cross-border regulatory scrutiny following tensions from the previous year.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/03/23/detras-de-la-convencion-bancaria/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Bahco closes its Santa Fe plant after 140 years: 40 workers lose jobs as production moves to Europe",
+          "body": "SNA Europe Argentina, a Snap-on Incorporated subsidiary and owner of the Bahco brand, announced the shutdown of manufacturing at its Santo Tomé, Santa Fe facility, citing the need to 'adapt its operating model to the current regional economic context.' The 40 affected workers have already been notified, and the company pledged to meet all legal obligations. The plant — approaching its 140th anniversary and historically credited with inventing the adjustable wrench in 1892 — will retain only commercial and distribution functions serving the Argentine market.",
+          "url": "https://www.lanacion.com.ar/economia/un-gigante-de-las-herramientas-deja-de-producir-en-santa-fe-nid23032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Apple warns of spyware threatening between 220 and 270 million iPhones, including cryptocurrency wallets",
+          "body": "Apple issued a security alert after identifying a sophisticated spyware tool capable of accessing messages, emails, location data, and cryptocurrency wallets on devices running iOS versions 18.4 through 18.7 — an estimated universe of up to 270 million handsets. The malware exploits vulnerabilities in Safari and system graphics resources, erases its tracks after extracting data, and has already been deployed in targeted campaigns against users in Ukraine, Saudi Arabia, Turkey, and Malaysia, according to research by Google, Lookout, and iVerify. Apple recommends immediate update to the latest iOS version and urges high-risk users to enable the system's 'Lockdown Mode.'",
+          "url": "https://www.lanacion.com.ar/tecnologia/apple-advierte-sobre-el-software-espia-que-puede-infiltrarse-en-los-iphones-y-robar-datos-de-los-nid23032026/",
+          "tag": "Mercados"
+        }
+      ],
+      "quote": {
+        "text": "Oil prices have gone up and down, but the geopolitical risk premium never fully disappears — it just goes into hibernation.",
+        "attribution": "Daniel Yergin, The New Map: Energy, Climate, and the Clash of Nations, 2021"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "99.34",
+        "change": "▲ 0.4%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.38%",
+        "change": "▲ 1.2%",
+        "direction": "up",
+        "chg_1w": "▲ 2.9%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "26.52",
+        "change": "▲ 1.4%",
+        "direction": "up",
+        "chg_1w": "▲ 5.7%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$56.52",
+        "change": "▼ 1.4%",
+        "direction": "down",
+        "chg_1w": "▼ 1.8%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05612",
+            "chg_1d": {
+              "text": "▲ 0.66%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.94%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2954",
+            "chg_1d": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04840",
+            "chg_1d": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.40%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3869",
+            "chg_1d": {
+              "text": "▲ 0.80%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.82%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0771",
+            "chg_1d": {
+              "text": "▲ 0.94%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04188",
+            "chg_1d": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.24%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.91",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.02%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.8205",
+            "chg_1d": {
+              "text": "▼ 0.66%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.95%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.2637",
+            "chg_1d": {
+              "text": "▼ 0.91%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.36%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86259",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8949",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3748",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74627",
+            "chg_1d": {
+              "text": "▼ 0.51%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "158.76",
+            "chg_1d": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3855",
+            "chg_1d": {
+              "text": "▲ 0.25%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.18998",
+            "chg_1d": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.35%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16388",
+            "chg_1d": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.80%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3099",
+            "chg_1d": {
+              "text": "▲ 1.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.22%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2612",
+            "chg_1d": {
+              "text": "▲ 1.20%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.92%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14178",
+            "chg_1d": {
+              "text": "▲ 0.40%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.64%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.16",
+            "chg_1d": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.43%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.6593",
+            "chg_1d": {
+              "text": "▼ 0.38%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.42%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15930",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.1022",
+            "chg_1d": {
+              "text": "▼ 0.63%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.83%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9933",
+            "chg_1d": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.5938",
+            "chg_1d": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.89%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86515",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "184.05",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5846",
+            "chg_1d": {
+              "text": "▼ 0.79%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.82%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14503",
+            "chg_1d": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7634",
+            "chg_1d": {
+              "text": "▼ 1.04%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.24%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12511",
+            "chg_1d": {
+              "text": "▼ 0.42%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.59%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.1994",
+            "chg_1d": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10823",
+            "chg_1d": {
+              "text": "▼ 0.64%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.43%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.03",
+            "chg_1d": {
+              "text": "▼ 0.43%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
