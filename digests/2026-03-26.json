@@ -1,0 +1,598 @@
+{
+  "date": "2026-03-26",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, mientras España compara la guerra en Irán con el mayor desastre geopolítico desde Vietnam, los mercados argentinos encuentran en el mismo conflicto una excusa para rebotar 5% — la ironía de que la guerra ajena sea el catalizador doméstico de la semana no se le escapa a nadie. Por si fuera poco, China le factura a México $9,400 millones en pérdidas por sus aranceles, recordándonos que el proteccionismo siempre tiene remitente y destinatario.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 45,
+        "context_es": "Rebote táctico impulsado por señales de negociación en Medio Oriente, pero con tensiones comerciales globales y fragilidades locales que limitan el optimismo.",
+        "context_en": "A tactical bounce driven by Middle East negotiation signals, but global trade tensions and local vulnerabilities cap any sustained optimism."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "Mercados argentinos rebotan 5% y el peso toca mínimos en un mes mientras EEUU envía plan de paz a Irán",
+          "body": "El envío de un plan de 15 puntos de Washington a Teherán para poner fin a la guerra en Medio Oriente mejoró el clima global y arrastró al alza a los activos argentinos: las acciones subieron hasta 5% en Wall Street, encabezadas por IRSA (+6.4%) y BBVA (+4.4%), mientras el tipo de cambio oficial mayorista retrocedió 1.05% a $1,376.70, su nivel más bajo en un mes. El dólar CCL cedió a $1,453.16 y el blue a $1,420, con el peso acumulando una apreciación del 4.5% en lo que va del año. Analistas de Cohen Aliados Financieros advierten que la caída del tipo de cambio real y el eventual desarme del carry trade serán los focos de tensión en las próximas semanas.",
+          "url": "https://www.lanacion.com.ar/economia/dolar/mejora-el-clima-global-las-acciones-argentinas-suben-5-y-el-dolar-oficial-cae-a-minimos-en-un-mes-nid25032026/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "China dictamina que aranceles de México generan barreras comerciales y estima pérdidas por $9,400 millones",
+          "body": "El Ministerio de Comercio chino concluyó su investigación iniciada en septiembre pasado determinando que los aranceles mexicanos a productos de países sin TLC 'constituyen barreras al comercio y la inversión', con pérdidas estimadas en $9,400 millones de dólares en sectores mecánico y eléctrico. México aprobó en diciembre gravámenes de entre 5% y 50% a 1,463 productos en textiles, aluminio y plásticos, con vigencia desde el 1 de enero de 2026. Beijing no detalló aún qué medidas de represalia tomará, pero la tensión llega en vísperas de la revisión del T-MEC y en pleno escrutinio estadounidense sobre la presencia china en América del Norte.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/25/china-reclama-a-mexico-que-perdera-9-mil-mdd-por-sus-aranceles-vemos-barrera-al-comercio-e-inversion/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Sánchez advierte ante el Congreso español que la guerra contra Irán supera en gravedad a la invasión de Irak de 2003",
+          "body": "El presidente del Gobierno español Pedro Sánchez calificó el conflicto actual en Oriente Medio como 'mucho peor' que la invasión de Irak de 2003 — a la que describió como 'el mayor desastre geopolítico desde la guerra de Vietnam' con más de 300,000 muertos — y advirtió sobre riesgos globales aún mayores. Sánchez apuntó contra Netanyahu por las intenciones israelíes sobre el Líbano y caracterizó al nuevo líder supremo iraní Mojtabá como más radical que su predecesor, acusando al PP y Vox de 'contribuir con su apoyo y su silencio al desastre'. La relación con la administración Trump entró en punto crítico en paralelo, con amenazas de corte de vínculos diplomáticos en el trasfondo.",
+          "url": "https://www.lanacion.com.ar/el-mundo/sanchez-endurece-su-discurso-y-advierte-que-la-guerra-contra-iran-supera-a-la-de-irak-en-2003-nid25032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Caso $LIBRA: documentos del celular de Novelli revelan que vendía acceso exclusivo a Milei con pagos en criptomonedas",
+          "body": "Borradores y contratos extraídos por peritos del Ministerio Público Fiscal del teléfono de Mauricio Novelli exponen un esquema institucionalizado para comercializar el acceso al presidente Javier Milei y a Karina Milei mediante acuerdos confidenciales pagados en criptomonedas. Entre los vínculos documentados figuran un acuerdo con Kelsier Holdings (BVI) para ser 'socio exclusivo' del sector Web3 en Argentina, gestiones para obtener exenciones impositivas de 10 años para la fintech Cube Exchange — que firmó una carta de intención con Milei — y el cobro de un 'fee' por organizar reuniones presidenciales en el Tech Forum. Los documentos no prueban autorización presidencial, pero múltiples indicios, incluida la 'selfie' posteada por Hayden Davis con Milei, alimentan la investigación en curso.",
+          "url": "https://www.lanacion.com.ar/politica/caso-libra-mauricio-novelli-vendia-exclusividad-para-acceder-a-javier-milei-nid25032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Trump forma consejo asesor de IA con Zuckerberg, Jensen Huang y Larry Ellison para definir política tecnológica de EEUU",
+          "body": "La Casa Blanca confirmó la formación del Consejo de Asesores de Ciencia y Tecnología (PCAST) con 13 miembros iniciales, entre ellos Mark Zuckerberg (Meta), Jensen Huang (Nvidia), Larry Ellison (Oracle) y Sergey Brin (Google), copresidido por el 'zar' de IA David Sacks. El consejo, ampliable a 24 integrantes, asesorará sobre regulación de inteligencia artificial, reducción de cargas regulatorias para centros de datos y el objetivo de la Casa Blanca de asegurar el 'dominio estadounidense' en IA. La iniciativa es la expresión más concreta hasta ahora del alineamiento entre Silicon Valley y la segunda administración Trump, que la semana pasada ya presentó un plan nacional de regulación de IA.",
+          "url": "https://www.elfinanciero.com.mx/tech/2026/03/25/los-avengers-de-trump-en-ia-formara-consejo-especial-con-zuckerberg-y-ceo-de-nvidia/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Industria cervecera mexicana prevé alza de 20% en demanda por el Mundial 2026 y despliega logística de emergencia",
+          "body": "Grupo Modelo (AB InBev) y Heineken, que controlan una capacidad de producción de 136.9 millones de hectolitros anuales, anticipan un incremento de hasta 20% en la demanda de cerveza durante la Copa Mundial de Fútbol 2026. Heineken rentará 30 bodegas distribuidas entre Monterrey, Guadalajara y Ciudad de México, y reforzará puntos de venta en Oxxo y Tiendas Six; el 65% del gasto mundialista corresponde a bebidas alcohólicas según Deloitte, con una derrama estimada de 181 millones de dólares solo en consumo en hogares. El director de logística de Heineken México advirtió que obras inconclusas en las ciudades sede podrían 'trastrocar toda la logística' si no se asegura inventario anticipado.",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/03/25/mundial-2026-aumentara-venta-de-cervezas-en-mexico-en-20-por-ciento/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, while Spain compares the Iran war to the greatest geopolitical disaster since Vietnam, Argentine markets found in that same conflict a convenient excuse to bounce 5% — the irony of foreign war serving as the week's domestic catalyst is lost on no one. Meanwhile, China is billing Mexico $9.4 billion in losses over its tariffs, reminding us that protectionism always has both a sender and a recipient.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 45,
+        "context_es": "Rebote táctico impulsado por señales de negociación en Medio Oriente, pero con tensiones comerciales globales y fragilidades locales que limitan el optimismo.",
+        "context_en": "A tactical bounce driven by Middle East negotiation signals, but global trade tensions and local vulnerabilities cap any sustained optimism."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "Argentine markets bounce 5% and the peso hits one-month low as Washington sends peace plan to Iran",
+          "body": "Washington's delivery of a 15-point plan to Tehran to end the Middle East war lifted global risk appetite and dragged Argentine assets higher: stocks rose as much as 5% on Wall Street, led by IRSA (+6.4%) and BBVA (+4.4%), while the official wholesale exchange rate fell 1.05% to $1,376.70 — its lowest level in a month. The CCL dollar eased to $1,453.16 and the blue-chip rate to $1,420, with the peso having appreciated 4.5% year-to-date. Analysts at Cohen Aliados Financieros warn that the continued erosion of the real exchange rate and a potential unwind of carry trade positions will be the key pressure points in the weeks ahead.",
+          "url": "https://www.lanacion.com.ar/economia/dolar/mejora-el-clima-global-las-acciones-argentinas-suben-5-y-el-dolar-oficial-cae-a-minimos-en-un-mes-nid25032026/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "China rules Mexico's tariffs constitute trade barriers, estimates $9.4 billion in losses",
+          "body": "China's Ministry of Commerce concluded its investigation — opened last September — determining that Mexico's tariffs on goods from countries without free trade agreements 'constitute barriers to trade and investment,' estimating $9.4 billion in losses in its mechanical and electrical sectors. Mexico approved tariffs of between 5% and 50% on 1,463 products covering textiles, aluminum, and plastics, effective January 1, 2026. Beijing has not yet detailed any retaliatory measures, but the tension arrives on the eve of the T-MEC review and amid growing U.S. scrutiny of Chinese corporate presence in North America.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/25/china-reclama-a-mexico-que-perdera-9-mil-mdd-por-sus-aranceles-vemos-barrera-al-comercio-e-inversion/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Sánchez warns Spanish Congress that the war against Iran is more dangerous than the 2003 Iraq invasion",
+          "body": "Spanish Prime Minister Pedro Sánchez told Congress the current Middle East conflict is 'much worse' than the 2003 Iraq invasion — which he called 'the greatest geopolitical disaster since the Vietnam War,' with over 300,000 dead — and warned of even broader global risks. Sánchez took aim at Netanyahu over Israeli intentions toward Lebanon and characterized Iran's new Supreme Leader Mojtabá as more radical than his predecessor, accusing opposition parties PP and Vox of 'contributing through their support and silence to the disaster.' Relations with the Trump administration simultaneously reached a critical point, with threats of a diplomatic break looming in the background.",
+          "url": "https://www.lanacion.com.ar/el-mundo/sanchez-endurece-su-discurso-y-advierte-que-la-guerra-contra-iran-supera-a-la-de-irak-en-2003-nid25032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "$LIBRA case: documents from Novelli's phone reveal he sold exclusive access to Milei for payments in cryptocurrency",
+          "body": "Drafts and contracts extracted by prosecutors from lobbyist Mauricio Novelli's phone expose an institutionalized scheme to sell access to President Javier Milei and Karina Milei through confidential agreements paid in cryptocurrency. Documented links include a deal with Kelsier Holdings (BVI) to serve as 'exclusive partner' for the Web3 sector in Argentina, efforts to secure a 10-year tax exemption for fintech Cube Exchange — which signed a letter of intent with Milei — and the collection of a 'fee' for arranging presidential meetings at the Tech Forum. The documents do not prove presidential authorization, but multiple indicators, including the selfie posted by Hayden Davis alongside Milei, are fueling the ongoing investigation.",
+          "url": "https://www.lanacion.com.ar/politica/caso-libra-mauricio-novelli-vendia-exclusividad-para-acceder-a-javier-milei-nid25032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Trump forms AI advisory council with Zuckerberg, Jensen Huang, and Larry Ellison to shape U.S. tech policy",
+          "body": "The White House confirmed the formation of the President's Council of Advisors on Science and Technology (PCAST) with an initial 13 members, including Mark Zuckerberg (Meta), Jensen Huang (Nvidia), Larry Ellison (Oracle), and Sergey Brin (Google), co-chaired by AI and crypto czar David Sacks. The council, expandable to 24 members, will advise on AI regulation, reducing permitting burdens for energy-intensive data centers, and the administration's goal of securing 'American dominance' in artificial intelligence. The move is the clearest expression yet of the Silicon Valley-Trump alignment, following last week's release of a national AI regulatory framework.",
+          "url": "https://www.elfinanciero.com.mx/tech/2026/03/25/los-avengers-de-trump-en-ia-formara-consejo-especial-con-zuckerberg-y-ceo-de-nvidia/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico's beer industry forecasts 20% demand surge for the 2026 World Cup and deploys emergency logistics",
+          "body": "Grupo Modelo (AB InBev) and Heineken, which together command annual production capacity of 136.9 million hectoliters, are projecting up to a 20% increase in beer demand during the 2026 FIFA World Cup. Heineken will rent 30 warehouses across Monterrey, Guadalajara, and Mexico City, reinforcing supply points at Oxxo and Tiendas Six; alcoholic beverages account for 65% of World Cup consumer spending according to Deloitte, with an estimated $181 million economic spillover from home viewing alone. Heineken Mexico's logistics director warned that unfinished construction at host cities could 'disrupt all logistics' if inventory is not secured well in advance.",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/03/25/mundial-2026-aumentara-venta-de-cervezas-en-mexico-en-20-por-ciento/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "99.88",
+        "change": "▲ 0.3%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.38%",
+        "change": "▲ 1.2%",
+        "direction": "up",
+        "chg_1w": "▼ 0.3%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "VIX",
+        "value": "26.96",
+        "change": "▲ 6.4%",
+        "direction": "up",
+        "chg_1w": "▲ 0.7%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$56.26",
+        "change": "▼ 2.0%",
+        "direction": "down",
+        "chg_1w": "▲ 1.1%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05627",
+            "chg_1d": {
+              "text": "▼ 0.24%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.19%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2944",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04875",
+            "chg_1d": {
+              "text": "▲ 0.39%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3888",
+            "chg_1d": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0780",
+            "chg_1d": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.66%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04216",
+            "chg_1d": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.98",
+            "chg_1d": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.88%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.7713",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.2316",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86640",
+            "chg_1d": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.9102",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3853",
+            "chg_1d": {
+              "text": "▲ 0.70%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.85%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74929",
+            "chg_1d": {
+              "text": "▲ 0.53%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.61",
+            "chg_1d": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.07%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3969",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19115",
+            "chg_1d": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.22%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16561",
+            "chg_1d": {
+              "text": "▲ 0.65%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3209",
+            "chg_1d": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2648",
+            "chg_1d": {
+              "text": "▲ 0.72%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14322",
+            "chg_1d": {
+              "text": "▲ 0.55%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.51",
+            "chg_1d": {
+              "text": "▲ 0.58%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.84%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5116",
+            "chg_1d": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15420",
+            "chg_1d": {
+              "text": "▼ 0.63%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.0383",
+            "chg_1d": {
+              "text": "▼ 0.64%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9758",
+            "chg_1d": {
+              "text": "▼ 0.36%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.5989",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.54%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86483",
+            "chg_1d": {
+              "text": "▼ 0.10%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "184.22",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.76%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5717",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14471",
+            "chg_1d": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7571",
+            "chg_1d": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12538",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2005",
+            "chg_1d": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.70%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10843",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.10",
+            "chg_1d": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
