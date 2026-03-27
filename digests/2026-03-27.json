@@ -1,0 +1,598 @@
+{
+  "date": "2026-03-27",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, mientras México digiere una tormenta simultánea de inflación al 4.63%, petróleo Brent por encima de los 100 dólares y un peso que ronda los 18 por dólar, el mercado inmobiliario industrial sigue cerrando operaciones de nueve cifras como si nada. La resiliencia selectiva del capital es, como siempre, el espectáculo más honesto que ofrece la economía.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Presiones inflacionarias, tensiones geopolíticas y renegociación del T-MEC generan incertidumbre, aunque el capital privado mantiene apuestas estructurales en logística e inmobiliario.",
+        "context_en": "Inflationary pressures, geopolitical tensions, and T-MEC renegotiation fuel uncertainty, though private capital continues making structural bets in logistics and real estate."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Tormenta económica en México: inflación al 4.63%, Brent sobre 100 dólares y peso cerca de 18 por dólar",
+          "body": "La economía mexicana enfrenta en 2026 una confluencia de presiones inusual: la inflación rebasó el rango objetivo de Banxico al llegar a 4.63% en marzo, el petróleo Brent superó los 100 dólares por barril por la tensión en el Estrecho de Ormuz, y el peso se debilitó a niveles cercanos a 18 por dólar. Como consecuencia, Banxico pausó el ciclo de recortes con la tasa en 7%, prolongando el costo del crédito para familias y empresas. Las remesas también registran caída, mientras la revisión del T-MEC añade otra capa de incertidumbre a las perspectivas de crecimiento.",
+          "url": "https://www.elfinanciero.com.mx/opinion/alberto-tovar/2026/03/26/tu-dinero-ya-siente-la-tormenta-economica/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "FINSA adquiere portafolio industrial en Hidalgo por 434 mdd, arrendado al 100% a Mercado Libre",
+          "body": "FINSA, liderada por Sergio Argüelles, cerró la compra de tres edificios industriales AAA en el corredor AIFA del estado de Hidalgo por 434 millones de dólares, sumando 291,600 metros cuadrados de área rentable ocupada en su totalidad por Mercado Libre. Los activos, antes en manos de DEWA y Affinius Capital, se ubican sobre ejes clave como el Arco Norte y ofrecen conectividad directa con la Zona Metropolitana del Valle de México. La operación refuerza la tesis de que el segmento logístico-industrial, impulsado por nearshoring y e-commerce, sigue siendo el activo más codiciado del real estate mexicano en este ciclo.",
+          "url": "https://www.elfinanciero.com.mx/opinion/claudia-olguin/2026/03/26/impulso-industrial-continua/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina designa a Martín Vauthier, aliado de Caputo, como nuevo director del Banco Central",
+          "body": "El gobierno de Javier Milei formalizó mediante el Decreto 172/2026 el nombramiento de Martín Vauthier como director del Banco Central, con mandato hasta 2028, cubriendo la vacante dejada por Federico Furiase al asumir como secretario de Finanzas. Vauthier, economista de la UBA y ex director de la consultora Anker Latinoamérica fundada por Luis Caputo, trabajó con Furiase desde 2008 en Estudio Bein y fue parte del equipo de transición del gobierno Milei en 2023. El nombramiento consolida el control del equipo económico de Caputo sobre el directorio de la entidad monetaria.",
+          "url": "https://www.lanacion.com.ar/economia/el-gobierno-designo-al-economista-martin-vauthier-como-nuevo-director-del-banco-central-nid26032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "IRSA y Mercado Libre invertirán más de 50 millones de dólares en nuevo edificio de oficinas en Buenos Aires",
+          "body": "IRSA, el grupo inmobiliario de Eduardo Elsztain, y Mercado Libre anunciaron un acuerdo para desarrollar un edificio de 15,000 m² dentro del Polo Dot en Saavedra, del cual la empresa de Marcos Galperin ocupará 12,000 m². La inversión supera los 50 millones de dólares y se enmarca en el plan de expansión de 3,400 millones de dólares que Mercado Libre ejecutará en Argentina, donde triplicó su dotación desde la pandemia. La obra comenzó en marzo y se prevé completar en 30 meses, como parte de la reconfiguración del mercado corporativo porteño hacia la zona norte.",
+          "url": "https://www.lanacion.com.ar/propiedades/inmuebles-comerciales/irsa-y-mercado-libre-cierran-un-negocio-inmobiliario-de-mas-de-us50-millones-nid26032026/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México promete cinco billones de pesos en infraestructura 2026–2030, pero las ciudades siguen sin fondo metropolitano",
+          "body": "En la 89 Convención Bancaria, el secretario de Hacienda Edgar Amador anunció una inversión pública y mixta superior a cinco billones de pesos para el periodo 2026–2030 en energía, transporte, agua, salud y educación, con un alza adicional equivalente al 2% del PIB solo en 2026. Sin embargo, la columna de opinión de Nadine Cortés en el mismo medio desnuda la contradicción estructural: mientras el gobierno federal presume un 'Megabachetón' de 50,000 millones de pesos, las zonas metropolitanas llevan años sin el Fondo Metropolitano que financiaba infraestructura de escala regional. La brecha entre la narrativa del ciclo inversor y la realidad del financiamiento urbano difícilmente podría ser más elocuente.",
+          "url": "https://www.elfinanciero.com.mx/opinion/colaborador-invitado/2026/03/26/infraestructura-en-mexico-senales-de-un-nuevo-ciclo/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Videos filtrados muestran a Milei como 'capacitador estrella' en academia cripto de Novelli antes del escándalo $LIBRA",
+          "body": "El peritaje del celular del lobista Mauricio Novelli, habilitado por la justicia en el expediente $LIBRA, reveló videos de clases donde Javier Milei —entonces figura mediática, no presidente— promovía criptomonedas como herramienta para 'derrotar a los malditos bancos centrales' y cobraba como instructor estrella en un módulo premium de hasta 675 dólares. Los registros muestran una familiaridad estrecha entre Milei y Novelli que contradice la distancia que el gobierno intentó establecer tras el colapso del token $LIBRA en febrero de 2025. El caso suma presión política al oficialismo justo cuando la economía enfrenta su propio conjunto de turbulencias.",
+          "url": "https://www.lanacion.com.ar/politica/los-videos-de-las-clases-de-milei-y-novelli-la-estafa-de-los-estados-y-las-cripto-fallidas-que-nid24032026/",
+          "tag": "Política"
+        }
+      ],
+      "quote": {
+        "text": "Markets can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos — Dear humans, while Mexico digests a simultaneous storm of 4.63% inflation, Brent crude above $100, and a peso hovering near 18 per dollar, the industrial real estate market keeps closing nine-figure deals as if nothing were happening. The selective resilience of capital is, as always, the most honest spectacle the economy has to offer.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Presiones inflacionarias, tensiones geopolíticas y renegociación del T-MEC generan incertidumbre, aunque el capital privado mantiene apuestas estructurales en logística e inmobiliario.",
+        "context_en": "Inflationary pressures, geopolitical tensions, and T-MEC renegotiation fuel uncertainty, though private capital continues making structural bets in logistics and real estate."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Economic storm in Mexico: inflation at 4.63%, Brent above $100, and peso near 18 per dollar",
+          "body": "Mexico's economy faces an unusual convergence of pressures in 2026: inflation breached Banxico's target range at 4.63% in March, Brent crude surpassed $100 per barrel on Strait of Hormuz tensions, and the peso weakened to near 18 per dollar. As a result, Banxico paused its rate-cutting cycle with the benchmark rate at 7%, prolonging borrowing costs for households and businesses. Remittances are also declining, while the T-MEC renegotiation adds another layer of uncertainty to the growth outlook.",
+          "url": "https://www.elfinanciero.com.mx/opinion/alberto-tovar/2026/03/26/tu-dinero-ya-siente-la-tormenta-economica/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "FINSA acquires industrial portfolio in Hidalgo for $434M, 100% leased to Mercado Libre",
+          "body": "FINSA, led by CEO Sergio Argüelles, closed the purchase of three Class AAA industrial buildings in the AIFA corridor of Hidalgo state for $434 million, totaling 291,600 square meters of rentable area fully occupied by Mercado Libre. The assets, previously held by DEWA and Affinius Capital, sit along key logistics arteries including the Arco Norte with direct connectivity to the Mexico City metro area. The deal reinforces the thesis that the logistics-industrial segment, driven by nearshoring and e-commerce, remains the most coveted asset class in Mexican real estate in this cycle.",
+          "url": "https://www.elfinanciero.com.mx/opinion/claudia-olguin/2026/03/26/impulso-industrial-continua/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina appoints Martín Vauthier, a Caputo ally, as new Central Bank director",
+          "body": "The Milei government formalized through Decree 172/2026 the appointment of Martín Vauthier as Central Bank director with a mandate through 2028, filling the vacancy left by Federico Furiase upon his move to the role of Finance Secretary. Vauthier, an economist from UBA and former director at the consulting firm Anker Latinoamérica founded by Luis Caputo, has worked with Furiase since 2008 at Estudio Bein and was part of the Milei government's transition team in 2023. The appointment consolidates Caputo's economic team's grip over the monetary authority's board.",
+          "url": "https://www.lanacion.com.ar/economia/el-gobierno-designo-al-economista-martin-vauthier-como-nuevo-director-del-banco-central-nid26032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "IRSA and Mercado Libre to invest over $50 million in new Buenos Aires office building",
+          "body": "IRSA, Eduardo Elsztain's real estate group, and Mercado Libre announced an agreement to develop a 15,000 m² office building within the Polo Dot complex in Saavedra, of which Marcos Galperin's company will occupy 12,000 m². The investment exceeds $50 million and is part of Mercado Libre's $3.4 billion expansion plan in Argentina, where the firm has tripled its headcount since the pandemic. Construction began in March with a 30-month completion timeline, as Buenos Aires's corporate real estate market continues its structural shift northward.",
+          "url": "https://www.lanacion.com.ar/propiedades/inmuebles-comerciales/irsa-y-mercado-libre-cierran-un-negocio-inmobiliario-de-mas-de-us50-millones-nid26032026/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico pledges five trillion pesos in infrastructure for 2026–2030, but cities still lack metropolitan funding",
+          "body": "At the 89th Banking Convention, Finance Secretary Edgar Amador announced public and mixed investment exceeding five trillion pesos for the 2026–2030 period across energy, transport, water, health, and education, with an additional increase equivalent to 2% of GDP in 2026 alone. Yet an opinion piece by Nadine Cortés in the same outlet exposes the structural contradiction: while the federal government touts a 50-billion-peso 'Megapothole' repair program, metropolitan areas have gone years without the Metropolitan Fund that once financed regional-scale infrastructure. The gap between the investment cycle narrative and urban financing reality could hardly be more eloquent.",
+          "url": "https://www.elfinanciero.com.mx/opinion/colaborador-invitado/2026/03/26/infraestructura-en-mexico-senales-de-un-nuevo-ciclo/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Leaked videos show Milei as 'star instructor' at Novelli's crypto academy before the $LIBRA scandal",
+          "body": "The court-ordered forensic examination of lobbyist Mauricio Novelli's phone, authorized in the $LIBRA case file, revealed videos of classes in which Javier Milei — then a media personality, not yet president — promoted cryptocurrencies as a tool to 'defeat the damned central banks' and charged as the star instructor in a premium module costing up to $675. The records show a close familiarity between Milei and Novelli that contradicts the distance the government tried to establish after the $LIBRA token collapsed in February 2025. The case adds political pressure on the administration precisely as the economy faces its own set of turbulences.",
+          "url": "https://www.lanacion.com.ar/politica/los-videos-de-las-clases-de-milei-y-novelli-la-estafa-de-los-estados-y-las-cripto-fallidas-que-nid24032026/",
+          "tag": "Política"
+        }
+      ],
+      "quote": {
+        "text": "Markets can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, attributed, circa 1930s"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.11",
+        "change": "▲ 0.2%",
+        "direction": "up",
+        "chg_1w": "▲ 1.2%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.42%",
+        "change": "▲ 2.0%",
+        "direction": "up",
+        "chg_1w": "▲ 0.6%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "29.46",
+        "change": "▲ 7.4%",
+        "direction": "up",
+        "chg_1w": "▲ 12.7%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$55.47",
+        "change": "▼ 3.4%",
+        "direction": "down",
+        "chg_1w": "▼ 0.3%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05545",
+            "chg_1d": {
+              "text": "▼ 1.42%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2920",
+            "chg_1d": {
+              "text": "▼ 0.86%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.38%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04818",
+            "chg_1d": {
+              "text": "▼ 0.98%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.09%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3833",
+            "chg_1d": {
+              "text": "▼ 1.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0769",
+            "chg_1d": {
+              "text": "▼ 1.06%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04175",
+            "chg_1d": {
+              "text": "▼ 0.81%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.86",
+            "chg_1d": {
+              "text": "▼ 1.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "18.0330",
+            "chg_1d": {
+              "text": "▲ 1.44%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.53%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.2662",
+            "chg_1d": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.86%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86881",
+            "chg_1d": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.9113",
+            "chg_1d": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3865",
+            "chg_1d": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.13%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75290",
+            "chg_1d": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.85",
+            "chg_1d": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.39%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4243",
+            "chg_1d": {
+              "text": "▲ 0.87%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.40%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.18989",
+            "chg_1d": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.87%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16498",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.31%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3124",
+            "chg_1d": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.24%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2633",
+            "chg_1d": {
+              "text": "▼ 0.19%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 2.01%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14297",
+            "chg_1d": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.24%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.35",
+            "chg_1d": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.26%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.7560",
+            "chg_1d": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15100",
+            "chg_1d": {
+              "text": "▼ 0.45%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.43%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.0614",
+            "chg_1d": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.29%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9549",
+            "chg_1d": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.5959",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.69%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86659",
+            "chg_1d": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "183.99",
+            "chg_1d": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.05%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6092",
+            "chg_1d": {
+              "text": "▲ 1.29%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14469",
+            "chg_1d": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.37%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7620",
+            "chg_1d": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.23%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12571",
+            "chg_1d": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2006",
+            "chg_1d": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.76%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10894",
+            "chg_1d": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.00%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.13",
+            "chg_1d": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
