@@ -19,6 +19,7 @@ def _freshness_score(published_at: str | None, now: datetime) -> float:
         if pub.tzinfo is None:
             pub = pub.replace(tzinfo=timezone.utc)
         hours_old = (now - pub).total_seconds() / 3600
+        hours_old = max(hours_old, 0)  # guard against future-dated articles
     except Exception:
         return 0.1
     if hours_old < 6:   return 1.0
@@ -30,7 +31,7 @@ def _freshness_score(published_at: str | None, now: datetime) -> float:
 def _authority_score(source_name: str) -> float:
     """1.0 for Tier 1 sources, 0.6 for Tier 2, 0.3 for unknown."""
     from config import SOURCE_TIERS
-    name_lower = source_name.lower()
+    name_lower = (source_name or "").lower()
     if any(t.lower() in name_lower for t in SOURCE_TIERS["tier1"]):
         return 1.0
     if any(t.lower() in name_lower for t in SOURCE_TIERS["tier2"]):
@@ -49,13 +50,16 @@ def rank_articles(articles: list[dict], now: datetime | None = None) -> list[dic
     """
     Score and rank articles. Returns at most MAX_ARTICLES_FOR_CLAUDE articles.
 
-    Scoring weights:
+    Scoring weights (sum to 0.80; max composite score is 0.80):
       Freshness  30%  — recency of publication
       Authority  25%  — source tier (config.SOURCE_TIERS)
       Relevance  25%  — keyword overlap with config.TOPICS
 
-    A greedy uniqueness pass removes articles with >60% headline word
-    overlap against already-accepted articles (applied after initial sort).
+    Uniqueness is handled as a post-sort greedy filter (not a weight):
+    articles with >60% headline word overlap against already-accepted
+    articles are dropped. Overlap is measured from the candidate's perspective
+    (len(candidate_words & accepted_words) / len(candidate_words)), so short
+    headlines are filtered more aggressively than long ones — intentional.
     """
     from config import TOPICS, MAX_ARTICLES_FOR_CLAUDE
     if now is None:
@@ -65,7 +69,7 @@ def rank_articles(articles: list[dict], now: datetime | None = None) -> list[dic
     scored = []
     for article in articles:
         f = _freshness_score(article.get("publishedAt"), now) * 0.30
-        a = _authority_score(article.get("source", ""))        * 0.25
+        a = _authority_score(article.get("source") or "")      * 0.25
         r = _relevance_score(article, TOPICS)                  * 0.25
         scored.append((f + a + r, article))
 
