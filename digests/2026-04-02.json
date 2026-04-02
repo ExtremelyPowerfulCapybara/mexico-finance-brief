@@ -1,0 +1,598 @@
+{
+  "date": "2026-04-02",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, mientras la inversión física en México se desploma a niveles no vistos desde 1990, el gobierno presume superávit primario con la misma convicción con que uno presume de haber ahorrado en gasolina tras vender el auto. El presupuesto mexicano revela una arquitectura cada vez más familiar: gasto corriente que crece sin freno, inversión que se sacrifica en el altar de la inercia, y un IVA que se cae por el simple pecado de tener un peso fuerte.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Señales mixtas en México —recaudación moderadamente positiva pero inversión pública en colapso— y presión geopolítica sobre energía mantienen el tono defensivo sin pánico declarado.",
+        "context_en": "Mixed signals in Mexico — moderately positive tax collection but collapsing public investment — alongside geopolitical energy pressure keep the tone defensive without outright panic."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Inversión física en México cae 44.9% real en el primer bimestre, el peor nivel desde 1990",
+          "body": "El gasto en inversión física del sector público se desplomó de 152.2 mil millones de pesos en enero-febrero de 2025 a apenas 87.1 mil millones en el mismo periodo de 2026, una contracción de 44.9% en términos reales. El ajuste responde a una dinámica perversa: los servicios personales crecieron 17.8% real y el gasto corriente estructural avanzó 16.7%, triplicando el ritmo de crecimiento del ISR, de modo que lo único recortable es lo productivo. El caso más extremo es Pemex, cuya inversión física registra caídas adicionales dentro de ese ya devastado agregado, acumulando costos que el mediano plazo cobrará con intereses.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/04/01/los-claroscuros-de-las-finanzas-publicas/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Escándalo $LIBRA: lobista Novelli operó con banco de Miami mientras transferían millones en reunión con Milei",
+          "body": "Peritos de la Datip recuperaron del teléfono de Mauricio Novelli un registro detallado del 30 de enero de 2025: llamadas y accesos al homebanking del International Finance Bank de Miami ocurrieron en paralelo a que billeteras vinculadas a Hayden Mark Davis transfirieran US$499,999 a la plataforma Kraken, todo mientras Davis y Novelli se encontraban en la Casa Rosada con el presidente Javier Milei. A las 14:00, cuatro minutos después de que comenzara la reunión autorizada por Karina Milei, salió la primera transferencia cripto; a las 14:02 arrancó el encuentro formal con el mandatario. Novelli también consultó esa jornada precios de autos de lujo, relojes, lotes en countries y departamentos, y por la noche anunció a un contacto que había cerrado un \"deal tremendo\".",
+          "url": "https://www.lanacion.com.ar/politica/libra-novelli-tuvo-un-ida-y-vuelta-frenetico-con-un-banco-de-miami-el-dia-que-se-reunio-con-milei-y-nid31032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Nissan presiona en Washington: aranceles a autos hechos en México suben el precio al consumidor entre $2,500 y $3,000 dólares",
+          "body": "Christian Meunier, presidente de Nissan Americas, llevó al Foro Automotriz de Nueva York el argumento de la asequibilidad: el Sentra (US$22,600) y el Kicks (US$22,430) absorben un sobrecosto de entre US$2,500 y US$3,000 por unidad a causa de los aranceles, en un mercado donde el precio promedio de un auto nuevo ya alcanza US$49,353. Más de un tercio de las ventas de Nissan en EE.UU. proviene de plantas mexicanas, y la compañía advierte que fabricar esos modelos de entrada en territorio estadounidense es estructuralmente inviable al mismo costo. Las negociaciones avanzan con receptividad oficial, aunque los «factores secundarios» del entorno comercial regional complican el cierre.",
+          "url": "https://www.elfinanciero.com.mx/opinion/de-jefes/2026/04/01/nissan-contraaranceles-de-eu/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Conflicto en Medio Oriente dispara la gasolina en EE.UU.: el galón regular llega a US$4.01 a nivel nacional",
+          "body": "El precio promedio de la gasolina regular en Estados Unidos alcanzó US$4.01 por galón al 31 de marzo de 2026, con Texas en US$3.67, mientras en Nuevo Laredo el litro de magna ronda los US$1.32, haciendo que el lado estadounidense de la frontera sea paradójicamente más barato en varios tipos de combustible. Según CNBC, el petróleo ha subido cerca de 60% desde el inicio del conflicto entre EE.UU., Israel e Irán, con la gasolina norteamericana acumulando un alza de 35% en el último mes. La reducción de actividad de algunos productores por limitaciones logísticas y de almacenamiento profundiza la escasez y sostiene la presión al alza.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/cuanto-cuesta-el-galon-de-gasolina-en-nuevo-laredo-mexico-vs-texas-donde-es-mas-barato-llenar-el-nid01042026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "T-MEC: México acumula superávit en bienes pero déficit estructural en servicios digitales, financieros y de propiedad intelectual",
+          "body": "Un análisis de Clemente Ruiz Durán identifica el talón de Aquiles del modelo de integración norteamericano: el TLCAN y el T-MEC liberalizaron manufacturas con profundidad quirúrgica, pero dejaron los servicios —financieros, digitales, logísticos y profesionales— en un capítulo de apertura parcial sin desarrollo real de capacidades nacionales. El resultado es una «trampa de especialización incompleta»: México participa como ensamblador de bajo valor agregado mientras EE.UU. exporta servicios intensivos en conocimiento de los que México es consumidor neto. De cara a la revisión del tratado, el autor propone una agenda activa en acceso a mercados de servicios profesionales, regulación simétrica de plataformas digitales y articulación universidad-empresa con la UNAM como nodo.",
+          "url": "https://www.elfinanciero.com.mx/opinion/clemente-ruiz-duran1/2026/04/01/la-omision-estructural-de-los-servicios-en-el-t-mec-un-vacio-estrategico-para-mexico/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México lanza portal IMPI-COFEPRIS para destrabar la guerra judicial entre patentes farmacéuticas y genéricos",
+          "body": "El 30 de marzo quedó operativo el portal de vinculación entre el IMPI y la COFEPRIS, diseñado para resolver en tiempo real si un medicamento genérico viola o no una patente vigente antes de que se otorgue el registro sanitario. El sistema lleva más de 20 años creado sin alcanzar sus objetivos, generando un limbo normativo que derivó en litigios interminables, desabasto y decisiones defensivas tanto de fabricantes de genéricos como de titulares de patentes. Con información pública y accesible, el portal busca eliminar la «caja negra» que existía entre ambas autoridades y dar certidumbre de fechas a todos los actores de la cadena farmacéutica.",
+          "url": "https://www.elfinanciero.com.mx/opinion/mauricio-jalife/2026/04/01/dan-transparencia-a-vinculacion-entre-patentes-y-registros-sanitarios/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "A budget is not just a collection of numbers, but an expression of our values and aspirations.",
+        "attribution": "Jacob Lew, Secretario del Tesoro de EE.UU., 2013"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, as Mexico's public investment collapses to levels unseen since 1990, the government touts a primary surplus with the same confidence one might boast about saving on gas after selling the car. The Mexican budget reveals an increasingly familiar architecture: runaway current spending, investment sacrificed on the altar of inertia, and VAT revenues falling simply because the peso had the audacity to strengthen.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Señales mixtas en México —recaudación moderadamente positiva pero inversión pública en colapso— y presión geopolítica sobre energía mantienen el tono defensivo sin pánico declarado.",
+        "context_en": "Mixed signals in Mexico — moderately positive tax collection but collapsing public investment — alongside geopolitical energy pressure keep the tone defensive without outright panic."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Mexico's physical investment plunges 44.9% in real terms in Q1, worst level since 1990",
+          "body": "Public sector capital expenditure collapsed from 152.2 billion pesos in January-February 2025 to just 87.1 billion in the same period of 2026, a 44.9% real contraction. The adjustment reflects a perverse dynamic: personnel services grew 17.8% in real terms and structural current spending advanced 16.7% — more than triple the growth rate of income tax revenues — meaning that the only item available for cutting is productive investment. The most extreme case is Pemex, whose capital spending fell further still within that already devastated aggregate, accumulating costs that the medium term will collect with interest.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/04/01/los-claroscuros-de-las-finanzas-publicas/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "$LIBRA scandal: lobbyist Novelli was frantically wiring money through a Miami bank while millions were being transferred during his meeting with Milei",
+          "body": "Forensic experts from Argentina's Datip unit recovered a detailed record from Mauricio Novelli's phone for January 30, 2025: calls and online banking access at Miami's International Finance Bank occurred in parallel with wallets linked to Hayden Mark Davis transferring US$499,999 to the Kraken crypto exchange — all while Davis and Novelli were at the Casa Rosada with President Javier Milei. At 14:00, four minutes before the formal meeting began, the first crypto transfer went out; at 14:02, the sit-down with the president officially started. That same day Novelli also checked prices on luxury cars, watches, gated-community lots and apartments, and that evening told a contact he had closed a \"tremendous deal.\"",
+          "url": "https://www.lanacion.com.ar/politica/libra-novelli-tuvo-un-ida-y-vuelta-frenetico-con-un-banco-de-miami-el-dia-que-se-reunio-con-milei-y-nid31032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Nissan pushes back in Washington: tariffs on Mexico-made cars add $2,500–$3,000 to consumer prices",
+          "body": "Nissan Americas president Christian Meunier brought the affordability argument to the New York Auto Forum: the Sentra (US$22,600) and the Kicks (US$22,430) absorb a surcharge of between US$2,500 and US$3,000 per unit due to tariffs, in a market where the average new-car price has already hit US$49,353. More than a third of Nissan's U.S. sales volume comes from Mexican plants, and the company warns that manufacturing those entry-level models on American soil at the same cost is structurally impossible. Negotiations are proceeding with official receptiveness, though the «secondary factors» of the regional trade environment are complicating a resolution.",
+          "url": "https://www.elfinanciero.com.mx/opinion/de-jefes/2026/04/01/nissan-contraaranceles-de-eu/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Middle East conflict sends U.S. gasoline to $4.01 per gallon nationally as energy markets reel",
+          "body": "The average price of regular gasoline in the United States reached US$4.01 per gallon as of March 31, 2026, with Texas at US$3.67 — paradoxically making the American side of the border cheaper than Nuevo Laredo for several fuel grades. According to CNBC, crude oil has risen nearly 60% since the outbreak of the U.S.-Israel-Iran conflict, with U.S. gasoline prices up roughly 35% over the past month. Some producers have reduced activity due to logistical and storage constraints, deepening scarcity and sustaining upward price pressure.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/cuanto-cuesta-el-galon-de-gasolina-en-nuevo-laredo-mexico-vs-texas-donde-es-mas-barato-llenar-el-nid01042026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "USMCA: Mexico runs a goods surplus but carries a structural deficit in digital, financial and IP services",
+          "body": "An analysis by Clemente Ruiz Durán identifies the Achilles heel of the North American integration model: NAFTA and the USMCA liberalized manufacturing with surgical depth but left services — financial, digital, logistics and professional — in a chapter of partial openness with no real development of national capabilities. The result is an \"incomplete specialization trap\": Mexico participates as a low-value-added assembler while the U.S. exports knowledge-intensive services for which Mexico is a net consumer. Ahead of the treaty review, the author proposes an active agenda covering market access for professional services, symmetric regulation of digital platforms, and university-business linkages with UNAM as a key hub.",
+          "url": "https://www.elfinanciero.com.mx/opinion/clemente-ruiz-duran1/2026/04/01/la-omision-estructural-de-los-servicios-en-el-t-mec-un-vacio-estrategico-para-mexico/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico launches IMPI-COFEPRIS portal to defuse endless patent litigation blocking generic drug approvals",
+          "body": "On March 30, a joint portal between Mexico's patent office (IMPI) and health regulator (COFEPRIS) went live, designed to resolve in real time whether a generic drug infringes an active patent before a sanitary registration is granted. The linkage mechanism has existed for over 20 years without achieving its goals, spawning endless litigation, drug shortages and defensive decisions by both generics manufacturers and patent holders. By making information public and accessible, the portal aims to eliminate the \"black box\" that existed between the two agencies and give all players in the pharmaceutical supply chain reliable timeline certainty.",
+          "url": "https://www.elfinanciero.com.mx/opinion/mauricio-jalife/2026/04/01/dan-transparencia-a-vinculacion-entre-patentes-y-registros-sanitarios/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "A budget is not just a collection of numbers, but an expression of our values and aspirations.",
+        "attribution": "Jacob Lew, U.S. Secretary of the Treasury, 2013"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.19",
+        "change": "▲ 0.5%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.32%",
+        "change": "▲ 0.2%",
+        "direction": "up",
+        "chg_1w": "▼ 2.2%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "VIX",
+        "value": "27.60",
+        "change": "▲ 12.5%",
+        "direction": "up",
+        "chg_1w": "▼ 11.1%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$57.23",
+        "change": "▲ 0.8%",
+        "direction": "up",
+        "chg_1w": "▲ 3.2%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05576",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2891",
+            "chg_1d": {
+              "text": "▼ 0.44%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04837",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3846",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0776",
+            "chg_1d": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04222",
+            "chg_1d": {
+              "text": "▼ 0.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.86%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.90",
+            "chg_1d": {
+              "text": "▲ 0.40%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.9345",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1845",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.97%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86753",
+            "chg_1d": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8974",
+            "chg_1d": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.19%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3913",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75717",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.97%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.66",
+            "chg_1d": {
+              "text": "▲ 0.68%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4593",
+            "chg_1d": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.09%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19288",
+            "chg_1d": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.98%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16733",
+            "chg_1d": {
+              "text": "▲ 0.57%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.05%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3304",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.78%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2684",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.42%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14605",
+            "chg_1d": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.96%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.79",
+            "chg_1d": {
+              "text": "▲ 0.84%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.95%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.6731",
+            "chg_1d": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15270",
+            "chg_1d": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9762",
+            "chg_1d": {
+              "text": "▼ 0.57%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.04%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9506",
+            "chg_1d": {
+              "text": "▼ 0.36%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6038",
+            "chg_1d": {
+              "text": "▼ 0.34%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.87279",
+            "chg_1d": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.90%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "184.03",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.10%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6002",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14498",
+            "chg_1d": {
+              "text": "▼ 0.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7517",
+            "chg_1d": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.78%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12578",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2017",
+            "chg_1d": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10978",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.17%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.15",
+            "chg_1d": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
