@@ -57,12 +57,23 @@ def test_story_without_context_renders_cleanly():
     assert "Peso cierra en 17.20" in html, \
         "Story without context_note must render normally"
 
+def test_thread_badge_rendered_when_thread_tag_present():
+    """Thread badge must appear when thread_tag is a non-empty string."""
+    story = dict(STORY_WITHOUT_CONTEXT)
+    story["thread_tag"] = "Banxico: tasa"
+    html = _story_block(story)
+    assert "Banxico: tasa" in html, \
+        "thread_tag text must appear in email card"
+    assert "&#9679;" in html, \
+        "thread badge bullet must be present"
+
 if __name__ == "__main__":
     tests = [
         test_context_note_not_in_email_card,
         test_headline_present_in_email_card,
         test_body_present_in_email_card,
         test_story_without_context_renders_cleanly,
+        test_thread_badge_rendered_when_thread_tag_present,
     ]
     passed = 0
     for t in tests:

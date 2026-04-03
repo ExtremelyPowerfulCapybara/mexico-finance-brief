@@ -19,7 +19,7 @@ def test_body_prompt_two_sentence_contract():
         "Prompt must define the role of the first sentence"
     assert "Segunda oraci" in source, \
         "Prompt must define the role of the second sentence"
-    assert "Sin res" in source, \
+    assert "Sin resúmenes" in source, \
         "Prompt must forbid wire-service summaries"
 
 def test_body_prompt_old_instruction_removed():
