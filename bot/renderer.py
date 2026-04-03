@@ -158,14 +158,19 @@ def _editor_note(note: str, author: str = "") -> str:
 
 
 def _narrative_thread(text: str) -> str:
-    """Renders the day's dominant macro theme as a bold callout below the editor note."""
+    """Renders the day's dominant macro theme as a centered pull quote below the editor note."""
     if not text:
         return ""
     return f"""
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {BORDER}; border-bottom:1px solid {BORDER};">
   <tr>
-    <td style="padding:0 48px 20px;">
-      <p style="margin:0; font-family:{FONT_SANS}; font-size:11px; font-weight:bold; color:{TEXT_MID}; border-left:3px solid {TEXT_DARK}; padding-left:12px; line-height:1.7;">{text}</p>
+    <td style="padding:20px 48px 4px; text-align:center;">
+      <p style="margin:0; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:{TEXT_LIGHT};">HILO DEL D&Iacute;A</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:6px 48px 20px; text-align:center;">
+      <p style="margin:0; font-family:{FONT_SERIF}; font-style:italic; font-size:15px; color:#3a4a54; line-height:1.65;">{text}</p>
     </td>
   </tr>
 </table>"""
