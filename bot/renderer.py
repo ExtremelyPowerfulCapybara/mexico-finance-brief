@@ -224,16 +224,6 @@ def _story_block(story: dict) -> str:
             f'</p>'
         )
 
-    context_note = story.get("context_note", {})
-    context_es = context_note.get("es", "") if isinstance(context_note, dict) else ""
-    context_html = ""
-    if context_es:
-        context_html = (
-            f'<p style="margin:10px 0 10px 0; font-family:{FONT_SANS}; font-size:12px; '
-            f'color:{TEXT_MID}; border-left:3px solid {BORDER}; padding-left:10px; '
-            f'line-height:1.7; font-style:italic;">{context_es}</p>'
-        )
-
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
@@ -244,8 +234,7 @@ def _story_block(story: dict) -> str:
         <span style="font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_LIGHT}; border:1px solid {BORDER}; padding:2px 6px; margin-left:8px;">{story.get('tag','')}</span>
       </p>
       <p style="margin:0 0 10px 0; font-family:{FONT_SERIF}; font-size:20px; font-weight:bold; color:{TEXT_DARK}; line-height:1.3;">{story['headline']}</p>
-      <p style="margin:0 0 10px 0; font-family:{FONT_SANS}; font-size:13px; color:{TEXT_MID}; line-height:1.75;">{story['body']}</p>
-      {context_html}
+      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:13px; color:{TEXT_MID}; line-height:1.75;">{story['body']}</p>
       <a href="{story['url']}" style="font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_DARK}; text-decoration:none; border-bottom:1px solid {TEXT_DARK}; padding-bottom:1px;">Leer m&aacute;s &#8594;</a>
     </td>
   </tr>
