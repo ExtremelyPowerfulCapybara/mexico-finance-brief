@@ -580,7 +580,7 @@ def build_pretty_html(
                 label_en = entry.get("label_en", "Cautious")
                 color    = _sc_color.get(label_en, "#e8a030")
                 label_s  = _sc_label_es.get(label_en, label_en)
-                w_pct    = max(4, int((score - 5) / 90 * 100))
+                w_pct    = min(100, max(4, int((score - 5) / 90 * 100)))
                 sc_rows += f"""
       <tr>
         <td class="sc-day">{entry['day']}</td>

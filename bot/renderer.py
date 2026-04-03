@@ -347,7 +347,7 @@ def _sentiment_week_chart(week_data: list[dict]) -> str:
         label_en = entry.get("label_en", "Cautious")
         color    = _color.get(label_en, "#e8a030")
         label    = _label_es.get(label_en, label_en)
-        w_pct    = max(4, int((score - 5) / 90 * 100))
+        w_pct    = min(100, max(4, int((score - 5) / 90 * 100)))
         rows += f"""
         <tr>
           <td style="font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_LIGHT}; width:32px; white-space:nowrap; padding:0 8px 8px 0; vertical-align:middle;">{entry['day']}</td>
