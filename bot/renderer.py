@@ -330,88 +330,53 @@ def _week_review(stories: list[dict]) -> str:
 </table>"""
 
 
-def _sentiment_chart(week_sentiment: list[dict]) -> str:
+def _sentiment_week_chart(week_data: list[dict]) -> str:
     """
-    Renders the weekly sentiment trajectory as a PNG via QuickChart.io.
-    Returns an inline <img> block for Gmail-safe embedding.
+    Renders Mon-Fri sentiment as Gmail-safe table-based horizontal bars.
+    Returns empty string if fewer than 2 entries.
     """
-    import json
-    import urllib.parse
-
-    if not week_sentiment:
+    if len(week_data) < 2:
         return ""
 
-    labels = [d["day"] for d in week_sentiment]
-    data   = [d["position"] for d in week_sentiment]
-    colors = [
-        "#b84a3a" if d["position"] < 36 else
-        ("#4a9e6a" if d["position"] > 64 else "#e8a030")
-        for d in week_sentiment
-    ]
+    _color    = {"Risk-Off": "#d4695a", "Cautious": "#e8a030", "Risk-On": "#6abf7b"}
+    _label_es = {"Risk-Off": "Aversión", "Cautious": "Cauteloso", "Risk-On": "Apetito"}
 
-    config = {
-        "type": "line",
-        "data": {
-            "labels": labels,
-            "datasets": [{
-                "data": data,
-                "borderColor": "#3a4a54",
-                "borderWidth": 2,
-                "pointBackgroundColor": colors,
-                "pointBorderColor":     colors,
-                "pointRadius": 6,
-                "fill": False,
-                "tension": 0.3,
-            }],
-        },
-        "options": {
-            "responsive": False,
-            "plugins": {"legend": {"display": False}},
-            "scales": {
-                "y": {
-                    "min": 0, "max": 100,
-                    "ticks": {"display": False},
-                    "grid": {"color": "#dde3e8"},
-                },
-                "x": {
-                    "ticks": {"color": "#888888", "font": {"size": 11}},
-                    "grid":  {"display": False},
-                },
-            },
-        },
-    }
-
-    chart_url = (
-        "https://quickchart.io/chart"
-        f"?w=504&h=160&bkg=%23f0f3f5&f=png"
-        f"&c={urllib.parse.quote(json.dumps(config, separators=(',', ':')))}"
-    )
+    rows = ""
+    for entry in week_data:
+        score    = entry.get("position", 50)
+        label_en = entry.get("label_en", "Cautious")
+        color    = _color.get(label_en, "#e8a030")
+        label    = _label_es.get(label_en, label_en)
+        w_pct    = max(4, int((score - 5) / 90 * 100))
+        rows += f"""
+        <tr>
+          <td style="font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_LIGHT}; width:32px; white-space:nowrap; padding:0 8px 8px 0; vertical-align:middle;">{entry['day']}</td>
+          <td style="padding:0 8px 8px 0; vertical-align:middle;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#e4e9ec; height:20px;">
+              <tr>
+                <td style="width:{w_pct}%; background:{color}; height:20px; padding:0 7px; vertical-align:middle;">
+                  <span style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; color:#ffffff; letter-spacing:0.5px;">{score}</span>
+                </td>
+                <td style="background:#e4e9ec;">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; color:{color}; white-space:nowrap; padding:0 0 8px 0; vertical-align:middle; width:80px;">{label}</td>
+        </tr>"""
 
     today  = date.today()
     monday = today - timedelta(days=today.weekday())
     friday = monday + timedelta(days=4)
     label  = f"{monday.strftime('%d %b')}&#8211;{friday.strftime('%d %b, %Y')}"
 
-    # Annotate min/max points in a plain-text legend below the chart
-    if data:
-        low_day  = week_sentiment[data.index(min(data))]["day"]
-        high_day = week_sentiment[data.index(max(data))]["day"]
-        legend = (
-            f'<span style="color:#b84a3a;">&#9679;</span> Risk-Off &nbsp;'
-            f'<span style="color:#e8a030;">&#9679;</span> Cauteloso &nbsp;'
-            f'<span style="color:#4a9e6a;">&#9679;</span> Risk-On &nbsp;&nbsp;'
-            f'<span style="color:#888888;">m&iacute;n: {low_day} &middot; m&aacute;x: {high_day}</span>'
-        )
-    else:
-        legend = ""
-
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
-    <td style="padding:24px 48px 8px;">
+    <td style="padding:24px 48px 16px;">
       <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Sentimiento Semanal &middot; {label}</p>
-      <img src="{chart_url}" width="504" style="width:100%; max-width:504px; display:block;" alt="Weekly sentiment chart"/>
-      <p style="margin:10px 0 0 0; font-family:{FONT_SANS}; font-size:9px; color:{TEXT_LIGHT};">{legend}</p>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        {rows}
+      </table>
     </td>
   </tr>
 </table>"""
@@ -543,7 +508,7 @@ def build_html(
     sentiment_chart_html = ""
     if is_friday:
         from storage import get_week_sentiment
-        sentiment_chart_html = _sentiment_chart(get_week_sentiment())
+        sentiment_chart_html = _sentiment_week_chart(get_week_sentiment())
 
     sentiment  = digest.get("sentiment", {})
     quote      = digest.get("quote", {})
