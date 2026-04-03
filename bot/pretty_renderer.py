@@ -97,9 +97,11 @@ CSS = """
   .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
   .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
   .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-headline-lead { font-size: 26px; }
+  .lead-label { font-size: 8px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 6px; }
   .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
-  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
-  .read-more:hover { color: #555; border-color: #555; }
+  .read-more { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border: 1px solid #1a1a1a; padding: 6px 14px; margin-top: 6px; transition: background 0.15s, color 0.15s; }
+  .read-more:hover { background: #1a1a1a; color: #f5f2ed; }
   .thread-badge {
     display: inline-block;
     font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
@@ -111,14 +113,9 @@ CSS = """
     border-left: 3px solid #cdd4d9; padding-left: 10px;
     margin: 10px 0;
   }
-  .narrative-thread {
-    padding: 0 48px 20px;
-  }
-  .narrative-thread p {
-    font-size: 11px; font-weight: 600; color: #555;
-    border-left: 3px solid #1a1a1a; padding-left: 12px; line-height: 1.7;
-    margin: 0;
-  }
+  .narrative-thread { padding: 20px 48px; border-top: 1px solid #e4e9ec; border-bottom: 1px solid #e4e9ec; text-align: center; }
+  .nt-label { font-size: 8px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #aab4bc; margin-bottom: 10px; }
+  .nt-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: #3a4a54; line-height: 1.65; margin: 0; }
 
   .currency { padding: 24px 48px; }
   .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
@@ -159,6 +156,14 @@ CSS = """
   .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
   .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
   .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .sc-table { width: 100%; border-collapse: collapse; }
+  .sc-day { font-size: 8px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; width: 32px; white-space: nowrap; padding: 0 8px 8px 0; vertical-align: middle; }
+  .sc-track-cell { padding: 0 8px 8px 0; vertical-align: middle; }
+  .sc-track { background: #e4e9ec; height: 20px; width: 100%; }
+  .sc-bar { height: 20px; display: flex; align-items: center; padding-left: 7px; min-width: 4%; }
+  .sc-val { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .sc-label { font-size: 9px; font-weight: 700; white-space: nowrap; padding: 0 0 8px 0; vertical-align: middle; width: 80px; text-align: right; }
 
   .calendar { padding: 24px 48px; }
   .cal-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e4e9ec; }
@@ -286,8 +291,10 @@ def build_pretty_html(
     if narrative_es:
         narrative_html = f"""
 <div class="narrative-thread">
-  <div class="lang-es"><p>{narrative_es}</p></div>
-  <div class="lang-en"><p>{narrative_en}</p></div>
+  <div class="nt-label lang-es">Hilo del d&#237;a</div>
+  <div class="nt-label lang-en">Today&#39;s thread</div>
+  <p class="nt-text lang-es">{narrative_es}</p>
+  <p class="nt-text lang-en">{narrative_en}</p>
 </div>"""
 
     today      = date.today().strftime("%A, %B %d, %Y").upper()
@@ -350,22 +357,29 @@ def build_pretty_html(
         ctx_es_html = f'<div class="context-note">{ctx_es}</div>' if ctx_es else ""
         ctx_en_html = f'<div class="context-note">{ctx_en}</div>' if ctx_en else ""
 
+        lead_label_html = (
+            '<div class="lead-label">&#9679; LEAD STORY</div>'
+            if i == 0 else ""
+        )
+        headline_class = "story-headline story-headline-lead" if i == 0 else "story-headline"
+
         stories_html += f"""
 {DIVIDER}
 <div class="story">
   {thread_badge}
+  {lead_label_html}
   <div class="story-meta">
     <span class="story-source">{story['source']}</span>
     <span class="story-tag">{story.get('tag','')}</span>
   </div>
   <div class="lang-es">
-    <div class="story-headline">{story['headline']}</div>
+    <div class="{headline_class}">{story['headline']}</div>
     <div class="story-body">{story['body']}</div>
     {ctx_es_html}
     <a href="{story['url']}" class="read-more">Leer m&aacute;s &rarr;</a>
   </div>
   <div class="lang-en">
-    <div class="story-headline">{story_en.get('headline', story['headline'])}</div>
+    <div class="{headline_class}">{story_en.get('headline', story['headline'])}</div>
     <div class="story-body">{story_en.get('body', story['body'])}</div>
     {ctx_en_html}
     <a href="{story['url']}" class="read-more">Read more &rarr;</a>
@@ -555,56 +569,43 @@ def build_pretty_html(
     # ── Sentiment chart (Fridays only) ───────────────────────────────────
     sentiment_chart_html = ""
     if is_friday:
-        import json, urllib.parse
         from storage import get_week_sentiment
         week_sent = get_week_sentiment()
-        if week_sent:
-            sc_labels = [d["day"] for d in week_sent]
-            sc_data   = [d["position"] for d in week_sent]
-            sc_colors = [
-                "#b84a3a" if d["position"] < 36 else
-                ("#4a9e6a" if d["position"] > 64 else "#e8a030")
-                for d in week_sent
-            ]
-            sc_config = {
-                "type": "line",
-                "data": {
-                    "labels": sc_labels,
-                    "datasets": [{
-                        "data": sc_data,
-                        "borderColor": "#3a4a54",
-                        "borderWidth": 2,
-                        "pointBackgroundColor": sc_colors,
-                        "pointBorderColor":     sc_colors,
-                        "pointRadius": 6,
-                        "fill": False,
-                        "tension": 0.3,
-                    }],
-                },
-                "options": {
-                    "responsive": False,
-                    "plugins": {"legend": {"display": False}},
-                    "scales": {
-                        "y": {"min": 0, "max": 100, "ticks": {"display": False}, "grid": {"color": "#dde3e8"}},
-                        "x": {"ticks": {"color": "#888888", "font": {"size": 11}}, "grid": {"display": False}},
-                    },
-                },
-            }
-            sc_url = (
-                "https://quickchart.io/chart"
-                f"?w=544&h=160&bkg=%23f0f3f5&f=png"
-                f"&c={urllib.parse.quote(json.dumps(sc_config, separators=(',', ':')))}"
-            )
+        if len(week_sent) >= 2:
+            _sc_color    = {"Risk-Off": "#d4695a", "Cautious": "#e8a030", "Risk-On": "#6abf7b"}
+            _sc_label_es = {"Risk-Off": "Aversión", "Cautious": "Cauteloso", "Risk-On": "Apetito"}
+            sc_rows = ""
+            for entry in week_sent:
+                score    = entry.get("position", 50)
+                label_en = entry.get("label_en", "Cautious")
+                color    = _sc_color.get(label_en, "#e8a030")
+                label_s  = _sc_label_es.get(label_en, label_en)
+                w_pct    = min(100, max(4, int((score - 5) / 90 * 100)))
+                sc_rows += f"""
+      <tr>
+        <td class="sc-day">{entry['day']}</td>
+        <td class="sc-track-cell">
+          <div class="sc-track">
+            <div class="sc-bar" style="width:{w_pct}%; background:{color};">
+              <span class="sc-val">{score}</span>
+            </div>
+          </div>
+        </td>
+        <td class="sc-label" style="color:{color};">{label_s}</td>
+      </tr>"""
             monday_sc = date.today() - timedelta(days=date.today().weekday())
             friday_sc = monday_sc + timedelta(days=4)
             sc_label  = f"{monday_sc.strftime('%b %d')}&ndash;{friday_sc.strftime('%d, %Y')}"
             sentiment_chart_html = f"""
 {DIVIDER}
-<div style="padding:24px 48px 8px;">
+<div style="padding:24px 48px 16px;">
   <div class="section-title"
        data-es="Sentimiento Semanal &middot; {sc_label}"
        data-en="Weekly Sentiment &middot; {sc_label}">Sentimiento Semanal &middot; {sc_label}</div>
-  <img src="{sc_url}" style="width:100%; border:1px solid #cdd4d9; margin-top:14px;" alt="Weekly sentiment chart"/>
+  <table class="sc-table" style="margin-top:14px;">
+    <tbody>{sc_rows}
+    </tbody>
+  </table>
 </div>"""
 
     # ── Wordcloud ─────────────────────────────────────────────────────────
