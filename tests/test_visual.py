@@ -130,3 +130,84 @@ def test_missing_en_block_falls_back_to_es_sentiment():
 def test_template_stored_in_result():
     result = generate_hero_prompt(MOCK_DIGEST)
     assert result["hero_prompt_template"] == PROMPT_TEMPLATES["Energía"]
+
+# ── storage merge ────────────────────────────────────────────────────────────
+
+import json, os
+from datetime import date
+
+def test_save_digest_persists_visual(tmp_path, monkeypatch):
+    import storage
+    monkeypatch.setattr(storage, "DIGEST_DIR", str(tmp_path))
+
+    visual = {
+        "hero_category": "Energía",
+        "hero_category_source": "lead_story",
+        "hero_prompt_template": "template",
+        "hero_prompt_version": "v1",
+        "hero_prompt": "original prompt",
+        "hero_selected": None,
+    }
+    storage.save_digest(MOCK_DIGEST, {"tickers": [], "currency": {}}, visual=visual)
+
+    today = date.today().isoformat()
+    with open(os.path.join(str(tmp_path), f"{today}.json"), encoding="utf-8") as f:
+        stored = json.load(f)
+
+    assert stored["visual"]["hero_category"] == "Energía"
+    assert stored["visual"]["hero_selected"] is None
+
+
+def test_save_digest_preserves_hero_selected_on_rerun(tmp_path, monkeypatch):
+    import storage
+    monkeypatch.setattr(storage, "DIGEST_DIR", str(tmp_path))
+
+    today = date.today().isoformat()
+    path  = os.path.join(str(tmp_path), f"{today}.json")
+
+    visual_first = {
+        "hero_category": "Energía",
+        "hero_category_source": "lead_story",
+        "hero_prompt_template": "template",
+        "hero_prompt_version": "v1",
+        "hero_prompt": "first prompt",
+        "hero_selected": None,
+    }
+    storage.save_digest(MOCK_DIGEST, {"tickers": [], "currency": {}}, visual=visual_first)
+
+    # Simulate manual edit: set hero_selected
+    with open(path, encoding="utf-8") as f:
+        stored = json.load(f)
+    stored["visual"]["hero_selected"] = "https://cdn.example.com/hero.png"
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(stored, f)
+
+    # Rerun with updated prompt — hero_selected must survive
+    visual_second = {
+        "hero_category": "Energía",
+        "hero_category_source": "lead_story",
+        "hero_prompt_template": "template",
+        "hero_prompt_version": "v1",
+        "hero_prompt": "updated prompt",
+        "hero_selected": None,
+    }
+    storage.save_digest(MOCK_DIGEST, {"tickers": [], "currency": {}}, visual=visual_second)
+
+    with open(path, encoding="utf-8") as f:
+        final = json.load(f)
+
+    assert final["visual"]["hero_selected"] == "https://cdn.example.com/hero.png"
+    assert final["visual"]["hero_prompt"] == "updated prompt"
+
+
+def test_save_digest_without_visual_omits_key(tmp_path, monkeypatch):
+    import storage
+    monkeypatch.setattr(storage, "DIGEST_DIR", str(tmp_path))
+
+    storage.save_digest(MOCK_DIGEST, {"tickers": [], "currency": {}})
+
+    today = date.today().isoformat()
+    with open(os.path.join(str(tmp_path), f"{today}.json"), encoding="utf-8") as f:
+        stored = json.load(f)
+
+    assert "visual" not in stored
