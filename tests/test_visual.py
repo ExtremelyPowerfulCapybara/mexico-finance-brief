@@ -211,3 +211,76 @@ def test_save_digest_without_visual_omits_key(tmp_path, monkeypatch):
         stored = json.load(f)
 
     assert "visual" not in stored
+
+# ── pretty_renderer hero block ────────────────────────────────────────────────
+
+from pretty_renderer import build_pretty_html
+
+_MINIMAL_TICKERS   = []
+_MINIMAL_CURRENCY  = {"bases": ["MXN"], "matrix": {"MXN": []}}
+_MINIMAL_SECONDARY = None
+
+
+def test_hero_block_absent_when_visual_is_none():
+    html = build_pretty_html(
+        digest            = MOCK_DIGEST,
+        tickers           = _MINIMAL_TICKERS,
+        currency          = _MINIMAL_CURRENCY,
+        week_stories      = [],
+        secondary_tickers = _MINIMAL_SECONDARY,
+        visual            = None,
+    )
+    assert 'class="hero-image"' not in html
+
+
+def test_hero_block_absent_when_hero_selected_is_none():
+    visual = {
+        "hero_category": "Energía",
+        "hero_selected": None,
+    }
+    html = build_pretty_html(
+        digest            = MOCK_DIGEST,
+        tickers           = _MINIMAL_TICKERS,
+        currency          = _MINIMAL_CURRENCY,
+        week_stories      = [],
+        secondary_tickers = _MINIMAL_SECONDARY,
+        visual            = visual,
+    )
+    assert 'class="hero-image"' not in html
+
+
+def test_hero_block_present_when_hero_selected_is_set():
+    visual = {
+        "hero_category": "Energía",
+        "hero_selected": "https://cdn.example.com/hero.png",
+    }
+    html = build_pretty_html(
+        digest            = MOCK_DIGEST,
+        tickers           = _MINIMAL_TICKERS,
+        currency          = _MINIMAL_CURRENCY,
+        week_stories      = [],
+        secondary_tickers = _MINIMAL_SECONDARY,
+        visual            = visual,
+    )
+    assert 'class="hero-image"' in html
+    assert 'src="https://cdn.example.com/hero.png"' in html
+    assert 'alt="Energía"' in html
+
+
+def test_hero_block_position_before_sentiment():
+    """Hero image must appear before the sentiment gauge in the document."""
+    visual = {
+        "hero_category": "FX",
+        "hero_selected": "https://cdn.example.com/hero.png",
+    }
+    html = build_pretty_html(
+        digest            = MOCK_DIGEST,
+        tickers           = _MINIMAL_TICKERS,
+        currency          = _MINIMAL_CURRENCY,
+        week_stories      = [],
+        secondary_tickers = _MINIMAL_SECONDARY,
+        visual            = visual,
+    )
+    hero_pos      = html.index('class="hero-image"')
+    sentiment_pos = html.index('class="sentiment"')
+    assert hero_pos < sentiment_pos
