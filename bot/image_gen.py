@@ -7,7 +7,7 @@
 #  Outputs: visual metadata dict for digest JSON
 # ─────────────────────────────────────────────
 
-from prompt_map import PROMPT_TEMPLATES
+from prompt_map import PROMPT_TEMPLATES, PROMPT_VARIANT_SUBJECTS, _BASE
 
 TEMPLATE_VERSION = "v1"
 
@@ -38,11 +38,22 @@ def generate_hero_prompt(digest: dict) -> dict:
     template = PROMPT_TEMPLATES.get(tag, PROMPT_TEMPLATES["Macro"])
     prompt   = template.format(headline=headline, sentiment=mood)
 
+    # Generate 3 compositional variants; opt1 matches the default prompt above.
+    variant_subjects = PROMPT_VARIANT_SUBJECTS.get(tag, PROMPT_VARIANT_SUBJECTS["Macro"])
+    hero_options = {}
+    for i, subject in enumerate(variant_subjects[:3], start=1):
+        hero_options[f"opt{i}"] = _BASE.format(
+            subject=subject,
+            headline=headline,
+            sentiment=mood,
+        )
+
     return {
         "hero_category":        tag,
         "hero_category_source": "lead_story",
         "hero_prompt_template": template,
         "hero_prompt_version":  TEMPLATE_VERSION,
         "hero_prompt":          prompt,
+        "hero_options":         hero_options,
         "hero_selected":        None,
     }

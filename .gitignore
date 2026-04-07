@@ -24,6 +24,9 @@ Thumbs.db
 .idea/
 *.swp
 
+# ── Telegram handler state ─────────────────────
+bot/.telegram_offset
+
 # ── Claude Code ────────────────────────────────
 .claude/
 
