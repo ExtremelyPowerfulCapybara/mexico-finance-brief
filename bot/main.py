@@ -5,6 +5,8 @@
 import os
 import random
 from concurrent.futures import ThreadPoolExecutor
+from dotenv import load_dotenv
+load_dotenv()  # loads bot/.env when running from bot/; no-op if file absent
 from fetcher     import fetch_news
 from summarizer  import summarize_news
 from market_data import fetch_tickers, fetch_secondary_tickers, fetch_currency_table
@@ -16,6 +18,7 @@ from config      import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES, MOCK_MODE, SKIP
 from mock_data   import load_mock
 from wordcloud_gen import generate_wordcloud
 from image_gen   import generate_hero_prompt
+from telegram_bot import send_telegram_issue_notification
 
 
 def get_issue_number() -> int:
@@ -131,6 +134,13 @@ def run():
         author             = author,
         visual             = visual,
     )
+
+    # ── 7. Telegram notification ────────────────────
+    from datetime import date
+    today_str   = date.today().isoformat()
+    _base       = os.environ.get("PUBLIC_ARCHIVE_BASE_URL", "").rstrip("/")
+    archive_url = f"{_base}/{today_str}.html" if _base else None
+    send_telegram_issue_notification({**digest, "visual": visual}, today_str, archive_url=archive_url)
 
     print("\n" + "=" * 50)
     print(f"  Done. Issue #{issue_num} delivered.")

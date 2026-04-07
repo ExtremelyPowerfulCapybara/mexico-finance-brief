@@ -1,5 +1,6 @@
 # ── Secrets ───────────────────────────────────
 .env
+bot/.env
 bot/config_local.py
 subscribers.csv
 # ── Python ────────────────────────────────────

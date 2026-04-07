@@ -1,6 +1,6 @@
 # The Periphery — Mexico Finance Brief
 
-A bilingual (Spanish/English) automated financial newsletter focused on emerging markets and macro intelligence. Every weekday at ~7 AM Mexico City time, GitHub Actions fetches news, pulls live market data, writes a bilingual digest with Claude, sends an email to subscribers, and publishes a full HTML archive to GitHub Pages.
+A bilingual (Spanish/English) automated financial newsletter focused on emerging markets and macro intelligence. Every weekday at ~7 AM Mexico City time, a scheduled job on a VPS fetches news, pulls live market data, writes a bilingual digest with Claude, sends an email to subscribers, and publishes a full HTML archive to GitHub Pages.
 
 **Live archive:** https://extremelypowerfulcapybara.github.io/News-Digest/
 
@@ -15,7 +15,7 @@ A bilingual (Spanish/English) automated financial newsletter focused on emerging
 
 Each issue contains: a bilingual editor note, 5–7 curated stories with context notes, a macro sentiment score, a market data panel (equities, commodities, crypto, FX), a quote of the day, and an economic calendar. On Fridays it also includes a week-in-review timeline, a sentiment bar chart, and a word cloud generated from the week's headlines.
 
-The pipeline has no web server and no database. All persistent state is flat JSON files in `digests/`. GitHub Actions is the scheduler, secrets manager, and deployment pipeline.
+The pipeline has no web server and no database. All persistent state is flat JSON files in `digests/`. The production runtime is a VPS running a scheduled cron job; secrets are loaded from `bot/.env`. GitHub Actions is retained for optional dev/test runs.
 
 ---
 
@@ -24,7 +24,7 @@ The pipeline has no web server and no database. All persistent state is flat JSO
 | Layer | Technology | Notes |
 |---|---|---|
 | Language | Python 3.11+ | Single process, no async |
-| Scheduling | GitHub Actions (cron) | Mon–Fri 11:30 UTC (~7 AM CST) |
+| Scheduling | VPS cron job | Mon–Fri ~7 AM CST; GitHub Actions retained for dev/test |
 | News data | NewsAPI v2 | 7 Spanish-language topics, 14 curated outlets |
 | Market data | Yahoo Finance JSON API | Raw `requests` — no `yfinance` package |
 | AI summarization | Anthropic Claude API | Structured bilingual JSON output |
@@ -103,7 +103,7 @@ mexico-finance-brief/
     (Fridays) Generate word cloud → wordcloud_gen.py → docs/wordcloud-YYYY-WNN.png
 ```
 
-After step 6, the GitHub Actions workflow runs `git add docs/ digests/` and commits + pushes to the branch, triggering a GitHub Pages redeploy.
+After step 6, the pipeline (or the VPS cron wrapper) runs `git add docs/ digests/` and commits + pushes to the branch, triggering a GitHub Pages redeploy.
 
 ### Data ingestion
 
@@ -151,7 +151,39 @@ The renderers share no code. Behavioral divergence between them accumulates over
 
 ---
 
-## 5. Running Locally
+## 5. Environment Setup (VPS)
+
+The production runtime is a VPS at `/home/adrian/project`. Secrets are stored in `bot/.env` and loaded automatically via `python-dotenv` when the pipeline starts. GitHub Actions is no longer the primary runtime — it is retained only for optional dev/test runs.
+
+### Creating `bot/.env`
+
+```bash
+cd /home/adrian/project/bot
+cp .env.example .env   # if an example file exists, or create from scratch
+nano .env
+```
+
+Minimum required content:
+
+```
+NEWS_API_KEY=your-newsapi-key
+ANTHROPIC_API_KEY=your-anthropic-key
+EMAIL_SENDER=your@gmail.com
+EMAIL_PASSWORD="xxxx xxxx xxxx xxxx"
+SUBSCRIBERS=subscriber@example.com
+```
+
+### Notes
+
+- Values containing spaces **must be quoted**: `EMAIL_PASSWORD="xxxx xxxx xxxx xxxx"`
+- `bot/.env` is listed in `.gitignore` — it will never be committed accidentally
+- `load_dotenv()` in `main.py` loads the file automatically; no `export` step needed
+- On the VPS, a cron entry in `crontab -e` runs `python main.py` from `/home/adrian/project/bot`
+- GitHub Actions workflows (`newsletter.yml`, etc.) inject secrets via the GitHub Actions secrets store and do not depend on `bot/.env`
+
+---
+
+## 6. Running Locally
 
 ### Installation
 
@@ -162,17 +194,24 @@ pip install -r ../requirements.txt
 
 ### Environment variables
 
-Create a `.env` file in `bot/` (never committed):
+Create `bot/.env` (never committed — automatically loaded by `load_dotenv()` at startup):
 
 ```
-NEWS_API_KEY=...
-ANTHROPIC_API_KEY=...
+NEWS_API_KEY=your-newsapi-key
+ANTHROPIC_API_KEY=your-anthropic-key
 EMAIL_SENDER=your@gmail.com
-EMAIL_PASSWORD=your-gmail-app-password
-SUBSCRIBERS=you@example.com
+EMAIL_PASSWORD="xxxx xxxx xxxx xxxx"
+SUBSCRIBERS=you@example.com,other@example.com
+SKIP_EMAIL=false
+TELEGRAM_TOKEN=your-bot-token
+TELEGRAM_CHAT_ID=your-chat-id
+PUBLIC_ARCHIVE_BASE_URL=https://extremelypowerfulcapybara.github.io/News-Digest
 ```
 
-All variables read by `config.py`:
+> **Quoting:** values that contain spaces (e.g. Gmail App Passwords) must be quoted.
+> **Security:** never commit `bot/.env`. It is already in `.gitignore`.
+
+All variables read by the pipeline:
 
 | Variable | Required | Description |
 |---|---|---|
@@ -180,39 +219,48 @@ All variables read by `config.py`:
 | `ANTHROPIC_API_KEY` | Yes | Anthropic Claude API key |
 | `EMAIL_SENDER` | Yes | Gmail address to send from |
 | `EMAIL_PASSWORD` | Yes | Gmail App Password (not your login password) |
-| `SUBSCRIBERS` | Yes (local) | Comma-separated recipient emails |
-| `SUBSCRIBERS_CSV` | Prod only | Newline-separated list; written to `subscribers.csv` by the workflow |
-| `DEV_SUBSCRIBERS_CSV` | Dev only | Same format; used by `newsletter-dev.yml` and `newsletter-adrian.yml` |
-| `MOCK` | No | `true` to skip NewsAPI + Claude; loads latest digest from `digests/` |
+| `SUBSCRIBERS` | Yes | Comma-separated recipient emails |
 | `SKIP_EMAIL` | No | `true` to skip SMTP; archive HTML is still generated |
+| `TELEGRAM_TOKEN` | No | Telegram bot token for post-run notifications |
+| `TELEGRAM_CHAT_ID` | No | Telegram chat/channel ID for notifications |
+| `PUBLIC_ARCHIVE_BASE_URL` | No | Base URL for archive links in Telegram messages |
+| `MOCK` | No | `true` to skip NewsAPI + Claude; loads latest digest from `digests/` |
 | `FORCE_FRIDAY` | No | `true` to simulate Friday mode (word cloud + week-in-review) |
-| `GITHUB_RAW_URL` | Dev only | Base URL override for word cloud images on non-Pages branches |
+| `GITHUB_RAW_URL` | Dev only | Asset URL override for word cloud images on non-Pages branches |
+| `SUBSCRIBERS_CSV` | GH Actions only | Newline-separated list; written to `subscribers.csv` by the workflow |
+| `DEV_SUBSCRIBERS_CSV` | GH Actions only | Same format; used by `newsletter-dev.yml` and `newsletter-adrian.yml` |
 | `HEALTH_CHECK_URL` | No | Healthchecks.io ping URL (not yet implemented) |
 | `BANXICO_API_KEY` | No | Reserved for future Banxico API integration |
 
+Missing required variables are caught by `config.py` returning empty strings; the pipeline will fail at the first API call that needs the key and log the error clearly.
+
 ### Run commands
 
-Load env and run the full pipeline:
+With `bot/.env` in place, `load_dotenv()` loads it automatically:
 
 ```bash
-export $(cat .env | xargs) && python main.py
+cd bot
+python main.py
 ```
 
 Dry run — no API calls, no email, archive HTML generated from saved digest:
 
 ```bash
+cd bot
 MOCK=true SKIP_EMAIL=true python main.py
 ```
 
 Simulate a Friday run:
 
 ```bash
+cd bot
 MOCK=true SKIP_EMAIL=true FORCE_FRIDAY=true python main.py
 ```
 
 Send a test email using hardcoded mock data (no pipeline):
 
 ```bash
+cd bot
 python test_email.py
 ```
 
@@ -228,7 +276,7 @@ GitHub Pages reflects `main` only. To preview `Dev-Nigg` output, open the file f
 
 ---
 
-## 6. Output Format
+## 7. Output Format
 
 ### Email
 
@@ -280,7 +328,7 @@ The archive index (`docs/index.html`) is rebuilt from all digest files on every 
 
 ---
 
-## 7. Editing Guide
+## 8. Editing Guide
 
 ### Safe to edit
 
@@ -324,7 +372,7 @@ Edit `config.py` — the `ECONOMIC_CALENDAR` list. Each entry needs `date`, `eve
 
 ---
 
-## 8. Planned Extension Points
+## 9. Planned Extension Points
 
 ### Visual / image generation layer
 
@@ -348,12 +396,12 @@ See `TODO.md` for the current task list. Key items:
 - **Health monitoring** — Healthchecks.io ping at end of each run (`HEALTH_CHECK_URL` env var is already wired in `config.py`)
 - **Unsubscribe tokens** — per-subscriber token system for GDPR-friendly unsubscribes
 - **Resend/Mailgun migration** — replace Gmail SMTP for deliverability at scale (needed beyond ~20 subscribers)
-- **VPS migration** — move off GitHub Actions to a dedicated server (Hetzner/DigitalOcean)
+- **VPS migration** — ~~move off GitHub Actions~~ **done**; pipeline runs on a VPS
 - **Substack integration** — freemium commercial launch on a ~12-month horizon
 
 ---
 
-## 9. Known Limitations & Tech Debt
+## 10. Known Limitations & Tech Debt
 
 1. **Single process, no fault isolation.** If any external API call fails mid-run (NewsAPI, Yahoo Finance, Claude), the entire run fails. The only retry logic is in `summarizer.py` (Claude JSON repair + overload backoff). Everything else is fail-fast.
 
@@ -367,7 +415,7 @@ See `TODO.md` for the current task list. Key items:
 
 6. **Full index rebuild on every run.** `archive.py` regenerates `docs/index.html` from all digest files on every run. As the digest count grows, this will become progressively slower.
 
-7. **GitHub Actions as the runtime.** The scheduler, secrets manager, compute environment, and deployment pipeline are all GitHub Actions. This creates a tight coupling to GitHub's platform and limits observability.
+7. **Git push still required for GitHub Pages.** The VPS runs the pipeline and generates `docs/`, but GitHub Pages still requires a push to `main` to redeploy. The cron wrapper handles this with `git push`, which keeps a coupling to GitHub's platform for archive hosting.
 
 8. **Branch divergence.** As of April 2026, `Dev-Nigg` is significantly ahead of `main` in features. Production is running old code. Merging is a listed quick-win in `TODO.md`.
 
@@ -377,7 +425,7 @@ See `TODO.md` for the current task list. Key items:
 
 ---
 
-## 10. Developer Documentation
+## 11. Developer Documentation
 
 The `engineering/` folder contains detailed technical references:
 

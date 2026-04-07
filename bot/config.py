@@ -3,9 +3,8 @@
 #
 #  Secrets are read from environment variables
 #  so they're never committed to the repo.
-#  On GitHub Actions they come from repo secrets.
-#  Locally, create a .env file or export them
-#  in your terminal before running.
+#  Production (VPS): loaded from bot/.env via load_dotenv() in main.py.
+#  GitHub Actions (dev/test): injected as repo secrets by the workflow.
 # ─────────────────────────────────────────────
 
 import os
