@@ -302,11 +302,11 @@ def build_pretty_html(
   <p class="nt-text lang-en">{narrative_en}</p>
 </div>"""
 
-    # ── Hero image (renders only when hero_selected is set manually) ──────
+    # ── Hero image (renders only when hero_image is set after selection) ──
     hero_html = ""
-    if visual and visual.get("hero_selected"):
+    if visual and visual.get("hero_image"):
         cat = visual.get("hero_category", "")
-        src = visual["hero_selected"]
+        src = visual["hero_image"]
         hero_html = f'''
 <div class="hero-image">
   <img src="{src}" alt="{cat}">

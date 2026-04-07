@@ -3,7 +3,7 @@
 # ─────────────────────────────────────────────
 #  Re-render a single archive issue from its
 #  stored digest JSON. Useful after manually
-#  setting visual.hero_selected.
+#  setting visual.hero_image.
 #
 #  Usage (run from bot/):
 #    python rerender.py 2026-04-06
@@ -75,10 +75,10 @@ def rerender(target_date: str) -> None:
         f.write(html)
 
     print(f"[rerender] Written to {out_path}")
-    if visual and visual.get("hero_selected"):
-        print(f"[rerender] Hero image: {visual['hero_selected']}")
+    if visual and visual.get("hero_image"):
+        print(f"[rerender] Hero image: {visual['hero_image']}")
     else:
-        print("[rerender] No hero image (hero_selected is null -- set it in the digest JSON first)")
+        print("[rerender] No hero image (hero_image is null -- run generate_candidates.py and select an option)")
 
 
 if __name__ == "__main__":
