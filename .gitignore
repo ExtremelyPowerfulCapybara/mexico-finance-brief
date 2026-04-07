@@ -28,3 +28,6 @@ Thumbs.db
 
 # ── Superpowers brainstorm sessions ───────────
 .superpowers/
+
+# ── Temporary image candidates ───────────────
+tmp_images/
