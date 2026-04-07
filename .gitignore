@@ -32,3 +32,6 @@ bot/.telegram_offset
 
 # ── Superpowers brainstorm sessions ───────────
 .superpowers/
+
+# ── Temporary image candidates ───────────────
+tmp_images/
