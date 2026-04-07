@@ -231,7 +231,7 @@ ECONOMIC_CALENDAR = [
 import pathlib
 REPO_ROOT   = pathlib.Path(__file__).parent.parent
 DIGEST_DIR  = str(REPO_ROOT / "digests")
-ARCHIVE_DIR = str(REPO_ROOT / "docs")
+ARCHIVE_DIR = str(REPO_ROOT / "docs")  # ARCHIVE_DIR is the source of truth for published site content (docs/)
 
 # ── Archive / asset URLs ───────────────────────
 # GITHUB_PAGES_URL: always the rendered GitHub Pages site.

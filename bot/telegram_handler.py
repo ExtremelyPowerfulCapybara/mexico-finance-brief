@@ -24,6 +24,7 @@ from config import DIGEST_DIR, ARCHIVE_DIR
 from image_candidates import generate_image_candidates
 from generate_candidates import _send_candidate_photos, _send_control_message
 from rerender import rerender
+from publish_site import publish_site
 
 _OFFSET_FILE = os.path.join(os.path.dirname(__file__), ".telegram_offset")
 
@@ -145,10 +146,13 @@ def _handle_select(token: str, cb_id: str, issue_date: str, key: str) -> None:
     except Exception as exc:
         print(f"  [telegram_handler] Rerender error (non-fatal): {exc}")
 
-    # 6. Cleanup non-selected tmp candidates
+    # 6. Publish updated site
+    publish_site()
+
+    # 8. Cleanup non-selected tmp candidates
     _cleanup_tmp_candidates(issue_date, key, candidates)
 
-    # 7. Answer
+    # 9. Answer
     _answer_callback(token, cb_id, f"Saved: {key}")
     print(f"  [telegram_handler] Selection complete: {key} for {issue_date}.")
 
