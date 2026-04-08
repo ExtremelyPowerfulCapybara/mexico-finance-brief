@@ -225,7 +225,8 @@ def _handle_regenerate(token: str, cb_id: str, issue_date: str) -> None:
     # Send new photos + control message
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
     if chat_id:
-        _send_candidate_photos(token, chat_id, issue_date, new_candidates)
+        summaries = visual.get("hero_option_summaries", {})
+        _send_candidate_photos(token, chat_id, issue_date, new_candidates, summaries)
         _send_control_message(token, chat_id, issue_date)
 
     print(f"  [telegram_handler] Regeneration round {new_round} complete for {issue_date}.")

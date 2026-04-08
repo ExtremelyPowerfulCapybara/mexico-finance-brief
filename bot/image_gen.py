@@ -48,12 +48,27 @@ def generate_hero_prompt(digest: dict) -> dict:
             sentiment=mood,
         )
 
+    # Concise captions derived from variant subjects — no new LLM call.
+    # Strip leading indefinite article and capitalize for mobile-friendly display.
+    def _caption(subject: str) -> str:
+        for prefix in ("a ", "an "):
+            if subject.lower().startswith(prefix):
+                subject = subject[len(prefix):]
+                break
+        return subject[:1].upper() + subject[1:]
+
+    hero_option_summaries = {
+        f"opt{i+1}": _caption(subject)
+        for i, subject in enumerate(variant_subjects[:3])
+    }
+
     return {
-        "hero_category":        tag,
-        "hero_category_source": "lead_story",
-        "hero_prompt_template": template,
-        "hero_prompt_version":  TEMPLATE_VERSION,
-        "hero_prompt":          prompt,
-        "hero_options":         hero_options,
-        "hero_selected":        None,
+        "hero_category":         tag,
+        "hero_category_source":  "lead_story",
+        "hero_prompt_template":  template,
+        "hero_prompt_version":   TEMPLATE_VERSION,
+        "hero_prompt":           prompt,
+        "hero_options":          hero_options,
+        "hero_option_summaries": hero_option_summaries,
+        "hero_selected":         None,
     }

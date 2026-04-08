@@ -30,15 +30,54 @@ PROJECT_ROOT = str(pathlib.Path(DIGEST_DIR).parent)
 
 # ── Telegram delivery ──────────────────────────
 
-def _send_candidate_photos(token: str, chat_id: str, issue_date: str, candidates: dict) -> None:
+def _send_context_message(
+    token: str,
+    chat_id: str,
+    issue_date: str,
+    lead_headline: str,
+    hero_category: str,
+) -> None:
+    """Send a brief editorial context message before the candidate photos."""
+    parts = [f"📋 {issue_date}"]
+    if lead_headline:
+        parts.append(f"📰 {lead_headline}")
+    if hero_category:
+        parts.append(f"🏷 {hero_category}")
+    parts.append("")
+    parts.append("Choose the visual angle that best matches the lead story.")
+    text = "\n".join(parts)
+    try:
+        resp = requests.post(
+            f"https://api.telegram.org/bot{token}/sendMessage",
+            json={"chat_id": chat_id, "text": text},
+            timeout=10,
+        )
+        if resp.ok:
+            print("  [generate_candidates] Context message sent.")
+        else:
+            print(f"  [generate_candidates] Context message failed: {resp.status_code} {resp.text[:80]}")
+    except Exception as exc:
+        print(f"  [generate_candidates] Error sending context message (non-fatal): {exc}")
+
+
+def _send_candidate_photos(
+    token: str,
+    chat_id: str,
+    issue_date: str,
+    candidates: dict,
+    summaries: dict = None,
+) -> None:
     """Send 3 candidate photos to Telegram, each with an individual Select button."""
     labels = {"opt1": "Option 1", "opt2": "Option 2", "opt3": "Option 3"}
+    summaries = summaries or {}
 
     for key in ("opt1", "opt2", "opt3"):
         path = candidates.get(key)
         if not path or not os.path.exists(path):
             print(f"  [generate_candidates] Skipping {key}: file not found at {path}")
             continue
+
+        caption = summaries.get(key) or labels[key]
 
         keyboard = {
             "inline_keyboard": [[
@@ -55,7 +94,7 @@ def _send_candidate_photos(token: str, chat_id: str, issue_date: str, candidates
                     f"https://api.telegram.org/bot{token}/sendPhoto",
                     data={
                         "chat_id": chat_id,
-                        "caption": labels[key],
+                        "caption": caption,
                         "reply_markup": json.dumps(keyboard),
                     },
                     files={"photo": photo_file},
@@ -159,7 +198,12 @@ def _load_and_run(
         print("  [generate_candidates] TELEGRAM_TOKEN or TELEGRAM_CHAT_ID not set -- skipping Telegram send.")
         return
 
-    _send_candidate_photos(token, chat_id, issue_date, new_candidates)
+    lead_headline = data.get("es", {}).get("stories", [{}])[0].get("headline", "")
+    hero_category = visual.get("hero_category", "")
+    summaries     = visual.get("hero_option_summaries", {})
+
+    _send_context_message(token, chat_id, issue_date, lead_headline, hero_category)
+    _send_candidate_photos(token, chat_id, issue_date, new_candidates, summaries)
     _send_control_message(token, chat_id, issue_date)
 
 
