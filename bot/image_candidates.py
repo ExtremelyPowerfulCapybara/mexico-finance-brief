@@ -2,8 +2,7 @@
 # ─────────────────────────────────────────────
 #  Hero image candidate generation.
 #
-#  generate_image() is the provider stub.
-#  Replace its body with a real API call when ready.
+#  generate_image() calls the OpenAI Images API.
 #  Signature (prompt, output_path) is stable — do not change.
 #
 #  generate_image_candidates() is the orchestrator.
@@ -11,48 +10,56 @@
 #  {opt1: path, opt2: path, opt3: path} mapping.
 # ─────────────────────────────────────────────
 
+import base64
 import os
 
 
 def generate_image(prompt: str, output_path: str) -> None:
     """
-    Stub implementation: creates a solid-color placeholder PNG.
+    Generate one image from prompt and save it as a PNG at output_path.
 
-    TODO: Replace this body with a real provider call, e.g.:
-        client = openai.OpenAI()
-        response = client.images.generate(
-            model="dall-e-3",
-            prompt=prompt,
-            size="1792x1024",
-            quality="standard",
-            n=1,
-        )
-        image_url = response.data[0].url
-        img_data = requests.get(image_url).content
-        with open(output_path, "wb") as f:
-            f.write(img_data)
-
-    The signature (prompt: str, output_path: str) must remain unchanged.
+    Reads from environment:
+        OPENAI_API_KEY         -- required
+        OPENAI_IMAGE_MODEL     -- default: gpt-image-1
+        OPENAI_IMAGE_SIZE      -- default: 1024x1024
+        OPENAI_IMAGE_QUALITY   -- default: medium
     """
-    from PIL import Image, ImageDraw
+    import openai
 
-    # Use a different hue per filename so options are visually distinct in Telegram
-    basename = os.path.basename(output_path)
-    if "opt1" in basename:
-        bg = (28, 45, 65)
-    elif "opt2" in basename:
-        bg = (28, 62, 52)
-    else:
-        bg = (65, 42, 28)
+    model   = os.environ.get("OPENAI_IMAGE_MODEL",   "gpt-image-1")
+    size    = os.environ.get("OPENAI_IMAGE_SIZE",    "1024x1024")
+    quality = os.environ.get("OPENAI_IMAGE_QUALITY", "medium")
 
-    img = Image.new("RGB", (1200, 630), color=bg)
-    draw = ImageDraw.Draw(img)
-    draw.rectangle([40, 40, 1160, 590], outline=(160, 160, 160), width=2)
-    # PIL default font — always available, no path needed
-    draw.text((60, 60), f"[stub] {basename}", fill=(200, 200, 200))
-    draw.text((60, 100), prompt[:100], fill=(140, 140, 140))
-    img.save(output_path, "PNG")
-    print(f"  [image_candidates] Stub image saved: {output_path}")
+    print(f"  [image_candidates] Generating: model={model} size={size} quality={quality} -> {os.path.basename(output_path)}")
+
+    client = openai.OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+
+    try:
+        response = client.images.generate(
+            model=model,
+            prompt=prompt,
+            size=size,
+            quality=quality,
+            n=1,
+            response_format="b64_json",
+        )
+    except openai.AuthenticationError as exc:
+        raise RuntimeError(f"[image_candidates] OpenAI auth failed: {exc}") from exc
+    except openai.RateLimitError as exc:
+        raise RuntimeError(f"[image_candidates] OpenAI rate limit: {exc}") from exc
+    except openai.APIConnectionError as exc:
+        raise RuntimeError(f"[image_candidates] OpenAI connection error: {exc}") from exc
+    except openai.OpenAIError as exc:
+        raise RuntimeError(f"[image_candidates] OpenAI API error: {exc}") from exc
+
+    b64_data = response.data[0].b64_json
+    if not b64_data:
+        raise RuntimeError("[image_candidates] OpenAI returned empty image data.")
+
+    with open(output_path, "wb") as f:
+        f.write(base64.b64decode(b64_data))
+
+    print(f"  [image_candidates] Saved: {output_path}")
 
 
 def generate_image_candidates(
