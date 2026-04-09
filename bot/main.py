@@ -38,6 +38,15 @@ def run():
         print("  *** SKIP EMAIL -- archive/preview only ***")
     print("=" * 50)
 
+    # ── Duplicate-run protection ──────────────────
+    from datetime import date
+    today_str    = date.today().isoformat()
+    _digest_path = os.path.join(DIGEST_DIR, f"{today_str}.json")
+    _force_run   = os.environ.get("FORCE_RUN", "").strip().lower() in {"true", "1", "yes", "on"}
+    if os.path.exists(_digest_path) and not _force_run:
+        print(f"[SKIP] Digest already exists for {today_str}: {_digest_path}")
+        return
+
     # ── 1. Fetch market data (fast, no LLM needed) ──
     print("\n[1/5] Fetching market data...")
     with ThreadPoolExecutor(max_workers=3) as pool:
@@ -84,8 +93,6 @@ def run():
 
     # -- 4. Save digest to disk --
     print("\n[4/5] Saving digest...")
-    from datetime import date
-    today_str = date.today().isoformat()
     digest["archive_url"] = build_issue_url(today_str)
     save_digest(digest, {"tickers": tickers, "currency": currency}, visual=visual)
 
