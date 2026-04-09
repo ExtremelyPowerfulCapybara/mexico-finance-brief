@@ -307,6 +307,17 @@ def process_telegram_updates() -> None:
 
 
 if __name__ == "__main__":
+    import fcntl
+    import sys
     from dotenv import load_dotenv
     load_dotenv()
+
+    _LOCK_PATH = "/tmp/telegram_handler.lock"
+    _lock_fh = open(_LOCK_PATH, "w")
+    try:
+        fcntl.flock(_lock_fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print("[SKIP] telegram_handler already running.")
+        sys.exit(0)
+
     process_telegram_updates()
