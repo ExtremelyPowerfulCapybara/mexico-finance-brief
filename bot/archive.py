@@ -412,7 +412,7 @@ def rebuild_index() -> None:
         labelEl.textContent = 'All Issues';
         return;
       }}
-      const tokens  = q.split(/\s+/).filter(Boolean);
+      const tokens  = q.split(/\\s+/).filter(Boolean);
       const matches = searchIndex.filter(item => tokens.every(t => item.text.includes(t)));
       const matchDates = new Set(matches.map(m => m.date));
       let shown = 0;
