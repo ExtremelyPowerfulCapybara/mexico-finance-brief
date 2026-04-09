@@ -233,15 +233,12 @@ REPO_ROOT   = pathlib.Path(__file__).parent.parent
 DIGEST_DIR  = str(REPO_ROOT / "digests")
 ARCHIVE_DIR = str(REPO_ROOT / "docs")  # ARCHIVE_DIR is the source of truth for published site content (docs/)
 
-# ── Archive / asset URLs ───────────────────────
-# GITHUB_PAGES_URL: always the rendered GitHub Pages site.
-# Used for navigation links (preheader, footer, archive index).
-GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest"
-
+# ── Asset URLs ─────────────────────────────────
 # ASSET_BASE_URL: used only for asset src attributes (e.g. wordcloud PNG).
-# In dev runs, GITHUB_RAW_URL is injected by the workflow so assets
+# In dev runs, GITHUB_RAW_URL may be injected by the workflow so assets
 # are served from the dev branch without needing a Pages deploy.
+# Falls back to PUBLIC_ARCHIVE_BASE_URL (the VPS public URL).
 ASSET_BASE_URL = os.environ.get(
     "GITHUB_RAW_URL",
-    "https://extremelypowerfulcapybara.github.io/News-Digest/"
+    os.environ.get("PUBLIC_ARCHIVE_BASE_URL", "").rstrip("/") + "/"
 )

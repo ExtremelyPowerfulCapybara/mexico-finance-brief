@@ -13,7 +13,7 @@
 import locale
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
-from config import GITHUB_PAGES_URL, ASSET_BASE_URL
+from config import ASSET_BASE_URL
 
 try:
     locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
