@@ -66,18 +66,29 @@ def _send_candidate_photos(
     issue_date: str,
     candidates: dict,
     summaries: dict = None,
+    lead_headline: str = "",
+    hero_category: str = "",
 ) -> None:
     """Send 3 candidate photos to Telegram, each with an individual Select button."""
     labels = {"opt1": "Option 1", "opt2": "Option 2", "opt3": "Option 3"}
     summaries = summaries or {}
+
+    # Build shared caption header (Lead + Category, plain text, skip missing fields)
+    header_lines = []
+    if lead_headline:
+        header_lines.append(f"Lead: {lead_headline}")
+    if hero_category:
+        header_lines.append(f"Category: {hero_category}")
+    if header_lines:
+        header_lines.append("")
+    header_lines.append("Choose the best image for today's issue.")
+    caption = "\n".join(header_lines)
 
     for key in ("opt1", "opt2", "opt3"):
         path = candidates.get(key)
         if not path or not os.path.exists(path):
             print(f"  [generate_candidates] Skipping {key}: file not found at {path}")
             continue
-
-        caption = summaries.get(key) or labels[key]
 
         keyboard = {
             "inline_keyboard": [[
@@ -203,7 +214,7 @@ def _load_and_run(
     summaries     = visual.get("hero_option_summaries", {})
 
     _send_context_message(token, chat_id, issue_date, lead_headline, hero_category)
-    _send_candidate_photos(token, chat_id, issue_date, new_candidates, summaries)
+    _send_candidate_photos(token, chat_id, issue_date, new_candidates, summaries, lead_headline, hero_category)
     _send_control_message(token, chat_id, issue_date)
 
 
