@@ -1,4 +1,4 @@
-# Mexico Finance Brief — To-Do List
+# The Opening Bell — To-Do List
 
 Track of features to build, roughly in order of priority.
 
@@ -7,6 +7,7 @@ Track of features to build, roughly in order of priority.
 ## In Progress
 
 - [ ] Sentiment chart in Friday email
+- [ ] **Landing page → production** — finalize newsletter name/branding, choose palette variant (warm ivory vs. archive blue-gray), add link from `docs/index.html`, wire up subscribe form to actual backend
 
 ---
 
@@ -14,14 +15,15 @@ Track of features to build, roughly in order of priority.
 
 - [ ] **Health monitoring** — free Healthchecks.io ping at the end of each run. If the bot doesn't check in, you get an email alert. Catches silent failures.
 - [ ] **Merge Dev-Nigg → main** — all features built since March 2026 are still on Dev-Nigg. Production runs old code.
+- [ ] **Global content expansion** — expand `NEWS_DOMAINS` and `TOPICS` in `config.py` beyond Spanish LatAm press to include English-language European and Asian sources, in line with the global scope pivot.
 
 ---
 
 ## Bigger Lift
 
+- [ ] **Market sections** — wire the focus selector on the landing page to a subscription backend; route per-section digest content to subscribers based on their preferences. Foundation UI already built in `docs/landing*.html`.
 - [ ] **Unsubscribe links** — each subscriber gets a unique token. Unsubscribe link removes them from the list automatically.
 - [ ] **Resend/Mailgun migration** — replace Gmail SMTP with a proper email service for better deliverability and open/click tracking. Needed if subscriber list grows beyond ~20.
-- [ ] **VPS migration** — move off GitHub Actions to a dedicated server (e.g. Hetzner, DigitalOcean) for more control, faster runs, and no GitHub dependency.
 - [ ] **PWA + swipe navigation** — mobile reading experience on the archive site. Add to home screen, offline support, swipe between issues.
 
 ---
@@ -31,6 +33,7 @@ Track of features to build, roughly in order of priority.
 - [ ] Regulation watch section (DOF/SAT publications)
 - [ ] Telegram or WhatsApp delivery option alongside email
 - [ ] Subscriber growth / Substack integration
+- [ ] Multi-language expansion beyond ES/EN (PT for Brazil coverage)
 
 ---
 
@@ -61,3 +64,8 @@ Track of features to build, roughly in order of priority.
 - [x] Scraper domain selectors (per-outlet CSS selectors to target article body)
 - [x] Parallel market data fetching (ThreadPoolExecutor)
 - [x] Code audit — bugs, efficiency, and quality pass across all bot/ files
+- [x] VPS migration — pipeline runs on VPS cron; GitHub Actions retained for dev/test only
+- [x] SMTP migration — replaced SMTP_SSL (port 465) with SMTP + STARTTLS (port 587); VPS port 465 was blocked
+- [x] Delivery logging — normalized `[delivery]` log prefixes with connection phase visibility (connecting → authenticated → sent)
+- [x] DEV/PROD environment separation — `ENVIRONMENT=dev` overrides recipients to `DEV_RECIPIENT`; Telegram notifications prefixed `[DEV]`
+- [x] Newsletter landing page — `docs/landing-v1-warm.html` (warm ivory/amber) and `docs/landing-v2-archive.html` (cool blue-gray matching archive palette); both feature scrolling global ticker, interactive market focus selector (6 regions), sample issue frame, branding config object for easy renaming

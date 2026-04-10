@@ -1,6 +1,6 @@
-# The Periphery — Mexico Finance Brief
+# The Opening Bell — Global Macro & Financial Intelligence
 
-A bilingual (Spanish/English) automated financial newsletter focused on emerging markets and macro intelligence. Every weekday at ~7 AM Mexico City time, a scheduled job on a VPS fetches news, pulls live market data, writes a bilingual digest with Claude, sends an email to subscribers, and publishes a full HTML archive to GitHub Pages.
+A bilingual (Spanish/English) automated financial newsletter covering global markets, macro policy, and emerging economies. Every weekday at ~7 AM Mexico City time, a scheduled job on a VPS fetches news, pulls live market data, writes a bilingual digest with Claude, sends an email to subscribers, and publishes a full HTML archive to GitHub Pages.
 
 **Live archive:** https://extremelypowerfulcapybara.github.io/News-Digest/
 
@@ -8,7 +8,7 @@ A bilingual (Spanish/English) automated financial newsletter focused on emerging
 
 ## 1. Project Overview
 
-**The Periphery** (also branded as *The Opening Bell*) is a self-hosted newsletter pipeline that produces two outputs per run:
+**The Opening Bell** (also referred to as *The Periphery*) is a self-hosted newsletter pipeline that produces two outputs per run:
 
 1. A **Gmail-safe HTML email** sent to subscribers via SMTP
 2. A **full web archive page** committed to GitHub Pages
@@ -64,9 +64,11 @@ mexico-finance-brief/
 │   ├── wordcloud_gen.py         # Generates weekly PNG word cloud (Fridays only)
 │   └── test_email.py            # Sends a test email with hardcoded mock data; run manually
 │
-├── docs/                        # GitHub Pages output — DO NOT edit manually
-│   ├── index.html               # Archive landing page; rebuilt on every run
-│   ├── YYYY-MM-DD.html          # One page per issue
+├── docs/                        # GitHub Pages output — DO NOT edit auto-generated files
+│   ├── index.html               # Archive index; rebuilt on every run — do not edit manually
+│   ├── YYYY-MM-DD.html          # One page per issue — written once, never edited
+│   ├── landing-v1-warm.html     # Landing page candidate: warm ivory/amber palette
+│   ├── landing-v2-archive.html  # Landing page candidate: cool blue-gray (matches archive)
 │   ├── thread_index.json        # Thread tag accumulator; read and written by archive.py
 │   └── wordcloud-YYYY-WNN.png   # Weekly word cloud images
 │
@@ -245,6 +247,8 @@ All variables read by the pipeline:
 | `EMAIL_SENDER` | Yes | Gmail address to send from |
 | `EMAIL_PASSWORD` | Yes | Gmail App Password (not your login password) |
 | `SUBSCRIBERS` | Yes | Comma-separated recipient emails |
+| `ENVIRONMENT` | No | `dev` to override recipients to `DEV_RECIPIENT` and prefix Telegram with `[DEV]`; default `prod` |
+| `DEV_RECIPIENT` | No | Email address that receives all sends when `ENVIRONMENT=dev` |
 | `SKIP_EMAIL` | No | `true` to skip SMTP; archive HTML is still generated |
 | `TELEGRAM_TOKEN` | No | Telegram bot token for post-run notifications |
 | `TELEGRAM_CHAT_ID` | No | Telegram chat/channel ID for notifications |
@@ -362,6 +366,8 @@ The archive index (`docs/index.html`) is rebuilt from all digest files on every 
 | `bot/config.py` | Newsletter name, topics, domain allowlist, tickers, currency pairs, economic calendar, pen names |
 | `bot/renderer.py` | Email layout and copy. Test in Gmail, Outlook, Apple Mail before merging. |
 | `bot/pretty_renderer.py` | Archive web layout and styling. No email compatibility constraints here. |
+| `docs/landing-v1-warm.html` | Landing page (warm palette). Safe to edit; branding strings live in the `NEWSLETTER_CONFIG` JS object at the bottom. |
+| `docs/landing-v2-archive.html` | Landing page (archive palette). Same structure as v1. |
 | `bot/scraper.py` | Add CSS selectors for new news outlets |
 | `bot/scorer.py` | Adjust authority tiers or scoring weights |
 | `bot/summarizer.py` | Edit the Claude prompt or expected JSON structure |
@@ -422,6 +428,8 @@ See `TODO.md` for the current task list. Key items:
 - **Unsubscribe tokens** — per-subscriber token system for GDPR-friendly unsubscribes
 - **Resend/Mailgun migration** — replace Gmail SMTP for deliverability at scale (needed beyond ~20 subscribers)
 - **VPS migration** — ~~move off GitHub Actions~~ **done**; pipeline runs on a VPS
+- **Market sections** — foundation UI built in `docs/landing*.html`; backend routing of per-section digest content based on subscriber focus preferences is the next step
+- **Global content expansion** — `NEWS_DOMAINS` and `TOPICS` in `config.py` currently focus on Spanish-language LatAm press; expanding to European and Asian English-language sources is the primary content-side step for the global scope pivot
 - **Substack integration** — freemium commercial launch on a ~12-month horizon
 
 ---
@@ -442,7 +450,7 @@ See `TODO.md` for the current task list. Key items:
 
 7. **Git push still required for GitHub Pages.** The VPS runs the pipeline and generates `docs/`, but GitHub Pages still requires a push to `main` to redeploy. The cron wrapper handles this with `git push`, which keeps a coupling to GitHub's platform for archive hosting.
 
-8. **Branch divergence.** As of April 2026, `Dev-Nigg` is significantly ahead of `main` in features. Production is running old code. Merging is a listed quick-win in `TODO.md`.
+8. **Branch divergence.** As of April 2026, `Dev-Nigg` is significantly ahead of `main` in features. Production is running old code. Merging is a listed quick-win in `TODO.md`. Recent work (SMTP migration, DEV/PROD separation, landing page) was committed directly to `main`.
 
 9. **`scorer.py` is loaded lazily in `main.py`.** The import happens inside the `else` block that skips mock mode. In mock runs, articles are loaded pre-scored from the saved digest and the scorer never executes. This is intentional but could confuse someone reading the imports at the top of `main.py`.
 
