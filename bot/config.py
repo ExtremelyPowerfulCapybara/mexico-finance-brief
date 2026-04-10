@@ -229,9 +229,10 @@ ECONOMIC_CALENDAR = [
 # Paths are relative to the repo root, not bot/
 # so digests and archive are committed together.
 import pathlib
-REPO_ROOT   = pathlib.Path(__file__).parent.parent
-DIGEST_DIR  = str(REPO_ROOT / "digests")
-ARCHIVE_DIR = str(REPO_ROOT / "docs")  # ARCHIVE_DIR is the source of truth for published site content (docs/)
+REPO_ROOT    = pathlib.Path(__file__).parent.parent
+_preview     = os.environ.get("PREVIEW_MODE", "false").lower() == "true"
+DIGEST_DIR   = str(REPO_ROOT / ("digests/preview" if _preview else "digests"))
+ARCHIVE_DIR  = str(REPO_ROOT / ("docs/preview" if _preview else "docs"))  # ARCHIVE_DIR is the source of truth for published site content (docs/)
 
 # ── Asset URLs ─────────────────────────────────
 # ASSET_BASE_URL: used only for asset src attributes (e.g. wordcloud PNG).
