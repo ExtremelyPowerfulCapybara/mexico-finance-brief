@@ -194,6 +194,12 @@ MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
 # Skip email delivery (preview/archive only).
 SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
 
+# Environment: "dev" or "prod" (default prod).
+# In dev mode, email is sent only to DEV_RECIPIENT and Telegram messages
+# are prefixed with [DEV].
+ENVIRONMENT   = os.environ.get("ENVIRONMENT", "prod").lower()
+DEV_RECIPIENT = os.environ.get("DEV_RECIPIENT", "")
+
 # ── Economic calendar ─────────────────────────
 # Upcoming key dates for Banxico, Fed, and macro data releases.
 # Verify and update at: banxico.org.mx, federalreserve.gov, inegi.org.mx, bls.gov

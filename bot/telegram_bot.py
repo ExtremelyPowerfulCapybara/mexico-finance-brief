@@ -12,6 +12,8 @@
 import os
 import requests
 
+_ENV = os.environ.get("ENVIRONMENT", "prod").lower()
+
 
 def send_telegram_issue_notification(
     digest: dict,
@@ -31,7 +33,8 @@ def send_telegram_issue_notification(
     visual    = digest.get("visual", {})
     category  = visual.get("hero_category", "")
 
-    lines = ["✅ The Opening Bell ready"]
+    prefix = "[DEV] " if _ENV == "dev" else ""
+    lines = [f"{prefix}✅ The Opening Bell ready"]
     if headline != "(no headline)":
         lines.append(f"Lead: {headline}")
     if category:

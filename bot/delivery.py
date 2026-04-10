@@ -10,7 +10,7 @@ import smtplib
 from datetime import date
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from config import EMAIL_SENDER, EMAIL_PASSWORD, SUBSCRIBERS, NEWSLETTER_NAME
+from config import EMAIL_SENDER, EMAIL_PASSWORD, SUBSCRIBERS, NEWSLETTER_NAME, ENVIRONMENT, DEV_RECIPIENT
 
 import pathlib
 REPO_ROOT       = pathlib.Path(__file__).parent.parent
@@ -45,6 +45,13 @@ def send_email(html: str, plain: str, sentiment_label: str = "Cautious") -> None
     today_str   = f"{today.day} de {months_es[today.month]} de {today.year}"
     subject     = f"{sentiment_label} | {NEWSLETTER_NAME} — {today_str}"
     subscribers = load_subscribers()
+
+    if ENVIRONMENT == "dev":
+        if not DEV_RECIPIENT:
+            print("  [delivery] DEV mode but DEV_RECIPIENT not set — skipping send.")
+            return
+        print(f"  [delivery] DEV mode — overriding recipients to: {DEV_RECIPIENT}")
+        subscribers = [DEV_RECIPIENT]
 
     if not subscribers:
         print("  [delivery] No subscribers found, skipping send.")
