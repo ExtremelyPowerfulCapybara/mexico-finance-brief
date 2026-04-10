@@ -5,6 +5,7 @@
 # ─────────────────────────────────────────────
 
 import csv
+import os
 import smtplib
 from datetime import date
 from email.mime.multipart import MIMEMultipart
@@ -50,12 +51,23 @@ def send_email(html: str, plain: str, sentiment_label: str = "Cautious") -> None
         return
 
     print(f"  [delivery] Sending to {len(subscribers)} subscriber(s)...")
+    smtp_port = int(os.environ.get("SMTP_PORT", 587))
+    use_ssl   = os.environ.get("SMTP_USE_SSL", "false").lower() == "true"
     try:
-        with smtplib.SMTP("smtp.gmail.com", 587, timeout=30) as server:
-            server.ehlo()
-            server.starttls()
-            server.ehlo()
+        print(f"[delivery] Connecting to SMTP ({'SSL' if use_ssl else 'STARTTLS'}:{smtp_port})...")
+        if use_ssl:
+            import ssl as _ssl
+            ctx = _ssl.create_default_context()
+            server_cm = smtplib.SMTP_SSL("smtp.gmail.com", smtp_port, timeout=30, context=ctx)
+        else:
+            server_cm = smtplib.SMTP("smtp.gmail.com", smtp_port, timeout=30)
+        with server_cm as server:
+            if not use_ssl:
+                server.ehlo()
+                server.starttls()
+                server.ehlo()
             server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+            print("[delivery] SMTP login successful")
             for recipient in subscribers:
                 msg            = MIMEMultipart("alternative")
                 msg["Subject"] = subject
@@ -65,7 +77,8 @@ def send_email(html: str, plain: str, sentiment_label: str = "Cautious") -> None
                 msg.attach(MIMEText(html,  "html"))
                 server.sendmail(EMAIL_SENDER, recipient, msg.as_string())
                 print(f"  [delivery] Sent to {recipient}")
+        print(f"[delivery] Email sent to {len(subscribers)} subscriber(s)")
     except Exception as e:
-        print(f"  [delivery] ERROR: SMTP connection/auth failed: {e}")
+        print(f"[delivery] Email send failed: {e}")
         raise
     print("  [delivery] Done.")
