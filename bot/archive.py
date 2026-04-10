@@ -139,7 +139,6 @@ def rebuild_index() -> None:
 
     chart_dates    = [d["date"]        for d in digest_data]
     chart_position = [d["position"]    for d in digest_data]
-    chart_stories  = [d["story_count"] for d in digest_data]
     chart_labels   = [d["label"]       for d in digest_data]
 
     point_colors = [
@@ -260,7 +259,6 @@ def rebuild_index() -> None:
     search_index_js = json.dumps(search_index)
     dates_js    = json.dumps(chart_dates)
     position_js = json.dumps(chart_position)
-    stories_js  = json.dumps(chart_stories)
     colors_js   = json.dumps(point_colors)
 
     charts_html = ""
@@ -268,21 +266,81 @@ def rebuild_index() -> None:
         charts_html = f"""
   <div style="background:#f0f3f5; border:1px solid #cdd4d9; padding:28px 32px; margin-bottom:24px;">
     <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Sentiment Timeline</p>
-    <div style="position:relative; height:120px; margin-bottom:28px;">
+    <div style="position:relative; height:200px;">
       <canvas id="sentimentChart"></canvas>
-    </div>
-    <div style="height:1px; background:#dde3e8; margin-bottom:24px;"></div>
-    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Stories per Issue</p>
-    <div style="position:relative; height:80px;">
-      <canvas id="storyChart"></canvas>
     </div>
   </div>
 
   <script>
     const dates    = {dates_js};
     const position = {position_js};
-    const stories  = {stories_js};
     const colors   = {colors_js};
+
+    const _zones = {{
+      id: 'zones',
+      beforeDraw(chart) {{
+        const {{ ctx, chartArea: {{ left, right }}, scales: {{ y }} }} = chart;
+        [
+          {{ min: 0,  max: 40,  color: 'rgba(212,105,90,0.26)'  }},
+          {{ min: 40, max: 60,  color: 'rgba(232,160,48,0.22)'  }},
+          {{ min: 60, max: 100, color: 'rgba(106,191,123,0.26)' }},
+        ].forEach(({{ min, max, color }}) => {{
+          ctx.save();
+          ctx.fillStyle = color;
+          ctx.fillRect(left, y.getPixelForValue(max), right - left, y.getPixelForValue(min) - y.getPixelForValue(max));
+          ctx.restore();
+        }});
+      }}
+    }};
+
+    const _faintGrid = {{
+      id: 'faintGrid',
+      beforeDraw(chart) {{
+        const {{ ctx, chartArea: {{ left, right }}, scales: {{ y }} }} = chart;
+        ctx.save();
+        ctx.strokeStyle = 'rgba(140,158,170,0.65)';
+        ctx.lineWidth = 0.5;
+        for (let v = 5; v < 100; v += 5) {{
+          if ([25, 50, 75].includes(v)) continue;
+          const py = y.getPixelForValue(v);
+          ctx.beginPath(); ctx.moveTo(left, py); ctx.lineTo(right, py); ctx.stroke();
+        }}
+        ctx.restore();
+      }}
+    }};
+
+    const _zoneLabels = {{
+      id: 'zoneLabels',
+      afterDraw(chart) {{
+        const {{ ctx, chartArea: {{ right }}, scales: {{ y }} }} = chart;
+        [
+          {{ mid: 20,  label: 'RISK-OFF', color: '#d4695a' }},
+          {{ mid: 50,  label: 'CAUTIOUS', color: '#c8922a' }},
+          {{ mid: 80,  label: 'RISK-ON',  color: '#4fa868' }},
+        ].forEach(({{ mid, label, color }}) => {{
+          ctx.save();
+          ctx.font = '700 7.5px Arial';
+          ctx.fillStyle = color;
+          ctx.textAlign = 'left';
+          ctx.fillText(label, right + 10, y.getPixelForValue(mid) + 3);
+          ctx.restore();
+        }});
+      }}
+    }};
+
+    const _midline = {{
+      id: 'midline',
+      beforeDraw(chart) {{
+        const {{ ctx, chartArea: {{ left, right }}, scales: {{ y }} }} = chart;
+        const py = y.getPixelForValue(50);
+        ctx.save();
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = 'rgba(58,74,84,0.25)';
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(left, py); ctx.lineTo(right, py); ctx.stroke();
+        ctx.restore();
+      }}
+    }};
 
     new Chart(document.getElementById('sentimentChart'), {{
       type: 'line',
@@ -291,7 +349,7 @@ def rebuild_index() -> None:
         datasets: [{{
           data: position,
           borderColor: '#3a4a54',
-          borderWidth: 1.5,
+          borderWidth: 2,
           pointBackgroundColor: colors,
           pointBorderColor: colors,
           pointRadius: 5,
@@ -303,48 +361,40 @@ def rebuild_index() -> None:
       options: {{
         responsive: true,
         maintainAspectRatio: false,
+        layout: {{ padding: {{ right: 72 }} }},
         plugins: {{
           legend: {{ display: false }},
           tooltip: {{
+            backgroundColor: '#3a4a54',
+            titleFont: {{ family: 'Arial', size: 9 }},
+            bodyFont: {{ family: 'Arial', size: 9 }},
             callbacks: {{
               label: (ctx) => {{
-                const i = ctx.dataIndex;
+                const v = ctx.raw;
                 const labels = {json.dumps(chart_labels)};
-                return labels[i] + ' (' + ctx.raw + ')';
+                return ' ' + v + ' \u00b7 ' + labels[ctx.dataIndex];
               }}
             }}
           }}
         }},
         scales: {{
-          x: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }}, grid: {{ color: '#e8edf0' }} }},
+          x: {{
+            ticks: {{ font: {{ family: 'Arial', size: 8 }}, color: '#aab4bc', maxRotation: 45, autoSkip: true, maxTicksLimit: 10 }},
+            grid: {{ display: false }},
+            border: {{ display: false }},
+          }},
           y: {{
             min: 0, max: 100,
-            ticks: {{
-              font: {{ size: 9 }}, color: '#aab4bc',
-              callback: (v) => v === 5 ? 'Risk-Off' : v === 50 ? 'Neutral' : v === 95 ? 'Risk-On' : '',
-              stepSize: 45,
+            afterBuildTicks(scale) {{
+              scale.ticks = [0, 25, 50, 75, 100].map(v => ({{ value: v }}));
             }},
-            grid: {{ color: '#e8edf0' }}
+            ticks: {{ font: {{ family: 'Arial', size: 8 }}, color: '#8a9aa4' }},
+            grid: {{ color: '#8fa4b4', lineWidth: 1 }},
+            border: {{ display: false }},
           }}
         }}
-      }}
-    }});
-
-    new Chart(document.getElementById('storyChart'), {{
-      type: 'bar',
-      data: {{
-        labels: dates,
-        datasets: [{{ data: stories, backgroundColor: '#c8d4da', borderRadius: 2 }}]
       }},
-      options: {{
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {{ legend: {{ display: false }}, tooltip: {{ callbacks: {{ label: (ctx) => ctx.raw + ' stories' }} }} }},
-        scales: {{
-          x: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }}, grid: {{ display: false }} }},
-          y: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', stepSize: 1 }}, grid: {{ color: '#e8edf0' }} }}
-        }}
-      }}
+      plugins: [_zones, _faintGrid, _zoneLabels, _midline]
     }});
   </script>"""
 
