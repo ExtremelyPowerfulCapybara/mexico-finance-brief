@@ -35,3 +35,7 @@ bot/.telegram_offset
 
 # ── Temporary image candidates ───────────────
 tmp_images/
+
+# ── Image dedup working directories ────────────
+generated_images/
+data/
