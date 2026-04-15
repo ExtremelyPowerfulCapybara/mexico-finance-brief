@@ -6,3 +6,5 @@ lxml
 wordcloud
 Pillow
 python-dotenv
+imagehash
+scikit-learn
