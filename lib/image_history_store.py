@@ -21,8 +21,10 @@ _DEFAULT_DB = os.path.join(
 
 
 def _resolve_path(db_path: Optional[str]) -> str:
-    path = db_path or os.environ.get("IMAGE_HISTORY_DB", _DEFAULT_DB)
-    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    path = (db_path or "").strip() or os.environ.get("IMAGE_HISTORY_DB", _DEFAULT_DB)
+    parent = os.path.dirname(os.path.abspath(path))
+    if parent:
+        os.makedirs(parent, exist_ok=True)
     return path
 
 
@@ -115,6 +117,9 @@ def save_record(record: Dict, db_path: Optional[str] = None) -> int:
 def update_record(record_id: int, updates: Dict, db_path: Optional[str] = None) -> None:
     """
     Update specific fields on an existing image_history record.
+    Only fields in _allowed can be updated. Fields used at creation time
+    (prompt_sent, variation_code, novelty_request, prompt_master_version) are
+    intentionally excluded — they represent the original generation intent.
     """
     _allowed = {
         "image_path", "image_phash", "similarity_score_text",
@@ -128,10 +133,12 @@ def update_record(record_id: int, updates: Dict, db_path: Optional[str] = None) 
     set_clause = ", ".join(f"{k} = ?" for k in fields)
     values = list(fields.values()) + [record_id]
     with sqlite3.connect(path) as conn:
-        conn.execute(
+        cursor = conn.execute(
             f"UPDATE image_history SET {set_clause} WHERE id = ?", values
         )
         conn.commit()
+        if cursor.rowcount == 0:
+            print(f"  [image_history_store] Warning: update_record found no row with id={record_id}")
 
 
 def save_attempt_record(attempt: Dict, db_path: Optional[str] = None) -> int:
