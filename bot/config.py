@@ -3,9 +3,8 @@
 #
 #  Secrets are read from environment variables
 #  so they're never committed to the repo.
-#  On GitHub Actions they come from repo secrets.
-#  Locally, create a .env file or export them
-#  in your terminal before running.
+#  Production (VPS): loaded from bot/.env via load_dotenv() in main.py.
+#  GitHub Actions (dev/test): injected as repo secrets by the workflow.
 # ─────────────────────────────────────────────
 
 import os
@@ -195,6 +194,12 @@ MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
 # Skip email delivery (preview/archive only).
 SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
 
+# Environment: "dev" or "prod" (default prod).
+# In dev mode, email is sent only to DEV_RECIPIENT and Telegram messages
+# are prefixed with [DEV].
+ENVIRONMENT   = os.environ.get("ENVIRONMENT", "prod").lower()
+DEV_RECIPIENT = os.environ.get("DEV_RECIPIENT", "")
+
 # ── Economic calendar ─────────────────────────
 # Upcoming key dates for Banxico, Fed, and macro data releases.
 # Verify and update at: banxico.org.mx, federalreserve.gov, inegi.org.mx, bls.gov
@@ -233,17 +238,14 @@ ECONOMIC_CALENDAR = [
 REPO_ROOT    = pathlib.Path(__file__).parent.parent
 _preview     = os.environ.get("PREVIEW_MODE", "false").lower() == "true"
 DIGEST_DIR   = str(REPO_ROOT / ("digests/preview" if _preview else "digests"))
-ARCHIVE_DIR  = str(REPO_ROOT / ("docs/preview" if _preview else "docs"))
+ARCHIVE_DIR  = str(REPO_ROOT / ("docs/preview" if _preview else "docs"))  # ARCHIVE_DIR is the source of truth for published site content (docs/)
 
-# ── Archive / asset URLs ───────────────────────
-# GITHUB_PAGES_URL: always the rendered GitHub Pages site.
-# Used for navigation links (preheader, footer, archive index).
-GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest"
-
+# ── Asset URLs ─────────────────────────────────
 # ASSET_BASE_URL: used only for asset src attributes (e.g. wordcloud PNG).
-# In dev runs, GITHUB_RAW_URL is injected by the workflow so assets
+# In dev runs, GITHUB_RAW_URL may be injected by the workflow so assets
 # are served from the dev branch without needing a Pages deploy.
+# Falls back to PUBLIC_ARCHIVE_BASE_URL (the VPS public URL).
 ASSET_BASE_URL = os.environ.get(
     "GITHUB_RAW_URL",
-    "https://extremelypowerfulcapybara.github.io/News-Digest/"
+    os.environ.get("PUBLIC_ARCHIVE_BASE_URL", "").rstrip("/") + "/"
 )

@@ -9,7 +9,7 @@ import os
 import json
 from datetime import date, datetime
 from pretty_renderer import build_pretty_html
-from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR, GITHUB_PAGES_URL
+from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR
 
 def save_pretty_issue(
     digest:             dict,
@@ -485,7 +485,7 @@ def rebuild_index() -> None:
         labelEl.textContent = 'All Issues';
         return;
       }}
-      const tokens  = q.split(/\s+/).filter(Boolean);
+      const tokens  = q.split(/\\s+/).filter(Boolean);
       const matches = searchIndex.filter(item => tokens.every(t => item.text.includes(t)));
       const matchDates = new Set(matches.map(m => m.date));
       let shown = 0;
