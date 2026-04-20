@@ -213,7 +213,12 @@ def rebuild_index() -> None:
   </div>"""
 
     issues = sorted(
-        [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html") and f != "index.html"],
+        [
+            f for f in os.listdir(ARCHIVE_DIR)
+            if f.endswith(".html") and f != "index.html"
+            and len(f) == 15
+            and f[:10].replace("-", "").isdigit()
+        ],
         reverse=True,
     )
 

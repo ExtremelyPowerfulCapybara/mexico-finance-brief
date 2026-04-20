@@ -39,6 +39,7 @@ Track of features to build, roughly in order of priority.
 
 ## Done
 
+- [x] Image generation deduplication subsystem — `lib/` + `scripts/generate_editorial_image.py`; phash two-phase rejection, concept tagging, 0–3 escalation, SQLite attempt tracking, full CLI
 - [x] Core bot — fetch, summarize, send email
 - [x] Gmail-safe email renderer (tables, inline styles)
 - [x] Global macro ticker bar (DXY, 10Y UST, VIX, MSCI EM)

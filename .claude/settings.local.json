@@ -31,7 +31,14 @@
       "Bash(bash \"C:/Users/adriv/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh\" --project-dir \"D:/GitHub/mexico-finance-brief\")",
       "Bash(pip install:*)",
       "Bash(winget upgrade:*)",
-      "Bash(chmod +x \"D:/GitHub/News-Digest/scripts/rebuild_and_publish.sh\")"
+      "Bash(chmod +x \"D:/GitHub/News-Digest/scripts/rebuild_and_publish.sh\")",
+      "Bash(start:*)",
+      "Bash(python3:*)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(/c/Users/adriv/.config/superpowers/worktrees/News-Digest/image-dedup/.gitignore:*)",
+      "Bash(git merge:*)",
+      "Bash(git reset:*)",
+      "Bash(ls D:/GitHub/News-Digest/docs/*.html)"
     ]
   }
 }
