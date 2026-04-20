@@ -243,18 +243,23 @@ def test_suggest_novelty_composition_freq_avoids_overused():
 
 
 def test_suggest_novelty_level3_mentions_most_recent_subject():
+    from lib.image_prompt_builder import suggest_novelty_request
+    # Use a recent history entry with subject_family NOT in subject_family_freq
+    # so we can tell if most_recent_clause fires independently
     recent = [
-        {"subject_family": "refinery", "composition_preset": "left_weighted"},
+        {"subject_family": "offshore_rig", "composition_preset": "elevated_wide"},
         {"subject_family": "pipeline", "composition_preset": "right_weighted"},
     ]
     result = suggest_novelty_request(
         "energy", recent,
         escalation_level=3,
-        subject_family_freq={"refinery": 3},
-        composition_freq={"left_weighted": 3},
+        subject_family_freq={"refinery": 3},  # refinery overused, not offshore_rig
+        composition_freq={},
     )
-    # Level 3 + overuse should produce a rich avoidance string mentioning recent subject
-    assert "refinery" in result or "left" in result
+    # "refinery" should appear from subject_family_freq avoidance clause
+    assert "refinery" in result
+    # "offshore rig" should appear from most_recent_clause (recent_history[0])
+    assert "offshore rig" in result
 
 
 def test_suggest_novelty_new_params_are_optional():

@@ -311,7 +311,7 @@ def suggest_novelty_request(
         if latest_cp:
             parts.append(f'"{latest_cp.replace("_", " ")}" composition')
         if parts:
-            most_recent_clause = f" Most recent image used {' and '.join(parts)} — use neither."
+            most_recent_clause = f" Most recent image used {' and '.join(parts)} - use neither."
 
     if escalation_level == 0:
         return (

@@ -93,6 +93,8 @@ def test_save_record_stores_all_fields(tmp_db):
         "similarity_score_image": 0.12,
         "regeneration_count": 1,
         "notes": "Test note",
+        "subject_family": "refinery",
+        "composition_preset": "left_weighted",
     }, db_path=tmp_db)
     with sqlite3.connect(tmp_db) as conn:
         conn.row_factory = sqlite3.Row
@@ -102,6 +104,8 @@ def test_save_record_stores_all_fields(tmp_db):
     assert row["accepted_prompt"] == "A revised prompt"
     assert row["concept_tag"] == "pipeline_infrastructure"
     assert row["variation_code"] == "B-2-ii-gamma"
+    assert row["subject_family"] == "refinery"
+    assert row["composition_preset"] == "left_weighted"
 
 
 def test_update_record_modifies_fields(tmp_db):

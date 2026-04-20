@@ -212,8 +212,8 @@ def test_scoring_avoids_most_recent_combo(registry_file):
         and r["subject_family"] == "refinery"
         and r["composition_preset"] == "left_weighted"
     )
-    # With 8 alternatives equally scored at 0, the overused combo (score=5) should rarely appear
-    assert overused_count < 5
+    # With 8 alternatives equally scored at 0, the overused combo (score=5) should never appear
+    assert overused_count == 0
 
 
 def test_no_history_returns_valid_result(registry_file):
