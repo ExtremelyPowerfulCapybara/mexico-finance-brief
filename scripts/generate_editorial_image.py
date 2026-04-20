@@ -17,6 +17,8 @@
 #    --novelty-request     Manual novelty directive
 #    --variation-code      e.g. B-2-ii-gamma
 #    --concept-tag         Override inferred concept tag
+#    --subject-family      Override registry-selected subject family
+#    --composition-preset  Override registry-selected composition preset
 #    --force-novelty-level {0,1,2,3}  Apply escalation from first attempt
 #    --max-retries         Default 3
 #    --text-threshold      Default 0.82
@@ -26,12 +28,14 @@
 #    --dry-run             Print full prompt breakdown; skip generation
 #    --show-similarity-debug  Print per-phase similarity scores after generation
 #    --list-presets        Print category presets and exit
+#    --list-registry-options [CATEGORY]  Print registry allowed values and exit
 # ─────────────────────────────────────────────
 
 import argparse
 import json
 import os
 import sys
+from typing import Optional
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -46,6 +50,25 @@ def cmd_list_presets() -> None:
         print()
 
 
+def cmd_list_registry_options(category_filter: Optional[str] = None) -> None:
+    from lib.image_registry import load_registry
+    registry = load_registry()
+    categories = (registry.get("categories") or {})
+    if category_filter:
+        if category_filter not in categories:
+            print(f"Unknown category: {category_filter}. Known: {list(categories.keys())}")
+            return
+        categories = {category_filter: categories[category_filter]}
+    print("\n-- Registry options --------------------------------------------------\n")
+    for cat, cat_data in categories.items():
+        print(f"[{cat}]")
+        print(f"  default_color_system: {cat_data.get('default_color_system', '')}")
+        print(f"  allowed_concepts:         {cat_data.get('allowed_concepts', [])}")
+        print(f"  allowed_subject_families: {cat_data.get('allowed_subject_families', [])}")
+        print(f"  allowed_compositions:     {cat_data.get('allowed_compositions', [])}")
+        print()
+
+
 def cmd_dry_run(args) -> None:
     from lib.image_prompt_builder import (
         build_image_prompt,
@@ -53,48 +76,85 @@ def cmd_dry_run(args) -> None:
         resolve_variation_code,
         suggest_novelty_request,
     )
+    from lib.image_registry import select_prompt_components
     from lib.image_history_store import get_recent_by_category
 
-    resolved_concept_tag = args.concept_tag or infer_concept_tag(args.category, args.main_subject)
-    variation_text = resolve_variation_code(args.variation_code)
+    db_path = args.db_path or None
 
-    # Load comparison candidate count (if DB exists)
+    # Load recent history (so dry-run works with no DB)
+    recent_history = []
     candidate_count = 0
     try:
-        db_path = args.db_path or None
-        records = get_recent_by_category(args.category, limit=15, db_path=db_path)
-        candidate_count = len(records)
+        recent_history = get_recent_by_category(args.category, limit=15, db_path=db_path)
+        candidate_count = len(recent_history)
     except Exception:
         pass
 
-    # Resolve novelty: use manual if provided, else suggest at force_novelty_level
+    # Select prompt components from registry
+    components = select_prompt_components(
+        category=args.category,
+        recent_history=recent_history,
+        concept_tag=args.concept_tag,
+        subject_family=getattr(args, "subject_family", None),
+        composition_preset=getattr(args, "composition_preset", None),
+        excluded_combos=[],
+    )
+
+    # Resolve values: explicit args take precedence over registry selection
+    resolved_main_subject = components.get("main_subject") or args.main_subject
+    resolved_composition = components.get("composition") or args.composition
+    resolved_color_system = components.get("color_system") or args.color_system
+
+    resolved_concept_tag = components.get("concept_tag") or args.concept_tag or infer_concept_tag(args.category, args.main_subject)
+    resolved_subject_family = components.get("subject_family")
+    resolved_composition_preset = components.get("composition_preset")
+
+    # Determine sources for display
+    ct_source = "[override]" if args.concept_tag else "[registry-selected]"
+    sf_source = "[override]" if getattr(args, "subject_family", None) else "[registry-selected]"
+    cp_source = "[override]" if getattr(args, "composition_preset", None) else "[registry-selected]"
+
+    variation_text = resolve_variation_code(args.variation_code)
+
+    # Resolve novelty: manual > force_novelty_level > auto from registry
     novelty = args.novelty_request
-    if novelty is None and args.force_novelty_level is not None:
+    novelty_source = None
+    if novelty is not None:
+        novelty_source = "[manual]"
+    elif args.force_novelty_level is not None:
         novelty = suggest_novelty_request(
             args.category, [], escalation_level=args.force_novelty_level
         )
+        novelty_source = f"[forced level {args.force_novelty_level}]"
+    elif components.get("novelty_request"):
+        novelty = components["novelty_request"]
+        novelty_source = "[auto]"
+    else:
+        novelty_source = "[none]"
 
     prompt = build_image_prompt(
         category=args.category,
-        main_subject=args.main_subject,
+        main_subject=resolved_main_subject,
         environment=args.environment,
-        composition=args.composition,
-        color_system=args.color_system,
+        composition=resolved_composition,
+        color_system=resolved_color_system,
         context=args.context,
         novelty_request=novelty,
         variation_code=args.variation_code,
     )
 
     print("\n-- Dry-run breakdown --------------------------------------------------\n")
-    print(f"Category:            {args.category}")
-    print(f"Concept tag:         {resolved_concept_tag}")
-    if variation_text:
-        print(f"Variation resolved:  {variation_text}")
+    print(f"Category:                    {args.category}")
+    print(f"Concept tag:                 {resolved_concept_tag}  {ct_source}")
+    print(f"Subject family:              {resolved_subject_family or '(none)'}  {sf_source}")
+    print(f"Composition preset:          {resolved_composition_preset or '(none)'}  {cp_source}")
+    print(f"Color system:                {resolved_color_system}")
     if novelty:
-        print(f"Novelty directive:   {novelty}")
-    print(f"Comparison candidates (category): {candidate_count}")
-    print(f"Text threshold:      {args.text_threshold}")
-    print(f"Phash threshold:     {args.phash_threshold}")
+        print(f"Novelty directive:           {novelty_source} {novelty}")
+    print(f"Same-category combos compared: {candidate_count}")
+    print(f"Excluded combos:             0")
+    print(f"Text threshold:              {args.text_threshold}")
+    print(f"Phash threshold:             {args.phash_threshold}")
     print(f"\nFull prompt ({len(prompt)} chars):\n")
     print(prompt)
 
@@ -126,6 +186,8 @@ def cmd_generate(args) -> None:
         phash_threshold=args.phash_threshold,
         output_dir=args.output_dir,
         db_path=args.db_path,
+        subject_family=getattr(args, "subject_family", None),
+        composition_preset=getattr(args, "composition_preset", None),
     )
 
     printable = {k: v for k, v in result.items() if k != "similarity"}
@@ -152,6 +214,8 @@ def cmd_generate(args) -> None:
         )
 
     print(f"Concept tag:          {result['concept_tag']}")
+    print(f"Subject family:       {result.get('subject_family', '(none)')}")
+    print(f"Composition preset:   {result.get('composition_preset', '(none)')}")
     print(f"Regenerations used:   {result['regeneration_count']}")
     print(f"Saved to:             {result['image_path']}")
 
@@ -180,6 +244,13 @@ def main() -> None:
     parser.add_argument("--variation-code",        default=None)
     parser.add_argument("--concept-tag",           default=None,
                         help="Override inferred concept tag")
+    parser.add_argument("--subject-family", default=None,
+                        help="Override registry-selected subject family (e.g. tanker)")
+    parser.add_argument("--composition-preset", default=None,
+                        help="Override registry-selected composition preset (e.g. elevated_wide)")
+    parser.add_argument("--list-registry-options", nargs="?", const="",
+                        metavar="CATEGORY",
+                        help="Print registry allowed values per category and exit")
     parser.add_argument("--force-novelty-level",   type=int, default=None,
                         choices=[0, 1, 2, 3],
                         help="Apply this escalation level from attempt 0")
@@ -196,6 +267,10 @@ def main() -> None:
                         help="Print per-phase similarity scores after generation")
 
     args = parser.parse_args()
+
+    if args.list_registry_options is not None:
+        cmd_list_registry_options(args.list_registry_options or None)
+        return
 
     if args.list_presets:
         cmd_list_presets()
