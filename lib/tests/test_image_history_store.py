@@ -204,3 +204,55 @@ def test_update_attempt_parent_sets_id(tmp_db):
             "SELECT parent_image_id FROM generation_attempts WHERE id = ?", (aid,)
         ).fetchone()[0]
     assert val == rid
+
+
+def test_init_db_adds_subject_family_column(tmp_db):
+    with sqlite3.connect(tmp_db) as conn:
+        cols = [row[1] for row in conn.execute("PRAGMA table_info(image_history)").fetchall()]
+    assert "subject_family" in cols
+
+
+def test_init_db_adds_composition_preset_column(tmp_db):
+    with sqlite3.connect(tmp_db) as conn:
+        cols = [row[1] for row in conn.execute("PRAGMA table_info(image_history)").fetchall()]
+    assert "composition_preset" in cols
+
+
+def test_init_db_migration_is_idempotent(tmp_db):
+    # Call init_db a second time — should not raise even though columns exist
+    init_db(tmp_db)
+    with sqlite3.connect(tmp_db) as conn:
+        cols = [row[1] for row in conn.execute("PRAGMA table_info(image_history)").fetchall()]
+    assert "subject_family" in cols
+    assert "composition_preset" in cols
+
+
+def test_save_record_stores_subject_family_and_composition_preset(tmp_db):
+    rid = save_record({
+        "issue_date": "2026-04-15",
+        "story_slug": "test-story",
+        "category": "energy",
+        "prompt_sent": "Test prompt",
+        "subject_family": "refinery",
+        "composition_preset": "left_weighted",
+    }, db_path=tmp_db)
+    with sqlite3.connect(tmp_db) as conn:
+        conn.row_factory = sqlite3.Row
+        row = dict(conn.execute("SELECT * FROM image_history WHERE id = ?", (rid,)).fetchone())
+    assert row["subject_family"] == "refinery"
+    assert row["composition_preset"] == "left_weighted"
+
+
+def test_update_record_can_set_subject_family(tmp_db):
+    rid = save_record({
+        "issue_date": "2026-04-15",
+        "story_slug": "s",
+        "category": "energy",
+        "prompt_sent": "p",
+    }, db_path=tmp_db)
+    update_record(rid, {"subject_family": "pipeline", "composition_preset": "right_weighted"}, db_path=tmp_db)
+    with sqlite3.connect(tmp_db) as conn:
+        conn.row_factory = sqlite3.Row
+        row = dict(conn.execute("SELECT * FROM image_history WHERE id = ?", (rid,)).fetchone())
+    assert row["subject_family"] == "pipeline"
+    assert row["composition_preset"] == "right_weighted"

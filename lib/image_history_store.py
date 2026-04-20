@@ -69,6 +69,16 @@ def init_db(db_path: Optional[str] = None) -> None:
         )
         """)
         conn.commit()
+        # Idempotent column migrations
+        for col, coltype in [
+            ("subject_family", "TEXT"),
+            ("composition_preset", "TEXT"),
+        ]:
+            try:
+                conn.execute(f"ALTER TABLE image_history ADD COLUMN {col} {coltype}")
+                conn.commit()
+            except sqlite3.OperationalError:
+                pass  # column already exists
 
 
 def save_record(record: Dict, db_path: Optional[str] = None) -> int:
@@ -86,9 +96,10 @@ def save_record(record: Dict, db_path: Optional[str] = None) -> int:
                 created_at, issue_date, story_slug, category,
                 prompt_master_version, prompt_sent, revised_prompt,
                 accepted_prompt, variation_code, novelty_request, concept_tag,
+                subject_family, composition_preset,
                 image_path, image_phash, similarity_score_text,
                 similarity_score_image, regeneration_count, notes
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             """,
             (
                 record.get("created_at", now),
@@ -102,6 +113,8 @@ def save_record(record: Dict, db_path: Optional[str] = None) -> int:
                 record.get("variation_code"),
                 record.get("novelty_request"),
                 record.get("concept_tag"),
+                record.get("subject_family"),
+                record.get("composition_preset"),
                 record.get("image_path"),
                 record.get("image_phash"),
                 record.get("similarity_score_text"),
@@ -124,7 +137,8 @@ def update_record(record_id: int, updates: Dict, db_path: Optional[str] = None) 
     _allowed = {
         "image_path", "image_phash", "similarity_score_text",
         "similarity_score_image", "regeneration_count",
-        "revised_prompt", "accepted_prompt", "concept_tag", "notes",
+        "revised_prompt", "accepted_prompt", "concept_tag",
+        "subject_family", "composition_preset", "notes",
     }
     fields = {k: v for k, v in updates.items() if k in _allowed}
     if not fields:
