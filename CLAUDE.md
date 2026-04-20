@@ -63,6 +63,20 @@ mexico-finance-brief/
 │   ├── wordcloud_gen.py            # Weekly word cloud generator (Fridays only)
 │   └── test_email.py               # Sends test email with mock data
 │
+├── lib/                            # Image generation subsystem (standalone; not wired into main.py yet)
+│   ├── image_generator.py          # Full pipeline: registry selection, retry loop, DB persistence
+│   ├── image_prompt_builder.py     # Prompt assembly, variation codes, novelty directives
+│   ├── image_history_store.py      # SQLite: image_history + generation_attempts tables
+│   ├── image_similarity.py         # pHash + TF-IDF two-phase rejection
+│   ├── image_registry.py           # Registry loader + history-aware select_prompt_components()
+│   └── tests/                      # pytest suite (97 tests)
+│
+├── config/
+│   └── image_prompt_registry.yaml  # Per-category building blocks: concepts, subjects, compositions
+│
+├── scripts/
+│   └── generate_editorial_image.py # CLI for standalone image generation
+│
 ├── docs/                           # Served by GitHub Pages
 │   ├── index.html                  # Auto-rebuilt archive index
 │   └── YYYY-MM-DD.html             # One file per issue
@@ -171,7 +185,7 @@ export $(cat .env | xargs) && python main.py
 | GitHub Pages | Archive hosting | Free |
 
 **Python dependencies** (`requirements.txt`):
-`anthropic`, `requests`, `beautifulsoup4`, `lxml`, `wordcloud`, `Pillow`
+`anthropic`, `requests`, `beautifulsoup4`, `lxml`, `wordcloud`, `Pillow`, `imagehash`, `scikit-learn`, `pyyaml`
 
 ---
 
@@ -229,12 +243,11 @@ export $(cat .env | xargs) && python main.py
 
 ## Roadmap
 
-- [ ] Merge `Dev-Nigg` -> `main`, sync collaborator workflows
-- [ ] Domain blocklist for low-quality news sources
-- [ ] Sentiment timeline chart (client-side JS, from digest JSONs)
-- [ ] Full-text search on archive index (Lunr.js)
+- [x] VPS migration -- pipeline runs on VPS cron; GitHub Actions retained for dev/test only
+- [x] Image generation subsystem -- `lib/` fully built with registry, anti-repetition, similarity checks
+- [ ] Wire image generation into `main.py` -- call `generate_editorial_image()` per story after summarizer, inject `image_path` into digest dict, add conditional `<img>` in both renderers
 - [ ] Health monitoring (Healthchecks.io)
-- [ ] VPS migration (Hetzner) -- off GitHub Actions for scheduling/hosting
 - [ ] Substack integration + freemium commercial launch (~12 month horizon)
 - [ ] Unsubscribe links + subscriber token system
 - [ ] Resend/Mailgun migration for deliverability at scale
+- [ ] Global content expansion -- expand `NEWS_DOMAINS` and `TOPICS` beyond Spanish LatAm press

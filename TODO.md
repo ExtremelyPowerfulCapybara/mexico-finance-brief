@@ -40,6 +40,7 @@ Track of features to build, roughly in order of priority.
 ## Done
 
 - [x] Image generation deduplication subsystem — `lib/` + `scripts/generate_editorial_image.py`; phash two-phase rejection, concept tagging, 0–3 escalation, SQLite attempt tracking, full CLI
+- [x] Image prompt registry + anti-repetition system — `config/image_prompt_registry.yaml` + `lib/image_registry.py`; history-aware (concept_tag x subject_family x composition_preset) combo scoring, excluded_combos retry rotation, auto-novelty directives, `--subject-family` / `--composition-preset` / `--list-registry-options` CLI flags
 - [x] Core bot — fetch, summarize, send email
 - [x] Gmail-safe email renderer (tables, inline styles)
 - [x] Global macro ticker bar (DXY, 10Y UST, VIX, MSCI EM)

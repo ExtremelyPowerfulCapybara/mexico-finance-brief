@@ -33,7 +33,7 @@ The pipeline has no web server and no database. All persistent state is flat JSO
 | Archive hosting | GitHub Pages | Served from `docs/` on `main` |
 | Word cloud | `wordcloud` + Pillow | Fridays only; soft dependency |
 
-**Python dependencies** (`requirements.txt`): `anthropic`, `requests`, `beautifulsoup4`, `lxml`, `wordcloud`, `Pillow`
+**Python dependencies** (`requirements.txt`): `anthropic`, `requests`, `beautifulsoup4`, `lxml`, `wordcloud`, `Pillow`, `imagehash`, `scikit-learn`, `pyyaml`
 
 ---
 
@@ -79,6 +79,20 @@ mexico-finance-brief/
 │   ├── architecture.md          # System diagram, module graph, data flow, extension points
 │   ├── pipeline.md              # Stage-by-stage walkthrough with JSON shapes
 │   └── project-structure.md    # File-by-file reference, generated vs. editable files
+│
+├── lib/                         # Image generation subsystem (standalone, not wired into main.py yet)
+│   ├── image_generator.py       # Full generation pipeline: registry selection, retry loop, DB tracking
+│   ├── image_prompt_builder.py  # STYLE_MASTER prompt assembly, variation codes, novelty directives
+│   ├── image_history_store.py   # SQLite store: image_history + generation_attempts tables
+│   ├── image_similarity.py      # pHash + TF-IDF similarity checks (two-phase rejection)
+│   ├── image_registry.py        # Registry loader + history-aware select_prompt_components()
+│   └── tests/                   # pytest suite (97 tests)
+│
+├── config/
+│   └── image_prompt_registry.yaml  # Per-category building blocks: concepts, subjects, compositions
+│
+├── scripts/
+│   └── generate_editorial_image.py  # CLI: --dry-run, --list-registry-options, --subject-family, etc.
 │
 ├── subscribers.csv              # Runtime-generated from GitHub secret — not authoritative
 ├── requirements.txt
@@ -407,14 +421,18 @@ Edit `config.py` — the `ECONOMIC_CALENDAR` list. Each entry needs `date`, `eve
 
 ### Visual / image generation layer
 
-The cleanest integration point is between `summarizer.py` (step 3) and the renderers (step 5). Each story already carries a `tag` field (`Macro`, `FX`, `México`, `Comercio`, `Tasas`, `Mercados`, `Energía`, `Política`). The intended approach:
+The image generation subsystem lives in `lib/` and is fully built but not yet wired into the daily pipeline. It can be run standalone via `scripts/generate_editorial_image.py`.
 
-1. **New file: `bot/image_gen.py`** — called from `main.py` after `summarizer.py`, before `renderer.py`
-2. Maps story tags to image generation prompts (mapping lives in `config.py` or a dedicated `bot/prompt_map.py`)
-3. Generates or selects an image per story; adds `story["image_url"]` or `story["image_b64"]` to the digest dict
-4. Both `renderer.py` and `pretty_renderer.py` conditionally include an `<img>` tag in `_story_block()` when that field is present
+**What's built:**
+- `lib/image_generator.py` — full generation pipeline with registry-aware component selection, 4-attempt retry loop with escalating novelty directives, and SQLite history tracking
+- `lib/image_registry.py` — loads `config/image_prompt_registry.yaml` and selects `(concept_tag, subject_family, composition_preset)` triples by scoring against last 8 same-category history records (anti-repetition)
+- `lib/image_similarity.py` — two-phase rejection: pHash distance check against recent images + TF-IDF text similarity guard
+- `lib/image_history_store.py` — SQLite persistence for accepted images and generation attempts
+- `config/image_prompt_registry.yaml` — 6 categories × 4–5 concepts × 4 subjects × 4 compositions = 64–125 unique combos per category
 
-This approach requires no changes to existing module interfaces — the image layer slots in as an optional enrichment step.
+**Integration point:** The cleanest path into the daily pipeline is between `summarizer.py` (step 3) and the renderers (step 5). Each story carries a `tag` field. `main.py` would call `generate_editorial_image()` per story after summarization and add `story["image_path"]` to the digest dict; both renderers would then conditionally include the image. No existing module interfaces need to change.
+
+See `README-image-generation.md` for full CLI reference and system documentation.
 
 ### Issue metadata layer
 
