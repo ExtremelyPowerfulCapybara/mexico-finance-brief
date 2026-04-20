@@ -262,6 +262,23 @@ def test_no_auto_novelty_when_no_overuse(registry_file):
     assert result["novelty_request"] is None
 
 
+def test_no_auto_novelty_when_force_novelty_level_set(registry_file):
+    from lib.image_registry import select_prompt_components
+    # History that would normally trigger auto-novelty (refinery appears 3x)
+    recent_history = [
+        {"concept_tag": "industrial_cluster", "subject_family": "refinery", "composition_preset": "left_weighted"},
+        {"concept_tag": "industrial_cluster", "subject_family": "refinery", "composition_preset": "right_weighted"},
+        {"concept_tag": "pipeline_infrastructure", "subject_family": "refinery", "composition_preset": "left_weighted"},
+    ]
+    # When force_novelty_level is set, auto-novelty must be suppressed
+    result = select_prompt_components(
+        "energy", recent_history,
+        force_novelty_level=2,
+        registry_path=registry_file,
+    )
+    assert result["novelty_request"] is None
+
+
 # ── select_prompt_components — unknown category fallback ─────────────────────
 
 def test_unknown_category_returns_valid_result(registry_file):
