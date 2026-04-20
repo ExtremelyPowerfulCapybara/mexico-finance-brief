@@ -94,6 +94,9 @@ python scripts/generate_editorial_image.py \
 | `--novelty-request` | None | Manual novelty directive (overrides auto-escalation) |
 | `--variation-code` | None | Variation code e.g. `B-2-ii-gamma` |
 | `--concept-tag` | inferred | Override inferred concept tag |
+| `--subject-family SUBJECT_FAMILY` | — | Override registry-selected subject family (e.g. `tanker`) |
+| `--composition-preset COMPOSITION_PRESET` | — | Override registry-selected composition preset (e.g. `elevated_wide`) |
+| `--list-registry-options [CATEGORY]` | — | Print registry allowed values per category and exit |
 | `--force-novelty-level` | None | Apply escalation level {0,1,2,3} from attempt 0 |
 | `--max-retries` | 3 | Maximum regeneration attempts on phash rejection |
 | `--text-threshold` | 0.82 | TF-IDF cosine threshold for text risk flag |
