@@ -220,3 +220,44 @@ def test_category_presets_have_required_keys():
     required_keys = {"main_subject", "environment", "composition", "color_system"}
     for cat, preset in CATEGORY_PRESETS.items():
         assert required_keys.issubset(set(preset.keys())), f"Preset for '{cat}' missing keys"
+
+
+# ── New frequency parameters (subject_family_freq and composition_freq) ─────
+
+def test_suggest_novelty_subject_family_freq_avoids_overused():
+    result = suggest_novelty_request(
+        "energy", [],
+        escalation_level=2,
+        subject_family_freq={"refinery": 4, "pipeline": 1},
+    )
+    assert "refinery" in result
+
+
+def test_suggest_novelty_composition_freq_avoids_overused():
+    result = suggest_novelty_request(
+        "energy", [],
+        escalation_level=2,
+        composition_freq={"left_weighted": 3, "right_weighted": 1},
+    )
+    assert "left weighted" in result or "left_weighted" in result
+
+
+def test_suggest_novelty_level3_mentions_most_recent_subject():
+    recent = [
+        {"subject_family": "refinery", "composition_preset": "left_weighted"},
+        {"subject_family": "pipeline", "composition_preset": "right_weighted"},
+    ]
+    result = suggest_novelty_request(
+        "energy", recent,
+        escalation_level=3,
+        subject_family_freq={"refinery": 3},
+        composition_freq={"left_weighted": 3},
+    )
+    # Level 3 + overuse should produce a rich avoidance string mentioning recent subject
+    assert "refinery" in result or "left" in result
+
+
+def test_suggest_novelty_new_params_are_optional():
+    # Old call signature should still work unchanged
+    result = suggest_novelty_request("energy", [], escalation_level=1)
+    assert isinstance(result, str) and len(result) > 0

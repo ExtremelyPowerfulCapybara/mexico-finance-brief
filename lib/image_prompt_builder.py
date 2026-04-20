@@ -258,27 +258,60 @@ def suggest_novelty_request(
     recent_history: List[Dict],
     escalation_level: int = 1,
     concept_tag_freq: Optional[Dict[str, int]] = None,
+    subject_family_freq: Optional[Dict[str, int]] = None,
+    composition_freq: Optional[Dict[str, int]] = None,
 ) -> str:
     """
     Generate a novelty request. Escalation levels 0-3:
 
     0 = minor composition tweaks (auto-applied on first generation if no manual novelty set)
     1 = composition + hierarchy change (first retry)
-    2 = subject arrangement + metaphor shift; concept-aware if freq provided (second retry)
+    2 = subject arrangement + metaphor shift; concept/subject/composition-aware (second retry)
     3 = full conceptual shift — new metaphor, new structure, new environment (third retry)
+
+    Frequency dicts (concept_tag_freq, subject_family_freq, composition_freq) add avoidance
+    clauses for any value appearing 3+ times.
     """
     n = len(recent_history)
     label = category.replace("_", " ")
 
-    # Build concept avoidance clause from overused tags (threshold: appearing 3+ times)
+    # Build concept avoidance clause (overused concept tags, threshold: 3+)
     concept_clause = ""
     if concept_tag_freq:
         overused = [tag for tag, count in concept_tag_freq.items() if count >= 3]
         if overused:
             tag_list = " or ".join(f'"{t.replace("_", " ")}"' for t in overused[:3])
-            concept_clause = (
-                f" Explicitly avoid repeating visual metaphors such as {tag_list}."
-            )
+            concept_clause = f" Explicitly avoid repeating visual metaphors such as {tag_list}."
+
+    # Build subject avoidance clause (overused subject families, threshold: 3+)
+    subject_clause = ""
+    if subject_family_freq:
+        overused_sf = [sf for sf, count in subject_family_freq.items() if count >= 3]
+        if overused_sf:
+            sf_list = " or ".join(f'"{s.replace("_", " ")}"' for s in overused_sf[:2])
+            subject_clause = f" Do not use {sf_list} as the dominant subject."
+
+    # Build composition avoidance clause (overused compositions, threshold: 3+)
+    comp_clause = ""
+    if composition_freq:
+        overused_cp = [cp for cp, count in composition_freq.items() if count >= 3]
+        if overused_cp:
+            cp_list = " or ".join(f'"{c.replace("_", " ")}"' for c in overused_cp[:2])
+            comp_clause = f" Avoid {cp_list} layout."
+
+    # At level 3, also mention the most recently used subject_family and composition_preset
+    most_recent_clause = ""
+    if escalation_level >= 3 and recent_history:
+        latest = recent_history[0]
+        latest_sf = latest.get("subject_family")
+        latest_cp = latest.get("composition_preset")
+        parts = []
+        if latest_sf:
+            parts.append(f'"{latest_sf.replace("_", " ")}" as main subject')
+        if latest_cp:
+            parts.append(f'"{latest_cp.replace("_", " ")}" composition')
+        if parts:
+            most_recent_clause = f" Most recent image used {' and '.join(parts)} — use neither."
 
     if escalation_level == 0:
         return (
@@ -289,14 +322,14 @@ def suggest_novelty_request(
         return (
             f"Avoid repeating visual metaphors from the last {min(n, 4)} {label} images. "
             "Introduce a different foreground subject and spatial relationship."
-            + concept_clause
+            + concept_clause + subject_clause + comp_clause
         )
     if escalation_level == 2:
         return (
             f"Avoid resemblance to the last {min(n, 6)} {label} images. "
             "Change foreground object count, composition balance, and dominant visual metaphor. "
             "Use a different environmental setting and implied time of day."
-            + concept_clause
+            + concept_clause + subject_clause + comp_clause
         )
     # Level 3+
     return (
@@ -306,7 +339,7 @@ def suggest_novelty_request(
         "new spatial hierarchy, and a distinct environmental context. "
         "If recent images used exterior settings, use interior. "
         "If recent images used horizontal framing, use strong vertical emphasis."
-        + concept_clause
+        + concept_clause + subject_clause + comp_clause + most_recent_clause
     )
 
 
