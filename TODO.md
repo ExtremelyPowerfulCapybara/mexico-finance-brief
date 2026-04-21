@@ -13,6 +13,9 @@ Track of features to build, roughly in order of priority.
 
 ## Quick Wins
 
+- [x] **Wire image generation into main.py** — `generate_hero_image()` in `bot/image_gen.py` calls `lib/image_generator.py`, saves PNG to `docs/images/`, sets `visual["hero_image"]` for the archive renderer.
+- [ ] **RSS/Atom feed** — generate `docs/feed.xml` after each run from the digest JSON. One more distribution channel; enables RSS readers and feed aggregators.
+- [ ] **Sector tags per story** — have Claude classify each story by sector (energy, banking, FX, macro, politics) as part of the summarizer JSON response. Enables archive filtering and sets up personalization later. *(do after image gen + RSS)*
 - [ ] **Health monitoring** — free Healthchecks.io ping at the end of each run. If the bot doesn't check in, you get an email alert. Catches silent failures.
 - [ ] **Merge Dev-Nigg → main** — all features built since March 2026 are still on Dev-Nigg. Production runs old code.
 - [ ] **Global content expansion** — expand `NEWS_DOMAINS` and `TOPICS` in `config.py` beyond Spanish LatAm press to include English-language European and Asian sources, in line with the global scope pivot.
