@@ -115,7 +115,7 @@ def generate_hero_image(digest: dict, issue_date: str, output_dir: str) -> dict:
     context = stories[0].get("headline", "") if stories else ""
 
     try:
-        generate_editorial_image(
+        result = generate_editorial_image(
             issue_date=issue_date,
             story_slug="hero",
             category=preset_key,
@@ -126,7 +126,8 @@ def generate_hero_image(digest: dict, issue_date: str, output_dir: str) -> dict:
             context=context,
             output_dir=output_dir,
         )
-        visual["hero_image"] = f"{config.ASSET_BASE_URL.rstrip('/')}/images/{issue_date}_hero.png"
+        filename = os.path.basename(result["image_path"])
+        visual["hero_image"] = f"{config.ASSET_BASE_URL.rstrip('/')}/images/{filename}"
     except Exception as exc:
         print(f"  [image_gen] Hero image generation failed: {exc}")
 

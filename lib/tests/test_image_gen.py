@@ -1,7 +1,7 @@
 import os
 import sys
 import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 # Repo root (for lib imports) and bot/ (for image_gen + prompt_map imports)
 _ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
@@ -63,7 +63,7 @@ def test_generation_exception_returns_visual_without_hero_image(tmp_path):
     assert "hero_category" in visual
 
 
-def test_tag_to_preset_mapping(tmp_path):
+def test_tag_to_preset_mapping():
     """Each story tag maps to the correct CATEGORY_PRESETS key."""
     expected = {
         "Energía":  "energy",
