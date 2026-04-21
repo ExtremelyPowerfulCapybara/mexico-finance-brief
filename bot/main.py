@@ -3,8 +3,15 @@
 # ---------------------------------------------
 
 import os
+import sys
 import random
 from concurrent.futures import ThreadPoolExecutor
+
+# Add repo root to path so lib/ imports work from bot/
+_repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _repo_root not in sys.path:
+    sys.path.insert(0, _repo_root)
+
 from dotenv import load_dotenv
 load_dotenv()  # loads bot/.env when running from bot/; no-op if file absent
 from fetcher     import fetch_news
@@ -14,10 +21,10 @@ from storage     import save_digest, get_week_stories, get_recent_urls, is_frida
 from renderer    import build_html, build_plain
 from delivery    import send_email
 from archive     import save_pretty_issue
-from config      import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES, MOCK_MODE, SKIP_EMAIL
+from config      import DIGEST_DIR, ARCHIVE_DIR, AUTHOR_NAMES, AUTHOR_TITLES, MOCK_MODE, SKIP_EMAIL
 from mock_data   import load_mock
 from wordcloud_gen import generate_wordcloud
-from image_gen   import generate_hero_prompt
+from image_gen   import generate_hero_image
 from telegram_bot import send_telegram_issue_notification
 from utils.urls  import build_issue_url
 
@@ -86,10 +93,11 @@ def run():
     digest_es = digest.get("es", digest)  # Spanish -- used in email
     digest_en = digest.get("en", digest)  # English -- used in archive toggle
 
-    # ── Visual metadata (hero prompt) ───────────────────────────────────────
-    print("\n[3.5/5] Generating hero image prompt...")
-    visual = generate_hero_prompt(digest)
-    print(f"  [visual] Category: {visual['hero_category']} | Sentiment: {visual['hero_prompt'].split('overall tone: ')[1].split(',')[0]}")
+    # ── Visual metadata (hero image) ────────────────────────────────────────
+    print("\n[3.5/5] Generating hero image...")
+    _image_dir = os.path.join(ARCHIVE_DIR, "images")
+    visual = generate_hero_image(digest, today_str, output_dir=_image_dir)
+    print(f"  [visual] Category: {visual['hero_category']} | image: {'yes' if visual.get('hero_image') else 'skipped'}")
 
     # -- 4. Save digest to disk --
     print("\n[4/5] Saving digest...")
