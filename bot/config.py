@@ -195,7 +195,7 @@ MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
 SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
 
 # Skip image generation (mock/dev runs).
-SKIP_IMAGE = os.environ.get("SKIP_IMAGE", "false").lower() in {"true", "1", "yes"}
+SKIP_IMAGE = os.environ.get("SKIP_IMAGE", "false").lower() == "true"
 
 # Environment: "dev" or "prod" (default prod).
 # In dev mode, email is sent only to DEV_RECIPIENT and Telegram messages
