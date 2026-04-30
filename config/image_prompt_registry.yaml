@@ -15,11 +15,16 @@ categories:
       - pipeline_infrastructure
       - offshore_platform
       - storage_facility
+      - renewable_energy
     allowed_subject_families:
       - refinery
       - pipeline
       - offshore_rig
       - storage_tanks
+      - wind_farm
+      - solar_field
+      - hydroelectric_dam
+      - power_grid_tower
     allowed_compositions:
       - left_weighted
       - right_weighted
@@ -67,11 +72,15 @@ categories:
       - institutional_facade
       - trading_floor_empty
       - market_data_display
+      - commodity_market
+      - currency_exchange
     allowed_subject_families:
       - central_bank_exterior
       - empty_trading_floor
       - stone_plaza
       - institutional_columns
+      - commodity_exchange_pit
+      - currency_exchange_booth
     allowed_compositions:
       - low_angle_monumental
       - frontal_symmetric
@@ -85,11 +94,15 @@ categories:
       - legislative_chamber
       - empty_plaza
       - monumental_steps
+      - international_summit
     allowed_subject_families:
       - parliament_facade
       - government_exterior
       - government_plaza
       - ceremonial_doors
+      - legislative_chamber_interior
+      - press_briefing_room
+      - international_summit_hall
     allowed_compositions:
       - frontal_symmetric
       - left_weighted
@@ -103,11 +116,15 @@ categories:
       - exchange_floor
       - data_terminal
       - capital_flow_map
+      - bond_market
+      - ipo_listing
     allowed_subject_families:
       - glass_tower_atrium
       - trading_floor_interior
       - financial_district_exterior
       - exchange_building_exterior
+      - bond_trading_room
+      - ipo_ticker_display
     allowed_compositions:
       - upward_diagonal
       - split_frame
@@ -122,6 +139,10 @@ subject_family_templates:
   pipeline: "industrial pipeline network traversing open terrain, valve stations visible"
   offshore_rig: "offshore drilling platform with functional superstructure against open sea"
   storage_tanks: "cylindrical storage tanks in a flat industrial yard, orderly arrangement"
+  wind_farm: "wind turbine array on open terrain, nacelles and blades in still formation"
+  solar_field: "utility-scale solar panel array covering open terrain in orderly rows"
+  hydroelectric_dam: "concrete dam face and spillway with reservoir stretching behind into distance"
+  power_grid_tower: "high-voltage transmission towers crossing open landscape, cables suspended"
 
   container_port: "stacked shipping containers at a deep-water port, crane silhouettes overhead"
   cargo_vessel: "ocean-going cargo vessel navigating open water, visible cargo decks"
@@ -137,16 +158,23 @@ subject_family_templates:
   empty_trading_floor: "empty trading floor with silent workstations and curved data screens"
   stone_plaza: "empty stone plaza in front of an institutional facade, long shadow geometry"
   institutional_columns: "monumental columns of an institutional building seen in close perspective"
+  commodity_exchange_pit: "empty commodity exchange trading pit, tiered circular steps, silent workstations"
+  currency_exchange_booth: "row of currency exchange booths with dormant rate boards, no figures present"
 
   parliament_facade: "parliament or government building facade, flag poles and ceremonial details"
   government_exterior: "government ministry exterior, formal facade and sealed entrance"
   government_plaza: "empty government plaza with long shadow geometry and subdued ambient light"
   ceremonial_doors: "heavy ceremonial doors of a government building, closed and imposing"
+  legislative_chamber_interior: "legislative chamber interior, tiered semicircular seating, empty central floor"
+  press_briefing_room: "institutional press briefing podium with draped backdrop, empty chairs in rows"
+  international_summit_hall: "large conference hall with name placards and empty delegate seats, receding rows"
 
   glass_tower_atrium: "financial district tower atrium viewed from below, glass and steel geometry"
   trading_floor_interior: "trading floor with workstations and ceiling infrastructure, empty or sparse"
   financial_district_exterior: "financial district exterior, towers and stone paving, low-angle view"
   exchange_building_exterior: "stock exchange building exterior, classical or modern facade"
+  bond_trading_room: "institutional bond trading floor, rows of silent workstations, overhead screens dark"
+  ipo_ticker_display: "large LED ticker display in a financial institution lobby, numbers mid-scroll"
 
 # ── Composition descriptions (filled into COMPOSITION in STYLE_MASTER) ────────
 

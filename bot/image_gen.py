@@ -10,6 +10,7 @@
 #  Outputs: visual metadata dict for digest JSON
 # ─────────────────────────────────────────────
 
+import json
 import os
 
 from prompt_map import PROMPT_TEMPLATES, PROMPT_VARIANT_SUBJECTS, _BASE
@@ -93,6 +94,50 @@ TAG_TO_PRESET: dict = {
 }
 
 
+def extract_visual_keywords(story: dict, category: str) -> dict:
+    """
+    Call Claude Haiku to extract story-specific visual elements for image generation.
+    Returns dict with 'main_subject' and 'environment', or {} on any failure.
+    """
+    import anthropic
+    import config
+
+    headline = story.get("headline", "")
+    body = story.get("body", "")
+    if not headline:
+        return {}
+
+    prompt = (
+        "You are an art director for a high-end financial newsletter. "
+        "Given the story below, describe a specific visual scene for an editorial illustration.\n\n"
+        f"Category: {category}\n"
+        f"Headline: {headline}\n"
+        f"Summary: {body}\n\n"
+        "Respond with JSON only, no explanation:\n"
+        "{\n"
+        '  "main_subject": "dominant foreground visual element, 10-15 words, specific to this story",\n'
+        '  "environment": "setting or background context, 10-15 words, specific to this story"\n'
+        "}\n\n"
+        "Style constraints: hand-drawn ink illustration, no people, no text in image, no flags or logos."
+    )
+
+    try:
+        client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
+        response = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=150,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        text = response.content[0].text.strip()
+        if text.startswith("```"):
+            lines = text.split("\n")
+            text = "\n".join(lines[1:-1] if lines[-1].strip() == "```" else lines[1:])
+        return json.loads(text)
+    except Exception as exc:
+        print(f"  [image_gen] Keyword extraction failed: {exc}")
+        return {}
+
+
 def generate_hero_image(digest: dict, issue_date: str, output_dir: str) -> dict:
     """
     Extends generate_hero_prompt() to actually produce a PNG via OpenAI.
@@ -116,15 +161,20 @@ def generate_hero_image(digest: dict, issue_date: str, output_dir: str) -> dict:
 
     digest_es = digest.get("es", digest)
     stories = digest_es.get("stories", [])
-    context = stories[0].get("headline", "") if stories else ""
+    lead = stories[0] if stories else {}
+    context = lead.get("headline", "")
+
+    keywords = extract_visual_keywords(lead, preset_key)
+    main_subject = keywords.get("main_subject") or preset["main_subject"]
+    environment = keywords.get("environment") or preset["environment"]
 
     try:
         result = generate_editorial_image(
             issue_date=issue_date,
             story_slug="hero",
             category=preset_key,
-            main_subject=preset["main_subject"],
-            environment=preset["environment"],
+            main_subject=main_subject,
+            environment=environment,
             composition=preset["composition"],
             color_system=preset["color_system"],
             context=context,

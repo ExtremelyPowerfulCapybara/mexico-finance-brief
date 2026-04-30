@@ -175,7 +175,7 @@ def generate_editorial_image(
             force_novelty_level=force_novelty_level if attempt == 0 else None,
         )
 
-        resolved_main_subject = components.get("main_subject") or main_subject
+        resolved_main_subject = main_subject or components.get("main_subject")
         resolved_composition = components.get("composition") or composition
         resolved_color_system = components.get("color_system") or color_system
         resolved_concept_tag = (
