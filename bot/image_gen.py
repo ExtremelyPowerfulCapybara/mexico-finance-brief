@@ -17,6 +17,22 @@ from prompt_map import PROMPT_TEMPLATES, PROMPT_VARIANT_SUBJECTS, _BASE
 
 TEMPLATE_VERSION = "v1"
 
+# Three compositional framings applied to a story-specific subject.
+# Tuple: (prompt_template, short label for Telegram caption)
+_VARIANT_COMPOSITIONS = [
+    ("{subject}, wide establishing shot, environmental context visible", "Wide shot"),
+    ("close-up of {subject}, isolated detail, shallow depth of field", "Close-up"),
+    ("{subject}, low angle with strong perspective and architectural framing", "Low angle"),
+]
+
+
+def _strip_article(text: str) -> str:
+    """Strip a leading indefinite article for display captions."""
+    for prefix in ("a ", "an "):
+        if text.lower().startswith(prefix):
+            return text[len(prefix):]
+    return text
+
 
 def generate_hero_prompt(digest: dict) -> dict:
     """
@@ -167,6 +183,29 @@ def generate_hero_image(digest: dict, issue_date: str, output_dir: str) -> dict:
     keywords = extract_visual_keywords(lead, preset_key)
     main_subject = keywords.get("main_subject") or preset["main_subject"]
     environment = keywords.get("environment") or preset["environment"]
+
+    # If Haiku returned a story-specific subject, rebuild hero_options so Telegram
+    # candidates use story-specific prompts and labels instead of the static lookup.
+    if keywords.get("main_subject"):
+        digest_en = digest.get("en", digest_es)
+        mood = (
+            digest_en.get("sentiment", {}).get("label_en")
+            or digest_es.get("sentiment", {}).get("label_en")
+            or "Cautious"
+        )
+        new_options = {}
+        new_summaries = {}
+        for i, (comp_tmpl, comp_label) in enumerate(_VARIANT_COMPOSITIONS, start=1):
+            subject_with_comp = comp_tmpl.format(subject=main_subject)
+            new_options[f"opt{i}"] = _BASE.format(
+                subject=subject_with_comp,
+                headline=context,
+                sentiment=mood,
+            )
+            caption = _strip_article(main_subject)
+            new_summaries[f"opt{i}"] = f"{caption[:1].upper()}{caption[1:]} — {comp_label}"
+        visual["hero_options"] = new_options
+        visual["hero_option_summaries"] = new_summaries
 
     try:
         result = generate_editorial_image(
