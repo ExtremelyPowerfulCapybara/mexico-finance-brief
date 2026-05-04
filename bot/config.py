@@ -85,6 +85,8 @@ AUTHOR_TITLES = [
 # ── News preferences ──────────────────────────
 TOPICS                 = ["finanzas", "economía", "México", "comercio", "mercados", "política", "criptomonedas"]
 LANGUAGE               = "es"
+TOPICS_EN              = ["emerging markets", "global trade", "Federal Reserve", "China economy", "commodities", "geopolitics", "tariffs"]
+LANGUAGE_EN            = "en"
 MAX_ARTICLES_PER_TOPIC  = 5
 MAX_ARTICLES_PER_SOURCE = 1   # cap per outlet across all topics
 MAX_ARTICLE_CHARS       = 3000
@@ -109,9 +111,16 @@ NEWS_DOMAINS = [
     "infobae.com",
     "lanacion.com.ar",
     "eluniversal.com.mx",
-    # Secondary: English signal layer
+    # English tier 1: global macro & analysis
     "ft.com",
     "wsj.com",
+    "bloomberg.com",
+    "economist.com",
+    # English tier 2: markets & geopolitics
+    "foreignpolicy.com",
+    "cnbc.com",
+    "axios.com",
+    "marketwatch.com",
 ]
 NEWS_DOMAINS_STR = ",".join(NEWS_DOMAINS)
 
@@ -128,8 +137,8 @@ NEWS_DOMAIN_BLOCKLIST: set[str] = {
 # ── Article scoring ───────────────────────────
 # Source name substrings for authority scoring (case-insensitive match).
 SOURCE_TIERS = {
-    "tier1": ["Financial Times", "Reuters", "Wall Street Journal", "Bloomberg"],
-    "tier2": ["Expansion", "El Economista", "Reforma", "Milenio"],
+    "tier1": ["Financial Times", "Reuters", "Wall Street Journal", "Bloomberg", "The Economist"],
+    "tier2": ["Expansion", "El Economista", "Reforma", "Milenio", "CNBC", "Axios", "MarketWatch", "Foreign Policy"],
 }
 
 # Maximum number of articles passed to Claude after scoring.
