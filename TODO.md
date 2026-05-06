@@ -17,13 +17,14 @@ Track of features to build, roughly in order of priority.
 - [ ] **RSS/Atom feed** — generate `docs/feed.xml` after each run from the digest JSON. One more distribution channel; enables RSS readers and feed aggregators.
 - [ ] **Sector tags per story** — have Claude classify each story by sector (energy, banking, FX, macro, politics) as part of the summarizer JSON response. Enables archive filtering and sets up personalization later. *(do after image gen + RSS)*
 - [ ] **Health monitoring** — free Healthchecks.io ping at the end of each run. If the bot doesn't check in, you get an email alert. Catches silent failures.
-- [ ] **Merge Dev-Nigg → main** — all features built since March 2026 are still on Dev-Nigg. Production runs old code.
+- [x] **Merge Dev-Nigg → main** — all features built since March 2026 are still on Dev-Nigg. Production runs old code.
 - [ ] **Global content expansion** — expand `NEWS_DOMAINS` and `TOPICS` in `config.py` beyond Spanish LatAm press to include English-language European and Asian sources, in line with the global scope pivot.
 
 ---
 
 ## Bigger Lift
 
+- [ ] **Paid tier + topic preferences** — freemium model: free subscribers get full digest unchanged; paid subscribers authenticate via magic-link portal, select topic buckets (LatAm, Global Markets, Geopolitics, Crypto), receive filtered digest. SQLite DB replaces `subscribers.csv`, small Flask portal on VPS handles auth + preferences. Phase 2: Substack webhook auto-promotes on payment. Spec: `docs/superpowers/specs/2026-05-06-paid-tier-topic-preferences-design.md`. Plan: `docs/superpowers/plans/2026-05-06-paid-tier-topic-preferences.md`.
 - [ ] **Market sections** — wire the focus selector on the landing page to a subscription backend; route per-section digest content to subscribers based on their preferences. Foundation UI already built in `docs/landing*.html`.
 - [ ] **Unsubscribe links** — each subscriber gets a unique token. Unsubscribe link removes them from the list automatically.
 - [ ] **Resend/Mailgun migration** — replace Gmail SMTP with a proper email service for better deliverability and open/click tracking. Needed if subscriber list grows beyond ~20.
