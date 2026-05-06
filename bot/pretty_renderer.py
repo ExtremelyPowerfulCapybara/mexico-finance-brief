@@ -190,7 +190,7 @@ CSS = """
   .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
 
   /* -- Hero image -- */
-  .hero-image { line-height: 0; border-bottom: 1px solid #cdd4d9; }
+  .hero-image { line-height: 0; }
   .hero-image img { width: 100%; display: block; }
 
   @media (max-width: 600px) {
@@ -678,7 +678,7 @@ def build_pretty_html(
 
   {hero_html}
 
-  {DIVIDER}
+  {"<div style='height:1px; background:#cdd4d9;'></div>" if hero_html else DIVIDER}
 
   <div class="sentiment">
     <div class="sentiment-header">
